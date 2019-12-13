@@ -18,7 +18,13 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     var mapViewModel: MapViewModel!
-    
+    var localBeacon: CLBeaconRegion!
+    var localBeaconIdentityConstraint: CLBeaconIdentityConstraint!
+    var beaconPeripheralData: [String:Any]?
+    var peripheralManager: CBPeripheralManager!
+    var uuid: UUID!
+    var appIdentifier = "com.shokohashimoto.CopsAndRobbers"
+    var beaconsToRange = [CLBeaconRegion]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +37,14 @@ class MapViewController: UIViewController {
         
         // TODO: Should change later
         startMonitoringUser()
-        
+        initLocalBeacon()
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         // TODO: Need to change later
         stopMonitoringUser()
+        stopLocalBeacon()
     }
     
     func startMonitoringUser() {
@@ -56,6 +63,28 @@ class MapViewController: UIViewController {
         }
     }
     
+    func initLocalBeacon(){
+        if localBeacon != nil {
+            stopLocalBeacon()
+        }
+        
+        let localBeaconManajor: CLBeaconMajorValue = 10 // teamID
+        let localBeaconMinor: CLBeaconMinorValue = 1 // cop or rubber
+        
+        uuid = UUID(uuidString: "B0702980-A295-A8AB-F734-031A98A512DE")
+        localBeaconIdentityConstraint = CLBeaconIdentityConstraint(uuid: uuid, major: localBeaconManajor, minor: localBeaconMinor)
+        localBeacon = CLBeaconRegion(beaconIdentityConstraint: localBeaconIdentityConstraint, identifier: appIdentifier)
+        beaconPeripheralData = localBeacon.peripheralData(withMeasuredPower: nil) as? [String: Any]
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+        
+    }
+    
+    func stopLocalBeacon(){
+        peripheralManager.stopAdvertising()
+        peripheralManager = nil
+        beaconPeripheralData = nil
+        localBeacon = nil
+    }
 }
 
 // MARK - CLLocationManagerDelegate
@@ -100,10 +129,13 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: CBPeripheralManagerDelegate
 extension MapViewController: CBPeripheralManagerDelegate {
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-        <#code#>
+        if peripheral.state == .poweredOn {
+            peripheralManager.startAdvertising(beaconPeripheralData)
+        } else if peripheral.state == .poweredOff {
+            peripheralManager.stopAdvertising()
+        }
     }
-    
-    
 }
