@@ -27,7 +27,7 @@ class User {
     }
     
     func asBeaconRegion() -> CLBeaconRegion {
-        return CLBeaconRegion(proximityUUID: uuid, major: majorValue, minor: minorValue, identifier: name)
+        return CLBeaconRegion(proximityUUID: uuid, major: majorValue, identifier: name)
     }
     
     func nameForProximity(_ proximity: CLProximity) -> String {

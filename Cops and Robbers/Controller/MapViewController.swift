@@ -32,9 +32,11 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        let user1 = User(name: "Test1", icon: "iconTest1", uuid: UUID(uuidString: "05F62A3D-F60F-44BC-B36E-2B80FD6C9679")!, majorValue: 10, minorValue: 1)
-        mapViewModel = MapViewModel(user: user1)
+        let user1 = User(name: "Cops", icon: "iconTest1", uuid: UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA")!, majorValue: 20, minorValue: 1)
         
+        mapViewModel = MapViewModel(user: user1)
+       // mapViewModel.users.append(user2)
+        //mapViewModel.users.append(user3)
         // TODO: Should change later
         startMonitoringUser()
         initLocalBeacon()
@@ -49,7 +51,7 @@ class MapViewController: UIViewController {
     
     func startMonitoringUser() {
         for user in mapViewModel.users {
-            let beaconRegion = user.asBeaconRegion()
+            var beaconRegion = user.asBeaconRegion()
             locationManager.startMonitoring(for: beaconRegion)
             locationManager.startRangingBeacons(in: beaconRegion)
         }
@@ -68,10 +70,12 @@ class MapViewController: UIViewController {
             stopLocalBeacon()
         }
         
-        let localBeaconManajor: CLBeaconMajorValue = 10 // teamID
+        let localBeaconManajor: CLBeaconMajorValue = 30 // teamID
         let localBeaconMinor: CLBeaconMinorValue = 1 // cop or rubber
         
-        uuid = UUID(uuidString: "B0702980-A295-A8AB-F734-031A98A512DE")
+       //uuid = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D") // ESTIMONI
+       uuid = UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA") // RedBear
+//        uuid = UUID(uuidString: "05F62A3D-F60F-44BC-B36E-2B80FD6C9679") // My Beacon Device
         localBeaconIdentityConstraint = CLBeaconIdentityConstraint(uuid: uuid, major: localBeaconManajor, minor: localBeaconMinor)
         localBeacon = CLBeaconRegion(beaconIdentityConstraint: localBeaconIdentityConstraint, identifier: appIdentifier)
         beaconPeripheralData = localBeacon.peripheralData(withMeasuredPower: nil) as? [String: Any]
@@ -93,28 +97,33 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         
         var indexPaths = [IndexPath]()
+        var printInfo = ""
+        
         for beacon in beacons {
             for row in 0..<mapViewModel.users.count {
                 
-                if mapViewModel.users[row] == beacon {
+                //if mapViewModel.users[row] == beacon {
                     mapViewModel.users[row].beacon = beacon
                     indexPaths += [IndexPath(row: row, section: 0)]
                     print(mapViewModel.users[row].name)
-                }
+                    
+                    
+                    let bea = beacon as CLBeacon
+                    
+                    let title = "------------ number \(beacons.count) -----------------\n"
+                    let name = "Name: \(mapViewModel.users[row].name) \n"
+                    let major = "major: \(bea.major.intValue) \n"
+                    let minor = "minor: \(bea.minor.intValue) \n"
+                    let location = "location: \(mapViewModel.users[row].locationString()) \n"
+                    
+                    printInfo += title + name + major + minor + location
+                    
+                    
+                //}
             }
         }
-        var printInfo = ""
-        for index in indexPaths {
-            let title = "------------ number \(index[0]) -----------------\n"
-            let name = "Name: \(mapViewModel.users[index[0]].name) \n"
-            let major = "major: \(mapViewModel.users[index[0]].majorValue) \n"
-            let minor = "minor: \(mapViewModel.users[index[0]].minorValue) \n"
-            let location = "location: \(mapViewModel.users[index[0]].locationString()) \n"
-            
-            printInfo += title + name + major + minor + location
-            
-        }
         
+        print(printInfo)
         textView.text = printInfo
     }
     
