@@ -14,6 +14,7 @@ import CoreBluetooth
 class MapViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
 
     let locationManager = CLLocationManager()
     
@@ -25,24 +26,39 @@ class MapViewController: UIViewController {
     var uuid: UUID!
     var appIdentifier = "com.shokohashimoto.CopsAndRobbers"
     var beaconsToRange = [CLBeaconRegion]()
+    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
+        // Beacon setting
         let user1 = User(name: "Cops", icon: "iconTest1", uuid: UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA")!, majorValue: 20, minorValue: 1)
         
         mapViewModel = MapViewModel(user: user1)
-       // mapViewModel.users.append(user2)
-        //mapViewModel.users.append(user3)
+        
         // TODO: Should change later
         startMonitoringUser()
         initLocalBeacon()
         
+        
+        // Map setting
+        mapView.showsUserLocation = true
+        
+        let location = CLLocation(latitude: 49.242221, longitude: -123.035765)
+        let regionRadius: CLLocationDistance = 1500
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        
+        mapView.setRegion(region, animated: true)
+        addRadiusCircle(location: location)
+        
+        
     }
     
+    // Beacon setting
     override func viewDidDisappear(_ animated: Bool) {
         // TODO: Need to change later
         stopMonitoringUser()
@@ -51,7 +67,7 @@ class MapViewController: UIViewController {
     
     func startMonitoringUser() {
         for user in mapViewModel.users {
-            var beaconRegion = user.asBeaconRegion()
+            let beaconRegion = user.asBeaconRegion()
             locationManager.startMonitoring(for: beaconRegion)
             locationManager.startRangingBeacons(in: beaconRegion)
         }
@@ -89,9 +105,17 @@ class MapViewController: UIViewController {
         beaconPeripheralData = nil
         localBeacon = nil
     }
+    
+    
+    // Map setting
+    func addRadiusCircle(location: CLLocation) {
+        self.mapView.delegate = self
+        var circle = MKCircle(center: location.coordinate, radius: 500 as CLLocationDistance)
+        self.mapView.addOverlay(circle)
+    }
 }
 
-// MARK - CLLocationManagerDelegate
+// MARK: CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
@@ -136,6 +160,11 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
       print("Location manager failed: \(error.localizedDescription)")
     }
+    
+    // Map Setting
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = locations.last as CLLocation?
+    }
 }
 
 // MARK: CBPeripheralManagerDelegate
@@ -146,5 +175,18 @@ extension MapViewController: CBPeripheralManagerDelegate {
         } else if peripheral.state == .poweredOff {
             peripheralManager.stopAdvertising()
         }
+    }
+}
+
+
+// MARK: MKMapViewDelegate
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        let circle = MKCircleRenderer(overlay: overlay)
+        circle.strokeColor = UIColor.red
+        circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
+        circle.lineWidth = 2
+        return circle
     }
 }

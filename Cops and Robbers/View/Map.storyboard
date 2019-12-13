@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fli-So-lCs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fli-So-lCs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F4V-DA-4YM">
-                                <rect key="frame" x="0.0" y="698.5" width="414" height="163.5"/>
+                                <rect key="frame" x="0.0" y="207.5" width="414" height="654.5"/>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pYG-cX-1O3">
-                                <rect key="frame" x="0.0" y="44" width="414" height="654.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="163.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -35,11 +35,12 @@
                             <constraint firstItem="fDP-2t-5tE" firstAttribute="bottom" secondItem="F4V-DA-4YM" secondAttribute="bottom" id="mpu-Ay-GSk"/>
                             <constraint firstItem="fDP-2t-5tE" firstAttribute="trailing" secondItem="F4V-DA-4YM" secondAttribute="trailing" id="rtm-az-2nW"/>
                             <constraint firstItem="F4V-DA-4YM" firstAttribute="top" secondItem="pYG-cX-1O3" secondAttribute="bottom" id="sY6-go-Nvs"/>
-                            <constraint firstItem="pYG-cX-1O3" firstAttribute="height" secondItem="fDP-2t-5tE" secondAttribute="height" multiplier="0.8" id="wA0-wq-zwZ"/>
+                            <constraint firstItem="pYG-cX-1O3" firstAttribute="height" secondItem="fDP-2t-5tE" secondAttribute="height" multiplier="0.2" id="wA0-wq-zwZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fDP-2t-5tE"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="F4V-DA-4YM" id="md5-0V-kJD"/>
                         <outlet property="textView" destination="pYG-cX-1O3" id="4ss-IQ-Epg"/>
                     </connections>
                 </viewController>
