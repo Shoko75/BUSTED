@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
 		2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEC23A0923300AA9216 /* ViewController.swift */; };
 		2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DEE23A0923300AA9216 /* Main.storyboard */; };
 		2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF123A0923600AA9216 /* Assets.xcassets */; };
 		2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */; };
+		2FB47DFD23A092C400AA9216 /* AccountLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DFC23A092C400AA9216 /* AccountLogin.storyboard */; };
+		2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */; };
+		2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */; };
+		2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47E4E23A1E57200AA9216 /* Map.storyboard */; };
+		2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5023A1E64900AA9216 /* MapViewController.swift */; };
+		2FB47E5523A1EDD100AA9216 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5423A1EDD100AA9216 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,12 @@
 		2FB47DF123A0923600AA9216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FB47DF423A0923600AA9216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FB47DF623A0923600AA9216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FB47DFC23A092C400AA9216 /* AccountLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountLogin.storyboard; sourceTree = "<group>"; };
+		2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLoginViewController.swift; sourceTree = "<group>"; };
+		2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		2FB47E4E23A1E57200AA9216 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		2FB47E5023A1E64900AA9216 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2FB47E5423A1EDD100AA9216 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,54 @@
 		2FB47DE723A0923300AA9216 /* Cops and Robbers */ = {
 			isa = PBXGroup;
 			children = (
+				2FB47DFE23A0958400AA9216 /* View */,
+				2FB47E2723A0BDD800AA9216 /* Controller */,
+				2FB47E2823A0BEB600AA9216 /* ViewModel */,
+				2FB47E2923A0BECC00AA9216 /* Model */,
 				2FB47DE823A0923300AA9216 /* AppDelegate.swift */,
 				2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */,
-				2FB47DEC23A0923300AA9216 /* ViewController.swift */,
-				2FB47DEE23A0923300AA9216 /* Main.storyboard */,
 				2FB47DF123A0923600AA9216 /* Assets.xcassets */,
 				2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */,
 				2FB47DF623A0923600AA9216 /* Info.plist */,
 			);
 			path = "Cops and Robbers";
+			sourceTree = "<group>";
+		};
+		2FB47DFE23A0958400AA9216 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47DEE23A0923300AA9216 /* Main.storyboard */,
+				2FB47DFC23A092C400AA9216 /* AccountLogin.storyboard */,
+				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FB47E2723A0BDD800AA9216 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47DEC23A0923300AA9216 /* ViewController.swift */,
+				2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */,
+				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
+				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FB47E2823A0BEB600AA9216 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2FB47E2923A0BECC00AA9216 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47E5423A1EDD100AA9216 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +178,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB47DFD23A092C400AA9216 /* AccountLogin.storyboard in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
+				2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */,
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
 				2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */,
+				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
+				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
+				2FB47E5523A1EDD100AA9216 /* User.swift in Sources */,
+				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,11 +347,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49P3BQ2KSR;
 				INFOPLIST_FILE = "Cops and Robbers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shokohashimoto.Cops-and-Robbers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,11 +366,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49P3BQ2KSR;
 				INFOPLIST_FILE = "Cops and Robbers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.shokohashimoto.Cops-and-Robbers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
