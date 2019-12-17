@@ -38,6 +38,7 @@
 		2FB47E4E23A1E57200AA9216 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2FB47E5023A1E64900AA9216 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2FB47E5423A1EDD100AA9216 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cops and Robbers.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		2FB47DE723A0923300AA9216 /* Cops and Robbers */ = {
 			isa = PBXGroup;
 			children = (
+				2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */,
 				2FB47DFE23A0958400AA9216 /* View */,
 				2FB47E2723A0BDD800AA9216 /* Controller */,
 				2FB47E2823A0BEB600AA9216 /* ViewModel */,
@@ -344,6 +346,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Cops and Robbers/Cops and Robbers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58BN93L43H;
 				INFOPLIST_FILE = "Cops and Robbers/Info.plist";
@@ -352,7 +355,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -363,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Cops and Robbers/Cops and Robbers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58BN93L43H;
 				INFOPLIST_FILE = "Cops and Robbers/Info.plist";
@@ -371,7 +375,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

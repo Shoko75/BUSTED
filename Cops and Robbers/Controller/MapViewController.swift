@@ -10,12 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreBluetooth
+import UserNotifications
 
 class MapViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var mapView: MKMapView!
 
+    private let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
     
     var mapViewModel: MapViewModel!
@@ -24,7 +26,7 @@ class MapViewController: UIViewController {
     var beaconPeripheralData: [String:Any]?
     var peripheralManager: CBPeripheralManager!
     var uuid: UUID!
-    var appIdentifier = "com.shokohashimoto.CopsAndRobbers"
+    var appIdentifier = "com.shokohashimoto.CopsAndRobber"
     var beaconsToRange = [CLBeaconRegion]()
     var currentLocation: CLLocation!
     
@@ -48,12 +50,20 @@ class MapViewController: UIViewController {
         // Map setting
         mapView.showsUserLocation = true
         
+        // Darawing the field
         let location = CLLocation(latitude: 49.242221, longitude: -123.035765)
         let regionRadius: CLLocationDistance = 1500
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
         mapView.setRegion(region, animated: true)
         addRadiusCircle(location: location)
+        
+        // Set exit notification of the field
+        let geofenceRegionCenter = CLLocationCoordinate2DMake(49.242221, -123.035765)
+        let radiusOfNotify: CLLocationDistance = 100
+        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
+        geofenceRegion.notifyOnExit = true
+        locationManager.startMonitoring(for: geofenceRegion)
         
         
     }
@@ -110,7 +120,7 @@ class MapViewController: UIViewController {
     // Map setting
     func addRadiusCircle(location: CLLocation) {
         self.mapView.delegate = self
-        var circle = MKCircle(center: location.coordinate, radius: 500 as CLLocationDistance)
+        var circle = MKCircle(center: location.coordinate, radius: 100 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
 }
@@ -188,5 +198,14 @@ extension MapViewController: MKMapViewDelegate {
         circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
         circle.lineWidth = 2
         return circle
+    }
+}
+
+
+// MARK: UNUserNotificationCenterDelegate
+extension MapViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        
     }
 }

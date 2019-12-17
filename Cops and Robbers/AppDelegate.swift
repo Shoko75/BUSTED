@@ -7,14 +7,32 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var locationManager: CLLocationManager?
+    var notificationCenter: UNUserNotificationCenter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        self.locationManager = CLLocationManager()
+        self.locationManager?.delegate = self
+        
+        self.notificationCenter = UNUserNotificationCenter.current()
+        
+        notificationCenter?.delegate = self as! UNUserNotificationCenterDelegate
+        
+        let options: UNAuthorizationOptions = [.alert, .sound]
+        
+        notificationCenter?.requestAuthorization(options: options, completionHandler: { (granted, error) in
+            if !granted {
+                print("Permission not granted")
+            }
+        })
+        
         return true
     }
 
@@ -32,6 +50,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    // Notification setiing
+    func handleEvent(forRegion region: CLRegion) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Cops and Robbers (Warning)"
+        content.body = "You are out side of the filed! Please come back! "
+        content.sound = UNNotificationSound.default
+        
+        let timeInSeconds: TimeInterval = 5
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInSeconds, repeats: false)
+        let identifier = region.identifier
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter?.add(request, withCompletionHandler: { (error) in
+            if error != nil {
+                print("Error adding notification with identifier: \(identifier)")
+            }
+        })
+    }
 
 }
 
+// MARK: CLLocationManagerDelegate
+extension AppDelegate: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            self.handleEvent(forRegion: region)
+        }
+    }
+    
+}
+
+// MARK: UNUserNotificationCenterDelegate
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    // Setting for foreground notification
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    // Setting for when the user tapped the notification
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let identifier = response.notification.request.identifier
+    }
+}
