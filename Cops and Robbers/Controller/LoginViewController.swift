@@ -17,31 +17,38 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginViewModel.loginViewModelDelegate = self
     }
     
     
     @IBAction func pressedLogin(_ sender: Any) {
         
-        let loginManager = FirebaseAuthManager()
-        guard let email = emailText.text, let password = password.text else { return }
+        guard let email = emailText.text, let password = password.text,
+                email != "", password != "" else { return }
         
-        loginManager.logIn(email: email, password: password) { [weak self] (success) in
-            guard let self = self else { return }
-            var message: String = ""
-            if success {
-                message = "User was sucessfully logged in."
-            } else {
-                message = "There was an error."
-            }
-            
-            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alertController, animated: false, completion: nil)
-        }
+        loginViewModel.logIn(email: email, password: password)
+        
+        
         
     }
     
     @IBAction func pressedBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+}
+
+extension LoginViewController: LoginViewModelDelegate {
+    
+    func finishLogIn(errorMessage: String?) {
+        
+        if errorMessage == nil {
+            self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
+        } else {
+            let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertController, animated: false, completion: nil)
+        }
+    }
+    
+    
 }

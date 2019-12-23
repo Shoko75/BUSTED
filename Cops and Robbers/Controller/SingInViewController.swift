@@ -1,5 +1,5 @@
 //
-//  SingInViewController.swift
+//  SignInViewController.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2019-12-17.
@@ -8,42 +8,44 @@
 
 import UIKit
 
-class SingInViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
-    var singInViewModel = SingInViewModel()
+    var singInViewModel = SignInViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        singInViewModel.signInDelegate = self
     }
 
     @IBAction func pressedSingIn(_ sender: Any) {
         
-        let singInManager = FirebaseAuthManager()
         if let email = emailText.text, let password = passwordText.text {
-            
-            singInManager.createUser(email: email, password: password) { [weak self] (success) in
-                
-                guard let self = self else { return }
-                var message: String = ""
-                
-                if success {
-                    self.dismiss(animated: false, completion: nil)
-                } else {
-                    message = "There was an error."
-                    let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            }
+            singInViewModel.createUser(email: email, password: password)
         }
     }
     
     @IBAction func pressedBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+    
+}
+
+extension SignInViewController: SignInDelegate {
+    func finishSignIn(errorMessage: String?) {
+        
+        if errorMessage == nil {
+            self.dismiss(animated: false, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     
 }

@@ -10,13 +10,13 @@
         <!--Navigation Controller-->
         <scene sceneID="Bzf-gB-ExA">
             <objects>
-                <navigationController id="9Q2-s3-54s" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationCon" id="9Q2-s3-54s" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q6w-eE-j9m">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="F5j-15-Dbw" kind="modal" modalPresentationStyle="fullScreen" id="zPf-r3-jof"/>
+                        <segue destination="F5j-15-Dbw" kind="relationship" relationship="rootViewController" id="RIr-0b-0r2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEB-XA-zEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,15 +8,25 @@
 
 import Foundation
 
+protocol LoginViewModelDelegate {
+    func finishLogIn(errorMessage: String?)
+}
+
 class LoginViewModel {
     
-    func loginCheck(userOrEmail: String, password: String) -> Bool {
-        
-        if ( userInfo.email == userOrEmail || userInfo.userName == userOrEmail ) && userInfo.password == password {
-            
-            return true
-        }
-        return false
-    }
+    var loginViewModelDelegate: LoginViewModelDelegate?
     
+    func logIn(email: String, password: String) {
+        
+        let loginManager = FirebaseAuthManager()
+        var message: String?
+        
+        loginManager.logIn(email: email, password: password) { [weak self] (success, error) in
+            guard self != nil else { return }
+            if !success {
+                message = error
+            }
+            self!.loginViewModelDelegate?.finishLogIn(errorMessage: message)
+        }
+    }
 }
