@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         // Beacon setting
-        let user1 = User(name: "Cops", icon: "iconTest1", uuid: UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA")!, majorValue: 20, minorValue: 1)
+        let user1 = UserForGame(name: "Cops", icon: "iconTest1", uuid: UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA")!, majorValue: 20, minorValue: 1)
         
         mapViewModel = MapViewModel(user: user1)
         
