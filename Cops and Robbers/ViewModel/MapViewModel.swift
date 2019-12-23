@@ -11,10 +11,10 @@ import CoreLocation
 
 class MapViewModel {
     
-    var users = [User]()
+    var users = [UserForGame]()
     
     
-    init(user: User){
+    init(user: UserForGame){
         self.users.append(user)
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -14,12 +15,24 @@
 		2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DEE23A0923300AA9216 /* Main.storyboard */; };
 		2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF123A0923600AA9216 /* Assets.xcassets */; };
 		2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */; };
-		2FB47DFD23A092C400AA9216 /* AccountLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DFC23A092C400AA9216 /* AccountLogin.storyboard */; };
 		2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */; };
 		2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */; };
 		2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47E4E23A1E57200AA9216 /* Map.storyboard */; };
 		2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5023A1E64900AA9216 /* MapViewController.swift */; };
-		2FB47E5523A1EDD100AA9216 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5423A1EDD100AA9216 /* User.swift */; };
+		2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5423A1EDD100AA9216 /* UserForGame.swift */; };
+		2FDF0E1623A99D3C001648D5 /* SingIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1523A99D3C001648D5 /* SingIn.storyboard */; };
+		2FDF0E1823A9A20E001648D5 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1723A9A20E001648D5 /* SingInViewController.swift */; };
+		2FDF0E1A23AC61E9001648D5 /* SingInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1923AC61E9001648D5 /* SingInViewModel.swift */; };
+		2FDF0E1D23AC6867001648D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1C23AC6867001648D5 /* User.swift */; };
+		2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1E23AC6D39001648D5 /* Login.storyboard */; };
+		2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */; };
+		2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */; };
+		2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2423AC7534001648D5 /* Menu.storyboard */; };
+		2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2623AC763A001648D5 /* MenuViewController.swift */; };
+		2FDF0E2923AC7B3D001648D5 /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2823AC7B3D001648D5 /* FriendsList.storyboard */; };
+		2FDF0E5023B0B4BA001648D5 /* SinginLoginMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E4F23B0B4BA001648D5 /* SinginLoginMenu.storyboard */; };
+		2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */; };
+		2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,13 +45,28 @@
 		2FB47DF123A0923600AA9216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FB47DF423A0923600AA9216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FB47DF623A0923600AA9216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FB47DFC23A092C400AA9216 /* AccountLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountLogin.storyboard; sourceTree = "<group>"; };
 		2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLoginViewController.swift; sourceTree = "<group>"; };
 		2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		2FB47E4E23A1E57200AA9216 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2FB47E5023A1E64900AA9216 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		2FB47E5423A1EDD100AA9216 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2FB47E5423A1EDD100AA9216 /* UserForGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForGame.swift; sourceTree = "<group>"; };
 		2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cops and Robbers.entitlements"; sourceTree = "<group>"; };
+		2FDF0E1523A99D3C001648D5 /* SingIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingIn.storyboard; sourceTree = "<group>"; };
+		2FDF0E1723A9A20E001648D5 /* SingInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewController.swift; sourceTree = "<group>"; };
+		2FDF0E1923AC61E9001648D5 /* SingInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingInViewModel.swift; sourceTree = "<group>"; };
+		2FDF0E1C23AC6867001648D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2FDF0E1E23AC6D39001648D5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2FDF0E2423AC7534001648D5 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		2FDF0E2623AC763A001648D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2FDF0E2823AC7B3D001648D5 /* FriendsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsList.storyboard; sourceTree = "<group>"; };
+		2FDF0E4F23B0B4BA001648D5 /* SinginLoginMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SinginLoginMenu.storyboard; sourceTree = "<group>"; };
+		2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cops_and_Robbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7612EB71681B5FC421FE236 /* Pods-Cops and Robbers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.release.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.release.xcconfig"; sourceTree = "<group>"; };
+		F94686A141C0903A5835B56E /* Pods-Cops and Robbers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.debug.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +86,8 @@
 			children = (
 				2FB47DE723A0923300AA9216 /* Cops and Robbers */,
 				2FB47DE623A0923300AA9216 /* Products */,
+				C62DB8DD9E87B505C77189F6 /* Pods */,
+				7D60EA17EE79DC306E7497FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +112,7 @@
 				2FB47DF123A0923600AA9216 /* Assets.xcassets */,
 				2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */,
 				2FB47DF623A0923600AA9216 /* Info.plist */,
+				2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */,
 			);
 			path = "Cops and Robbers";
 			sourceTree = "<group>";
@@ -89,8 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				2FB47DEE23A0923300AA9216 /* Main.storyboard */,
-				2FB47DFC23A092C400AA9216 /* AccountLogin.storyboard */,
+				2FDF0E4F23B0B4BA001648D5 /* SinginLoginMenu.storyboard */,
 				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
+				2FDF0E1523A99D3C001648D5 /* SingIn.storyboard */,
+				2FDF0E1E23AC6D39001648D5 /* Login.storyboard */,
+				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
+				2FDF0E2823AC7B3D001648D5 /* FriendsList.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +138,9 @@
 				2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */,
 				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
 				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
+				2FDF0E1723A9A20E001648D5 /* SingInViewController.swift */,
+				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
+				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -110,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
+				2FDF0E1923AC61E9001648D5 /* SingInViewModel.swift */,
+				2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -117,9 +158,29 @@
 		2FB47E2923A0BECC00AA9216 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47E5423A1EDD100AA9216 /* User.swift */,
+				2FB47E5423A1EDD100AA9216 /* UserForGame.swift */,
+				2FDF0E1C23AC6867001648D5 /* User.swift */,
+				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7D60EA17EE79DC306E7497FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C62DB8DD9E87B505C77189F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F94686A141C0903A5835B56E /* Pods-Cops and Robbers.debug.xcconfig */,
+				C7612EB71681B5FC421FE236 /* Pods-Cops and Robbers.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FB47DF923A0923600AA9216 /* Build configuration list for PBXNativeTarget "Cops and Robbers" */;
 			buildPhases = (
+				19D258F4B10D7E5BEE4B35E8 /* [CP] Check Pods Manifest.lock */,
 				2FB47DE123A0923300AA9216 /* Sources */,
 				2FB47DE223A0923300AA9216 /* Frameworks */,
 				2FB47DE323A0923300AA9216 /* Resources */,
+				7948438935B07F108B1870E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,29 +243,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FB47DFD23A092C400AA9216 /* AccountLogin.storyboard in Resources */,
+				2FDF0E5023B0B4BA001648D5 /* SinginLoginMenu.storyboard in Resources */,
+				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
 				2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */,
+				2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */,
+				2FDF0E2923AC7B3D001648D5 /* FriendsList.storyboard in Resources */,
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
+				2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */,
 				2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */,
+				2FDF0E1623A99D3C001648D5 /* SingIn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19D258F4B10D7E5BEE4B35E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cops and Robbers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7948438935B07F108B1870E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FB47DE123A0923300AA9216 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */,
+				2FDF0E1823A9A20E001648D5 /* SingInViewController.swift in Sources */,
 				2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */,
+				2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */,
+				2FDF0E1A23AC61E9001648D5 /* SingInViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
+				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
+				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
-				2FB47E5523A1EDD100AA9216 /* User.swift in Sources */,
+				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,
+				2FDF0E1D23AC6867001648D5 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +461,7 @@
 		};
 		2FB47DFA23A0923600AA9216 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F94686A141C0903A5835B56E /* Pods-Cops and Robbers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cops and Robbers/Cops and Robbers.entitlements";
@@ -364,6 +482,7 @@
 		};
 		2FB47DFB23A0923600AA9216 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7612EB71681B5FC421FE236 /* Pods-Cops and Robbers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cops and Robbers/Cops and Robbers.entitlements";
