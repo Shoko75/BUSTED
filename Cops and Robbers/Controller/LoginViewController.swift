@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
     
     var loginViewModel = LoginViewModel()
     
@@ -23,13 +23,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func pressedLogin(_ sender: Any) {
         
-        guard let email = emailText.text, let password = password.text,
-                email != "", password != "" else { return }
+        let email = emailText.text
+        let password = passwordText.text
         
-        loginViewModel.logIn(email: email, password: password)
-        
-        
-        
+        if email != "", password != "" {
+            loginViewModel.logIn(email: email!, password: password!)
+        } else {
+            self.showAlert(title: "Login Error", message: "Please enter Email and Password")
+        }
     }
     
     @IBAction func pressedBack(_ sender: Any) {
@@ -44,9 +45,7 @@ extension LoginViewController: LoginViewModelDelegate {
         if errorMessage == nil {
             self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
         } else {
-            let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alertController, animated: false, completion: nil)
+            self.showAlert(title: "Login Error", message: errorMessage!)
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 protocol SignInDelegate {
     func finishSignIn(errorMessage: String?)
@@ -15,8 +16,11 @@ protocol SignInDelegate {
 class SignInViewModel {
     
     var signInDelegate: SignInDelegate?
+    var dbUser: DBUser!
     
-    func createUser(email: String, password: String) {
+    let userInfoRef = Database.database().reference(withPath: "user_Info")
+    
+    func createUser(userName: String, email: String, password: String) {
         
         let singInManager = FirebaseAuthManager()
         singInManager.createUser(email: email, password: password) { [weak self] (success, error) in
@@ -24,11 +28,29 @@ class SignInViewModel {
             guard self != nil else { return }
             var errorMessage: String?
             
-            if !success {
+            if success {
+                self!.createUserInfo(userName: userName)
+                singInManager.logIn(email: email, password: password) { [weak self] (success, error) in
+                    print("logined!")
+                }
+            } else {
                 errorMessage = error
             }
             self!.signInDelegate?.finishSignIn(errorMessage: errorMessage)
         }
+    }
+    
+    func createUserInfo(userName: String) {
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            
+            guard let user = user else { return }
+            self.dbUser = DBUser(authData: user, userName: userName)
+            
+            let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
+            currentUserRef.setValue(self.dbUser.userName)
+        }
+        
     }
     
 }

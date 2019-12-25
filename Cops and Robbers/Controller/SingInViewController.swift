@@ -24,8 +24,14 @@ class SignInViewController: UIViewController {
 
     @IBAction func pressedSingIn(_ sender: Any) {
         
-        if let email = emailText.text, let password = passwordText.text {
-            singInViewModel.createUser(email: email, password: password)
+        let userName = userNameText.text
+        let email = emailText.text
+        let password = passwordText.text
+        
+        if userName != "", email != "", password != "" {
+            singInViewModel.createUser(userName: userName!, email: email!, password: password!)
+        } else {
+            self.showAlert(title: "SignIn Error", message: "please enter username, email and password")
         }
     }
     
@@ -39,11 +45,9 @@ extension SignInViewController: SignInDelegate {
     func finishSignIn(errorMessage: String?) {
         
         if errorMessage == nil {
-            self.dismiss(animated: false, completion: nil)
+            self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
         } else {
-            let alertController = UIAlertController(title: nil, message: errorMessage, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alertController, animated: true, completion: nil)
+            self.showAlert(title: "SignIn Error", message: errorMessage!)
         }
     }
     
