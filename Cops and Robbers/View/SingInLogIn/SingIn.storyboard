@@ -72,11 +72,22 @@
                         <outlet property="emailText" destination="NRw-ze-7lE" id="uz7-Zd-Z6x"/>
                         <outlet property="passwordText" destination="MsU-Ej-N9t" id="Abw-O4-r97"/>
                         <outlet property="userNameText" destination="Ekf-Uk-mcI" id="hZP-nB-R4M"/>
+                        <segue destination="b4i-i3-5EH" kind="modal" identifier="GoToMainMenu" modalPresentationStyle="fullScreen" id="YVe-nj-Q9l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4T-dJ-YGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-268.1159420289855" y="105.80357142857143"/>
+        </scene>
+        <!--NavigationController-->
+        <scene sceneID="a32-GC-d7H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NavigationController" referencedIdentifier="NavigationController" id="b4i-i3-5EH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pO6-OX-XHH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZD-AJ-lMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341" y="119"/>
         </scene>
     </scenes>
 </document>

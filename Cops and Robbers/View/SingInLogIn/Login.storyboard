@@ -62,7 +62,7 @@
                     </view>
                     <connections>
                         <outlet property="emailText" destination="Hu8-4Q-DV5" id="E56-vZ-9nd"/>
-                        <outlet property="password" destination="pjH-Bj-gGZ" id="GM5-1P-fGu"/>
+                        <outlet property="passwordText" destination="pjH-Bj-gGZ" id="GM5-1P-fGu"/>
                         <segue destination="BHw-5K-5in" kind="modal" identifier="GoToMainMenu" modalPresentationStyle="fullScreen" id="7DA-nc-Gb6"/>
                     </connections>
                 </viewController>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="-543.47826086956525" y="104.46428571428571"/>
         </scene>
-        <!--NavigationCon-->
+        <!--NavigationController-->
         <scene sceneID="Hbj-8a-eSm">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="NavigationCon" storyboardName="Menu" referencedIdentifier="NavigationCon" id="BHw-5K-5in" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="NavigationCon" storyboardName="NavigationController" referencedIdentifier="NavigationController" id="BHw-5K-5in" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="5gd-ct-qhr"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23Q-Rl-qGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
