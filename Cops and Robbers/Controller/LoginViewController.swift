@@ -48,6 +48,4 @@ extension LoginViewController: LoginViewModelDelegate {
             self.showAlert(title: "Login Error", message: errorMessage!)
         }
     }
-    
-    
 }

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Friends List View Controller-->
         <scene sceneID="pyY-NV-Kac">
             <objects>
-                <viewController storyboardIdentifier="FriendsList" id="c8S-jq-lki" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendsList" id="c8S-jq-lki" customClass="FriendsListViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTM-6F-jjF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="86" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KG1-ou-UOI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsListCell" id="KG1-ou-UOI" customClass="FriendsListCell" customModule="Cops_and_Robbers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KG1-ou-UOI" id="FQe-OF-vyv">
@@ -47,8 +47,16 @@
                                                 <constraint firstItem="jpM-sz-UAa" firstAttribute="centerY" secondItem="FQe-OF-vyv" secondAttribute="centerY" id="xpP-Wk-oeh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="jpM-sz-UAa" id="Mdp-gp-rgZ"/>
+                                            <outlet property="userNameLabel" destination="SVR-TR-2aF" id="weL-ib-Ob5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="c8S-jq-lki" id="qcQ-Di-BnN"/>
+                                    <outlet property="delegate" destination="c8S-jq-lki" id="ivB-Rx-FzD"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-Se-atD">
                                 <rect key="frame" x="0.0" y="44" width="414" height="42"/>
@@ -69,6 +77,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZ4-Aa-Rxq"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="6Sy-kC-xqp" id="lbF-ZD-Lr8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WQ-Vl-XHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
