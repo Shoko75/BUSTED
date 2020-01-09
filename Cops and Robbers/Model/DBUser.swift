@@ -23,7 +23,10 @@ struct DBUser {
         self.uid = uid
         self.userName = userName
     }
-
+    
+    func toAnyObject() -> Any {
+        return [
+            "userName": userName
+        ]
+    }
 }
-
-

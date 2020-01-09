@@ -36,6 +36,9 @@
 		2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5A23B3AE65001648D5 /* DBUser.swift */; };
 		2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */; };
 		2FDF0E6023B3C239001648D5 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5F23B3C239001648D5 /* Components.swift */; };
+		2FDF0E6223B4515C001648D5 /* FriendsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6123B4515C001648D5 /* FriendsListViewModel.swift */; };
+		2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6323B452A8001648D5 /* Friend.swift */; };
+		2FDF0E6623BC7D5F001648D5 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6523BC7D5F001648D5 /* FriendsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		2FDF0E5A23B3AE65001648D5 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		2FDF0E5F23B3C239001648D5 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		2FDF0E6123B4515C001648D5 /* FriendsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewModel.swift; sourceTree = "<group>"; };
+		2FDF0E6323B452A8001648D5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		2FDF0E6523BC7D5F001648D5 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cops_and_Robbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7612EB71681B5FC421FE236 /* Pods-Cops and Robbers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.release.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.release.xcconfig"; sourceTree = "<group>"; };
 		F94686A141C0903A5835B56E /* Pods-Cops and Robbers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.debug.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
+				2FDF0E6523BC7D5F001648D5 /* FriendsListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
 				2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */,
 				2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */,
+				2FDF0E6123B4515C001648D5 /* FriendsListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 				2FDF0E1C23AC6867001648D5 /* User.swift */,
 				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
 				2FDF0E5A23B3AE65001648D5 /* DBUser.swift */,
+				2FDF0E6323B452A8001648D5 /* Friend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,8 +341,11 @@
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
+				2FDF0E6223B4515C001648D5 /* FriendsListViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
+				2FDF0E6623BC7D5F001648D5 /* FriendsListViewController.swift in Sources */,
 				2FDF0E5623B0FE55001648D5 /* SingInViewController.swift in Sources */,
+				2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */,
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,

@@ -48,7 +48,7 @@ class SignInViewModel {
             self.dbUser = DBUser(authData: user, userName: userName)
             
             let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
-            currentUserRef.setValue(self.dbUser.userName)
+            currentUserRef.setValue(self.dbUser.toAnyObject())
         }
         
     }
