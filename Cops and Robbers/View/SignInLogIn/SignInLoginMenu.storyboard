@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="JaR-eQ-aiV">
             <objects>
-                <viewController storyboardIdentifier="SinginLoginMenu" id="8Rh-kD-N9e" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInLoginMenu" id="8Rh-kD-N9e" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PMG-Ll-JgK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <state key="normal" title="SingIn">
+                                <state key="normal" title="SignIn">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="569" y="191"/>
         </scene>
-        <!--SingIn-->
+        <!--SignIn-->
         <scene sceneID="Uzj-XV-CMd">
             <objects>
-                <viewControllerPlaceholder storyboardName="SingIn" referencedIdentifier="SingIn" id="8eb-EW-VcL" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SignIn" referencedIdentifier="SignIn" id="8eb-EW-VcL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="QhB-vt-3k7"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJw-Zk-iEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

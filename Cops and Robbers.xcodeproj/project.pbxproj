@@ -20,7 +20,7 @@
 		2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47E4E23A1E57200AA9216 /* Map.storyboard */; };
 		2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5023A1E64900AA9216 /* MapViewController.swift */; };
 		2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5423A1EDD100AA9216 /* UserForGame.swift */; };
-		2FDF0E1623A99D3C001648D5 /* SingIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1523A99D3C001648D5 /* SingIn.storyboard */; };
+		2FDF0E1623A99D3C001648D5 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */; };
 		2FDF0E1A23AC61E9001648D5 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */; };
 		2FDF0E1D23AC6867001648D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1C23AC6867001648D5 /* User.swift */; };
 		2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1E23AC6D39001648D5 /* Login.storyboard */; };
@@ -29,10 +29,10 @@
 		2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2423AC7534001648D5 /* Menu.storyboard */; };
 		2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2623AC763A001648D5 /* MenuViewController.swift */; };
 		2FDF0E2923AC7B3D001648D5 /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2823AC7B3D001648D5 /* FriendsList.storyboard */; };
-		2FDF0E5023B0B4BA001648D5 /* SinginLoginMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E4F23B0B4BA001648D5 /* SinginLoginMenu.storyboard */; };
+		2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */; };
 		2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */; };
 		2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */; };
-		2FDF0E5623B0FE55001648D5 /* SingInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5523B0FE55001648D5 /* SingInViewController.swift */; };
+		2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */; };
 		2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5A23B3AE65001648D5 /* DBUser.swift */; };
 		2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */; };
 		2FDF0E6023B3C239001648D5 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5F23B3C239001648D5 /* Components.swift */; };
@@ -57,7 +57,7 @@
 		2FB47E5023A1E64900AA9216 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2FB47E5423A1EDD100AA9216 /* UserForGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForGame.swift; sourceTree = "<group>"; };
 		2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cops and Robbers.entitlements"; sourceTree = "<group>"; };
-		2FDF0E1523A99D3C001648D5 /* SingIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingIn.storyboard; sourceTree = "<group>"; };
+		2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		2FDF0E1C23AC6867001648D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2FDF0E1E23AC6D39001648D5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -66,10 +66,10 @@
 		2FDF0E2423AC7534001648D5 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		2FDF0E2623AC763A001648D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2FDF0E2823AC7B3D001648D5 /* FriendsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsList.storyboard; sourceTree = "<group>"; };
-		2FDF0E4F23B0B4BA001648D5 /* SinginLoginMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SinginLoginMenu.storyboard; sourceTree = "<group>"; };
+		2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInLoginMenu.storyboard; sourceTree = "<group>"; };
 		2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2FDF0E5523B0FE55001648D5 /* SingInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingInViewController.swift; sourceTree = "<group>"; };
+		2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2FDF0E5A23B3AE65001648D5 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		2FDF0E5F23B3C239001648D5 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			children = (
 				2FB47DEE23A0923300AA9216 /* Main.storyboard */,
 				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
-				2FDF0E5E23B3BE53001648D5 /* SingInLogIn */,
+				2FDF0E5E23B3BE53001648D5 /* SignInLogIn */,
 				2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */,
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
 				2FDF0E2823AC7B3D001648D5 /* FriendsList.storyboard */,
@@ -149,7 +149,7 @@
 				2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */,
 				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
 				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
-				2FDF0E5523B0FE55001648D5 /* SingInViewController.swift */,
+				2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */,
 				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
@@ -181,14 +181,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2FDF0E5E23B3BE53001648D5 /* SingInLogIn */ = {
+		2FDF0E5E23B3BE53001648D5 /* SignInLogIn */ = {
 			isa = PBXGroup;
 			children = (
-				2FDF0E4F23B0B4BA001648D5 /* SinginLoginMenu.storyboard */,
-				2FDF0E1523A99D3C001648D5 /* SingIn.storyboard */,
+				2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */,
+				2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */,
 				2FDF0E1E23AC6D39001648D5 /* Login.storyboard */,
 			);
-			path = SingInLogIn;
+			path = SignInLogIn;
 			sourceTree = "<group>";
 		};
 		7D60EA17EE79DC306E7497FD /* Frameworks */ = {
@@ -268,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FDF0E5023B0B4BA001648D5 /* SinginLoginMenu.storyboard in Resources */,
+				2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */,
 				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
 				2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */,
@@ -277,7 +277,7 @@
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
 				2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */,
 				2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */,
-				2FDF0E1623A99D3C001648D5 /* SingIn.storyboard in Resources */,
+				2FDF0E1623A99D3C001648D5 /* SignIn.storyboard in Resources */,
 				2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +344,7 @@
 				2FDF0E6223B4515C001648D5 /* FriendsListViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
 				2FDF0E6623BC7D5F001648D5 /* FriendsListViewController.swift in Sources */,
-				2FDF0E5623B0FE55001648D5 /* SingInViewController.swift in Sources */,
+				2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */,
 				2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */,
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
