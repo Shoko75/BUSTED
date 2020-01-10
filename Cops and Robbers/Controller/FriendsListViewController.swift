@@ -33,8 +33,6 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsListCell", for: indexPath) as! FriendsListCell
         if let friend = friendsListViewModel.friendsList {
             cell.userNameLabel.text = friend[indexPath.row].userName
-        } else {
-            cell.userNameLabel.text = "Test Name"
         }
         
         return cell

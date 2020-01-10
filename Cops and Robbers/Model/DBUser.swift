@@ -13,20 +13,24 @@ struct DBUser {
     
     let uid: String
     let userName: String
+    let userImageURL: String
     
-    init(authData: Firebase.User, userName: String) {
+    init(authData: Firebase.User, userName: String, userImageURL: String) {
         self.uid = authData.uid
         self.userName = userName
+        self.userImageURL = userImageURL
     }
     
-    init(uid: String, userName: String) {
+    init(uid: String, userName: String, userImageURL: String) {
         self.uid = uid
         self.userName = userName
+        self.userImageURL = userImageURL
     }
     
     func toAnyObject() -> Any {
         return [
-            "userName": userName
+            "userName": userName,
+            "userImageURL": userImageURL
         ]
     }
 }

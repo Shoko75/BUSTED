@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+
 protocol SignInDelegate {
     func finishSignIn(errorMessage: String?)
 }
@@ -20,7 +21,7 @@ class SignInViewModel {
     
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     
-    func createUser(userName: String, email: String, password: String) {
+    func createUser(userName: String, email: String, password: String, userImage: UIImage) {
         
         let singInManager = FirebaseAuthManager()
         singInManager.createUser(email: email, password: password) { [weak self] (success, error) in
@@ -29,7 +30,8 @@ class SignInViewModel {
             var errorMessage: String?
             
             if success {
-                self!.createUserInfo(userName: userName)
+                self!.saveUserImage(userImage: userImage, userName: userName)
+                //self!.createUserInfo(userName: userName)
                 singInManager.logIn(email: email, password: password) { [weak self] (success, error) in
                     print("logined!")
                 }
@@ -40,12 +42,37 @@ class SignInViewModel {
         }
     }
     
-    func createUserInfo(userName: String) {
+    func saveUserImage(userImage: UIImage, userName: String){
+        
+        let randomID = UUID.init().uuidString
+        let storageRef = Storage.storage().reference(withPath: "profileImages/\(randomID).png")
+        
+        if let uploadData = userImage.pngData() {
+            storageRef.putData(uploadData, metadata: nil, completion:
+                { (metadata, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                
+                    storageRef.downloadURL { (url, error) in
+                        guard let dowloadURL = url else {
+                            print(error)
+                            return
+                        }
+                        self.createUserInfo(userName: userName, userImageURL: dowloadURL.absoluteString)
+                    }
+                    
+            })
+        }
+    }
+    
+    func createUserInfo(userName: String, userImageURL: String) {
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             
             guard let user = user else { return }
-            self.dbUser = DBUser(authData: user, userName: userName)
+            self.dbUser = DBUser(authData: user, userName: userName, userImageURL: userImageURL)
             
             let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
             currentUserRef.setValue(self.dbUser.toAnyObject())

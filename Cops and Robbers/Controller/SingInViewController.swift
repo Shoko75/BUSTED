@@ -10,6 +10,7 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
@@ -22,14 +23,18 @@ class SignInViewController: UIViewController {
         singInViewModel.signInDelegate = self
     }
 
+    @IBAction func pressedSelectImage(_ sender: Any) {
+        
+        showImagePickerController()
+    }
     @IBAction func pressedSingIn(_ sender: Any) {
         
         let userName = userNameText.text
         let email = emailText.text
         let password = passwordText.text
         
-        if userName != "", email != "", password != "" {
-            singInViewModel.createUser(userName: userName!, email: email!, password: password!)
+        if userName != "", email != "", password != "", let userImage = userImageView.image {
+            singInViewModel.createUser(userName: userName!, email: email!, password: password!, userImage: userImage)
         } else {
             self.showAlert(title: "SignIn Error", message: "please enter username, email and password")
         }
@@ -41,6 +46,33 @@ class SignInViewController: UIViewController {
     
 }
 
+extension SignInViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func showImagePickerController() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            userImageView.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userImageView.image = originalImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: SignInDelegate
 extension SignInViewController: SignInDelegate {
     func finishSignIn(errorMessage: String?) {
         
