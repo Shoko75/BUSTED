@@ -33,6 +33,11 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsListCell", for: indexPath) as! FriendsListCell
         if let friend = friendsListViewModel.friendsList {
             cell.userNameLabel.text = friend[indexPath.row].userName
+            cell.imageView?.contentMode = .scaleToFill
+            
+            if let userImageURL = friend[indexPath.row].userImageURL {
+                cell.imageView?.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+            }
         }
         
         return cell
@@ -49,7 +54,7 @@ extension FriendsListViewController: FriendsListDelegate {
 // MARK: FriendsListCell
 class FriendsListCell: UITableViewCell {
     
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
 }

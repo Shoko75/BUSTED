@@ -48,7 +48,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="iconImageView" destination="jpM-sz-UAa" id="Mdp-gp-rgZ"/>
+                                            <outlet property="userImageView" destination="jpM-sz-UAa" id="82S-Xu-vqf"/>
                                             <outlet property="userNameLabel" destination="SVR-TR-2aF" id="weL-ib-Ob5"/>
                                         </connections>
                                     </tableViewCell>
