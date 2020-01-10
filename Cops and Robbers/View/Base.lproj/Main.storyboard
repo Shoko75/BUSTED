@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="189.85507246376812" y="100.44642857142857"/>
         </scene>
-        <!--SinginLoginMenu-->
+        <!--SignInLoginMenu-->
         <scene sceneID="XK6-6a-nXE">
             <objects>
-                <viewControllerPlaceholder storyboardName="SinginLoginMenu" referencedIdentifier="SinginLoginMenu" id="G68-6a-yzr" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="SignInLoginMenu" referencedIdentifier="SignInLoginMenu" id="G68-6a-yzr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="u2b-z1-07X"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQe-7E-pV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

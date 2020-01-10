@@ -47,6 +47,7 @@ class SignInViewModel {
         let randomID = UUID.init().uuidString
         let storageRef = Storage.storage().reference(withPath: "profileImages/\(randomID).png")
         
+        // Saving the userImage on the storage
         if let uploadData = userImage.pngData() {
             storageRef.putData(uploadData, metadata: nil, completion:
                 { (metadata, error) in
@@ -55,14 +56,15 @@ class SignInViewModel {
                         return
                     }
                 
+                    
                     storageRef.downloadURL { (url, error) in
                         guard let dowloadURL = url else {
                             print(error)
                             return
                         }
+                        // Move to create the userInfo
                         self.createUserInfo(userName: userName, userImageURL: dowloadURL.absoluteString)
                     }
-                    
             })
         }
     }
@@ -77,7 +79,5 @@ class SignInViewModel {
             let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
             currentUserRef.setValue(self.dbUser.toAnyObject())
         }
-        
     }
-    
 }
