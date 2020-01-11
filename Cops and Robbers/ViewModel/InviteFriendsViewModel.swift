@@ -1,5 +1,5 @@
 //
-//  FriendsListViewModel.swift
+//  InviteFriendsViewModel.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2019-12-26.
@@ -9,16 +9,16 @@
 import Foundation
 import Firebase
 
-protocol FriendsListDelegate {
+protocol InviteFriendsDelegate {
     func didFinishObserveUserInfo()
 }
 
-class FriendsListViewModel {
+class InviteFriendsViewModel {
     
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     
     var friendsList: [Friend]?
-    var friendsListDelegate: FriendsListDelegate?
+    var inviteFriendsDelegate: InviteFriendsDelegate?
     
     func observeUserInfo() {
         
@@ -31,7 +31,7 @@ class FriendsListViewModel {
                 }
             }
             self.friendsList = friends
-            self.friendsListDelegate?.didFinishObserveUserInfo()
+            self.inviteFriendsDelegate?.didFinishObserveUserInfo()
         })
         
     }

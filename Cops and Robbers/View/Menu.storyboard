@@ -36,7 +36,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Friend List">
+                                <state key="normal" title="Invite Friends">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="-765" y="7"/>
         </scene>
-        <!--FriendsList-->
+        <!--InviteFriends-->
         <scene sceneID="cBj-8Z-jkc">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="FriendsList" storyboardName="FriendsList" referencedIdentifier="FriendsList" id="dia-OK-JS7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="InviteFriends" storyboardName="InviteFriends" referencedIdentifier="InviteFriends" id="dia-OK-JS7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PEg-UQ-vuu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQb-09-mx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
