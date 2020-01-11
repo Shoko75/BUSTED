@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c8S-jq-lki">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Invite Friends View Controller-->
+        <!--Invite Freinds-->
         <scene sceneID="pyY-NV-Kac">
             <objects>
-                <viewController storyboardIdentifier="InviteFriends" id="c8S-jq-lki" customClass="InviteFriendsViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteFriends" title="Invite Freinds" id="c8S-jq-lki" customClass="InviteFriendsViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTM-6F-jjF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sy-kC-xqp">
-                                <rect key="frame" x="0.0" y="86" width="414" height="776"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InviteFriendsCell" id="KG1-ou-UOI" customClass="InviteFriendsTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
@@ -40,10 +40,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-mb-xPM">
-                                                    <rect key="frame" x="344" y="7" width="50" height="30"/>
+                                                    <rect key="frame" x="314" y="7" width="80" height="30"/>
                                                     <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="lSH-61-Vny"/>
+                                                        <constraint firstAttribute="width" constant="80" id="lSH-61-Vny"/>
                                                     </constraints>
                                                     <state key="normal" title="Invite">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,21 +74,12 @@
                                     <outlet property="delegate" destination="c8S-jq-lki" id="ivB-Rx-FzD"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-Se-atD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="42"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Sy-kC-xqp" firstAttribute="trailing" secondItem="TZ4-Aa-Rxq" secondAttribute="trailing" id="31K-ym-rAV"/>
                             <constraint firstItem="6Sy-kC-xqp" firstAttribute="bottom" secondItem="TZ4-Aa-Rxq" secondAttribute="bottom" id="CsR-zb-EsO"/>
-                            <constraint firstItem="TZ4-Aa-Rxq" firstAttribute="trailing" secondItem="FSh-Se-atD" secondAttribute="trailing" id="MHY-Gj-RZ1"/>
-                            <constraint firstItem="FSh-Se-atD" firstAttribute="top" secondItem="TZ4-Aa-Rxq" secondAttribute="top" id="SKD-Tx-eFw"/>
-                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="top" secondItem="FSh-Se-atD" secondAttribute="bottom" id="cag-44-Wq7"/>
-                            <constraint firstItem="FSh-Se-atD" firstAttribute="leading" secondItem="TZ4-Aa-Rxq" secondAttribute="leading" id="gCF-B1-5D9"/>
+                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="top" secondItem="TZ4-Aa-Rxq" secondAttribute="top" id="cA8-7q-5Ha"/>
                             <constraint firstItem="6Sy-kC-xqp" firstAttribute="leading" secondItem="TZ4-Aa-Rxq" secondAttribute="leading" id="in0-Mg-sTY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZ4-Aa-Rxq"/>

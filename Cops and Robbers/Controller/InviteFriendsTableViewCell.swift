@@ -14,10 +14,12 @@ class InviteFriendsTableViewCell: UITableViewCell {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var inviteButton: UIButton!
        
+    let SECTION_REQUESTING = "Requesting"
+    
     var cellValues: Friend!
     fileprivate var invitefriendsViewModel = InviteFriendsViewModel()
     
-    func setCellValues(cellValues: Friend){
+    func setCellValues(cellValues: Friend, sectionName: String){
         self.invitefriendsViewModel.toCellInviteFriendsDelegate = self
         self.cellValues = cellValues
         userNameLabel.text = cellValues.userName
@@ -25,6 +27,10 @@ class InviteFriendsTableViewCell: UITableViewCell {
         
         if let userImageURL = cellValues.userImageURL {
             userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+        }
+        
+        if SECTION_REQUESTING == sectionName {
+            inviteButton.isHidden = true
         }
     }
     
@@ -38,5 +44,6 @@ class InviteFriendsTableViewCell: UITableViewCell {
 extension InviteFriendsTableViewCell: ToCellInviteFriendsDelegate {
     func didSendFriendRequest() {
         inviteButton.isEnabled = false
+        inviteButton.setTitle("Requesting", for: .normal)
     }
 }

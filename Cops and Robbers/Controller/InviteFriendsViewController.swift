@@ -18,23 +18,32 @@ class InviteFriendsViewController: UIViewController {
 
         invitefriendsViewModel = InviteFriendsViewModel()
         invitefriendsViewModel.inviteFriendsDelegate = self
-        invitefriendsViewModel.observeUserInfo()
+        invitefriendsViewModel.fetchFriendReq()
         
     }
 }
 
 extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return invitefriendsViewModel.friendsList?.count ?? 0
+        return invitefriendsViewModel.friendsList[section].friends.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return invitefriendsViewModel.friendsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return invitefriendsViewModel.friendsList[section].sectionName
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "InviteFriendsCell", for: indexPath) as! InviteFriendsTableViewCell
-        if let friend = invitefriendsViewModel.friendsList {
-            cell.setCellValues(cellValues: friend[indexPath.row])
-        }
         
+        let friend = invitefriendsViewModel.friendsList[indexPath.section].friends[indexPath.row]
+        let sectionName = invitefriendsViewModel.friendsList[indexPath.section].sectionName
+        cell.setCellValues(cellValues: friend, sectionName: sectionName)
+
         return cell
     }
 }
