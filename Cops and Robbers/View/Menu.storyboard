@@ -40,7 +40,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dia-OK-JS7" kind="modal" modalPresentationStyle="fullScreen" id="lmk-DZ-2gl"/>
+                                    <segue destination="dia-OK-JS7" kind="show" id="lmk-DZ-2gl"/>
                                 </connections>
                             </button>
                         </subviews>
