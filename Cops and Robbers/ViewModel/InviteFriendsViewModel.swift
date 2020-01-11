@@ -13,15 +13,21 @@ protocol InviteFriendsDelegate {
     func didFinishObserveUserInfo()
 }
 
+protocol ToCellInviteFriendsDelegate {
+    func didSendFriendRequest()
+}
+
 class InviteFriendsViewModel {
     
     let userInfoRef = Database.database().reference(withPath: "user_Info")
+    let friendReqRef = Database.database().reference(withPath: "friends_request")
     
     var friendsList: [Friend]?
+    var dbFriendReq: DBFriendRequest!
     var inviteFriendsDelegate: InviteFriendsDelegate?
+    var toCellInviteFriendsDelegate: ToCellInviteFriendsDelegate?
     
     func observeUserInfo() {
-        
         userInfoRef.observe(.value, with: { snapshot in
             var friends: [Friend] = []
             for child in snapshot.children {
@@ -33,6 +39,15 @@ class InviteFriendsViewModel {
             self.friendsList = friends
             self.inviteFriendsDelegate?.didFinishObserveUserInfo()
         })
+    }
+    
+    func sendFrinedRequest(friend: Friend){
         
+        let userID = Auth.auth().currentUser?.uid
+        self.dbFriendReq = DBFriendRequest(fromUser: userID!, toUser: friend.uid, status: "request")
+        
+        let request = friendReqRef.childByAutoId()
+        request.setValue(self.dbFriendReq.toAnyObject())
+        toCellInviteFriendsDelegate?.didSendFriendRequest()
     }
 }

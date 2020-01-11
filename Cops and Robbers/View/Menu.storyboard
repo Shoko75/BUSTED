@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="-765" y="7"/>
         </scene>
-        <!--InviteFriends-->
+        <!--FriendsList-->
         <scene sceneID="cBj-8Z-jkc">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="InviteFriends" storyboardName="InviteFriends" referencedIdentifier="InviteFriends" id="dia-OK-JS7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="FriendsList" storyboardName="FriendsList" referencedIdentifier="FriendsList" id="dia-OK-JS7" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PEg-UQ-vuu"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQb-09-mx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
