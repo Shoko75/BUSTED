@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="86" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsListCell" id="KG1-ou-UOI" customClass="FriendsListCell" customModule="Cops_and_Robbers" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InviteFriendsCell" id="KG1-ou-UOI" customClass="InviteFriendsTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KG1-ou-UOI" id="FQe-OF-vyv">
@@ -39,17 +39,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-mb-xPM">
+                                                    <rect key="frame" x="344" y="7" width="50" height="30"/>
+                                                    <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="lSH-61-Vny"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Invite">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressedInvite:" destination="KG1-ou-UOI" eventType="touchUpInside" id="K9F-EK-gKN"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SVR-TR-2aF" firstAttribute="centerY" secondItem="FQe-OF-vyv" secondAttribute="centerY" id="ARP-mP-YFq"/>
+                                                <constraint firstAttribute="trailing" secondItem="gGF-mb-xPM" secondAttribute="trailing" constant="20" id="FwA-DU-R4r"/>
                                                 <constraint firstItem="SVR-TR-2aF" firstAttribute="leading" secondItem="jpM-sz-UAa" secondAttribute="trailing" constant="10" id="hKz-qw-vQq"/>
+                                                <constraint firstItem="gGF-mb-xPM" firstAttribute="centerY" secondItem="FQe-OF-vyv" secondAttribute="centerY" id="nuP-D6-xes"/>
                                                 <constraint firstItem="jpM-sz-UAa" firstAttribute="leading" secondItem="FQe-OF-vyv" secondAttribute="leading" constant="10" id="taY-mH-WTL"/>
                                                 <constraint firstItem="jpM-sz-UAa" firstAttribute="centerY" secondItem="FQe-OF-vyv" secondAttribute="centerY" id="xpP-Wk-oeh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="userImageView" destination="jpM-sz-UAa" id="82S-Xu-vqf"/>
-                                            <outlet property="userNameLabel" destination="SVR-TR-2aF" id="weL-ib-Ob5"/>
+                                            <outlet property="inviteButton" destination="gGF-mb-xPM" id="rt9-d7-sjL"/>
+                                            <outlet property="userImageView" destination="jpM-sz-UAa" id="7Vf-dL-wlf"/>
+                                            <outlet property="userNameLabel" destination="SVR-TR-2aF" id="r3z-5W-AWQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

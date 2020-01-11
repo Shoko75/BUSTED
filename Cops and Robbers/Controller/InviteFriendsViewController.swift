@@ -30,14 +30,9 @@ extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsListCell", for: indexPath) as! FriendsListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InviteFriendsCell", for: indexPath) as! InviteFriendsTableViewCell
         if let friend = invitefriendsViewModel.friendsList {
-            cell.userNameLabel.text = friend[indexPath.row].userName
-            cell.imageView?.contentMode = .scaleToFill
-            
-            if let userImageURL = friend[indexPath.row].userImageURL {
-                cell.imageView?.loadImageUsingCacheWithUrlString(urlString: userImageURL)
-            }
+            cell.setCellValues(cellValues: friend[indexPath.row])
         }
         
         return cell
@@ -50,13 +45,3 @@ extension InviteFriendsViewController: InviteFriendsDelegate {
         self.tableView.reloadData()
     }
 }
-
-// MARK: FriendsListCell
-class FriendsListCell: UITableViewCell {
-    
-    @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var userNameLabel: UILabel!
-    
-}
-
-

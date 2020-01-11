@@ -31,7 +31,6 @@ class SignInViewModel {
             
             if success {
                 self!.saveUserImage(userImage: userImage, userName: userName)
-                //self!.createUserInfo(userName: userName)
                 singInManager.logIn(email: email, password: password) { [weak self] (success, error) in
                     print("logined!")
                 }

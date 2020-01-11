@@ -39,6 +39,11 @@
 		2FDF0E6223B4515C001648D5 /* InviteFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6123B4515C001648D5 /* InviteFriendsViewModel.swift */; };
 		2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6323B452A8001648D5 /* Friend.swift */; };
 		2FDF0E6623BC7D5F001648D5 /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6523BC7D5F001648D5 /* InviteFriendsViewController.swift */; };
+		2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6723C971E6001648D5 /* InviteFriendsTableViewCell.swift */; };
+		2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */; };
+		2FDF0E6C23C9843D001648D5 /* FriendsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6B23C9843D001648D5 /* FriendsList.storyboard */; };
+		2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */; };
+		2FDF0E7023C985FE001648D5 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +81,11 @@
 		2FDF0E6123B4515C001648D5 /* InviteFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewModel.swift; sourceTree = "<group>"; };
 		2FDF0E6323B452A8001648D5 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		2FDF0E6523BC7D5F001648D5 /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
+		2FDF0E6723C971E6001648D5 /* InviteFriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteFriendsTableViewCell.swift; sourceTree = "<group>"; };
+		2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFriendRequest.swift; sourceTree = "<group>"; };
+		2FDF0E6B23C9843D001648D5 /* FriendsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FriendsList.storyboard; sourceTree = "<group>"; };
+		2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cops_and_Robbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7612EB71681B5FC421FE236 /* Pods-Cops and Robbers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.release.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.release.xcconfig"; sourceTree = "<group>"; };
 		F94686A141C0903A5835B56E /* Pods-Cops and Robbers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.debug.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 				2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */,
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
 				2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */,
+				2FDF0E6B23C9843D001648D5 /* FriendsList.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +165,9 @@
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
 				2FDF0E6523BC7D5F001648D5 /* InviteFriendsViewController.swift */,
+				2FDF0E6723C971E6001648D5 /* InviteFriendsTableViewCell.swift */,
+				2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */,
+				2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +191,7 @@
 				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
 				2FDF0E5A23B3AE65001648D5 /* DBUser.swift */,
 				2FDF0E6323B452A8001648D5 /* Friend.swift */,
+				2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +291,7 @@
 				2FDF0E2923AC7B3D001648D5 /* InviteFriends.storyboard in Resources */,
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
 				2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */,
+				2FDF0E6C23C9843D001648D5 /* FriendsList.storyboard in Resources */,
 				2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */,
 				2FDF0E1623A99D3C001648D5 /* SignIn.storyboard in Resources */,
 				2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */,
@@ -334,21 +350,25 @@
 				2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */,
 				2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */,
 				2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */,
+				2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */,
 				2FDF0E1A23AC61E9001648D5 /* SignInViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
+				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,
 				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
 				2FDF0E6223B4515C001648D5 /* InviteFriendsViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
 				2FDF0E6623BC7D5F001648D5 /* InviteFriendsViewController.swift in Sources */,
 				2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */,
+				2FDF0E7023C985FE001648D5 /* FriendsListViewController.swift in Sources */,
 				2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */,
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,
+				2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */,
 				2FDF0E1D23AC6867001648D5 /* User.swift in Sources */,
 				2FDF0E6023B3C239001648D5 /* Components.swift in Sources */,
 			);
