@@ -14,7 +14,7 @@ protocol InviteFriendsDelegate {
 }
 
 protocol ToCellInviteFriendsDelegate {
-    func didSendFriendRequest()
+    func didRegisterFriendRequest()
 }
 
 class InviteFriendsViewModel {
@@ -73,7 +73,6 @@ class InviteFriendsViewModel {
     func fetchFriendReq() {
         
         var requestingFriendID = [String:Int]()
-        self.friendsList.removeAll()
         
         // Get the data which fromUser is myself
         friendReqRef.queryOrdered(byChild: "fromUser").queryEqual(toValue: userID).observeSingleEvent(of: .value, with: { snapshot in
@@ -112,13 +111,12 @@ class InviteFriendsViewModel {
         }
     }
     
-    func sendFrinedRequest(friend: Friend){
+    func registerFrinedRequest(friend: Friend){
         
-        let userID = Auth.auth().currentUser?.uid
         self.dbFriendReq = DBFriendRequest(fromUser: userID!, toUser: friend.uid, status: "request")
         
         let request = friendReqRef.childByAutoId()
         request.setValue(self.dbFriendReq.toAnyObject())
-        toCellInviteFriendsDelegate?.didSendFriendRequest()
+        toCellInviteFriendsDelegate?.didRegisterFriendRequest()
     }
 }
