@@ -18,7 +18,7 @@ class InviteFriendsViewController: UIViewController {
 
         invitefriendsViewModel = InviteFriendsViewModel()
         invitefriendsViewModel.inviteFriendsDelegate = self
-        invitefriendsViewModel.fetchFriendReq()
+        invitefriendsViewModel.fetchFriendReqFromUserMyself()
         
     }
 }
