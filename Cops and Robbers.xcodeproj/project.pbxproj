@@ -148,11 +148,10 @@
 			children = (
 				2FB47DEE23A0923300AA9216 /* Main.storyboard */,
 				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
-				2FDF0E5E23B3BE53001648D5 /* SignInLogIn */,
 				2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */,
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
-				2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */,
-				2FDF0E6B23C9843D001648D5 /* FriendsList.storyboard */,
+				2FDF0E5E23B3BE53001648D5 /* SignInLogIn */,
+				2FDF0E7523CAC551001648D5 /* Friend Management */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,14 +163,10 @@
 				2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */,
 				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
 				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
-				2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */,
-				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
-				2FDF0E6523BC7D5F001648D5 /* InviteFriendsViewController.swift */,
-				2FDF0E6723C971E6001648D5 /* InviteFriendsTableViewCell.swift */,
-				2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */,
-				2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */,
+				2FDF0E7823CAC5AD001648D5 /* SignInLogIn */,
+				2FDF0E7623CAC571001648D5 /* Friend Management */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,10 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
-				2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */,
-				2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */,
-				2FDF0E6123B4515C001648D5 /* InviteFriendsViewModel.swift */,
-				2FDF0E7123CA14FA001648D5 /* FriendsListViewModel.swift */,
+				2FDF0E7923CAC5C3001648D5 /* SignInLogIn */,
+				2FDF0E7723CAC587001648D5 /* Friend Management */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -208,6 +201,53 @@
 				2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */,
 				2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */,
 				2FDF0E1E23AC6D39001648D5 /* Login.storyboard */,
+			);
+			path = SignInLogIn;
+			sourceTree = "<group>";
+		};
+		2FDF0E7523CAC551001648D5 /* Friend Management */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */,
+				2FDF0E6B23C9843D001648D5 /* FriendsList.storyboard */,
+			);
+			path = "Friend Management";
+			sourceTree = "<group>";
+		};
+		2FDF0E7623CAC571001648D5 /* Friend Management */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E6523BC7D5F001648D5 /* InviteFriendsViewController.swift */,
+				2FDF0E6723C971E6001648D5 /* InviteFriendsTableViewCell.swift */,
+				2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */,
+				2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */,
+			);
+			path = "Friend Management";
+			sourceTree = "<group>";
+		};
+		2FDF0E7723CAC587001648D5 /* Friend Management */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E6123B4515C001648D5 /* InviteFriendsViewModel.swift */,
+				2FDF0E7123CA14FA001648D5 /* FriendsListViewModel.swift */,
+			);
+			path = "Friend Management";
+			sourceTree = "<group>";
+		};
+		2FDF0E7823CAC5AD001648D5 /* SignInLogIn */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */,
+				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
+			);
+			path = SignInLogIn;
+			sourceTree = "<group>";
+		};
+		2FDF0E7923CAC5C3001648D5 /* SignInLogIn */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */,
+				2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */,
 			);
 			path = SignInLogIn;
 			sourceTree = "<group>";

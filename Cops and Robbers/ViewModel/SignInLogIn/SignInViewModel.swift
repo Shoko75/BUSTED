@@ -51,14 +51,14 @@ class SignInViewModel {
             storageRef.putData(uploadData, metadata: nil, completion:
                 { (metadata, error) in
                     if error != nil {
-                        print(error)
+                        print(error!)
                         return
                     }
                 
                     
                     storageRef.downloadURL { (url, error) in
                         guard let dowloadURL = url else {
-                            print(error)
+                            print(error!)
                             return
                         }
                         // Move to create the userInfo

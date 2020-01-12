@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.notificationCenter = UNUserNotificationCenter.current()
         
-        notificationCenter?.delegate = self as! UNUserNotificationCenterDelegate
+        notificationCenter?.delegate = self as UNUserNotificationCenterDelegate
         
         let options: UNAuthorizationOptions = [.alert, .sound]
         
