@@ -30,6 +30,9 @@
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="n8I-S2-NjF" kind="show" id="EPg-dX-uAo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-oA-nrT">
                                 <rect key="frame" x="20" y="320" width="374" height="55"/>
@@ -52,6 +55,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GZ-Qw-aVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-765" y="7"/>
+        </scene>
+        <!--AddPlayer-->
+        <scene sceneID="Ny2-2z-QeM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddPlayer" referencedIdentifier="AddPlayer" id="n8I-S2-NjF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="go4-m3-0iv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CSd-6C-hHy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-145" y="-141"/>
         </scene>
         <!--FriendsList-->
         <scene sceneID="cBj-8Z-jkc">
