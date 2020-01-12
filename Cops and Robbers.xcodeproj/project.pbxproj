@@ -46,6 +46,10 @@
 		2FDF0E7023C985FE001648D5 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */; };
 		2FDF0E7223CA14FA001648D5 /* FriendsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E7123CA14FA001648D5 /* FriendsListViewModel.swift */; };
 		2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E7323CAA20C001648D5 /* DBFriends.swift */; };
+		2FDF0E7B23CB3F65001648D5 /* AddPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */; };
+		2FDF0E7D23CB4003001648D5 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */; };
+		2FDF0E7F23CB4028001648D5 /* AddPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */; };
+		2FDF0E8123CB4524001648D5 /* AddPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		2FDF0E7123CA14FA001648D5 /* FriendsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewModel.swift; sourceTree = "<group>"; };
 		2FDF0E7323CAA20C001648D5 /* DBFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFriends.swift; sourceTree = "<group>"; };
+		2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPlayer.storyboard; sourceTree = "<group>"; };
+		2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
+		2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerViewModel.swift; sourceTree = "<group>"; };
 		97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cops_and_Robbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7612EB71681B5FC421FE236 /* Pods-Cops and Robbers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.release.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.release.xcconfig"; sourceTree = "<group>"; };
 		F94686A141C0903A5835B56E /* Pods-Cops and Robbers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cops and Robbers.debug.xcconfig"; path = "Target Support Files/Pods-Cops and Robbers/Pods-Cops and Robbers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +160,7 @@
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
 				2FDF0E5E23B3BE53001648D5 /* SignInLogIn */,
 				2FDF0E7523CAC551001648D5 /* Friend Management */,
+				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +176,8 @@
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
 				2FDF0E7823CAC5AD001648D5 /* SignInLogIn */,
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
+				2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */,
+				2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
 				2FDF0E7923CAC5C3001648D5 /* SignInLogIn */,
 				2FDF0E7723CAC587001648D5 /* Friend Management */,
+				2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,6 +343,7 @@
 			files = (
 				2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */,
 				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
+				2FDF0E7B23CB3F65001648D5 /* AddPlayer.storyboard in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
 				2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */,
 				2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */,
@@ -396,6 +409,7 @@
 				2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */,
 				2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */,
 				2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */,
+				2FDF0E8123CB4524001648D5 /* AddPlayerViewModel.swift in Sources */,
 				2FDF0E7223CA14FA001648D5 /* FriendsListViewModel.swift in Sources */,
 				2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */,
 				2FDF0E1A23AC61E9001648D5 /* SignInViewModel.swift in Sources */,
@@ -416,6 +430,8 @@
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,
+				2FDF0E7D23CB4003001648D5 /* AddPlayerViewController.swift in Sources */,
+				2FDF0E7F23CB4028001648D5 /* AddPlayerTableViewCell.swift in Sources */,
 				2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */,
 				2FDF0E1D23AC6867001648D5 /* User.swift in Sources */,
 				2FDF0E6023B3C239001648D5 /* Components.swift in Sources */,
