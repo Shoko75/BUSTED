@@ -35,14 +35,14 @@ class InviteFriendsTableViewCell: UITableViewCell {
     }
     
     @IBAction func pressedInvite(_ sender: Any) {
-        invitefriendsViewModel.sendFrinedRequest(friend: cellValues)
+        invitefriendsViewModel.registerFrinedRequest(friend: cellValues)
     }
     
 
 }
 
 extension InviteFriendsTableViewCell: ToCellInviteFriendsDelegate {
-    func didSendFriendRequest() {
+    func didRegisterFriendRequest() {
         inviteButton.isEnabled = false
         inviteButton.setTitle("Requesting", for: .normal)
     }

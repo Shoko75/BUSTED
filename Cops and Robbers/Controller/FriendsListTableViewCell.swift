@@ -10,15 +10,39 @@ import UIKit
 
 class FriendsListTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var acceptButton: UIButton!
+
+    let SECTION_FRIENDDS = "Friends"
+    
+    var cellValues: Friend!
+    fileprivate var friendsListViewModel = FriendsListViewModel()
+    
+    func setCellValues(cellValues: Friend, sectionName: String){
+        self.friendsListViewModel.toCellFriendsListDelegate = self
+        self.cellValues = cellValues
+        userNameLabel.text = cellValues.userName
+        userImageView.contentMode = .scaleToFill
+        
+        if let userImageURL = cellValues.userImageURL {
+            userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+        }
+        
+        if SECTION_FRIENDDS == sectionName {
+            acceptButton.isHidden = true
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    
+    @IBAction func pressedAcceptButton(_ sender: Any) {
+        friendsListViewModel.registerFriend(friendUID: cellValues.uid)
     }
+}
 
+extension FriendsListTableViewCell: ToCellfriendsListDelegate {
+    func didRegisterFriend() {
+        acceptButton.isEnabled = false
+        acceptButton.setTitle("Accepted", for: .normal)
+    }
 }

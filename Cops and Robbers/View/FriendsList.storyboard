@@ -50,15 +50,60 @@
                                 <rect key="frame" x="0.0" y="126" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5P8-RF-5HY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="FriendsListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendsListCell" id="5P8-RF-5HY" customClass="FriendsListTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5P8-RF-5HY" id="jCb-MT-xDp">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zu9-Nq-fLa">
+                                                    <rect key="frame" x="20" y="2" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="ghW-28-L8c"/>
+                                                        <constraint firstAttribute="width" constant="40" id="ogo-kp-4Qd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScE-AM-e8C">
+                                                    <rect key="frame" x="80" y="11.5" width="47.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vns-BQ-owW">
+                                                    <rect key="frame" x="314" y="7" width="80" height="30"/>
+                                                    <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="zTL-QB-u6q"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Accept">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pressedAcceptButton:" destination="5P8-RF-5HY" eventType="touchUpInside" id="wcV-lW-jzx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Zu9-Nq-fLa" firstAttribute="leading" secondItem="jCb-MT-xDp" secondAttribute="leading" constant="20" id="5Xb-Wn-3oa"/>
+                                                <constraint firstAttribute="trailing" secondItem="vns-BQ-owW" secondAttribute="trailing" constant="20" id="5ao-V1-KZG"/>
+                                                <constraint firstItem="Zu9-Nq-fLa" firstAttribute="centerY" secondItem="jCb-MT-xDp" secondAttribute="centerY" id="DGl-mS-8GS"/>
+                                                <constraint firstItem="vns-BQ-owW" firstAttribute="centerY" secondItem="jCb-MT-xDp" secondAttribute="centerY" id="KKy-Fs-5yM"/>
+                                                <constraint firstItem="ScE-AM-e8C" firstAttribute="leading" secondItem="Zu9-Nq-fLa" secondAttribute="trailing" constant="20" id="W5g-zu-QXd"/>
+                                                <constraint firstItem="ScE-AM-e8C" firstAttribute="centerY" secondItem="jCb-MT-xDp" secondAttribute="centerY" id="zgF-6c-RXf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="acceptButton" destination="vns-BQ-owW" id="JMm-GV-Vru"/>
+                                            <outlet property="userImageView" destination="Zu9-Nq-fLa" id="CGk-cU-ziU"/>
+                                            <outlet property="userNameLabel" destination="ScE-AM-e8C" id="dUN-AY-cz7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iOy-P9-rf2" id="3n4-g2-ywx"/>
+                                    <outlet property="delegate" destination="iOy-P9-rf2" id="DW0-wL-jWn"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -74,10 +119,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bOT-O5-8Ra"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="plW-AN-Zja" id="fSO-pU-Ib5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McO-A3-sBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346" y="-106"/>
+            <point key="canvasLocation" x="-346.37681159420293" y="-106.47321428571428"/>
         </scene>
         <!--InviteFriends-->
         <scene sceneID="5w7-LG-1Os">
