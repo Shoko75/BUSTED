@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */; };
 		2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */; };
+		2F91FE5823D6807B0060A1FF /* StartGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* StartGame.storyboard */; };
+		2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBGame.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
+		2F91FE5723D6807B0060A1FF /* StartGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartGame.storyboard; sourceTree = "<group>"; };
+		2F91FE5923D6A6850060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				2FDF0E5E23B3BE53001648D5 /* SignInLogIn */,
 				2FDF0E7523CAC551001648D5 /* Friend Management */,
 				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
+				2F91FE5723D6807B0060A1FF /* StartGame.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				2FDF0E5A23B3AE65001648D5 /* DBUser.swift */,
 				2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */,
 				2FDF0E7323CAA20C001648D5 /* DBFriends.swift */,
+				2F91FE5923D6A6850060A1FF /* DBGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */,
+				2F91FE5823D6807B0060A1FF /* StartGame.storyboard in Resources */,
 				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
 				2FDF0E7B23CB3F65001648D5 /* AddPlayer.storyboard in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
@@ -419,6 +426,7 @@
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
 				2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */,
+				2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,

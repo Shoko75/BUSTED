@@ -28,6 +28,19 @@ class AddPlayerViewController: UIViewController {
     
     @objc func pressedNext() {
         print("Pressed Next!")
+        
+        let alert = UIAlertController(title: "Send invitations", message: "Are you sure to send invitations?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.prepareInvitation()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
+    func prepareInvitation() {
+        self.addPlayerViewModel.registerNewGame()
     }
 }
 
