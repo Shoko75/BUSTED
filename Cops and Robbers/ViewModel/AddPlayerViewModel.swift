@@ -17,6 +17,7 @@ class AddPlayerViewModel {
     
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     let friendsRef = Database.database().reference(withPath: "friends")
+    let gameRef = Database.database().reference(withPath: "game")
     let userID = Auth.auth().currentUser?.uid
 
     var friendList = [Friend]()
@@ -52,4 +53,22 @@ class AddPlayerViewModel {
             })
         }
     }
+    
+    func registerNewGame(){
+        
+        var members = [Member]()
+        
+        for player in playerList {
+            let member = Member(userId: player.uid, token: "put it later", team: "", status: "Waiting")
+            members.append(member)
+        }
+        
+        let teamStatus = TeamStatus(pTeamLeft: Int(), rTeamLeft: Int())
+        let game = DBGame(member: members, teamStatus: teamStatus)
+        
+        let request = gameRef.childByAutoId()
+        request.setValue(game.toAnyObject())
+        
+    }
+    
 }
