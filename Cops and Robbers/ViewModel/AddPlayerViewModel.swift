@@ -19,6 +19,7 @@ class AddPlayerViewModel {
     let friendsRef = Database.database().reference(withPath: "friends")
     let userID = Auth.auth().currentUser?.uid
 
+    var friendList = [Friend]()
     var playerList = [Friend]()
     var addPlayerDelegate: AddPlayerDelegate?
     
@@ -46,7 +47,7 @@ class AddPlayerViewModel {
                 if let friend = Friend(snapshot: snapshot) {
                     frineds.append(friend)
                 }
-                self.playerList = frineds
+                self.friendList = frineds
                 self.addPlayerDelegate?.didFinishFetchData()
             })
         }
