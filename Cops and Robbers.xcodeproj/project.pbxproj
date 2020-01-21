@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */; };
+		2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
 				2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */,
 				2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */,
+				2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
 				2FDF0E6223B4515C001648D5 /* InviteFriendsViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
+				2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */,
 				2FDF0E6623BC7D5F001648D5 /* InviteFriendsViewController.swift in Sources */,
 				2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */,
 				2FDF0E7023C985FE001648D5 /* FriendsListViewController.swift in Sources */,
