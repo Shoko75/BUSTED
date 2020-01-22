@@ -11,6 +11,7 @@
 		2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */; };
 		2F91FE5823D6807B0060A1FF /* StartGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* StartGame.storyboard */; };
 		2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBGame.swift */; };
+		2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -34,7 +35,6 @@
 		2FDF0E2923AC7B3D001648D5 /* InviteFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */; };
 		2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */; };
 		2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */; };
-		2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */; };
 		2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */; };
 		2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5A23B3AE65001648D5 /* DBUser.swift */; };
 		2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */; };
@@ -59,6 +59,7 @@
 		2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F91FE5723D6807B0060A1FF /* StartGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartGame.storyboard; sourceTree = "<group>"; };
 		2F91FE5923D6A6850060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
+		2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InviteFriends.storyboard; sourceTree = "<group>"; };
 		2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInLoginMenu.storyboard; sourceTree = "<group>"; };
 		2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
-		2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2FDF0E5A23B3AE65001648D5 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				2FB47DF123A0923600AA9216 /* Assets.xcassets */,
 				2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */,
 				2FB47DF623A0923600AA9216 /* Info.plist */,
-				2FDF0E5323B0B828001648D5 /* GoogleService-Info.plist */,
+				2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */,
 			);
 			path = "Cops and Robbers";
 			sourceTree = "<group>";
@@ -359,9 +359,9 @@
 				2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */,
 				2FDF0E2923AC7B3D001648D5 /* InviteFriends.storyboard in Resources */,
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
-				2FDF0E5423B0B828001648D5 /* GoogleService-Info.plist in Resources */,
 				2FDF0E6C23C9843D001648D5 /* FriendsList.storyboard in Resources */,
 				2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */,
+				2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */,
 				2FDF0E1623A99D3C001648D5 /* SignIn.storyboard in Resources */,
 				2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */,
 			);
@@ -593,14 +593,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cops and Robbers/Cops and Robbers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 58BN93L43H;
+				DEVELOPMENT_TEAM = 49P3BQ2KSR;
 				INFOPLIST_FILE = "Cops and Robbers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -614,14 +614,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Cops and Robbers/Cops and Robbers.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 58BN93L43H;
+				DEVELOPMENT_TEAM = 49P3BQ2KSR;
 				INFOPLIST_FILE = "Cops and Robbers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

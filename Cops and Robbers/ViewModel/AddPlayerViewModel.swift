@@ -55,11 +55,10 @@ class AddPlayerViewModel {
     }
     
     func registerNewGame(){
-        
         var members = [Member]()
         
         for player in playerList {
-            let member = Member(userId: player.uid, token: "put it later", team: "", status: "Waiting")
+            let member = Member(userId: player.uid, token: player.token, team: "", status: "Waiting")
             members.append(member)
         }
         
