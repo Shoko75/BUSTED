@@ -73,7 +73,7 @@ class SignInViewModel {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             
             guard let user = user else { return }
-            self.dbUser = DBUser(authData: user, userName: userName, userImageURL: userImageURL )
+            self.dbUser = DBUser(authData: user, userName: userName, userImageURL: userImageURL, token: UserDefaults.standard.string(forKey: "FCM_TOKEN")!)
             
             let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
             currentUserRef.setValue(self.dbUser.toAnyObject())

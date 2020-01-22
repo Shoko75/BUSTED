@@ -14,23 +14,27 @@ struct DBUser {
     let uid: String
     let userName: String
     let userImageURL: String
+    let token: String
     
-    init(authData: Firebase.User, userName: String, userImageURL: String) {
+    init(authData: Firebase.User, userName: String, userImageURL: String, token: String) {
         self.uid = authData.uid
         self.userName = userName
         self.userImageURL = userImageURL
+        self.token = token
     }
     
-    init(uid: String, userName: String, userImageURL: String) {
+    init(uid: String, userName: String, userImageURL: String, token: String) {
         self.uid = uid
         self.userName = userName
         self.userImageURL = userImageURL
+        self.token = token
     }
     
     func toAnyObject() -> Any {
         return [
             "userName": userName,
-            "userImageURL": userImageURL
+            "userImageURL": userImageURL,
+            "token": token
         ]
     }
 }

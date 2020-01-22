@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>931347136582-g48317pqo8bhbujdg2kq0u01052grnva.apps.googleusercontent.com</string>
+	<string>760583024206-6krkjn7a0rdut2udqnvjr08f7bvush6j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.931347136582-g48317pqo8bhbujdg2kq0u01052grnva</string>
+	<string>com.googleusercontent.apps.760583024206-6krkjn7a0rdut2udqnvjr08f7bvush6j</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDGTtW4y7u6dv0fDK5CAtyrhvIv1i-2bI8</string>
+	<string>AIzaSyCt55482UYGMT9F2mdrMcTC7Y_KFsDLNMs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>931347136582</string>
+	<string>760583024206</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.shokohashimoto.CopsAndRobber</string>
+	<string>com.shokohashimoto.CopsAndRobbers</string>
 	<key>PROJECT_ID</key>
-	<string>copsandrobbers-db16a</string>
+	<string>copsandrobbers-e71fd</string>
 	<key>STORAGE_BUCKET</key>
-	<string>copsandrobbers-db16a.appspot.com</string>
+	<string>copsandrobbers-e71fd.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:931347136582:ios:cdce06d25e283a35958a47</string>
+	<string>1:760583024206:ios:3723c2b17d0f16adb65d1f</string>
 	<key>DATABASE_URL</key>
-	<string>https://copsandrobbers-db16a.firebaseio.com</string>
+	<string>https://copsandrobbers-e71fd.firebaseio.com</string>
 </dict>
 </plist>
