@@ -14,9 +14,12 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
     var locationManager: CLLocationManager?
     var notificationCenter: UNUserNotificationCenter?
     let gcmMessageIDKey = "gcm.message_id"
+    let categoryButtonsId = "JoinOrDecline"
+    enum ActionButtonsId: String { case join, decline }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
@@ -114,21 +117,31 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let userInfo = notification.request.content.userInfo
         
         if let messageID = userInfo["gcm.message_id"] {
-            print("Message ID: \(messageID)")
+            print("3 Message ID: \(messageID)")
         }
+        
+        print(userInfo)
         
         completionHandler([.alert])
     }
     
     // Setting for when the user tapped the notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        defer { completionHandler() }
         
-        let userInfo = response.notification.request.content.userInfo
-        if let messageID = userInfo["gcm.message_id"] {
-            print("Message ID: \(messageID)")
+        if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+            let payload = response.notification.request.content
+            guard let _ = payload.userInfo["Cops and Robbers"] else { return }
+            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "Menu")
+            self.window!.rootViewController!.present(vc, animated: false)
         }
         
-        completionHandler()
+        let identity = response.notification.request.content.categoryIdentifier
+        guard identity == categoryButtonsId,
+            let action = ActionButtonsId(rawValue: response.actionIdentifier) else { return }
+        print("You pressed \(response.actionIdentifier)")
+        
         
        // let identifier = response.notification.request.identifier
     }
@@ -143,7 +156,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
       // Print message ID.
       if let messageID = userInfo[gcmMessageIDKey] {
-        print("Message ID: \(messageID)")
+        print("1 Message ID: \(messageID)")
       }
 
       // Print full message.
@@ -161,7 +174,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
       // Print message ID.
       if let messageID = userInfo[gcmMessageIDKey] {
-        print("Message ID: \(messageID)")
+        print("2 Message ID: \(messageID)")
       }
 
       // Print full message.
@@ -177,6 +190,7 @@ extension AppDelegate: MessagingDelegate {
         UserDefaults.standard.set(fcmToken, forKey: "FCM_TOKEN")
         UserDefaults.standard.synchronize()
         print("Firebase registration token: \(fcmToken)")
+        registerCustomActions()
     }
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
