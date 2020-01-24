@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuViewController: UIViewController {
+    var window: UIWindow?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        showSignOut()
     }
-
+    
+    func showSignOut() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "SignOut", style: .plain, target: self, action: #selector(signOut))
+    }
+    
+    @objc func signOut() {
+        do {
+            try Auth.auth().signOut()
+            let storybord = UIStoryboard(name: "Login", bundle: nil)
+            let loginController = storybord.instantiateViewController(identifier: "Login") as! LoginViewController
+            self.view.window?.rootViewController = loginController
+            
+        } catch let error {
+            print("Faild to sign out with error: \(error)")
+        }
+    }
+    
 }

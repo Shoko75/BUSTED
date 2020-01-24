@@ -1,5 +1,5 @@
 //
-//  SignInViewModel.swift
+//  RegisterAccountViewModel.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2019-12-19.
@@ -10,13 +10,13 @@ import Foundation
 import Firebase
 
 
-protocol SignInDelegate {
+protocol RegisterAccountDelegate {
     func finishSignIn(errorMessage: String?)
 }
 
-class SignInViewModel {
+class RegisterAccountViewModel {
     
-    var signInDelegate: SignInDelegate?
+    var registerAccountDelegate: RegisterAccountDelegate?
     var dbUser: DBUser!
     
     let userInfoRef = Database.database().reference(withPath: "user_Info")
@@ -37,7 +37,7 @@ class SignInViewModel {
             } else {
                 errorMessage = error
             }
-            self!.signInDelegate?.finishSignIn(errorMessage: errorMessage)
+            self!.registerAccountDelegate?.finishSignIn(errorMessage: errorMessage)
         }
     }
     

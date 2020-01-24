@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  RegisterAccountViewController.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2019-12-17.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class RegisterAccountViewController: UIViewController {
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
-    var singInViewModel = SignInViewModel()
+    var registerAccountViewModel = RegisterAccountViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        singInViewModel.signInDelegate = self
+        registerAccountViewModel.registerAccountDelegate = self
     }
 
     @IBAction func pressedSelectImage(_ sender: Any) {
@@ -34,7 +34,7 @@ class SignInViewController: UIViewController {
         let password = passwordText.text
         
         if userName != "", email != "", password != "", let userImage = userImageView.image {
-            singInViewModel.createUser(userName: userName!, email: email!, password: password!, userImage: userImage)
+            registerAccountViewModel.createUser(userName: userName!, email: email!, password: password!, userImage: userImage)
         } else {
             self.showAlert(title: "SignIn Error", message: "please enter username, email and password")
         }
@@ -46,7 +46,7 @@ class SignInViewController: UIViewController {
     
 }
 
-extension SignInViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerController() {
         let picker = UIImagePickerController()
@@ -72,8 +72,8 @@ extension SignInViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
-// MARK: SignInDelegate
-extension SignInViewController: SignInDelegate {
+// MARK: RegisterAccountDelegate
+extension RegisterAccountViewController: RegisterAccountDelegate {
     func finishSignIn(errorMessage: String?) {
         
         if errorMessage == nil {

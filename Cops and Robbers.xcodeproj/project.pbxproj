@@ -17,7 +17,6 @@
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
 		2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEC23A0923300AA9216 /* ViewController.swift */; };
-		2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DEE23A0923300AA9216 /* Main.storyboard */; };
 		2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF123A0923600AA9216 /* Assets.xcassets */; };
 		2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */; };
 		2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */; };
@@ -25,8 +24,8 @@
 		2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47E4E23A1E57200AA9216 /* Map.storyboard */; };
 		2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5023A1E64900AA9216 /* MapViewController.swift */; };
 		2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5423A1EDD100AA9216 /* UserForGame.swift */; };
-		2FDF0E1623A99D3C001648D5 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */; };
-		2FDF0E1A23AC61E9001648D5 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */; };
+		2FDF0E1623A99D3C001648D5 /* RegisterAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1523A99D3C001648D5 /* RegisterAccount.storyboard */; };
+		2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1923AC61E9001648D5 /* RegisterAccountViewModel.swift */; };
 		2FDF0E1D23AC6867001648D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1C23AC6867001648D5 /* User.swift */; };
 		2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1E23AC6D39001648D5 /* Login.storyboard */; };
 		2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */; };
@@ -34,9 +33,8 @@
 		2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2423AC7534001648D5 /* Menu.storyboard */; };
 		2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2623AC763A001648D5 /* MenuViewController.swift */; };
 		2FDF0E2923AC7B3D001648D5 /* InviteFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */; };
-		2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */; };
 		2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */; };
-		2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */; };
+		2FDF0E5623B0FE55001648D5 /* RegisterAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5523B0FE55001648D5 /* RegisterAccountViewController.swift */; };
 		2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5A23B3AE65001648D5 /* DBUser.swift */; };
 		2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */; };
 		2FDF0E6023B3C239001648D5 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E5F23B3C239001648D5 /* Components.swift */; };
@@ -67,7 +65,6 @@
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2FB47DEC23A0923300AA9216 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2FB47DEF23A0923300AA9216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FB47DF123A0923600AA9216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FB47DF423A0923600AA9216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FB47DF623A0923600AA9216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,8 +74,8 @@
 		2FB47E5023A1E64900AA9216 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2FB47E5423A1EDD100AA9216 /* UserForGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForGame.swift; sourceTree = "<group>"; };
 		2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cops and Robbers.entitlements"; sourceTree = "<group>"; };
-		2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
-		2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		2FDF0E1523A99D3C001648D5 /* RegisterAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterAccount.storyboard; sourceTree = "<group>"; };
+		2FDF0E1923AC61E9001648D5 /* RegisterAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewModel.swift; sourceTree = "<group>"; };
 		2FDF0E1C23AC6867001648D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2FDF0E1E23AC6D39001648D5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -86,9 +83,8 @@
 		2FDF0E2423AC7534001648D5 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		2FDF0E2623AC763A001648D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2FDF0E2823AC7B3D001648D5 /* InviteFriends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InviteFriends.storyboard; sourceTree = "<group>"; };
-		2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInLoginMenu.storyboard; sourceTree = "<group>"; };
 		2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
-		2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2FDF0E5523B0FE55001648D5 /* RegisterAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewController.swift; sourceTree = "<group>"; };
 		2FDF0E5A23B3AE65001648D5 /* DBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUser.swift; sourceTree = "<group>"; };
 		2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		2FDF0E5F23B3C239001648D5 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -163,11 +159,10 @@
 		2FB47DFE23A0958400AA9216 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47DEE23A0923300AA9216 /* Main.storyboard */,
 				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
 				2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */,
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
-				2FDF0E5E23B3BE53001648D5 /* SignInLogIn */,
+				2FDF0E5E23B3BE53001648D5 /* Authentication */,
 				2FDF0E7523CAC551001648D5 /* Friend Management */,
 				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
 				2F91FE5723D6807B0060A1FF /* StartGame.storyboard */,
@@ -184,7 +179,7 @@
 				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
-				2FDF0E7823CAC5AD001648D5 /* SignInLogIn */,
+				2FDF0E7823CAC5AD001648D5 /* Authentication */,
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
 				2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */,
 				2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */,
@@ -197,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
-				2FDF0E7923CAC5C3001648D5 /* SignInLogIn */,
+				2FDF0E7923CAC5C3001648D5 /* Authentication */,
 				2FDF0E7723CAC587001648D5 /* Friend Management */,
 				2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */,
 			);
@@ -219,14 +214,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2FDF0E5E23B3BE53001648D5 /* SignInLogIn */ = {
+		2FDF0E5E23B3BE53001648D5 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				2FDF0E4F23B0B4BA001648D5 /* SignInLoginMenu.storyboard */,
-				2FDF0E1523A99D3C001648D5 /* SignIn.storyboard */,
+				2FDF0E1523A99D3C001648D5 /* RegisterAccount.storyboard */,
 				2FDF0E1E23AC6D39001648D5 /* Login.storyboard */,
 			);
-			path = SignInLogIn;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		2FDF0E7523CAC551001648D5 /* Friend Management */ = {
@@ -258,22 +252,22 @@
 			path = "Friend Management";
 			sourceTree = "<group>";
 		};
-		2FDF0E7823CAC5AD001648D5 /* SignInLogIn */ = {
+		2FDF0E7823CAC5AD001648D5 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				2FDF0E5523B0FE55001648D5 /* SignInViewController.swift */,
+				2FDF0E5523B0FE55001648D5 /* RegisterAccountViewController.swift */,
 				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
 			);
-			path = SignInLogIn;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
-		2FDF0E7923CAC5C3001648D5 /* SignInLogIn */ = {
+		2FDF0E7923CAC5C3001648D5 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				2FDF0E1923AC61E9001648D5 /* SignInViewModel.swift */,
+				2FDF0E1923AC61E9001648D5 /* RegisterAccountViewModel.swift */,
 				2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */,
 			);
-			path = SignInLogIn;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		7D60EA17EE79DC306E7497FD /* Frameworks */ = {
@@ -353,7 +347,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FDF0E5023B0B4BA001648D5 /* SignInLoginMenu.storyboard in Resources */,
 				2F91FE5823D6807B0060A1FF /* StartGame.storyboard in Resources */,
 				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
 				2FDF0E7B23CB3F65001648D5 /* AddPlayer.storyboard in Resources */,
@@ -363,9 +356,8 @@
 				2FDF0E2923AC7B3D001648D5 /* InviteFriends.storyboard in Resources */,
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
 				2FDF0E6C23C9843D001648D5 /* FriendsList.storyboard in Resources */,
-				2FB47DF023A0923300AA9216 /* Main.storyboard in Resources */,
 				2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */,
-				2FDF0E1623A99D3C001648D5 /* SignIn.storyboard in Resources */,
+				2FDF0E1623A99D3C001648D5 /* RegisterAccount.storyboard in Resources */,
 				2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +417,7 @@
 				2FDF0E8123CB4524001648D5 /* AddPlayerViewModel.swift in Sources */,
 				2FDF0E7223CA14FA001648D5 /* FriendsListViewModel.swift in Sources */,
 				2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */,
-				2FDF0E1A23AC61E9001648D5 /* SignInViewModel.swift in Sources */,
+				2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
 				2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */,
@@ -439,7 +431,7 @@
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
 				2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */,
 				2FDF0E6623BC7D5F001648D5 /* InviteFriendsViewController.swift in Sources */,
-				2FDF0E5623B0FE55001648D5 /* SignInViewController.swift in Sources */,
+				2FDF0E5623B0FE55001648D5 /* RegisterAccountViewController.swift in Sources */,
 				2FDF0E7023C985FE001648D5 /* FriendsListViewController.swift in Sources */,
 				2F91FE5E23D94B520060A1FF /* ApnsUploads.swift in Sources */,
 				2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */,
@@ -457,14 +449,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2FB47DEE23A0923300AA9216 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FB47DEF23A0923300AA9216 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
