@@ -14,14 +14,16 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let gcmMessageIDKey = "gcm.message_id"
+    let categoryButtonsId = "JoinOrDecline"
+    
+    enum ActionButtonsId: String { case join, decline }
+    
+    var gameID = String()
     var window: UIWindow?
     var locationManager: CLLocationManager?
     var notificationCenter: UNUserNotificationCenter?
-    let gcmMessageIDKey = "gcm.message_id"
-    let categoryButtonsId = "JoinOrDecline"
-    enum ActionButtonsId: String { case join, decline }
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
         // Firebase setting
@@ -121,7 +123,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("3 Message ID: \(messageID)")
         }
         
-        print(userInfo)
+        if let gameID = userInfo["gameID"] {
+            self.gameID = gameID as! String
+        }
         
         completionHandler([.alert])
     }
@@ -130,29 +134,37 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         defer { completionHandler() }
         
-//        if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
-//            let payload = response.notification.request.content
-//            guard let _ = payload.userInfo["Cops and Robbers"] else { return }
-//            let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-//            let vc = storyboard.instantiateViewController(identifier: "Menu")
-//            self.window!.rootViewController!.present(vc, animated: false)
-//        }
         
         let identity = response.notification.request.content.categoryIdentifier
         guard identity == categoryButtonsId,
             let action = ActionButtonsId(rawValue: response.actionIdentifier) else { return }
-        print("You pressed \(response.actionIdentifier) ")
+        
+        if Auth.auth().currentUser != nil {
+            let gameRef = Database.database().reference(withPath: "game")
+            let userID = Auth.auth().currentUser?.uid
+            
+            switch action {
+            case .join:
+                let updateStatus = ["status": "Joined"]
+                
+                gameRef.child(gameID).child("member").child(userID!).updateChildValues(updateStatus)
+                // Todo: Do it later open window
+            case .decline:
+                let updateStatus = ["status": "Declined"]
+                
+                gameRef.child(gameID).child("member").child(userID!).updateChildValues(updateStatus)
+                break
+            }
+        } else {
+            // Todo: Do it later open window
+        }
         
         
        // let identifier = response.notification.request.identifier
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-      // If you are receiving a notification message while your app is in the background,
-      // this callback will not be fired till the user taps on the notification launching the application.
-      // TODO: Handle data of notification
 
-      // With swizzling disabled you must let Messaging know about the message, for Analytics
       // Messaging.messaging().appDidReceiveMessage(userInfo)
 
       // Print message ID.
@@ -166,11 +178,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-      // If you are receiving a notification message while your app is in the background,
-      // this callback will not be fired till the user taps on the notification launching the application.
-      // TODO: Handle data of notification
-
-      // With swizzling disabled you must let Messaging know about the message, for Analytics
+      
       // Messaging.messaging().appDidReceiveMessage(userInfo)
 
       // Print message ID.

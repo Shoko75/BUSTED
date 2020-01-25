@@ -13,13 +13,12 @@
 		2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBGame.swift */; };
 		2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */; };
 		2F91FE5E23D94B520060A1FF /* ApnsUploads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */; };
+		2F91FE6423DB9F830060A1FF /* notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6323DB9F830060A1FF /* notification.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
-		2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEC23A0923300AA9216 /* ViewController.swift */; };
 		2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF123A0923600AA9216 /* Assets.xcassets */; };
 		2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */; };
-		2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */; };
 		2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */; };
 		2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB47E4E23A1E57200AA9216 /* Map.storyboard */; };
 		2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5023A1E64900AA9216 /* MapViewController.swift */; };
@@ -60,15 +59,14 @@
 		2F91FE5923D6A6850060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
 		2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApnsUploads.swift; sourceTree = "<group>"; };
+		2F91FE6323DB9F830060A1FF /* notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notification.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2FB47DEC23A0923300AA9216 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2FB47DF123A0923600AA9216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FB47DF423A0923600AA9216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FB47DF623A0923600AA9216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLoginViewController.swift; sourceTree = "<group>"; };
 		2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
 		2FB47E4E23A1E57200AA9216 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		2FB47E5023A1E64900AA9216 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +144,7 @@
 				2FB47E2823A0BEB600AA9216 /* ViewModel */,
 				2FB47E2923A0BECC00AA9216 /* Model */,
 				2FB47DE823A0923300AA9216 /* AppDelegate.swift */,
+				2F91FE6323DB9F830060A1FF /* notification.swift */,
 				2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */,
 				2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */,
 				2FB47DF123A0923600AA9216 /* Assets.xcassets */,
@@ -173,8 +172,6 @@
 		2FB47E2723A0BDD800AA9216 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47DEC23A0923300AA9216 /* ViewController.swift */,
-				2FB47E2A23A0BF1800AA9216 /* AccountLoginViewController.swift */,
 				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
 				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
@@ -411,8 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F91FE6423DB9F830060A1FF /* notification.swift in Sources */,
 				2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */,
-				2FB47E2B23A0BF1800AA9216 /* AccountLoginViewController.swift in Sources */,
 				2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */,
 				2FDF0E8123CB4524001648D5 /* AddPlayerViewModel.swift in Sources */,
 				2FDF0E7223CA14FA001648D5 /* FriendsListViewModel.swift in Sources */,
@@ -420,7 +417,6 @@
 				2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
-				2FB47DED23A0923300AA9216 /* ViewController.swift in Sources */,
 				2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,

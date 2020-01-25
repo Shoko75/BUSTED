@@ -63,7 +63,7 @@ class AddPlayerViewModel {
         }
         
         let teamStatus = TeamStatus(pTeamLeft: Int(), rTeamLeft: Int())
-        let game = DBGame(member: members, teamStatus: teamStatus)
+        let game = DBGame(member: members, teamStatus: teamStatus, adminUser: userID!)
         
         let request = gameRef.childByAutoId()
         request.setValue(game.toAnyObject())

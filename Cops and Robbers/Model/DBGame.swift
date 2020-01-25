@@ -12,20 +12,23 @@ struct DBGame {
     
     let member: [Member]
     let teamStatus: TeamStatus
+    let adminUser: String
     
-    init(member: [Member], teamStatus: TeamStatus) {
+    init(member: [Member], teamStatus: TeamStatus, adminUser: String) {
         self.member = member
         self.teamStatus = teamStatus
+        self.adminUser = adminUser
     }
     
     func toAnyObject() -> Any {
         
-        var members = [Any]()
+        var members = [String:Any]()
         for mem in member {
-            members.append(mem.toAnyObject())
+            members[mem.userId] = mem.toAnyObject()
         }
         
         return [
+            "adminUser": adminUser,
             "member": members,
             "teamStatus": teamStatus.toAnyObject()
         ]
@@ -48,7 +51,6 @@ struct Member {
     func toAnyObject() -> Any {
         
         return [
-            "userId": userId,
             "token": token,
             "team": team,
             "status": status

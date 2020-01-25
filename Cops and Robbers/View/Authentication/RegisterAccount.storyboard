@@ -10,7 +10,7 @@
         <!--Register Account View Controller-->
         <scene sceneID="9Bh-hv-Fzf">
             <objects>
-                <viewController storyboardIdentifier="SignIn" id="Z5l-0X-NtX" customClass="RegisterAccountViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterAccount" id="Z5l-0X-NtX" customClass="RegisterAccountViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6KR-1x-bRs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
