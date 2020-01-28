@@ -54,20 +54,21 @@ class AddPlayerViewModel {
         }
     }
     
-    func registerNewGame(){
-        var members = [Member]()
+    func registerNewGame() -> String {
+        var players = [DBPlayer]()
         
         for player in playerList {
-            let member = Member(userId: player.uid, token: player.token, team: "", status: "Waiting")
-            members.append(member)
+            let dbplayer = DBPlayer(userId: player.uid, token: player.token, team: "", status: "Waiting")
+            players.append(dbplayer)
         }
         
-        let teamStatus = TeamStatus(pTeamLeft: Int(), rTeamLeft: Int())
-        let game = DBGame(member: members, teamStatus: teamStatus, adminUser: userID!)
+        let teamStatus = DBTeamStatus(pTeamLeft: Int(), rTeamLeft: Int())
+        let game = DBGame(players: players, teamStatus: teamStatus, adminUser: userID!)
         
         let request = gameRef.childByAutoId()
         request.setValue(game.toAnyObject())
         
+        return request.key!
     }
-    
 }
+

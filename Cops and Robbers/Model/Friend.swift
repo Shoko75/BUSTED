@@ -36,4 +36,6 @@ struct Friend {
         self.userImageURL = userImageURL
         self.token = token
     }
+    
+    
 }

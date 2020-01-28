@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jck-Hh-Wal">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Waiting Player View Controller-->
         <scene sceneID="Ouu-iW-1fZ">
             <objects>
-                <viewController id="Jck-Hh-Wal" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WaitingPlayer" id="Jck-Hh-Wal" customClass="WaitingPlayerViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MLN-Kd-dml">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="d9n-vi-jPA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaitingPlayerTableCell" id="d9n-vi-jPA" customClass="WaitingPlayerTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d9n-vi-jPA" id="018-le-odI">
@@ -60,8 +60,17 @@
                                                 <constraint firstItem="gVB-TS-kgL" firstAttribute="leading" secondItem="lHQ-UF-ghr" secondAttribute="trailing" constant="10" id="cmi-VA-nEd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="statusLabel" destination="yaO-zR-8n4" id="l0Q-Lf-0iM"/>
+                                            <outlet property="userImageView" destination="lHQ-UF-ghr" id="0ig-sw-H89"/>
+                                            <outlet property="userNameLabel" destination="gVB-TS-kgL" id="EQh-eb-hxY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jck-Hh-Wal" id="Esw-MP-VwG"/>
+                                    <outlet property="delegate" destination="Jck-Hh-Wal" id="1C3-jO-UHO"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cqI-Nh-z8k">
                                 <rect key="frame" x="0.0" y="788" width="414" height="74"/>
@@ -96,6 +105,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="t7C-gh-MZo"/>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="zXa-Yi-h6v" id="ewN-jP-Wgs"/>
+                        <outlet property="startButton" destination="q1W-P2-ED3" id="Pl8-te-65P"/>
+                        <outlet property="tableView" destination="XfB-jS-v6t" id="hO3-A8-nIt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jT-uz-jrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

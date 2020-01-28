@@ -14,6 +14,7 @@ class AddPlayerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var addPlayerViewModel: AddPlayerViewModel!
+    var gameID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,16 @@ class AddPlayerViewController: UIViewController {
     }
     
     func prepareInvitation() {
-        self.addPlayerViewModel.registerNewGame()
+        self.gameID = self.addPlayerViewModel.registerNewGame()
+        self.performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWaitingPlayer" {
+            if let waitingPlayerViewController = segue.destination as? WaitingPlayerViewController {
+                waitingPlayerViewController.gameID = self.gameID
+            }
+        }
     }
 }
 
@@ -97,6 +107,7 @@ extension AddPlayerViewController: UICollectionViewDelegateFlowLayout, UICollect
 
 // MARK: AddPlayerDelegate
 extension AddPlayerViewController: AddPlayerDelegate {
+    
     func didFinishFetchData() {
         self.tableView.reloadData()
     }

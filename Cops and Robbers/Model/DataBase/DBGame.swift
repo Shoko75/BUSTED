@@ -10,32 +10,32 @@ import Foundation
 
 struct DBGame {
     
-    let member: [Member]
-    let teamStatus: TeamStatus
+    let dbPlayers: [DBPlayer]
+    let dbTeamStatus: DBTeamStatus
     let adminUser: String
     
-    init(member: [Member], teamStatus: TeamStatus, adminUser: String) {
-        self.member = member
-        self.teamStatus = teamStatus
+    init(players: [DBPlayer], teamStatus: DBTeamStatus, adminUser: String) {
+        self.dbPlayers = players
+        self.dbTeamStatus = teamStatus
         self.adminUser = adminUser
     }
     
     func toAnyObject() -> Any {
         
-        var members = [String:Any]()
-        for mem in member {
-            members[mem.userId] = mem.toAnyObject()
+        var dbPlayer = [String:Any]()
+        for player in dbPlayers {
+            dbPlayer[player.userId] = player.toAnyObject()
         }
         
         return [
             "adminUser": adminUser,
-            "member": members,
-            "teamStatus": teamStatus.toAnyObject()
+            "member": dbPlayer,
+            "teamStatus": dbTeamStatus.toAnyObject()
         ]
     }
 }
 
-struct Member {
+struct DBPlayer {
     let userId: String
     let token: String
     let team: String?
@@ -58,7 +58,7 @@ struct Member {
     }
 }
 
-struct TeamStatus {
+struct DBTeamStatus {
     let pTeamLeft: Int?
     let rTeamLeft: Int?
     

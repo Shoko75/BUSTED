@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */; };
 		2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */; };
-		2F91FE5823D6807B0060A1FF /* StartGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* StartGame.storyboard */; };
+		2F91FE5823D6807B0060A1FF /* WaitingPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* WaitingPlayer.storyboard */; };
 		2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBGame.swift */; };
 		2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */; };
 		2F91FE5E23D94B520060A1FF /* ApnsUploads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */; };
 		2F91FE6423DB9F830060A1FF /* notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6323DB9F830060A1FF /* notification.swift */; };
+		2F91FE6D23DBD2B40060A1FF /* WaitingPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6C23DBD2B40060A1FF /* WaitingPlayerViewController.swift */; };
+		2F91FE6F23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */; };
+		2F91FE7123DBD5A10060A1FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7023DBD5A10060A1FF /* Game.swift */; };
+		2F91FE7423DBDD1A0060A1FF /* WaitingPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -55,11 +59,15 @@
 
 /* Begin PBXFileReference section */
 		2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
-		2F91FE5723D6807B0060A1FF /* StartGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartGame.storyboard; sourceTree = "<group>"; };
+		2F91FE5723D6807B0060A1FF /* WaitingPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaitingPlayer.storyboard; sourceTree = "<group>"; };
 		2F91FE5923D6A6850060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
 		2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApnsUploads.swift; sourceTree = "<group>"; };
 		2F91FE6323DB9F830060A1FF /* notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notification.swift; sourceTree = "<group>"; };
+		2F91FE6C23DBD2B40060A1FF /* WaitingPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingPlayerViewController.swift; sourceTree = "<group>"; };
+		2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		2F91FE7023DBD5A10060A1FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerViewModel.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F91FE6523DBD14F0060A1FF /* Create Field */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
+				2F91FE5723D6807B0060A1FF /* WaitingPlayer.storyboard */,
+			);
+			path = "Create Field";
+			sourceTree = "<group>";
+		};
+		2F91FE6623DBD1610060A1FF /* Add Player */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */,
+				2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */,
+				2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */,
+			);
+			path = "Add Player";
+			sourceTree = "<group>";
+		};
+		2F91FE6723DBD1750060A1FF /* Create Field */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE6B23DBD1E80060A1FF /* Waiting Player */,
+				2F91FE6623DBD1610060A1FF /* Add Player */,
+			);
+			path = "Create Field";
+			sourceTree = "<group>";
+		};
+		2F91FE6823DBD1A10060A1FF /* Create Field */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */,
+				2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */,
+			);
+			path = "Create Field";
+			sourceTree = "<group>";
+		};
+		2F91FE6B23DBD1E80060A1FF /* Waiting Player */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE6C23DBD2B40060A1FF /* WaitingPlayerViewController.swift */,
+				2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */,
+			);
+			path = "Waiting Player";
+			sourceTree = "<group>";
+		};
+		2F91FE7223DBD5B20060A1FF /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E5A23B3AE65001648D5 /* DBUser.swift */,
+				2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */,
+				2FDF0E7323CAA20C001648D5 /* DBFriends.swift */,
+				2F91FE5923D6A6850060A1FF /* DBGame.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 		2FB47DDC23A0923300AA9216 = {
 			isa = PBXGroup;
 			children = (
@@ -163,8 +228,7 @@
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
 				2FDF0E5E23B3BE53001648D5 /* Authentication */,
 				2FDF0E7523CAC551001648D5 /* Friend Management */,
-				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
-				2F91FE5723D6807B0060A1FF /* StartGame.storyboard */,
+				2F91FE6523DBD14F0060A1FF /* Create Field */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,9 +242,7 @@
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
 				2FDF0E7823CAC5AD001648D5 /* Authentication */,
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
-				2FDF0E7C23CB4003001648D5 /* AddPlayerViewController.swift */,
-				2FDF0E7E23CB4028001648D5 /* AddPlayerTableViewCell.swift */,
-				2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */,
+				2F91FE6723DBD1750060A1FF /* Create Field */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,7 +253,7 @@
 				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
 				2FDF0E7923CAC5C3001648D5 /* Authentication */,
 				2FDF0E7723CAC587001648D5 /* Friend Management */,
-				2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */,
+				2F91FE6823DBD1A10060A1FF /* Create Field */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -203,10 +265,8 @@
 				2FDF0E1C23AC6867001648D5 /* User.swift */,
 				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
 				2FDF0E6323B452A8001648D5 /* Friend.swift */,
-				2FDF0E5A23B3AE65001648D5 /* DBUser.swift */,
-				2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */,
-				2FDF0E7323CAA20C001648D5 /* DBFriends.swift */,
-				2F91FE5923D6A6850060A1FF /* DBGame.swift */,
+				2F91FE7023DBD5A10060A1FF /* Game.swift */,
+				2F91FE7223DBD5B20060A1FF /* DataBase */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,7 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F91FE5823D6807B0060A1FF /* StartGame.storyboard in Resources */,
+				2F91FE5823D6807B0060A1FF /* WaitingPlayer.storyboard in Resources */,
 				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
 				2FDF0E7B23CB3F65001648D5 /* AddPlayer.storyboard in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
@@ -421,10 +481,13 @@
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,
+				2F91FE7123DBD5A10060A1FF /* Game.swift in Sources */,
 				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
 				2FDF0E6223B4515C001648D5 /* InviteFriendsViewModel.swift in Sources */,
+				2F91FE7423DBDD1A0060A1FF /* WaitingPlayerViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
+				2F91FE6D23DBD2B40060A1FF /* WaitingPlayerViewController.swift in Sources */,
 				2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */,
 				2FDF0E6623BC7D5F001648D5 /* InviteFriendsViewController.swift in Sources */,
 				2FDF0E5623B0FE55001648D5 /* RegisterAccountViewController.swift in Sources */,
@@ -439,6 +502,7 @@
 				2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */,
 				2FDF0E1D23AC6867001648D5 /* User.swift in Sources */,
 				2FDF0E6023B3C239001648D5 /* Components.swift in Sources */,
+				2F91FE6F23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
