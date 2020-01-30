@@ -16,7 +16,7 @@ class WaitingPlayerViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
 
     fileprivate var waitingPlayerViewModel: WaitingPlayerViewModel!
-    var gameID: String?
+    var invitationID: String?
     var admin: Bool?
     
     override func viewDidLoad() {
@@ -28,15 +28,10 @@ class WaitingPlayerViewController: UIViewController {
         waitingPlayerViewModel = WaitingPlayerViewModel()
         waitingPlayerViewModel.waitingPlayerDelegate = self
         
-        guard let gameID = gameID else { return }
-        waitingPlayerViewModel.gameID = gameID
+        guard let invitationID = invitationID else { return }
+        waitingPlayerViewModel.invitationID = invitationID
         
-        waitingPlayerViewModel.observeGameInfo()
-        
-        // TODO: error handling for players
-        if admin == false {
-            waitingPlayerViewModel.observeRemoveGame()
-        }
+        waitingPlayerViewModel.observeInvitation()
         
     }
     
@@ -62,7 +57,8 @@ class WaitingPlayerViewController: UIViewController {
     }
 
     @IBAction func pressedCancell(_ sender: Any) {
-        waitingPlayerViewModel.deleteGame()
+        waitingPlayerViewModel.deleteInvitation()
+        self.navigationController?.popToRootViewController(animated: false)
     }
     @IBAction func pressedStart(_ sender: Any) {
         waitingPlayerViewModel.createPassData()

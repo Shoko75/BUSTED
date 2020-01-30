@@ -11,16 +11,12 @@ import Firebase
 
 struct Player {
     let playerID: String
-    let token: String
     let status: String
-    let team: String?
     let user: Friend?
     
-    init( playerID: String, token: String, status: String, team: String?, user:Friend? ) {
+    init( playerID: String, status: String, user:Friend? ) {
         self.playerID = playerID
-        self.token = token
         self.status = status
-        self.team = team
         self.user = user
     }
 }

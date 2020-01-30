@@ -16,27 +16,25 @@ protocol WaitingPlayerDelegate {
 
 class WaitingPlayerViewModel {
     
-    let gameRef = Database.database().reference(withPath: "game")
+    let invitationRef = Database.database().reference(withPath: "invitation")
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     let userID = Auth.auth().currentUser?.uid
     
     var playerList = [Player]()
     var waitingPlayerDelegate: WaitingPlayerDelegate?
-    var gameID: String?
+    var invitationID: String?
     
-    
-    func observeGameInfo() {
-        gameRef.child(gameID!).observe(.value) { (snapshot) in
+    func observeInvitation() {
+        invitationRef.child(invitationID!).observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String: AnyObject],
-                let members = value["member"] as? [String: AnyObject] {
+                let members = value["player"] as? [String: AnyObject] {
                 var players = [Player]()
                 var dummyFriend: Friend?
                 
                 for member in members.keys {
                     if let value = members[member] as? [String:AnyObject],
-                        let status = value["status"] as? String,
-                        let token = value["token"] as? String {
-                        players.append(Player(playerID: member, token: token, status: status, team: "", user: dummyFriend))
+                        let status = value["status"] as? String {
+                        players.append(Player(playerID: member, status: status, user: dummyFriend))
                     }
                 }
                 self.fetchUserInfoByID(players: players)
@@ -52,7 +50,7 @@ class WaitingPlayerViewModel {
             userInfoRef.child(player.playerID).observeSingleEvent(of: .value, with: { snapshot in
                 cnt += 1
                 if let friend = Friend(snapshot: snapshot) {
-                    temPlayer.append(Player(playerID: player.playerID, token: player.token, status: player.status, team: player.team, user: friend))
+                    temPlayer.append(Player(playerID: player.playerID, status: player.status, user: friend))
                 }
                 if cnt == players.count {
                     self.playerList = temPlayer
@@ -68,7 +66,7 @@ class WaitingPlayerViewModel {
             if player.status == "Joined" {
                 joinedPlayers.append(player)
             } else if player.status == "Declined" {
-                let request = gameRef.child(gameID!).child("member").child(player.playerID)
+                let request = invitationRef.child(invitationID!).child("player").child(player.playerID)
                 request.removeValue()
             }
         }
@@ -79,35 +77,36 @@ class WaitingPlayerViewModel {
     func fetchAdminUserInfo() {
         userInfoRef.child(userID!).observeSingleEvent(of: .value, with: { snapshot in
             if let friend = Friend(snapshot: snapshot) {
-                let adminUser = Player(playerID: friend.uid, token: friend.token, status: "Joined", team: "", user: friend)
-                self.updateGamePlayer(updateInfo: adminUser)
+                let adminUser = Player(playerID: friend.uid, status: "Joined", user: friend)
+                self.updateInvitationPlayer(updateInfo: adminUser)
                 self.playerList.append(adminUser)
+                self.updateInvitationStatus()
                 self.waitingPlayerDelegate?.didCreatePassData()
             }
         })
     }
     
-    func updateGamePlayer(updateInfo: Player) {
+    func updateInvitationPlayer(updateInfo: Player) {
        
-        let adminData = DBPlayer(userId: updateInfo.playerID, token: updateInfo.token, team: "", status: updateInfo.status)
+        let adminData = DBPlayer(userId: updateInfo.playerID, token: updateInfo.user!.token, status: updateInfo.status)
         
-        let request = gameRef.child(gameID!).child("member").child(adminData.userId)
+        let request = invitationRef.child(invitationID!).child("player").child(adminData.userId)
         request.setValue(adminData.toAnyObject())
         
     }
     
-    func deleteGame(){
-        gameRef.child(gameID!).removeValue()
+    func updateInvitationStatus(){
+        
+        let request = invitationRef.child(invitationID!).child("status")
+        request.setValue("Start")
     }
     
-    func observeRemoveGame(){
-        gameRef.child(gameID!).observe(.childRemoved) { (snapshot) in
-            print(snapshot)
-        }
+    func deleteInvitation(){
+        invitationRef.child(invitationID!).removeValue()
     }
     
     func stopObserve() {
-        gameRef.child(gameID!).removeAllObservers()
+        invitationRef.child(invitationID!).removeAllObservers()
     }
     
 }

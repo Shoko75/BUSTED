@@ -14,7 +14,7 @@ class AddPlayerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     fileprivate var addPlayerViewModel: AddPlayerViewModel!
-    var gameID: String?
+    var invitationID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,14 +41,14 @@ class AddPlayerViewController: UIViewController {
     }
     
     func prepareInvitation() {
-        self.gameID = self.addPlayerViewModel.registerNewGame()
+        self.invitationID = self.addPlayerViewModel.registerInvitation()
         self.performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWaitingPlayer" {
             if let waitingPlayerViewController = segue.destination as? WaitingPlayerViewController {
-                waitingPlayerViewController.gameID = self.gameID
+                waitingPlayerViewController.invitationID = self.invitationID
                 waitingPlayerViewController.admin = true
             }
         }

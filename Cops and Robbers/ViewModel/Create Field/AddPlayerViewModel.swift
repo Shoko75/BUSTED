@@ -17,7 +17,7 @@ class AddPlayerViewModel {
     
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     let friendsRef = Database.database().reference(withPath: "friends")
-    let gameRef = Database.database().reference(withPath: "game")
+    let invitationRef = Database.database().reference(withPath: "invitation")
     let userID = Auth.auth().currentUser?.uid
 
     var friendList = [Friend]()
@@ -54,18 +54,17 @@ class AddPlayerViewModel {
         }
     }
     
-    func registerNewGame() -> String {
+    func registerInvitation() -> String {
         var players = [DBPlayer]()
         
         for player in playerList {
-            let dbplayer = DBPlayer(userId: player.uid, token: player.token, team: "", status: "Waiting")
+            let dbplayer = DBPlayer(userId: player.uid, token: player.token, status: "Waiting")
             players.append(dbplayer)
         }
         
-        let teamStatus = DBTeamStatus(pTeamLeft: Int(), rTeamLeft: Int())
-        let game = DBGame(players: players, teamStatus: teamStatus, adminUser: userID!)
+        let game = DBInvitation(players: players, adminUser: userID!, status: "Waiting")
         
-        let request = gameRef.childByAutoId()
+        let request = invitationRef.childByAutoId()
         request.setValue(game.toAnyObject())
         
         return request.key!

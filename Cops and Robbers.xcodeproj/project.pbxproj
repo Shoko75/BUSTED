@@ -10,13 +10,13 @@
 		1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */; };
 		2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */; };
 		2F91FE5823D6807B0060A1FF /* WaitingPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* WaitingPlayer.storyboard */; };
-		2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBGame.swift */; };
+		2F91FE5A23D6A6850060A1FF /* DBInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBInvitation.swift */; };
 		2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */; };
 		2F91FE5E23D94B520060A1FF /* ApnsUploads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */; };
 		2F91FE6423DB9F830060A1FF /* notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6323DB9F830060A1FF /* notification.swift */; };
 		2F91FE6D23DBD2B40060A1FF /* WaitingPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6C23DBD2B40060A1FF /* WaitingPlayerViewController.swift */; };
 		2F91FE6F23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */; };
-		2F91FE7123DBD5A10060A1FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7023DBD5A10060A1FF /* Game.swift */; };
+		2F91FE7123DBD5A10060A1FF /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7023DBD5A10060A1FF /* Invitation.swift */; };
 		2F91FE7423DBDD1A0060A1FF /* WaitingPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */; };
 		2F91FE7723E0EB260060A1FF /* MakeTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE7623E0EB260060A1FF /* MakeTeam.storyboard */; };
 		2F91FE7923E0EED80060A1FF /* MakeTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7823E0EED80060A1FF /* MakeTeamViewController.swift */; };
@@ -66,13 +66,13 @@
 /* Begin PBXFileReference section */
 		2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F91FE5723D6807B0060A1FF /* WaitingPlayer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaitingPlayer.storyboard; sourceTree = "<group>"; };
-		2F91FE5923D6A6850060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
+		2F91FE5923D6A6850060A1FF /* DBInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBInvitation.swift; sourceTree = "<group>"; };
 		2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApnsUploads.swift; sourceTree = "<group>"; };
 		2F91FE6323DB9F830060A1FF /* notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notification.swift; sourceTree = "<group>"; };
 		2F91FE6C23DBD2B40060A1FF /* WaitingPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingPlayerViewController.swift; sourceTree = "<group>"; };
 		2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerTableViewCell.swift; sourceTree = "<group>"; };
-		2F91FE7023DBD5A10060A1FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2F91FE7023DBD5A10060A1FF /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
 		2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerViewModel.swift; sourceTree = "<group>"; };
 		2F91FE7623E0EB260060A1FF /* MakeTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeTeam.storyboard; sourceTree = "<group>"; };
 		2F91FE7823E0EED80060A1FF /* MakeTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				2F91FE6B23DBD1E80060A1FF /* Waiting Player */,
 				2F91FE6623DBD1610060A1FF /* Add Player */,
 				2F91FE7A23E0EEE60060A1FF /* Make Team */,
-				2F91FE8123E260980060A1FF /* LoadGameViewController.swift */,
+				2F91FE8323E287F10060A1FF /* Load Game */,
 			);
 			path = "Create Field";
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 				2FDF0E5A23B3AE65001648D5 /* DBUser.swift */,
 				2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */,
 				2FDF0E7323CAA20C001648D5 /* DBFriends.swift */,
-				2F91FE5923D6A6850060A1FF /* DBGame.swift */,
+				2F91FE5923D6A6850060A1FF /* DBInvitation.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -206,6 +206,23 @@
 				2F91FE7B23E1032D0060A1FF /* MakeTeamTableViewCell.swift */,
 			);
 			path = "Make Team";
+			sourceTree = "<group>";
+		};
+		2F91FE8323E287F10060A1FF /* Load Game */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE8123E260980060A1FF /* LoadGameViewController.swift */,
+			);
+			path = "Load Game";
+			sourceTree = "<group>";
+		};
+		2F91FE8423E288170060A1FF /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
+				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		2FB47DDC23A0923300AA9216 = {
@@ -263,8 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
-				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
-				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
+				2F91FE8423E288170060A1FF /* Map */,
 				2FDF0E5F23B3C239001648D5 /* Components.swift */,
 				2FDF0E7823CAC5AD001648D5 /* Authentication */,
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
@@ -291,7 +307,7 @@
 				2FDF0E1C23AC6867001648D5 /* User.swift */,
 				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
 				2FDF0E6323B452A8001648D5 /* Friend.swift */,
-				2F91FE7023DBD5A10060A1FF /* Game.swift */,
+				2F91FE7023DBD5A10060A1FF /* Invitation.swift */,
 				2F91FE7223DBD5B20060A1FF /* DataBase */,
 			);
 			path = Model;
@@ -506,13 +522,13 @@
 				2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
-				2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */,
+				2F91FE5A23D6A6850060A1FF /* DBInvitation.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
 				2F91FE7923E0EED80060A1FF /* MakeTeamViewController.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,
 				2F91FE7C23E1032D0060A1FF /* MakeTeamTableViewCell.swift in Sources */,
-				2F91FE7123DBD5A10060A1FF /* Game.swift in Sources */,
+				2F91FE7123DBD5A10060A1FF /* Invitation.swift in Sources */,
 				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
 				2FDF0E6223B4515C001648D5 /* InviteFriendsViewModel.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  DBGame.swift
+//  DBInvitation.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2020-01-20.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct DBGame {
+struct DBInvitation {
     
-    let dbPlayers: [DBPlayer]
-    let dbTeamStatus: DBTeamStatus
     let adminUser: String
+    let status: String
+    let dbPlayers: [DBPlayer]
     
-    init(players: [DBPlayer], teamStatus: DBTeamStatus, adminUser: String) {
+    init(players: [DBPlayer], adminUser: String, status: String) {
         self.dbPlayers = players
-        self.dbTeamStatus = teamStatus
         self.adminUser = adminUser
+        self.status = status
     }
     
     func toAnyObject() -> Any {
@@ -28,9 +28,9 @@ struct DBGame {
         }
         
         return [
+            "status": status,
             "adminUser": adminUser,
-            "member": dbPlayer,
-            "teamStatus": dbTeamStatus.toAnyObject()
+            "player": dbPlayer
         ]
     }
 }
@@ -38,13 +38,11 @@ struct DBGame {
 struct DBPlayer {
     let userId: String
     let token: String
-    let team: String?
     let status: String
     
-    init (userId: String ,token: String, team: String, status: String) {
+    init (userId: String ,token: String, status: String) {
         self.userId = userId
         self.token = token
-        self.team = team
         self.status = status
     }
     
@@ -52,25 +50,7 @@ struct DBPlayer {
         
         return [
             "token": token,
-            "team": team,
             "status": status
-        ]
-    }
-}
-
-struct DBTeamStatus {
-    let pTeamLeft: Int?
-    let rTeamLeft: Int?
-    
-    init(pTeamLeft: Int, rTeamLeft: Int) {
-        self.pTeamLeft = pTeamLeft
-        self.rTeamLeft = rTeamLeft
-    }
-    
-    func toAnyObject() -> Any {
-        return [
-            "pTeamLeft": pTeamLeft,
-            "rTeamLeft": rTeamLeft
         ]
     }
 }
