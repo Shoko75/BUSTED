@@ -49,6 +49,7 @@ class AddPlayerViewController: UIViewController {
         if segue.identifier == "showWaitingPlayer" {
             if let waitingPlayerViewController = segue.destination as? WaitingPlayerViewController {
                 waitingPlayerViewController.gameID = self.gameID
+                waitingPlayerViewController.admin = true
             }
         }
     }
@@ -83,6 +84,7 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: UICollectionViewDelegate
 extension AddPlayerViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WaitingPlayerViewController: UIViewController {
     
@@ -16,18 +17,67 @@ class WaitingPlayerViewController: UIViewController {
 
     fileprivate var waitingPlayerViewModel: WaitingPlayerViewModel!
     var gameID: String?
+    var admin: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // initial setting
+        startButton.isEnabled = false
+        
         waitingPlayerViewModel = WaitingPlayerViewModel()
         waitingPlayerViewModel.waitingPlayerDelegate = self
-        if let gameID = gameID {
-            waitingPlayerViewModel.observeGameInfo(gameID: gameID)
+        
+        guard let gameID = gameID else { return }
+        waitingPlayerViewModel.gameID = gameID
+        
+        waitingPlayerViewModel.observeGameInfo()
+        
+        // TODO: error handling for players
+        if admin == false {
+            waitingPlayerViewModel.observeRemoveGame()
         }
         
     }
+    
+    func controlStartButton(){
+        let countPlayers = waitingPlayerViewModel.playerList.count
+        var cntAnswer = 0
+        var cntJoin = 0
+        
+        for player in waitingPlayerViewModel.playerList {
+            if player.status != "Waiting" {
+                cntAnswer += 1
+                
+                if player.status == "Joined" {
+                    cntJoin += 1
+                }
+                
+                if countPlayers == cntAnswer, cntJoin >= 1 {
+                    startButton.isEnabled = true
+                }
+            }
+        }
+    }
 
+    @IBAction func pressedCancell(_ sender: Any) {
+        waitingPlayerViewModel.deleteGame()
+    }
+    @IBAction func pressedStart(_ sender: Any) {
+        waitingPlayerViewModel.createPassData()
+        self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showMakeTeam" {
+            if let makeTeamViewController = segue.destination as? MakeTeamViewController {
+                makeTeamViewController.passedData = waitingPlayerViewModel.playerList
+            }
+        }
+        
+    }
 }
 
 // MARK: UITableViewDelegate
@@ -48,5 +98,6 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
 extension WaitingPlayerViewController: WaitingPlayerDelegate {
     func didfetchData() {
         self.tableView.reloadData()
+        self.controlStartButton()
     }
 }

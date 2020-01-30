@@ -81,6 +81,9 @@
                                         <state key="normal" title="Cancell">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedCancell:" destination="Jck-Hh-Wal" eventType="touchUpInside" id="ZT8-Lv-8ys"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-P2-ED3">
                                         <rect key="frame" x="211" y="0.0" width="203" height="74"/>
@@ -88,6 +91,9 @@
                                         <state key="normal" title="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedStart:" destination="Jck-Hh-Wal" eventType="touchUpInside" id="eY4-J4-rxf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -109,11 +115,22 @@
                         <outlet property="cancelButton" destination="zXa-Yi-h6v" id="ewN-jP-Wgs"/>
                         <outlet property="startButton" destination="q1W-P2-ED3" id="Pl8-te-65P"/>
                         <outlet property="tableView" destination="XfB-jS-v6t" id="hO3-A8-nIt"/>
+                        <segue destination="NUX-Wr-mXn" kind="show" identifier="showMakeTeam" id="nzO-IH-m1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jT-uz-jrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-110.14492753623189" y="77.678571428571431"/>
+        </scene>
+        <!--MakeTeam-->
+        <scene sceneID="sky-F4-Vql">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MakeTeam" referencedIdentifier="MakeTeam" id="NUX-Wr-mXn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2bq-rK-qFZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWV-oS-gsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="66"/>
         </scene>
     </scenes>
 </document>

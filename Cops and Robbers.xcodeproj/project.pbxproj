@@ -18,6 +18,10 @@
 		2F91FE6F23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */; };
 		2F91FE7123DBD5A10060A1FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7023DBD5A10060A1FF /* Game.swift */; };
 		2F91FE7423DBDD1A0060A1FF /* WaitingPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */; };
+		2F91FE7723E0EB260060A1FF /* MakeTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE7623E0EB260060A1FF /* MakeTeam.storyboard */; };
+		2F91FE7923E0EED80060A1FF /* MakeTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7823E0EED80060A1FF /* MakeTeamViewController.swift */; };
+		2F91FE7C23E1032D0060A1FF /* MakeTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7B23E1032D0060A1FF /* MakeTeamTableViewCell.swift */; };
+		2F91FE7E23E10E7A0060A1FF /* MakeTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7D23E10E7A0060A1FF /* MakeTeamViewModel.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -68,6 +72,10 @@
 		2F91FE6E23DBD3700060A1FF /* WaitingPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		2F91FE7023DBD5A10060A1FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerViewModel.swift; sourceTree = "<group>"; };
+		2F91FE7623E0EB260060A1FF /* MakeTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeTeam.storyboard; sourceTree = "<group>"; };
+		2F91FE7823E0EED80060A1FF /* MakeTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamViewController.swift; sourceTree = "<group>"; };
+		2F91FE7B23E1032D0060A1FF /* MakeTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamTableViewCell.swift; sourceTree = "<group>"; };
+		2F91FE7D23E10E7A0060A1FF /* MakeTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTeamViewModel.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 			children = (
 				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
 				2F91FE5723D6807B0060A1FF /* WaitingPlayer.storyboard */,
+				2F91FE7623E0EB260060A1FF /* MakeTeam.storyboard */,
 			);
 			path = "Create Field";
 			sourceTree = "<group>";
@@ -149,6 +158,7 @@
 			children = (
 				2F91FE6B23DBD1E80060A1FF /* Waiting Player */,
 				2F91FE6623DBD1610060A1FF /* Add Player */,
+				2F91FE7A23E0EEE60060A1FF /* Make Team */,
 			);
 			path = "Create Field";
 			sourceTree = "<group>";
@@ -158,6 +168,7 @@
 			children = (
 				2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */,
 				2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */,
+				2F91FE7D23E10E7A0060A1FF /* MakeTeamViewModel.swift */,
 			);
 			path = "Create Field";
 			sourceTree = "<group>";
@@ -180,6 +191,15 @@
 				2F91FE5923D6A6850060A1FF /* DBGame.swift */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		2F91FE7A23E0EEE60060A1FF /* Make Team */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE7823E0EED80060A1FF /* MakeTeamViewController.swift */,
+				2F91FE7B23E1032D0060A1FF /* MakeTeamTableViewCell.swift */,
+			);
+			path = "Make Team";
 			sourceTree = "<group>";
 		};
 		2FB47DDC23A0923300AA9216 = {
@@ -415,6 +435,7 @@
 				2FDF0E6C23C9843D001648D5 /* FriendsList.storyboard in Resources */,
 				2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */,
 				2FDF0E1623A99D3C001648D5 /* RegisterAccount.storyboard in Resources */,
+				2F91FE7723E0EB260060A1FF /* MakeTeam.storyboard in Resources */,
 				2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,8 +500,10 @@
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
 				2F91FE5A23D6A6850060A1FF /* DBGame.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,
+				2F91FE7923E0EED80060A1FF /* MakeTeamViewController.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,
+				2F91FE7C23E1032D0060A1FF /* MakeTeamTableViewCell.swift in Sources */,
 				2F91FE7123DBD5A10060A1FF /* Game.swift in Sources */,
 				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
@@ -497,6 +520,7 @@
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,
+				2F91FE7E23E10E7A0060A1FF /* MakeTeamViewModel.swift in Sources */,
 				2FDF0E7D23CB4003001648D5 /* AddPlayerViewController.swift in Sources */,
 				2FDF0E7F23CB4028001648D5 /* AddPlayerTableViewCell.swift in Sources */,
 				2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */,
