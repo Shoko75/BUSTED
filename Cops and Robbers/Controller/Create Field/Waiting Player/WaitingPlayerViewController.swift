@@ -55,6 +55,7 @@ class WaitingPlayerViewController: UIViewController {
                 
                 if countPlayers == cntAnswer, cntJoin >= 1 {
                     startButton.isEnabled = true
+                    waitingPlayerViewModel.stopObserve()
                 }
             }
         }
@@ -65,7 +66,6 @@ class WaitingPlayerViewController: UIViewController {
     }
     @IBAction func pressedStart(_ sender: Any) {
         waitingPlayerViewModel.createPassData()
-        self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
     }
     
     
@@ -96,6 +96,10 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 extension WaitingPlayerViewController: WaitingPlayerDelegate {
+    func didCreatePassData() {
+        self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
+    }
+    
     func didfetchData() {
         self.tableView.reloadData()
         self.controlStartButton()

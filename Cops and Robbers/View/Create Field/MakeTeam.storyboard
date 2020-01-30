@@ -15,8 +15,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-R0-E7o">
+                                <rect key="frame" x="0.0" y="44" width="414" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRR-EZ-0xn">
+                                        <rect key="frame" x="0.0" y="0.0" width="204.5" height="41"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robbers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aJ-TU-8Im">
+                                        <rect key="frame" x="209.5" y="0.0" width="204.5" height="41"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-xl-pXS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="makeTeamTableViewCell" id="4hI-8r-fXT" customClass="MakeTeamTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
@@ -106,20 +125,36 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rWj-xl-pXS" firstAttribute="top" secondItem="o3N-R0-E7o" secondAttribute="bottom" constant="8" symbolic="YES" id="06N-JX-l4k"/>
+                            <constraint firstItem="o3N-R0-E7o" firstAttribute="height" secondItem="YVG-Qg-O2f" secondAttribute="height" multiplier="0.05" id="1KR-dU-hVM"/>
+                            <constraint firstItem="o3N-R0-E7o" firstAttribute="width" secondItem="YVG-Qg-O2f" secondAttribute="width" id="4Cf-yE-WVL"/>
                             <constraint firstItem="rWj-xl-pXS" firstAttribute="leading" secondItem="YVG-Qg-O2f" secondAttribute="leading" id="JNX-es-upQ"/>
                             <constraint firstItem="YVG-Qg-O2f" firstAttribute="trailing" secondItem="rWj-xl-pXS" secondAttribute="trailing" id="Lp5-IJ-Fvy"/>
                             <constraint firstItem="YVG-Qg-O2f" firstAttribute="bottom" secondItem="rWj-xl-pXS" secondAttribute="bottom" id="Mu4-lJ-CJk"/>
-                            <constraint firstItem="rWj-xl-pXS" firstAttribute="top" secondItem="YVG-Qg-O2f" secondAttribute="top" id="vaR-0l-M8Y"/>
+                            <constraint firstItem="o3N-R0-E7o" firstAttribute="top" secondItem="YVG-Qg-O2f" secondAttribute="top" id="SQH-p1-zjq"/>
+                            <constraint firstItem="o3N-R0-E7o" firstAttribute="leading" secondItem="YVG-Qg-O2f" secondAttribute="leading" id="auP-Uq-0Y8"/>
+                            <constraint firstItem="YVG-Qg-O2f" firstAttribute="trailing" secondItem="o3N-R0-E7o" secondAttribute="trailing" id="htS-O4-cDp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVG-Qg-O2f"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="rWj-xl-pXS" id="mWF-6n-gEw"/>
+                        <segue destination="ZBx-zx-2bL" kind="show" identifier="showLoadGame" id="fLA-Bl-56H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feV-ei-lTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-428.98550724637687" y="81.696428571428569"/>
+        </scene>
+        <!--LoadGame-->
+        <scene sceneID="zhf-8v-7ab">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LoadGame" storyboardName="LoadGame" referencedIdentifier="LoadGame" id="ZBx-zx-2bL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7AJ-C1-tuZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAJ-fA-XTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157" y="78"/>
         </scene>
     </scenes>
 </document>

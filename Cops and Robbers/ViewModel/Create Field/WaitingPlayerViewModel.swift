@@ -11,6 +11,7 @@ import Firebase
 
 protocol WaitingPlayerDelegate {
     func didfetchData()
+    func didCreatePassData()
 }
 
 class WaitingPlayerViewModel {
@@ -81,6 +82,7 @@ class WaitingPlayerViewModel {
                 let adminUser = Player(playerID: friend.uid, token: friend.token, status: "Joined", team: "", user: friend)
                 self.updateGamePlayer(updateInfo: adminUser)
                 self.playerList.append(adminUser)
+                self.waitingPlayerDelegate?.didCreatePassData()
             }
         })
     }
@@ -91,6 +93,7 @@ class WaitingPlayerViewModel {
         
         let request = gameRef.child(gameID!).child("member").child(adminData.userId)
         request.setValue(adminData.toAnyObject())
+        
     }
     
     func deleteGame(){
@@ -101,6 +104,10 @@ class WaitingPlayerViewModel {
         gameRef.child(gameID!).observe(.childRemoved) { (snapshot) in
             print(snapshot)
         }
+    }
+    
+    func stopObserve() {
+        gameRef.child(gameID!).removeAllObservers()
     }
     
 }

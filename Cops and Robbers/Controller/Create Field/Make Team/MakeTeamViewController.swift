@@ -56,10 +56,17 @@ extension MakeTeamViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
+    
 }
 
 extension MakeTeamViewController: MakeTeamDelegate {
     func didFinshCreateTeam() {
-        self.tableView.reloadData()
+        
+        self.tableView.performBatchUpdates({
+            self.tableView.reloadData()
+        }) { (finished) in
+            sleep(5)
+            self.performSegue(withIdentifier: "showLoadGame", sender: nil)
+        }
     }
 }
