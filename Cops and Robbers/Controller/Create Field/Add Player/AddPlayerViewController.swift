@@ -42,14 +42,14 @@ class AddPlayerViewController: UIViewController {
     
     func prepareInvitation() {
         self.invitationID = self.addPlayerViewModel.registerInvitation()
-        self.performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
+        self.performSegue(withIdentifier: "showWaitingPlayerAdmin", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showWaitingPlayer" {
-            if let waitingPlayerViewController = segue.destination as? WaitingPlayerViewController {
-                waitingPlayerViewController.invitationID = self.invitationID
-                waitingPlayerViewController.admin = true
+        if segue.identifier == "showWaitingPlayerAdmin" {
+            if let waitingPlayerAdminViewController = segue.destination as? WaitingPlayerAdminViewController {
+                waitingPlayerAdminViewController.invitationID = self.invitationID
+                waitingPlayerAdminViewController.admin = true
             }
         }
     }

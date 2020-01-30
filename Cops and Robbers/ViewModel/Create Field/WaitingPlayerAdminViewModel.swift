@@ -1,5 +1,5 @@
 //
-//  WaitingPlayerViewModel.swift
+//  WaitingPlayerAdminViewModel.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2020-01-24.
@@ -9,19 +9,19 @@
 import Foundation
 import Firebase
 
-protocol WaitingPlayerDelegate {
+protocol WaitingPlayerAdminDelegate {
     func didfetchData()
     func didCreatePassData()
 }
 
-class WaitingPlayerViewModel {
+class WaitingPlayerAdminViewModel {
     
     let invitationRef = Database.database().reference(withPath: "invitation")
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     let userID = Auth.auth().currentUser?.uid
     
     var playerList = [Player]()
-    var waitingPlayerDelegate: WaitingPlayerDelegate?
+    var waitingPlayerAdminDelegate: WaitingPlayerAdminDelegate?
     var invitationID: String?
     
     func observeInvitation() {
@@ -54,7 +54,7 @@ class WaitingPlayerViewModel {
                 }
                 if cnt == players.count {
                     self.playerList = temPlayer
-                    self.waitingPlayerDelegate?.didfetchData()
+                    self.waitingPlayerAdminDelegate?.didfetchData()
                 }
             })
         }
@@ -81,7 +81,7 @@ class WaitingPlayerViewModel {
                 self.updateInvitationPlayer(updateInfo: adminUser)
                 self.playerList.append(adminUser)
                 self.updateInvitationStatus()
-                self.waitingPlayerDelegate?.didCreatePassData()
+                self.waitingPlayerAdminDelegate?.didCreatePassData()
             }
         })
     }

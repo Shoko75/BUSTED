@@ -1,5 +1,5 @@
 //
-//  WaitingPlayerTableViewCell.swift
+//  WaitingPlayerAdminTableViewCell.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2020-01-24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WaitingPlayerTableViewCell: UITableViewCell {
+class WaitingPlayerAdminTableViewCell: UITableViewCell {
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!

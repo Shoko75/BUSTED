@@ -1,5 +1,5 @@
 //
-//  WaitingPlayerViewController.swift
+//  WaitingPlayerAdminViewController.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2020-01-24.
@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-class WaitingPlayerViewController: UIViewController {
+class WaitingPlayerAdminViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
 
-    fileprivate var waitingPlayerViewModel: WaitingPlayerViewModel!
+    fileprivate var waitingPlayerAdminViewModel: WaitingPlayerAdminViewModel!
     var invitationID: String?
     var admin: Bool?
     
@@ -25,22 +25,22 @@ class WaitingPlayerViewController: UIViewController {
         // initial setting
         startButton.isEnabled = false
         
-        waitingPlayerViewModel = WaitingPlayerViewModel()
-        waitingPlayerViewModel.waitingPlayerDelegate = self
+        waitingPlayerAdminViewModel = WaitingPlayerAdminViewModel()
+        waitingPlayerAdminViewModel.waitingPlayerAdminDelegate = self
         
         guard let invitationID = invitationID else { return }
-        waitingPlayerViewModel.invitationID = invitationID
+        waitingPlayerAdminViewModel.invitationID = invitationID
         
-        waitingPlayerViewModel.observeInvitation()
+        waitingPlayerAdminViewModel.observeInvitation()
         
     }
     
     func controlStartButton(){
-        let countPlayers = waitingPlayerViewModel.playerList.count
+        let countPlayers = waitingPlayerAdminViewModel.playerList.count
         var cntAnswer = 0
         var cntJoin = 0
         
-        for player in waitingPlayerViewModel.playerList {
+        for player in waitingPlayerAdminViewModel.playerList {
             if player.status != "Waiting" {
                 cntAnswer += 1
                 
@@ -50,18 +50,18 @@ class WaitingPlayerViewController: UIViewController {
                 
                 if countPlayers == cntAnswer, cntJoin >= 1 {
                     startButton.isEnabled = true
-                    waitingPlayerViewModel.stopObserve()
+                    waitingPlayerAdminViewModel.stopObserve()
                 }
             }
         }
     }
 
     @IBAction func pressedCancell(_ sender: Any) {
-        waitingPlayerViewModel.deleteInvitation()
+        waitingPlayerAdminViewModel.deleteInvitation()
         self.navigationController?.popToRootViewController(animated: false)
     }
     @IBAction func pressedStart(_ sender: Any) {
-        waitingPlayerViewModel.createPassData()
+        waitingPlayerAdminViewModel.createPassData()
     }
     
     
@@ -69,7 +69,7 @@ class WaitingPlayerViewController: UIViewController {
         
         if segue.identifier == "showMakeTeam" {
             if let makeTeamViewController = segue.destination as? MakeTeamViewController {
-                makeTeamViewController.passedData = waitingPlayerViewModel.playerList
+                makeTeamViewController.passedData = waitingPlayerAdminViewModel.playerList
             }
         }
         
@@ -77,21 +77,21 @@ class WaitingPlayerViewController: UIViewController {
 }
 
 // MARK: UITableViewDelegate
-extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSource {
+extension WaitingPlayerAdminViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return waitingPlayerViewModel.playerList.count
+        return waitingPlayerAdminViewModel.playerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerTableCell", for: indexPath) as! WaitingPlayerTableViewCell
-        let values = waitingPlayerViewModel.playerList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerAdminTableCell", for: indexPath) as! WaitingPlayerAdminTableViewCell
+        let values = waitingPlayerAdminViewModel.playerList[indexPath.row]
         cell.setCellValues(cellValues: values)
         return cell
     }
 }
 
-extension WaitingPlayerViewController: WaitingPlayerDelegate {
+extension WaitingPlayerAdminViewController: WaitingPlayerAdminDelegate {
     func didCreatePassData() {
         self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
     }

@@ -168,17 +168,17 @@
                     <connections>
                         <outlet property="collectionView" destination="jzc-8g-ghL" id="wK5-mp-0aJ"/>
                         <outlet property="tableView" destination="G3U-7p-qUv" id="PN5-20-Qdm"/>
-                        <segue destination="D2h-FT-j9F" kind="show" identifier="showWaitingPlayer" id="N4R-AY-dqu"/>
+                        <segue destination="D2h-FT-j9F" kind="show" identifier="showWaitingPlayerAdmin" id="N4R-AY-dqu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFw-9B-RYE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-94.20289855072464" y="114.50892857142857"/>
         </scene>
-        <!--WaitingPlayer-->
+        <!--WaitingPlayerAdmin-->
         <scene sceneID="eVO-Cq-dEq">
             <objects>
-                <viewControllerPlaceholder storyboardName="WaitingPlayer" referencedIdentifier="WaitingPlayer" id="D2h-FT-j9F" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WaitingPlayerAdmin" referencedIdentifier="WaitingPlayerAdmin" id="D2h-FT-j9F" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="64n-cH-w2A"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zLi-KM-xZ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
