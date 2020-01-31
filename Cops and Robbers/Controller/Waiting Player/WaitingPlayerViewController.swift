@@ -53,5 +53,4 @@ extension WaitingPlayerViewController: WaitingPlayerDelegate {
         self.tableView.reloadData()
     }
     
-    
 }

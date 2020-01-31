@@ -10,13 +10,23 @@ import UIKit
 import Firebase
 
 class MenuViewController: UIViewController {
+    
+    @IBOutlet weak var joinFieldButton: UIButton!
+    
     var window: UIWindow?
     var invitationID: String?
+    var menuViewModel: MenuViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        menuViewModel = MenuViewModel()
+        menuViewModel.menuDelegate = self
+        joinFieldButton.isEnabled = menuViewModel.flgJoinField
+        
         showSignOut()
+        menuViewModel.checkInvitationStatus()
         
     }
     
@@ -36,4 +46,21 @@ class MenuViewController: UIViewController {
         }
     }
     
+    @IBAction func pressedCreateField(_ sender: Any) {
+        performSegue(withIdentifier: "showAddPlayer", sender: nil)
+    }
+    
+    @IBAction func pressedFriendsList(_ sender: Any) {
+        performSegue(withIdentifier: "showFriendsList", sender: nil)
+    }
+    
+    @IBAction func pressedJoinField(_ sender: Any) {
+        performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
+    }
+}
+
+extension MenuViewController: MenuDelegate {
+    func didFinishcheckInvitationStatus() {
+        joinFieldButton.isEnabled = self.menuViewModel.flgJoinField
+    }
 }

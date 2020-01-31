@@ -33,7 +33,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="n8I-S2-NjF" kind="show" id="EPg-dX-uAo"/>
+                                            <action selector="pressedCreateField:" destination="F5j-15-Dbw" eventType="touchUpInside" id="7dB-Nl-6PU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-oA-nrT">
@@ -44,7 +44,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="dia-OK-JS7" kind="show" id="lmk-DZ-2gl"/>
+                                            <action selector="pressedFriendsList:" destination="F5j-15-Dbw" eventType="touchUpInside" id="E3d-x9-WaR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE0-hB-sdH">
@@ -55,7 +55,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="zUI-Ek-lr6" kind="show" id="mek-bj-mji"/>
+                                            <action selector="pressedJoinField:" destination="F5j-15-Dbw" eventType="touchUpInside" id="Q1w-Vv-Nps"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -70,6 +70,12 @@
                         <viewLayoutGuide key="safeArea" id="uCJ-rb-r2e"/>
                     </view>
                     <navigationItem key="navigationItem" id="XQC-px-4w6"/>
+                    <connections>
+                        <outlet property="joinFieldButton" destination="mE0-hB-sdH" id="aqp-Ji-fHe"/>
+                        <segue destination="zUI-Ek-lr6" kind="show" identifier="showWaitingPlayer" id="TAT-XZ-wym"/>
+                        <segue destination="dia-OK-JS7" kind="show" identifier="showFriendsList" id="KfF-DC-5Og"/>
+                        <segue destination="n8I-S2-NjF" kind="show" identifier="showAddPlayer" id="ZWp-Gk-zId"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GZ-Qw-aVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

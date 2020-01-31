@@ -37,5 +37,4 @@ struct Friend {
         self.token = token
     }
     
-    
 }
