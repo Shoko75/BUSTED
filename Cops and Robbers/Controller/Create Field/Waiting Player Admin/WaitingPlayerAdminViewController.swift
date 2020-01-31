@@ -15,9 +15,8 @@ class WaitingPlayerAdminViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
 
-    fileprivate var waitingPlayerAdminViewModel: WaitingPlayerAdminViewModel!
+    fileprivate var waitingPlayerViewModel: WaitingPlayerViewModel!
     var invitationID: String?
-    var admin: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,22 +24,22 @@ class WaitingPlayerAdminViewController: UIViewController {
         // initial setting
         startButton.isEnabled = false
         
-        waitingPlayerAdminViewModel = WaitingPlayerAdminViewModel()
-        waitingPlayerAdminViewModel.waitingPlayerAdminDelegate = self
+        waitingPlayerViewModel = WaitingPlayerViewModel()
+        waitingPlayerViewModel.waitingPlayerDelegate = self
         
         guard let invitationID = invitationID else { return }
-        waitingPlayerAdminViewModel.invitationID = invitationID
+        waitingPlayerViewModel.invitationID = invitationID
         
-        waitingPlayerAdminViewModel.observeInvitation()
+        waitingPlayerViewModel.observeInvitation()
         
     }
     
     func controlStartButton(){
-        let countPlayers = waitingPlayerAdminViewModel.playerList.count
+        let countPlayers = waitingPlayerViewModel.playerList.count
         var cntAnswer = 0
         var cntJoin = 0
         
-        for player in waitingPlayerAdminViewModel.playerList {
+        for player in waitingPlayerViewModel.playerList {
             if player.status != "Waiting" {
                 cntAnswer += 1
                 
@@ -50,18 +49,18 @@ class WaitingPlayerAdminViewController: UIViewController {
                 
                 if countPlayers == cntAnswer, cntJoin >= 1 {
                     startButton.isEnabled = true
-                    waitingPlayerAdminViewModel.stopObserve()
+                    waitingPlayerViewModel.stopObserve()
                 }
             }
         }
     }
 
     @IBAction func pressedCancell(_ sender: Any) {
-        waitingPlayerAdminViewModel.deleteInvitation()
+        waitingPlayerViewModel.deleteInvitation()
         self.navigationController?.popToRootViewController(animated: false)
     }
     @IBAction func pressedStart(_ sender: Any) {
-        waitingPlayerAdminViewModel.createPassData()
+        waitingPlayerViewModel.createPassData()
     }
     
     
@@ -69,7 +68,7 @@ class WaitingPlayerAdminViewController: UIViewController {
         
         if segue.identifier == "showMakeTeam" {
             if let makeTeamViewController = segue.destination as? MakeTeamViewController {
-                makeTeamViewController.passedData = waitingPlayerAdminViewModel.playerList
+                makeTeamViewController.passedData = waitingPlayerViewModel.playerList
             }
         }
         
@@ -79,19 +78,19 @@ class WaitingPlayerAdminViewController: UIViewController {
 // MARK: UITableViewDelegate
 extension WaitingPlayerAdminViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return waitingPlayerAdminViewModel.playerList.count
+        return waitingPlayerViewModel.playerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerAdminTableCell", for: indexPath) as! WaitingPlayerAdminTableViewCell
-        let values = waitingPlayerAdminViewModel.playerList[indexPath.row]
+        let values = waitingPlayerViewModel.playerList[indexPath.row]
         cell.setCellValues(cellValues: values)
         return cell
     }
 }
 
-extension WaitingPlayerAdminViewController: WaitingPlayerAdminDelegate {
+extension WaitingPlayerAdminViewController: WaitingPlayerDelegate {
     func didCreatePassData() {
         self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
     }

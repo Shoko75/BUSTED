@@ -15,7 +15,7 @@ class InviteFriendsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         invitefriendsViewModel = InviteFriendsViewModel()
         invitefriendsViewModel.inviteFriendsDelegate = self
         invitefriendsViewModel.fetchFriendReqFromUserMyself()

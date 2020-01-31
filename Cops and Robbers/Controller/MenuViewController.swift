@@ -11,11 +11,13 @@ import Firebase
 
 class MenuViewController: UIViewController {
     var window: UIWindow?
-
+    var invitationID: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         showSignOut()
+        
     }
     
     func showSignOut() {

@@ -117,42 +117,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("3 Message ID: \(messageID)")
         }
         
-        if let gameID = userInfo["gameID"] {
-            self.gameID = gameID as! String
-        }
-        
         completionHandler([.alert])
     }
     
     // Setting for when the user tapped the notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        defer { completionHandler() }
-        
-        
-        let identity = response.notification.request.content.categoryIdentifier
-        guard identity == categoryButtonsId,
-            let action = ActionButtonsId(rawValue: response.actionIdentifier) else { return }
-        
-        if Auth.auth().currentUser != nil {
-            let gameRef = Database.database().reference(withPath: "game")
-            let userID = Auth.auth().currentUser?.uid
-            
-            switch action {
-            case .join:
-                let updateStatus = ["status": "Joined"]
-                
-                gameRef.child(gameID).child("member").child(userID!).updateChildValues(updateStatus)
-                // Todo: Do it later open window
-            case .decline:
-                let updateStatus = ["status": "Declined"]
-                
-                gameRef.child(gameID).child("member").child(userID!).updateChildValues(updateStatus)
-                break
-            }
-        } else {
-            // Todo: Do it later open window
-        }
-        
         
        // let identifier = response.notification.request.identifier
     }

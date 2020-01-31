@@ -21,7 +21,6 @@ class FriendsListViewController: UIViewController {
         friendsListViewModel.fetchFriendReq()
         friendsListViewModel.fetchFriends()
     }
-    
 }
 
 extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource {

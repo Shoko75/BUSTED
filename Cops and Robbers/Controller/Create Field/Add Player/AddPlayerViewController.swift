@@ -30,18 +30,12 @@ class AddPlayerViewController: UIViewController {
     @objc func pressedNext() {
         print("Pressed Next!")
         
-        let alert = UIAlertController(title: "Send invitations", message: "Are you sure to send invitations?", preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-            self.prepareInvitation()
-        }))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-
-        self.present(alert, animated: true)
+        self.addPlayerViewModel.checkInvitation()
     }
     
     func prepareInvitation() {
         self.invitationID = self.addPlayerViewModel.registerInvitation()
+        self.addPlayerViewModel.updateUserPlayTeam(invitationID: self.invitationID!)
         self.performSegue(withIdentifier: "showWaitingPlayerAdmin", sender: nil)
     }
     
@@ -49,7 +43,6 @@ class AddPlayerViewController: UIViewController {
         if segue.identifier == "showWaitingPlayerAdmin" {
             if let waitingPlayerAdminViewController = segue.destination as? WaitingPlayerAdminViewController {
                 waitingPlayerAdminViewController.invitationID = self.invitationID
-                waitingPlayerAdminViewController.admin = true
             }
         }
     }
@@ -109,6 +102,26 @@ extension AddPlayerViewController: UICollectionViewDelegateFlowLayout, UICollect
 
 // MARK: AddPlayerDelegate
 extension AddPlayerViewController: AddPlayerDelegate {
+    func didFinishCheckInvitation() {
+        if self.addPlayerViewModel.cancelPlayer != "" {
+        
+            let playerName = self.addPlayerViewModel.cancelPlayer
+            showAlert(title: "Can't choose this player" , message: "\(playerName) is already playing in the different team. Please choose other people.")
+            
+        
+        } else {
+        
+            let alert = UIAlertController(title: "Send invitations", message: "Are you sure to send invitations?", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.prepareInvitation()
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+            self.present(alert, animated: true)
+        }
+    }
+    
     
     func didFinishFetchData() {
         self.tableView.reloadData()

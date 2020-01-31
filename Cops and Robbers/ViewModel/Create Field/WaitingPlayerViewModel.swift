@@ -1,5 +1,5 @@
 //
-//  WaitingPlayerAdminViewModel.swift
+//  WaitingPlayerViewModel.swift
 //  Cops and Robbers
 //
 //  Created by Shoko Hashimoto on 2020-01-24.
@@ -9,19 +9,19 @@
 import Foundation
 import Firebase
 
-protocol WaitingPlayerAdminDelegate {
+protocol WaitingPlayerDelegate {
     func didfetchData()
     func didCreatePassData()
 }
 
-class WaitingPlayerAdminViewModel {
+class WaitingPlayerViewModel {
     
     let invitationRef = Database.database().reference(withPath: "invitation")
     let userInfoRef = Database.database().reference(withPath: "user_Info")
     let userID = Auth.auth().currentUser?.uid
     
     var playerList = [Player]()
-    var waitingPlayerAdminDelegate: WaitingPlayerAdminDelegate?
+    var waitingPlayerDelegate: WaitingPlayerDelegate?
     var invitationID: String?
     
     func observeInvitation() {
@@ -54,7 +54,7 @@ class WaitingPlayerAdminViewModel {
                 }
                 if cnt == players.count {
                     self.playerList = temPlayer
-                    self.waitingPlayerAdminDelegate?.didfetchData()
+                    self.waitingPlayerDelegate?.didfetchData()
                 }
             })
         }
@@ -81,7 +81,7 @@ class WaitingPlayerAdminViewModel {
                 self.updateInvitationPlayer(updateInfo: adminUser)
                 self.playerList.append(adminUser)
                 self.updateInvitationStatus()
-                self.waitingPlayerAdminDelegate?.didCreatePassData()
+                self.waitingPlayerDelegate?.didCreatePassData()
             }
         })
     }
@@ -102,7 +102,15 @@ class WaitingPlayerAdminViewModel {
     }
     
     func deleteInvitation(){
+        // Invitation
         invitationRef.child(invitationID!).removeValue()
+        
+        let invitationID = ["playTeam": ""]
+        
+        // User
+        for player in playerList {
+            userInfoRef.child(player.user!.uid).updateChildValues(invitationID)
+        }
     }
     
     func stopObserve() {

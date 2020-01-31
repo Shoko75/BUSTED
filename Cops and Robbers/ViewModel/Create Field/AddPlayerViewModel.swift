@@ -11,6 +11,7 @@ import Firebase
 
 protocol AddPlayerDelegate {
     func didFinishFetchData()
+    func didFinishCheckInvitation()
 }
 
 class AddPlayerViewModel {
@@ -23,6 +24,7 @@ class AddPlayerViewModel {
     var friendList = [Friend]()
     var playerList = [Friend]()
     var addPlayerDelegate: AddPlayerDelegate?
+    var cancelPlayer = ""
     
     func fetchFriends(){
         var friendsID = [String]()
@@ -68,6 +70,39 @@ class AddPlayerViewModel {
         request.setValue(game.toAnyObject())
         
         return request.key!
+    }
+    
+    func updateUserPlayTeam(invitationID: String) {
+        
+        let invitationID = ["playTeam": invitationID]
+        
+        for player in playerList {
+            userInfoRef.child(player.uid).updateChildValues(invitationID)
+        }
+    }
+    
+    func checkInvitation() {
+        
+        var cnt = 0
+        cancelPlayer = ""
+        
+        for player in playerList {
+            cnt += 1
+            userInfoRef.child(player.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if let value = snapshot.value as? [String: AnyObject],
+                    let playTeam = value["playTeam"] as? String,
+                    let userName = value["userName"] as? String {
+                    
+                    if playTeam != "" {
+                        self.cancelPlayer = userName
+                    }
+                }
+                if cnt == self.playerList.count {
+                    self.addPlayerDelegate?.didFinishCheckInvitation()
+                }
+            })
+        }
     }
 }
 

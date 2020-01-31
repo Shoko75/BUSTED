@@ -54,6 +54,9 @@
                                         <state key="normal" title="Join the Field">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="zUI-Ek-lr6" kind="show" id="mek-bj-mji"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -91,6 +94,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQb-09-mx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-172" y="-47"/>
+        </scene>
+        <!--WaitingPlayer-->
+        <scene sceneID="9Cv-9Y-utM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WaitingPlayer" referencedIdentifier="WaitingPlayer" id="zUI-Ek-lr6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Al9-LZ-MUw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYi-H6-7Uq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146" y="101"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="Qng-oq-8Ok">
