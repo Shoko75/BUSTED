@@ -73,7 +73,6 @@ class WaitingPlayerAdminViewController: UIViewController {
                 loadGameViewController.gameID = invitationID
             }
         }
-        
     }
 }
 

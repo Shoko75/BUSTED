@@ -25,25 +25,34 @@ class LoadGameViewController: UIViewController {
         
         loadGameViewModel = LoadGameViewModel()
         loadGameViewModel.loadGameDelegate = self
-        loadGameViewModel.observeOccupiedMajor()
         
-        // Location Manager setting
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        
-        if CLLocationManager.authorizationStatus() == .authorizedAlways ||
-            CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+        if flgAdmin {
             
-            activateLocationServices()
+            // get OccupiedMajor data
+            loadGameViewModel.observeOccupiedMajor()
+            
+            // Location Manager setting
+            locationManager = CLLocationManager()
+            locationManager?.delegate = self
+            locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            
+            if CLLocationManager.authorizationStatus() == .authorizedAlways ||
+                CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+                
+                activateLocationServices()
+            } else {
+                locationManager?.requestWhenInUseAuthorization()
+            }
+            
+            // create game after 5 sec
+            guard let gameID = gameID else { return }
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (timer) in
+                self.loadGameViewModel.prepareForGame(currentLoction: self.feildLocation!, playersInfo: self.passedData, gameID: gameID)
+            }
+            
         } else {
-            locationManager?.requestWhenInUseAuthorization()
-        }
-        
-        guard let gameID = gameID else { return }
-        
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (timer) in
-            self.loadGameViewModel.prepareForGame(currentLoction: self.feildLocation!, playersInfo: self.passedData, gameID: gameID)
+            guard let gameID = gameID else { return }
+            loadGameViewModel.observeGame(gameID: gameID)
         }
     }
     

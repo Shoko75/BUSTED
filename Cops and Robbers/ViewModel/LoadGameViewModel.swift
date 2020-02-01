@@ -23,10 +23,10 @@ class LoadGameViewModel {
     func observeOccupiedMajor() {
         occupiedMajorRef.observe(.value) { (snapshot) in
             
+            guard snapshot.exists() else { return }
+            
             for value in snapshot.children {
-                if let major = value as? String {
-                    self.occupiedMajors.append(major)
-                }
+                self.occupiedMajors.append(value as! String)
             }
         }
     }
@@ -118,6 +118,14 @@ class LoadGameViewModel {
         loadGameDelegate?.didCreateGame()
     }
     
-    
+    func observeGame(gameID: String) {
+        gameRef.child(gameID).observe(.value) { (snapshot) in
+            
+            guard snapshot.exists() else { return }
+
+            print("the game data was created")
+            self.loadGameDelegate?.didCreateGame()
+        }
+    }
 }
 

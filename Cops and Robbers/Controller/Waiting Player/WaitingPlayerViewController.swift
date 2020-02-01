@@ -56,6 +56,13 @@ class WaitingPlayerViewController: UIViewController {
         joinButton.isEnabled = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLoadGame" {
+            if let loadGameViewController = segue.destination as? LoadGameViewController {
+                loadGameViewController.gameID = invitationID
+            }
+        }
+    }
 }
 
 // TableViewDelegate
@@ -76,7 +83,7 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
 extension WaitingPlayerViewController: WaitingPlayerDelegate {
     func didStartGame() {
         print("didStartGame")
-        self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
+        self.performSegue(withIdentifier: "showLoadGame", sender: nil)
     }
     
     func didCancleInvitation() {
