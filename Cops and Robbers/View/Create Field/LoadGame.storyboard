@@ -34,17 +34,17 @@
                         <viewLayoutGuide key="safeArea" id="3lB-r8-pBn"/>
                     </view>
                     <connections>
-                        <segue destination="fPV-Yj-6Ai" kind="show" identifier="showMap" id="zKQ-Bv-mkv"/>
+                        <segue destination="fPV-Yj-6Ai" kind="show" identifier="showMakeTeam" id="zKQ-Bv-mkv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ocx-fc-NBm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46.376811594202906" y="38.839285714285715"/>
         </scene>
-        <!--Map-->
+        <!--MakeTeam-->
         <scene sceneID="Hj0-Xb-qI6">
             <objects>
-                <viewControllerPlaceholder storyboardName="Map" referencedIdentifier="Map" id="fPV-Yj-6Ai" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MakeTeam" referencedIdentifier="MakeTeam" id="fPV-Yj-6Ai" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="11B-pd-cRt"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd9-Jw-gFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

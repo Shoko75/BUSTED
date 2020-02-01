@@ -14,7 +14,6 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var joinFieldButton: UIButton!
     
     var window: UIWindow?
-    var invitationID: String?
     var menuViewModel: MenuViewModel!
     
     override func viewDidLoad() {
@@ -56,6 +55,15 @@ class MenuViewController: UIViewController {
     
     @IBAction func pressedJoinField(_ sender: Any) {
         performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showWaitingPlayer" {
+            if let waitingPlayerViewController = segue.destination as? WaitingPlayerViewController {
+                waitingPlayerViewController.invitationID = self.menuViewModel.invitationID
+            }
+        }
     }
 }
 

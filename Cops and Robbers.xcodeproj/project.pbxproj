@@ -27,6 +27,8 @@
 		2F91FE9223E38A500060A1FF /* WaitingPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9123E38A500060A1FF /* WaitingPlayerViewController.swift */; };
 		2F91FE9423E38ADB0060A1FF /* WaitingPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9323E38ADB0060A1FF /* WaitingPlayerTableViewCell.swift */; };
 		2F91FE9923E4EF760060A1FF /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9823E4EF760060A1FF /* MenuViewModel.swift */; };
+		2F91FE9C23E51C130060A1FF /* LoadGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */; };
+		2F91FE9E23E51C7C0060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9D23E51C7C0060A1FF /* DBGame.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -86,6 +88,8 @@
 		2F91FE9123E38A500060A1FF /* WaitingPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerViewController.swift; sourceTree = "<group>"; };
 		2F91FE9323E38ADB0060A1FF /* WaitingPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerTableViewCell.swift; sourceTree = "<group>"; };
 		2F91FE9823E4EF760060A1FF /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewModel.swift; sourceTree = "<group>"; };
+		2F91FE9D23E51C7C0060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 				2FDF0E6923C97737001648D5 /* DBFriendRequest.swift */,
 				2FDF0E7323CAA20C001648D5 /* DBFriends.swift */,
 				2F91FE5923D6A6850060A1FF /* DBInvitation.swift */,
+				2F91FE9D23E51C7C0060A1FF /* DBGame.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				2FDF0E7723CAC587001648D5 /* Friend Management */,
 				2F91FE6823DBD1A10060A1FF /* Create Field */,
 				2F91FE9823E4EF760060A1FF /* MenuViewModel.swift */,
+				2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -530,11 +536,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F91FE9C23E51C130060A1FF /* LoadGameViewModel.swift in Sources */,
 				2F91FE8223E260980060A1FF /* LoadGameViewController.swift in Sources */,
 				2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */,
 				2FDF0E2723AC763A001648D5 /* MenuViewController.swift in Sources */,
 				2FDF0E8123CB4524001648D5 /* AddPlayerViewModel.swift in Sources */,
 				2FDF0E7223CA14FA001648D5 /* FriendsListViewModel.swift in Sources */,
+				2F91FE9E23E51C7C0060A1FF /* DBGame.swift in Sources */,
 				2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */,
 				2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,

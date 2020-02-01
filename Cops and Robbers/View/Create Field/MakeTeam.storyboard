@@ -139,22 +139,11 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="rWj-xl-pXS" id="mWF-6n-gEw"/>
-                        <segue destination="ZBx-zx-2bL" kind="show" identifier="showLoadGame" id="fLA-Bl-56H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feV-ei-lTy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-428.98550724637687" y="81.696428571428569"/>
-        </scene>
-        <!--LoadGame-->
-        <scene sceneID="zhf-8v-7ab">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="LoadGame" storyboardName="LoadGame" referencedIdentifier="LoadGame" id="ZBx-zx-2bL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7AJ-C1-tuZ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IAJ-fA-XTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="157" y="78"/>
         </scene>
     </scenes>
 </document>

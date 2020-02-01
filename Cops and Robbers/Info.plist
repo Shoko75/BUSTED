@@ -34,13 +34,13 @@
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>We need permission to your bluetooth to share the infromation with other players</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Need to know each user&apos;s location in the game</string>
+	<string>Need to know each user's location in the game</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Need to know each user&apos;s location in the game</string>
+	<string>Need to know each user's location in the game</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Need to know each user&apos;s location in the game</string>
+	<string>Need to know each user's location in the game</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Need to know each user&apos;s location in the game</string>
+	<string>Need to know each user's location in the game</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -67,8 +67,6 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>NavigationController</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

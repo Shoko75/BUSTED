@@ -20,6 +20,7 @@ class MenuViewModel {
     
     var flgJoinField = false
     var menuDelegate: MenuDelegate?
+    var invitationID: String?
     
     func checkInvitationStatus() {
         
@@ -27,8 +28,11 @@ class MenuViewModel {
             if let value = snapshot.value as? [String: AnyObject],
                 let playTeam = value["playTeam"] as? String {
            
-               if playTeam != "" {
-                   self.flgJoinField = true
+                if playTeam != "" {
+                    self.flgJoinField = true
+                    self.invitationID = playTeam
+                } else {
+                    self.flgJoinField = false
                 }
                 self.menuDelegate?.didFinishcheckInvitationStatus()
             }

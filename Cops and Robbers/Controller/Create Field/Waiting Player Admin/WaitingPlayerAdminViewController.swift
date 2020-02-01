@@ -66,9 +66,11 @@ class WaitingPlayerAdminViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "showMakeTeam" {
-            if let makeTeamViewController = segue.destination as? MakeTeamViewController {
-                makeTeamViewController.passedData = waitingPlayerViewModel.playerList
+        if segue.identifier == "showLoadGame" {
+            if let loadGameViewController = segue.destination as? LoadGameViewController {
+                loadGameViewController.passedData = waitingPlayerViewModel.playerList
+                loadGameViewController.flgAdmin = true
+                loadGameViewController.gameID = invitationID
             }
         }
         
@@ -91,8 +93,16 @@ extension WaitingPlayerAdminViewController: UITableViewDelegate, UITableViewData
 }
 
 extension WaitingPlayerAdminViewController: WaitingPlayerDelegate {
+    func didStartGame() {
+        print("didStartGame")
+    }
+    
+    func didCancleInvitation() {
+        print("didCancleInvitation")
+    }
+    
     func didCreatePassData() {
-        self.performSegue(withIdentifier: "showMakeTeam", sender: nil)
+        self.performSegue(withIdentifier: "showLoadGame", sender: nil)
     }
     
     func didfetchData() {

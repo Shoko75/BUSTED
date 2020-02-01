@@ -12,6 +12,8 @@ import Firebase
 protocol WaitingPlayerDelegate {
     func didfetchData()
     func didCreatePassData()
+    func didCancleInvitation()
+    func didStartGame()
 }
 
 class WaitingPlayerViewModel {
@@ -27,17 +29,24 @@ class WaitingPlayerViewModel {
     func observeInvitation() {
         invitationRef.child(invitationID!).observe(.value) { (snapshot) in
             if let value = snapshot.value as? [String: AnyObject],
-                let members = value["player"] as? [String: AnyObject] {
+                let members = value["player"] as? [String: AnyObject],
+                let status = value["status"] as? String {
                 var players = [Player]()
                 var dummyFriend: Friend?
                 
-                for member in members.keys {
-                    if let value = members[member] as? [String:AnyObject],
-                        let status = value["status"] as? String {
-                        players.append(Player(playerID: member, status: status, user: dummyFriend))
+                if status == "Start" {
+                    self.waitingPlayerDelegate?.didStartGame()
+                } else {
+                
+                    for member in members.keys {
+                        if let value = members[member] as? [String:AnyObject],
+                            let status = value["status"] as? String {
+                            players.append(Player(playerID: member, status: status, user: dummyFriend))
+                        }
                     }
+                    self.fetchUserInfoByID(players: players)
                 }
-                self.fetchUserInfoByID(players: players)
+                
             }
         }
     }
@@ -105,16 +114,44 @@ class WaitingPlayerViewModel {
         // Invitation
         invitationRef.child(invitationID!).removeValue()
         
-        let invitationID = ["playTeam": ""]
+        let playTeamValue = ["playTeam": ""]
         
         // User
         for player in playerList {
-            userInfoRef.child(player.user!.uid).updateChildValues(invitationID)
+            userInfoRef.child(player.user!.uid).updateChildValues(playTeamValue)
         }
     }
     
     func stopObserve() {
         invitationRef.child(invitationID!).removeAllObservers()
     }
+    
+    func declineInvitation() {
+        let updateStatus = ["status": "Declined"]
+    invitationRef.child(invitationID!).child("player").child(userID!).updateChildValues(updateStatus)
+    
+        let playTeamValue = ["playTeam": ""]
+        userInfoRef.child(userID!).updateChildValues(playTeamValue)
+        
+    }
+    
+    func joinInvitation() {
+        let updateStatus = ["status": "Joined"]
+    invitationRef.child(invitationID!).child("player").child(userID!).updateChildValues(updateStatus)
+    }
+    
+    func observeUserInfo() {
+        userInfoRef.child(userID!).observe(.value) { (snapshot) in
+            
+            if let value = snapshot.value as? [String: AnyObject],
+                let playTeam = value["playTeam"] as? String {
+                
+                if playTeam == "" {
+                    self.waitingPlayerDelegate?.didCancleInvitation()
+                }
+            }
+        }
+    }
+    
     
 }

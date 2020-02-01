@@ -17,11 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         print("scene was called")
         if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
                 let storybord = UIStoryboard(name: "Login", bundle: nil)
                 let loginController = storybord.instantiateViewController(identifier: "Login")
                 self.window?.rootViewController = loginController
-            }
         } else {
             let storybord = UIStoryboard(name: "NavigationController", bundle: nil)
             let navigationController = storybord.instantiateViewController(identifier: "NavigationController")

@@ -80,6 +80,9 @@
                                         <state key="normal" title="Decline">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedDecline:" destination="M45-yJ-gTU" eventType="touchUpInside" id="HlV-Ee-EfH"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ou-Zc-VJS">
                                         <rect key="frame" x="212" y="0.0" width="202" height="74"/>
@@ -87,6 +90,9 @@
                                         <state key="normal" title="Join">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedJoin:" destination="M45-yJ-gTU" eventType="touchUpInside" id="3kY-GY-nV4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -108,11 +114,22 @@
                         <outlet property="declineButton" destination="jfL-tu-NYe" id="CtY-l3-AUS"/>
                         <outlet property="joinButton" destination="8Ou-Zc-VJS" id="1sV-65-VID"/>
                         <outlet property="tableView" destination="PLx-HR-yYD" id="Idm-RH-4Hz"/>
+                        <segue destination="TQ4-81-Zq4" kind="show" identifier="showLoadGame" id="Ezz-bZ-TUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mx1-km-9uz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-402.89855072463769" y="52.901785714285715"/>
+        </scene>
+        <!--LoadGame-->
+        <scene sceneID="B56-xM-hKq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoadGame" referencedIdentifier="LoadGame" id="TQ4-81-Zq4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VHj-6g-FqM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEy-Ba-LvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="37"/>
         </scene>
     </scenes>
 </document>

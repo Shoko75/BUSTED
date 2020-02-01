@@ -115,17 +115,17 @@
                         <outlet property="cancelButton" destination="zXa-Yi-h6v" id="ewN-jP-Wgs"/>
                         <outlet property="startButton" destination="q1W-P2-ED3" id="Pl8-te-65P"/>
                         <outlet property="tableView" destination="XfB-jS-v6t" id="hO3-A8-nIt"/>
-                        <segue destination="NUX-Wr-mXn" kind="show" identifier="showMakeTeam" id="nzO-IH-m1b"/>
+                        <segue destination="NUX-Wr-mXn" kind="show" identifier="showLoadGame" id="nzO-IH-m1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jT-uz-jrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-110.14492753623189" y="77.678571428571431"/>
         </scene>
-        <!--MakeTeam-->
+        <!--LoadGame-->
         <scene sceneID="sky-F4-Vql">
             <objects>
-                <viewControllerPlaceholder storyboardName="MakeTeam" referencedIdentifier="MakeTeam" id="NUX-Wr-mXn" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="LoadGame" referencedIdentifier="LoadGame" id="NUX-Wr-mXn" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2bq-rK-qFZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWV-oS-gsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
