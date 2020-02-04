@@ -25,8 +25,9 @@ class LoadGameViewModel {
             
             guard snapshot.exists() else { return }
             
-            for value in snapshot.children {
-                self.occupiedMajors.append(value as! String)
+            for child in snapshot.children {
+                guard let value = child as? DataSnapshot else { return }
+                self.occupiedMajors.append(value.key)
             }
         }
     }

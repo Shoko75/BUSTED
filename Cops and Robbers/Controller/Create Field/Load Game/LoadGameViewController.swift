@@ -79,10 +79,18 @@ extension LoadGameViewController: CLLocationManagerDelegate {
         
         feildLocation = DBField(latitude: String(lan), longitude: String(lon))
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTeam" {
+            if let showTeamViewController = segue.destination as? ShowTeamViewController {
+                showTeamViewController.gameID = gameID!
+            }
+        }
+    }
 }
 
 extension LoadGameViewController: LoadGameDelegate {
     func didCreateGame() {
-        performSegue(withIdentifier: "showMakeTeam", sender: nil)
+        performSegue(withIdentifier: "showTeam", sender: nil)
     }
 }
