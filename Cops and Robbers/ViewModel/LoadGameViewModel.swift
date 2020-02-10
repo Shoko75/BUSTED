@@ -83,7 +83,7 @@ class LoadGameViewModel {
     
     func createTeam(playersInfo: [Player], majors: [String]) -> (DBCops, DBRobber) {
         var passedData = playersInfo
-        var copsPlayer = [String]()
+        var copsPlayer = [DBCopPlayer]()
         var robbersPlayer = [DBRobPlayer]()
         var cnt = 0
         
@@ -91,9 +91,11 @@ class LoadGameViewModel {
         
         for player in passedData {
             if cnt % 2 == 0 {
-                copsPlayer.append(player.playerID)
+                let uuid = UUID().uuidString
+                copsPlayer.append(DBCopPlayer(userId: player.playerID, gameUuid: uuid))
             } else {
-                robbersPlayer.append(DBRobPlayer(userId: player.playerID, status: "Alive"))
+                let uuid = UUID().uuidString
+                robbersPlayer.append(DBRobPlayer(userId: player.playerID, status: "Alive", gameUuid: uuid))
             }
             cnt += 1
         }

@@ -19,7 +19,7 @@ class ShowTeamTableViewCell: UITableViewCell {
         copsNameLable.text = cop.userName
         copsImageView.contentMode = .scaleToFill
         
-        if let userImageURL = cop.userImageURL {
+        if let userImageURL = cop.userImageURL, userImageURL != "" {
             copsImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }
     }
@@ -28,7 +28,7 @@ class ShowTeamTableViewCell: UITableViewCell {
         robbersNameLable.text = robber.userName
         robbersImageView.contentMode = .scaleToFill
         
-        if let userImageURL = robber.userImageURL {
+        if let userImageURL = robber.userImageURL, userImageURL != "" {
             robbersImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }
     }

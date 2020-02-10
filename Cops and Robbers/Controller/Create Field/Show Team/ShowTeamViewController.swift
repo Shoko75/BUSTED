@@ -24,6 +24,15 @@ class ShowTeamViewController: UIViewController {
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showMap" {
+            if let mapViewController = segue.destination as? MapViewController {
+                mapViewController.gameData = showTeamViewModle.gameData
+                mapViewController.flgCops = showTeamViewModle.flgCops
+            }
+        }
+    }
 }
 
 extension ShowTeamViewController: UITableViewDelegate, UITableViewDataSource {

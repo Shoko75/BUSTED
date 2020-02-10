@@ -11,7 +11,7 @@ import CoreLocation
 
 class UserForGame {
     let name: String
-    let icon: String
+    let icon: String?
     let uuid: UUID
     let majorValue: CLBeaconMinorValue
     let minorValue: CLBeaconMinorValue

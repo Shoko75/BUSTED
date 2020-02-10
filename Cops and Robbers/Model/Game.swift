@@ -49,8 +49,12 @@ struct Cops {
         
         var cData = [CopPlayer]()
         let cPlayers = data["player"] as! [String: AnyObject]
-        for cPlayer in cPlayers.keys {
-            cData.append(CopPlayer(userId: cPlayer))
+        
+        for cPlayer in cPlayers {
+            let userID = cPlayer.key
+            let data = cPlayer.value as! [String:AnyObject]
+            
+            cData.append(CopPlayer(data: data, userID: userID))
         }
         
         self.major = data["major"] as! String
@@ -58,27 +62,23 @@ struct Cops {
         self.points = data["points"] as! Int
     }
     
-    init(major: String, players: [String], points: Int) {
-        
-        var cData = [CopPlayer]()
-        
-        for player in players {
-            cData.append(CopPlayer(userId: player))
-        }
+    init(major: String, players: [CopPlayer], points: Int) {
         
         self.major = major
         self.points = points
-        self.players = cData
+        self.players = players
     }
 }
 
 struct CopPlayer {
     let userId: String
+    let gameUuid: String
     var userName: String?
     var userImageURL: String?
     
-    init(userId: String) {
-        self.userId = userId
+    init(data: [String: AnyObject], userID: String) {
+        self.userId = userID
+        self.gameUuid = data["gameUuid"] as! String
         self.userName = ""
         self.userImageURL = ""
     }
@@ -105,21 +105,23 @@ struct Robbers {
         self.points = data["points"] as! Int
     }
     
-    init(major: String, RobPlayers: [RobPlayer], points: Int) {
+    init(major: String, robPlayers: [RobPlayer], points: Int) {
         self.major = major
-        self.robPlayers = RobPlayers
+        self.robPlayers = robPlayers
         self.points = points
     }
 }
 
 struct RobPlayer {
     let userId: String
+    let gameUuid: String
     let status: String
     var userName: String?
     var userImageURL: String?
     
     init (data: [String: AnyObject], userID: String) {
         self.userId = userID
+        self.gameUuid = data["gameUuid"] as! String
         self.status = data["status"] as! String
         self.userName = ""
         self.userImageURL = ""

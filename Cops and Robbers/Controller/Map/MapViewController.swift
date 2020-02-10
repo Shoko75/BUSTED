@@ -11,6 +11,7 @@ import MapKit
 import CoreLocation
 import CoreBluetooth
 import UserNotifications
+import Firebase
 
 class MapViewController: UIViewController {
     
@@ -25,10 +26,11 @@ class MapViewController: UIViewController {
     var localBeaconIdentityConstraint: CLBeaconIdentityConstraint!
     var beaconPeripheralData: [String:Any]?
     var peripheralManager: CBPeripheralManager!
-    var uuid: UUID!
     var appIdentifier = "com.shokohashimoto.CopsAndRobber"
     var beaconsToRange = [CLBeaconRegion]()
     var currentLocation: CLLocation!
+    var gameData: Game?
+    var flgCops: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,21 +39,19 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        // Beacon setting
-        let user1 = UserForGame(name: "Cops", icon: "iconTest1", uuid: UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA")!, majorValue: 20, minorValue: 1)
-        
-        mapViewModel = MapViewModel(user: user1)
-        
-        // TODO: Should change later
+        mapViewModel = MapViewModel()
+        mapViewModel.setEnemyData(gameData: gameData!, flgCops: flgCops!)
+        let myGameUuid = mapViewModel.searchMyGameUuid(gameData: gameData!, flgCops: flgCops!)
+        // Monitaring setting
         startMonitoringUser()
-        initLocalBeacon()
+        initLocalBeacon(gameUuid: myGameUuid)
         
         
         // Map setting
         mapView.showsUserLocation = true
         
         // Darawing the field
-        let location = CLLocation(latitude: 49.242221, longitude: -123.035765)
+        let location = CLLocation(latitude: Double((gameData?.field.latitude)!)!, longitude: Double((gameData?.field.longitude)!)!)
         let regionRadius: CLLocationDistance = 1500
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
@@ -59,7 +59,7 @@ class MapViewController: UIViewController {
         addRadiusCircle(location: location)
         
         // Set exit notification of the field
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(49.242221, -123.035765)
+        let geofenceRegionCenter = CLLocationCoordinate2DMake(Double((gameData?.field.latitude)!)!, Double((gameData?.field.longitude)!)!)
         let radiusOfNotify: CLLocationDistance = 100
         let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
         geofenceRegion.notifyOnExit = true
@@ -76,33 +76,36 @@ class MapViewController: UIViewController {
     }
     
     func startMonitoringUser() {
-        for user in mapViewModel.users {
-            let beaconRegion = user.asBeaconRegion()
+        for enemy in mapViewModel.enemys {
+            let beaconRegion = enemy.asBeaconRegion()
             locationManager.startMonitoring(for: beaconRegion)
             locationManager.startRangingBeacons(in: beaconRegion)
         }
     }
     
     func stopMonitoringUser() {
-        for user in mapViewModel.users {
-            let beaconRegion = user.asBeaconRegion()
+        for enemy in mapViewModel.enemys {
+            let beaconRegion = enemy.asBeaconRegion()
             locationManager.stopMonitoring(for: beaconRegion)
             locationManager.stopRangingBeacons(in: beaconRegion)
         }
     }
     
-    func initLocalBeacon(){
+    func initLocalBeacon(gameUuid: String){
         if localBeacon != nil {
             stopLocalBeacon()
         }
         
-        let localBeaconManajor: CLBeaconMajorValue = 30 // teamID
-        let localBeaconMinor: CLBeaconMinorValue = 1 // cop or rubber
+        var localBeaconManajor: CLBeaconMajorValue?
+        let localBeaconMinor: CLBeaconMinorValue = 1
         
-       //uuid = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D") // ESTIMONI
-       uuid = UUID(uuidString: "D6826348-41C8-43F6-88D5-DE7EF99426AA") // RedBear
-//        uuid = UUID(uuidString: "05F62A3D-F60F-44BC-B36E-2B80FD6C9679") // My Beacon Device
-        localBeaconIdentityConstraint = CLBeaconIdentityConstraint(uuid: uuid, major: localBeaconManajor, minor: localBeaconMinor)
+        if flgCops! {
+            localBeaconManajor = UInt16(gameData!.cops.major)
+        } else {
+            localBeaconManajor = UInt16(gameData!.robbers.major)
+        }
+        
+        localBeaconIdentityConstraint = CLBeaconIdentityConstraint(uuid: UUID(uuidString: gameUuid)!, major: localBeaconManajor!, minor: localBeaconMinor)
         localBeacon = CLBeaconRegion(beaconIdentityConstraint: localBeaconIdentityConstraint, identifier: appIdentifier)
         beaconPeripheralData = localBeacon.peripheralData(withMeasuredPower: nil) as? [String: Any]
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
@@ -134,21 +137,21 @@ extension MapViewController: CLLocationManagerDelegate {
         var printInfo = ""
         
         for beacon in beacons {
-            for row in 0..<mapViewModel.users.count {
+            for row in 0..<mapViewModel.enemys.count {
                 
                 //if mapViewModel.users[row] == beacon {
-                    mapViewModel.users[row].beacon = beacon
+                    mapViewModel.enemys[row].beacon = beacon
                     indexPaths += [IndexPath(row: row, section: 0)]
-                    print(mapViewModel.users[row].name)
+                    print(mapViewModel.enemys[row].name)
                     
                     
                     let bea = beacon as CLBeacon
                     
                     let title = "------------ number \(beacons.count) -----------------\n"
-                    let name = "Name: \(mapViewModel.users[row].name) \n"
+                    let name = "Name: \(mapViewModel.enemys[row].name) \n"
                     let major = "major: \(bea.major.intValue) \n"
                     let minor = "minor: \(bea.minor.intValue) \n"
-                    let location = "location: \(mapViewModel.users[row].locationString()) \n"
+                    let location = "location: \(mapViewModel.enemys[row].locationString()) \n"
                     
                     printInfo += title + name + major + minor + location
                     

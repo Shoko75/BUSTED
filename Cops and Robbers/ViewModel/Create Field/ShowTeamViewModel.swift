@@ -16,10 +16,13 @@ protocol ShowTeamDelegate {
 class ShowTeamViewModle {
     let gameRef = Database.database().reference(withPath: "game")
     let userInfoRef = Database.database().reference(withPath: "user_Info")
+    let userID = Auth.auth().currentUser?.uid
     
     var cops: Cops?
     var robbers: Robbers?
+    var gameData: Game?
     var showTeamDelegate: ShowTeamDelegate?
+    var flgCops = false
     
     
     func fetchGame(gameID: String) {
@@ -28,6 +31,7 @@ class ShowTeamViewModle {
             
             self.cops = game.cops
             self.robbers = game.robbers
+            self.gameData = game
             self.fetchUserInfoByID()
         }
     }
@@ -41,6 +45,11 @@ class ShowTeamViewModle {
                 if let friend = Friend(snapshot: snapshot) {
                     self.cops?.players[copsCnt].userName = friend.userName
                     self.cops?.players[copsCnt].userImageURL = friend.userImageURL
+                    
+                    if friend.uid == self.userID {
+                        self.flgCops = true
+                    }
+                    
                 }
                 copsCnt += 1
             })

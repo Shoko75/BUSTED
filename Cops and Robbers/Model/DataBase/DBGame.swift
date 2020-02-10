@@ -50,10 +50,10 @@ struct DBField {
 
 struct DBCops {
     let major: String
-    let players: [String]
+    let players: [DBCopPlayer]
     let points: Int
     
-    init(major: String, points: Int, players: [String]) {
+    init(major: String, points: Int, players: [DBCopPlayer]) {
         self.major = major
         self.players = players
         self.points = points
@@ -63,13 +63,30 @@ struct DBCops {
         
         var dbPlayer = [String:Any]()
         for player in players {
-            dbPlayer[player] = ""
+            dbPlayer[player.userId] = player.toAnyObject()
         }
         
         return [
             "major": major,
             "points": points,
             "player": dbPlayer
+        ]
+    }
+}
+
+struct DBCopPlayer {
+    let userId: String
+    let gameUuid: String
+    
+    init (userId: String , gameUuid: String) {
+        self.userId = userId
+        self.gameUuid = gameUuid
+    }
+    
+    func toAnyObject() -> Any {
+        
+        return [
+            "gameUuid": gameUuid
         ]
     }
 }
@@ -103,16 +120,19 @@ struct DBRobber {
 struct DBRobPlayer {
     let userId: String
     let status: String
+    let gameUuid: String
     
-    init (userId: String , status: String) {
+    init (userId: String , status: String, gameUuid: String) {
         self.userId = userId
         self.status = status
+        self.gameUuid = gameUuid
     }
     
     func toAnyObject() -> Any {
         
         return [
-            "status": status
+            "status": status,
+            "gameUuid": gameUuid
         ]
     }
 }
