@@ -31,16 +31,55 @@ class UserForGame {
     }
     
     func nameForProximity(_ proximity: CLProximity) -> String {
-      switch proximity {
-      case .unknown:
-        return "Unknown"
-      case .immediate:
-        return "Immediate"
-      case .near:
-        return "Near"
-      case .far:
-        return "Far"
-      }
+        
+        switch proximity {
+        case .unknown:
+            return "Unknown"
+        case .immediate:
+            return "Immediate"
+        case .near:
+            return "Near"
+        case .far:
+            return "Far"
+        @unknown default:
+        fatalError()
+        }
+    }
+    
+    func alertForProximity(_ proximity: CLProximity, flgCops: Bool) -> String {
+        
+        var alert = ""
+        switch proximity {
+        case .unknown:
+            return "Unknown"
+        case .immediate:
+
+            if flgCops {
+                alert = "YOU COUGHT A ROBBER!!"
+            } else {
+                alert = "YOU'VE BEEN SENT TO JAIL! "
+            }
+            return alert
+            
+        case .near:
+            if flgCops {
+                alert = "ALERT! A ROBBER IS NEARBY!"
+            } else {
+                alert = "ALERT! A COP IS NEARBY!"
+            }
+            
+            return alert
+        case .far:
+            if flgCops {
+                alert = "ALERT! A ROBBER IS NEARBY!"
+            } else {
+                alert = "ALERT! A COP IS NEARBY!"
+            }
+        
+        return alert
+        @unknown default:
+        fatalError()
+        }
     }
     
     func locationString() -> String {
@@ -48,15 +87,12 @@ class UserForGame {
       let proximity = nameForProximity(beacon.proximity)
       let accuracy = String(format: "%.2f", beacon.accuracy)
         
-      var location = "Location: \(proximity)"
+      var location = " \(proximity)"
       if beacon.proximity != .unknown {
         location += " (approx. \(accuracy)m)"
       }
         
       return location
     }
-}
-
-func ==(user: UserForGame, beacon: CLBeacon) -> Bool {
-    return ((beacon.proximityUUID.uuidString == user.uuid.uuidString) && (Int(beacon.major) == Int(user.majorValue)) && (Int(beacon.minor) == Int(user.minorValue)))
+    
 }

@@ -17,6 +17,9 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var alertLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusNumLabel: UILabel!
 
     private let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
@@ -31,7 +34,8 @@ class MapViewController: UIViewController {
     var currentLocation: CLLocation!
     var gameData: Game?
     var flgCops: Bool?
-    
+    var gameID: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,8 +44,13 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         
         mapViewModel = MapViewModel()
-        mapViewModel.setEnemyData(gameData: gameData!, flgCops: flgCops!)
-        let myGameUuid = mapViewModel.searchMyGameUuid(gameData: gameData!, flgCops: flgCops!)
+        mapViewModel.mapDelegate = self
+        mapViewModel.gameID = self.gameID!
+        mapViewModel.flgCops = self.flgCops!
+        mapViewModel.observeGame()
+        mapViewModel.setEnemyData(gameData: gameData!)
+        let myGameUuid = mapViewModel.searchMyGameUuid(gameData: gameData!)
+        
         // Monitaring setting
         startMonitoringUser()
         initLocalBeacon(gameUuid: myGameUuid)
@@ -128,6 +137,13 @@ class MapViewController: UIViewController {
     }
 }
 
+extension MapViewController: MapDelegate {
+    func didObserve() {
+    print("")
+    }
+    
+}
+
 // MARK: CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     
@@ -135,11 +151,10 @@ extension MapViewController: CLLocationManagerDelegate {
         
         var indexPaths = [IndexPath]()
         var printInfo = ""
-        
+        var alert = ""
         for beacon in beacons {
             for row in 0..<mapViewModel.enemys.count {
                 
-                //if mapViewModel.users[row] == beacon {
                     mapViewModel.enemys[row].beacon = beacon
                     indexPaths += [IndexPath(row: row, section: 0)]
                     print(mapViewModel.enemys[row].name)
@@ -151,17 +166,25 @@ extension MapViewController: CLLocationManagerDelegate {
                     let name = "Name: \(mapViewModel.enemys[row].name) \n"
                     let major = "major: \(bea.major.intValue) \n"
                     let minor = "minor: \(bea.minor.intValue) \n"
+
                     let location = "location: \(mapViewModel.enemys[row].locationString()) \n"
-                    
+                    alert = mapViewModel.enemys[row].alertForProximity(beacon.proximity, flgCops: flgCops!)
+                mapViewModel.controlProcessingByProximity(gameUuid: bea.uuid.uuidString)
                     printInfo += title + name + major + minor + location
-                    
-                    
-                //}
             }
         }
         
         print(printInfo)
         textView.text = printInfo
+        
+        if alert == "Unknown" || alert == "" {
+            alertLabel.isHidden = true
+        } else {
+            alertLabel.isHidden = true
+            alertLabel.text = alert
+        }
+        
+
     }
     
     

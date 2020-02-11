@@ -9,13 +9,23 @@
 import Foundation
 import Firebase
 
+protocol MapDelegate {
+    func didObserve()
+}
+
 class MapViewModel {
     
-    var enemys = [UserForGame]()
+    let gameRef = Database.database().reference(withPath: "game")
     
-    func setEnemyData(gameData:Game, flgCops: Bool) {
+    var enemys = [UserForGame]()
+    var gameID = ""
+    var flgCops: Bool?
+    var gameData: Game?
+    var mapDelegate: MapDelegate?
+    
+    func setEnemyData(gameData: Game) {
         
-        if flgCops {
+        if flgCops! {
             
             for enemy in gameData.robbers.robPlayers {
                 
@@ -28,19 +38,19 @@ class MapViewModel {
             for enemy in gameData.cops.players {
                 
                 let data = UserForGame(name: enemy.userName!, icon: enemy.userImageURL ?? "", uuid:
-                UUID(uuidString: enemy.gameUuid)!, majorValue: Int(gameData.cops.major)!, minorValue: 1)
+                    UUID(uuidString: enemy.gameUuid)!, majorValue: Int(gameData.cops.major)!, minorValue: 1)
                 
                 enemys.append(data)
             }
         }
     }
     
-    func searchMyGameUuid(gameData: Game, flgCops: Bool) -> String {
+    func searchMyGameUuid(gameData: Game) -> String {
         
         let userID = Auth.auth().currentUser?.uid
         var gameUuid = ""
         
-        if flgCops {
+        if flgCops! {
             for player in gameData.cops.players {
                 if player.userId == userID {
                     gameUuid = player.gameUuid
@@ -55,5 +65,31 @@ class MapViewModel {
         }
         
         return gameUuid
+    }
+    
+    func controlProcessingByProximity(gameUuid: String) {
+        updateRobberStatus(gameUuid: gameUuid)
+    }
+    
+    func updateRobberStatus(gameUuid: String) {
+        
+        let status = ["status": "Jail"]
+        
+        for player in (gameData?.robbers.robPlayers)! {
+            
+            if player.gameUuid == gameUuid, player.status != "Jail" {
+                gameRef.child(gameID).child("robbers").child("player").child(player.userId).updateChildValues(status)
+            }
+        }
+        
+    }
+    
+    func observeGame() {
+        gameRef.child(gameID).observe(.value) { (snapshot) in
+            
+            if let gameData = Game(snapshot: snapshot) {
+                self.gameData = gameData
+            }
+        }
     }
 }

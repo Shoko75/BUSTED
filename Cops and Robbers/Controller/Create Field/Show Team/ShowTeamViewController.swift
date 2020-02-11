@@ -30,6 +30,7 @@ class ShowTeamViewController: UIViewController {
             if let mapViewController = segue.destination as? MapViewController {
                 mapViewController.gameData = showTeamViewModle.gameData
                 mapViewController.flgCops = showTeamViewModle.flgCops
+                mapViewController.gameID = self.gameID
             }
         }
     }

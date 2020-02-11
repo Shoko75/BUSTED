@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 
 struct Game {
+
     let field: Field
     let cops: Cops
     let robbers: Robbers
