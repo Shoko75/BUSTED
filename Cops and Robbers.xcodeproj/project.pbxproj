@@ -30,6 +30,7 @@
 		2F91FE9C23E51C130060A1FF /* LoadGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */; };
 		2F91FE9E23E51C7C0060A1FF /* DBGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE9D23E51C7C0060A1FF /* DBGame.swift */; };
 		2F91FEA223E641C20060A1FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEA123E641C20060A1FF /* Game.swift */; };
+		2F91FEA423F3AED40060A1FF /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEA323F3AED30060A1FF /* MapCollectionViewCell.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -92,6 +93,7 @@
 		2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewModel.swift; sourceTree = "<group>"; };
 		2F91FE9D23E51C7C0060A1FF /* DBGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBGame.swift; sourceTree = "<group>"; };
 		2F91FEA123E641C20060A1FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2F91FEA323F3AED30060A1FF /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				2FB47E5023A1E64900AA9216 /* MapViewController.swift */,
+				2F91FEA323F3AED30060A1FF /* MapCollectionViewCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F91FEA423F3AED40060A1FF /* MapCollectionViewCell.swift in Sources */,
 				2F91FE9C23E51C130060A1FF /* LoadGameViewModel.swift in Sources */,
 				2F91FE8223E260980060A1FF /* LoadGameViewController.swift in Sources */,
 				2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */,

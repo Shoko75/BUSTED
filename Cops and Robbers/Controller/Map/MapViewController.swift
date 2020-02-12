@@ -15,11 +15,12 @@ import Firebase
 
 class MapViewController: UIViewController {
     
-    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusNumLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
 
     private let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
@@ -42,6 +43,8 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        initSetting()
         
         mapViewModel = MapViewModel()
         mapViewModel.mapDelegate = self
@@ -74,7 +77,6 @@ class MapViewController: UIViewController {
         geofenceRegion.notifyOnExit = true
         locationManager.startMonitoring(for: geofenceRegion)
         
-        
     }
     
     // Beacon setting
@@ -82,6 +84,16 @@ class MapViewController: UIViewController {
         // TODO: Need to change later
         stopMonitoringUser()
         stopLocalBeacon()
+    }
+    
+    func initSetting() {
+        if flgCops! {
+            statusLabel.text = "ROBBERS"
+            statusNumLabel.text = "0"
+        } else {
+            statusLabel.text = "FLAGS"
+            statusNumLabel.text = "0"
+        }
     }
     
     func startMonitoringUser() {
@@ -138,9 +150,50 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MapDelegate {
-    func didObserve() {
-    print("")
+    func didFetchGame() {
+        self.collectionView.reloadData()
     }
+    
+    func didObserve() {
+        if flgCops! {
+            let leftRobs = mapViewModel.countRobbers()
+        }
+    }
+    
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var rows = 0
+        
+        if flgCops! {
+            rows = mapViewModel.gameData?.cops.players.count ?? 0
+        } else {
+            rows = mapViewModel.gameData?.robbers.robPlayers.count ?? 0
+        }
+        
+        return rows
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        var name = ""
+        var userImage = ""
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCollectionViewCell", for: indexPath) as! MapCollectionViewCell
+        
+        if flgCops! {
+            name = (mapViewModel.gameData?.cops.players[indexPath.row].userName)!
+            userImage = (mapViewModel.gameData?.cops.players[indexPath.row].userImageURL)!
+        } else {
+            name = (mapViewModel.gameData?.robbers.robPlayers[indexPath.row].userName)!
+            userImage = (mapViewModel.gameData?.robbers.robPlayers[indexPath.row].userImageURL)!
+        }
+        cell.setCellValues(name: name, userImageURL: userImage)
+        return cell
+    }
+    
     
 }
 
@@ -168,19 +221,18 @@ extension MapViewController: CLLocationManagerDelegate {
                     let minor = "minor: \(bea.minor.intValue) \n"
 
                     let location = "location: \(mapViewModel.enemys[row].locationString()) \n"
-                    alert = mapViewModel.enemys[row].alertForProximity(beacon.proximity, flgCops: flgCops!)
-                mapViewModel.controlProcessingByProximity(gameUuid: bea.uuid.uuidString)
+                    
+                alert = mapViewModel.alertForProximity(bea.proximity, gameUuid: bea.uuid.uuidString)
                     printInfo += title + name + major + minor + location
             }
         }
         
         print(printInfo)
-        textView.text = printInfo
         
         if alert == "Unknown" || alert == "" {
             alertLabel.isHidden = true
         } else {
-            alertLabel.isHidden = true
+            alertLabel.isHidden = false
             alertLabel.text = alert
         }
         

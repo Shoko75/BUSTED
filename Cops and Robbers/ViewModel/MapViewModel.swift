@@ -8,14 +8,17 @@
 
 import Foundation
 import Firebase
+import CoreLocation
 
 protocol MapDelegate {
     func didObserve()
+    func didFetchGame()
 }
 
 class MapViewModel {
     
     let gameRef = Database.database().reference(withPath: "game")
+    let userInfoRef = Database.database().reference(withPath: "user_Info")
     
     var enemys = [UserForGame]()
     var gameID = ""
@@ -68,7 +71,45 @@ class MapViewModel {
     }
     
     func controlProcessingByProximity(gameUuid: String) {
-        updateRobberStatus(gameUuid: gameUuid)
+        
+    }
+    
+    func alertForProximity(_ proximity: CLProximity,gameUuid: String) -> String {
+        
+        var alert = ""
+        switch proximity {
+        case .unknown:
+            return "Unknown"
+        case .immediate:
+
+            if flgCops! {
+                updateRobberStatus(gameUuid: gameUuid)
+                alert = "YOU COUGHT A ROBBER!!"
+            } else {
+                
+                alert = "YOU'VE BEEN SENT TO JAIL! "
+            }
+            return alert
+            
+        case .near:
+            if flgCops! {
+                alert = "ALERT! A ROBBER IS NEARBY!"
+            } else {
+                alert = "ALERT! A COP IS NEARBY!"
+            }
+            
+            return alert
+        case .far:
+            if flgCops! {
+                alert = "ALERT! A ROBBER IS NEARBY!"
+            } else {
+                alert = "ALERT! A COP IS NEARBY!"
+            }
+        
+        return alert
+        @unknown default:
+        fatalError()
+        }
     }
     
     func updateRobberStatus(gameUuid: String) {
@@ -89,7 +130,50 @@ class MapViewModel {
             
             if let gameData = Game(snapshot: snapshot) {
                 self.gameData = gameData
+                self.fetchUserInfoByID()
             }
         }
+    }
+    
+    func fetchUserInfoByID() {
+        var copsCnt = 0
+        var robbersCnt = 0
+        
+        for player in (gameData?.cops.players)! {
+            userInfoRef.child(player.userId).observeSingleEvent(of: .value, with: { snapshot in
+                if let friend = Friend(snapshot: snapshot) {
+                    self.gameData?.cops.players[copsCnt].userName = friend.userName
+                    self.gameData?.cops.players[copsCnt].userImageURL = friend.userImageURL
+                }
+                copsCnt += 1
+            })
+        }
+        
+        for player in (gameData?.robbers.robPlayers)! {
+            userInfoRef.child(player.userId).observeSingleEvent(of: .value, with: { snapshot in
+                if let friend = Friend(snapshot: snapshot) {
+                    self.gameData?.robbers.robPlayers[robbersCnt].userName = friend.userName
+                    self.gameData?.robbers.robPlayers[robbersCnt].userImageURL = friend.userImageURL
+                }
+                robbersCnt += 1
+                if robbersCnt == self.gameData?.robbers.robPlayers.count {
+                    self.mapDelegate?.didFetchGame()
+                }
+            })
+        }
+    }
+    
+    func countRobbers() -> String {
+        var cntJail = 0
+        let total = (self.gameData?.robbers.robPlayers.count)!
+        
+        for player in (self.gameData?.robbers.robPlayers)! {
+            if player.status == "Jail" {
+                cntJail += 1
+            }
+        }
+        
+        let left = total - cntJail
+        return String(left)
     }
 }

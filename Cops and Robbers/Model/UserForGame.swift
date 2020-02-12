@@ -46,42 +46,6 @@ class UserForGame {
         }
     }
     
-    func alertForProximity(_ proximity: CLProximity, flgCops: Bool) -> String {
-        
-        var alert = ""
-        switch proximity {
-        case .unknown:
-            return "Unknown"
-        case .immediate:
-
-            if flgCops {
-                alert = "YOU COUGHT A ROBBER!!"
-            } else {
-                alert = "YOU'VE BEEN SENT TO JAIL! "
-            }
-            return alert
-            
-        case .near:
-            if flgCops {
-                alert = "ALERT! A ROBBER IS NEARBY!"
-            } else {
-                alert = "ALERT! A COP IS NEARBY!"
-            }
-            
-            return alert
-        case .far:
-            if flgCops {
-                alert = "ALERT! A ROBBER IS NEARBY!"
-            } else {
-                alert = "ALERT! A COP IS NEARBY!"
-            }
-        
-        return alert
-        @unknown default:
-        fatalError()
-        }
-    }
-    
     func locationString() -> String {
       guard let beacon = beacon else { return "Location: Unknown" }
       let proximity = nameForProximity(beacon.proximity)

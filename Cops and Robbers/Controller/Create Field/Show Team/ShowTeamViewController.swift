@@ -57,11 +57,11 @@ extension ShowTeamViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "showTeamTableViewCell", for: indexPath) as! ShowTeamTableViewCell
         
-        if showTeamViewModle.cops?.players.count != 0 {
+        if (showTeamViewModle.cops?.players.count)! - 1 >= indexPath.row {
             cell.setCupsValues(cop: (showTeamViewModle.cops?.players[indexPath.row])!)
         }
         
-        if showTeamViewModle.robbers?.robPlayers.count != 0 {
+        if (showTeamViewModle.robbers?.robPlayers.count)! - 1 >= indexPath.row {
             cell.setrobbersValues(robber: (showTeamViewModle.robbers?.robPlayers[indexPath.row])!)
         }
         

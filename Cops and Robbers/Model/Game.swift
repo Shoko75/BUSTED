@@ -12,8 +12,8 @@ import Firebase
 struct Game {
 
     let field: Field
-    let cops: Cops
-    let robbers: Robbers
+    var cops: Cops
+    var robbers: Robbers
     
     init?(snapshot: DataSnapshot){
         
