@@ -11,6 +11,8 @@ import UIKit
 class ShowTeamViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var customLeftView: CustomUIView!
+    @IBOutlet weak var customRightView: CustomUIView!
     
     var gameID: String?
     var showTeamViewModle: ShowTeamViewModle!
@@ -22,6 +24,11 @@ class ShowTeamViewController: UIViewController {
         showTeamViewModle.showTeamDelegate = self
         showTeamViewModle.fetchGame(gameID: gameID!)
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        customLeftView.roundLeftCorners(cornerRadius: 50.0)
+        customRightView.roundRightCorners(cornerRadius: 50.0)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

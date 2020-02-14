@@ -12,6 +12,7 @@ class AddPlayerViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var customView: CustomUIView!
     
     fileprivate var addPlayerViewModel: AddPlayerViewModel!
     var invitationID: String?
@@ -31,6 +32,10 @@ class AddPlayerViewController: UIViewController {
         print("Pressed Next!")
         
         self.addPlayerViewModel.checkInvitation()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        customView.roundCorners(cornerRadius: 50.0)
     }
     
     func prepareInvitation() {

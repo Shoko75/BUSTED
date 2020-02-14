@@ -27,6 +27,13 @@ class AddPlayerTableViewCell: UITableViewCell {
         userNameLabel.text = cellValues.userName
         userImageView.contentMode = .scaleToFill
         addedButton.isEnabled = bStatus
+        if bStatus {
+            addedButton.setImage(UIImage(named: "Button_Add"), for: .normal)
+        } else {
+            addedButton.setImage(UIImage(named: "Button_added"), for: .normal)
+        }
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
         if let userImageURL = cellValues.userImageURL {
             userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }
@@ -35,6 +42,7 @@ class AddPlayerTableViewCell: UITableViewCell {
     
     @IBAction func pressedAddButton(_ sender: Any) {
         addedButton.isEnabled = false
+        addedButton.setImage(UIImage(named: "Button_added"), for: .normal)
         addPlayerTableViewCellDelegate?.pressedAdd(player: self.cellValues)
     }
 }

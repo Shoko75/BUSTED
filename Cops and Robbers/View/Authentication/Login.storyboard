@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 2" translatesAutoresizingMaskIntoConstraints="NO" id="7rR-ub-ID1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Account Login" translatesAutoresizingMaskIntoConstraints="NO" id="7rR-ub-ID1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-iV-JhW" userLabel="Buttom View">
@@ -27,20 +27,29 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hu8-4Q-DV5">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="56.5"/>
                                                 <color key="backgroundColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="ato-Oq-CH8"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjH-Bj-gGZ">
                                                 <rect key="frame" x="0.0" y="86.5" width="331" height="56.5"/>
                                                 <color key="backgroundColor" red="0.81568627450980391" green="0.81568627450980391" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6bc-R2-MZA"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLn-Nn-dRC">
-                                        <rect key="frame" x="41.5" y="198" width="331" height="43"/>
+                                        <rect key="frame" x="41.5" y="198" width="331" height="45"/>
                                         <color key="backgroundColor" red="1" green="0.6588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="2rw-dG-WeH"/>
+                                        </constraints>
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -49,17 +58,19 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZnG-rL-296">
-                                        <rect key="frame" x="41.5" y="271" width="331" height="30"/>
+                                        <rect key="frame" x="41.5" y="273" width="331" height="27"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-vz-pug">
-                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCM-vz-pug">
+                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="FORGET PASSWORD?">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDB-Jj-tG7">
-                                                <rect key="frame" x="170.5" y="0.0" width="160.5" height="30"/>
+                                                <rect key="frame" x="170.5" y="0.0" width="160.5" height="27"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="CREATE ACCOUNT">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -76,7 +87,6 @@
                                     <constraint firstItem="X7A-bh-Ek7" firstAttribute="top" secondItem="1ic-iV-JhW" secondAttribute="top" constant="20" symbolic="YES" id="5zX-YV-sqm"/>
                                     <constraint firstItem="ZnG-rL-296" firstAttribute="width" secondItem="1ic-iV-JhW" secondAttribute="width" multiplier="0.8" id="7R1-jc-ACu"/>
                                     <constraint firstItem="X7A-bh-Ek7" firstAttribute="width" secondItem="1ic-iV-JhW" secondAttribute="width" multiplier="0.8" id="Cgl-X1-Q5g"/>
-                                    <constraint firstItem="fLn-Nn-dRC" firstAttribute="height" secondItem="X7A-bh-Ek7" secondAttribute="height" multiplier="0.3" id="FCJ-I1-A1u"/>
                                     <constraint firstItem="fLn-Nn-dRC" firstAttribute="top" secondItem="X7A-bh-Ek7" secondAttribute="bottom" constant="35" id="WcN-A0-jpd"/>
                                     <constraint firstItem="fLn-Nn-dRC" firstAttribute="centerX" secondItem="1ic-iV-JhW" secondAttribute="centerX" id="b2h-wP-C6v"/>
                                     <constraint firstItem="ZnG-rL-296" firstAttribute="top" secondItem="fLn-Nn-dRC" secondAttribute="bottom" constant="30" id="csz-lO-aZf"/>
@@ -88,7 +98,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abJ-Um-i70" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="401"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Busted_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-h6-lvZ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Busted_logo_big" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-h6-lvZ">
                                         <rect key="frame" x="67" y="150" width="280" height="101.5"/>
                                     </imageView>
                                 </subviews>
@@ -119,6 +129,7 @@
                     <connections>
                         <outlet property="emailText" destination="Hu8-4Q-DV5" id="E56-vZ-9nd"/>
                         <outlet property="passwordText" destination="pjH-Bj-gGZ" id="GM5-1P-fGu"/>
+                        <outlet property="signInButton" destination="fLn-Nn-dRC" id="YQg-p0-7br"/>
                         <segue destination="BHw-5K-5in" kind="modal" identifier="GoToMainMenu" animates="NO" modalPresentationStyle="fullScreen" id="7DA-nc-Gb6"/>
                     </connections>
                 </viewController>
@@ -148,7 +159,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Busted_logo" width="280" height="101.5"/>
-        <image name="Rectangle 2" width="414" height="896"/>
+        <image name="Account Login" width="414" height="896"/>
+        <image name="Busted_logo_big" width="280" height="101.5"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class FriendsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var customVIew: CustomUIView!
     fileprivate var friendsListViewModel: FriendsListViewModel!
     
     override func viewDidLoad() {
@@ -20,6 +21,10 @@ class FriendsListViewController: UIViewController {
         friendsListViewModel.friendsListDelegate = self
         friendsListViewModel.fetchFriendReq()
         friendsListViewModel.fetchFriends()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        customVIew.roundCorners(cornerRadius: 50.0)
     }
 }
 

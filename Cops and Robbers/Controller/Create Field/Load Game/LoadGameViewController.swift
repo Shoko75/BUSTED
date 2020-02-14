@@ -8,9 +8,11 @@
 
 import UIKit
 import CoreLocation
+import Lottie
 
 class LoadGameViewController: UIViewController {
     
+    @IBOutlet weak var animationUIView: UIView!
     
     var loadGameViewModel:LoadGameViewModel!
     var passedData = [Player]()
@@ -19,9 +21,12 @@ class LoadGameViewController: UIViewController {
     var feildLocation: DBField?
     var locationManager: CLLocationManager?
     
+    let animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playAnimation()
         
         loadGameViewModel = LoadGameViewModel()
         loadGameViewModel.loadGameDelegate = self
@@ -54,6 +59,31 @@ class LoadGameViewController: UIViewController {
             guard let gameID = gameID else { return }
             loadGameViewModel.observeGame(gameID: gameID)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        animationView.play(fromProgress: 0,
+                           toProgress: 1,
+                           loopMode: LottieLoopMode.autoReverse,
+                           completion: { (finished) in
+                            if finished {
+                                print("Animation Complete")
+                            } else {
+                                print("Animation cancelled")
+                            }
+        })
+    }
+    
+    func playAnimation() {
+        let animation = Animation.named("1802-single-wave-loader")
+        animationView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        animationView.animation = animation
+
+        animationView.contentMode = .scaleAspectFit
+
+        self.animationUIView.addSubview(animationView)
+
     }
     
     func activateLocationServices() {

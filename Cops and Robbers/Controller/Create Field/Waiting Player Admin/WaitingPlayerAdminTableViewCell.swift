@@ -20,7 +20,12 @@ class WaitingPlayerAdminTableViewCell: UITableViewCell {
         self.cellValues = cellValues
         userNameLabel.text = cellValues.user?.userName
         statusLabel.text = cellValues.status
+        if cellValues.status == "Joined" {
+            statusLabel.textColor = UIColor.link
+        }
         userImageView.contentMode = .scaleToFill
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
         
         if let userImageURL = cellValues.user?.userImageURL {
             userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)

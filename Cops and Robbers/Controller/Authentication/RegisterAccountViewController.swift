@@ -14,13 +14,57 @@ class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var userNameText: UITextField!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var customView: CustomUIView!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     var registerAccountViewModel = RegisterAccountViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Layout setting
+        signUpButton.layer.cornerRadius = 12
+        cancelButton.layer.cornerRadius = 12
+        
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
+        
+        userNameText.attributedPlaceholder = NSAttributedString(string: "Your username",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        emailText.attributedPlaceholder = NSAttributedString(string: "Your email",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordText.attributedPlaceholder = NSAttributedString(string: "Your password",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        // keyboard setting
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
         registerAccountViewModel.registerAccountDelegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        customView.roundCorners(cornerRadius: 50.0)
+    }
+    
+    deinit {
+        // Stop listening for keyboard
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardWillChange(notification: Notification) {
+        print("keyboard will show: \(notification.name.rawValue)")
+        
+        guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification ||
+            notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            view.frame.origin.y = -keyboardRect.height
+        } else {
+            view.frame.origin.y = 0
+        }
+        
     }
 
     @IBAction func pressedSelectImage(_ sender: Any) {

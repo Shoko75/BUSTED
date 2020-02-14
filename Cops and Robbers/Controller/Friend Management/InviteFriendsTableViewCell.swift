@@ -24,7 +24,8 @@ class InviteFriendsTableViewCell: UITableViewCell {
         self.cellValues = cellValues
         userNameLabel.text = cellValues.userName
         userImageView.contentMode = .scaleToFill
-        
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
         if let userImageURL = cellValues.userImageURL {
             userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }
@@ -44,6 +45,6 @@ class InviteFriendsTableViewCell: UITableViewCell {
 extension InviteFriendsTableViewCell: ToCellInviteFriendsDelegate {
     func didRegisterFriendRequest() {
         inviteButton.isEnabled = false
-        inviteButton.setTitle("Requesting", for: .normal)
+        inviteButton.setImage(UIImage(named: "Button_added"), for: .normal)
     }
 }

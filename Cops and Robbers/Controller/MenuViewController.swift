@@ -31,6 +31,12 @@ class MenuViewController: UIViewController {
     
     func showSignOut() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "SignOut", style: .plain, target: self, action: #selector(signOut))
+        
+        let logo = UIImage(named: "Busted_logo_navbar")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     @objc func signOut() {

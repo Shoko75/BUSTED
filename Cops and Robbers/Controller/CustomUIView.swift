@@ -10,12 +10,27 @@ import UIKit
 
 class CustomUIView: UIView {
     
-    func drawSemiCircle(){
-        
-        let radiusRate = self.frame.size.width/7
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: self.frame.size.width/2, y: self.frame.size.height), radius: self.frame.size.width - radiusRate, startAngle: 180 * CGFloat(M_PI)/180, endAngle: 0 * CGFloat(M_PI)/180, clockwise: true)
-        let circleShape = CAShapeLayer()
-        circleShape.path = circlePath.cgPath
-        self.layer.mask = circleShape
+    func roundCorners(cornerRadius: Double) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    func roundLeftCorners(cornerRadius: Double) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    func roundRightCorners(cornerRadius: Double) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = path.cgPath
+        self.layer.mask = maskLayer
     }
 }

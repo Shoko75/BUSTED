@@ -7,45 +7,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Invite Freinds-->
+        <!--Invite Friends-->
         <scene sceneID="pyY-NV-Kac">
             <objects>
-                <viewController storyboardIdentifier="InviteFriends" title="Invite Freinds" id="c8S-jq-lki" customClass="InviteFriendsViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteFriends" title="Invite Friends" id="c8S-jq-lki" customClass="InviteFriendsViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTM-6F-jjF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sy-kC-xqp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gda-wg-lqT" customClass="CustomUIView" customModule="Cops_and_Robbers" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sy-kC-xqp">
+                                <rect key="frame" x="20.5" y="126" width="373" height="736"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InviteFriendsCell" id="KG1-ou-UOI" customClass="InviteFriendsTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="373" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KG1-ou-UOI" id="FQe-OF-vyv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jpM-sz-UAa">
-                                                    <rect key="frame" x="10" y="2" width="40" height="40"/>
+                                                    <rect key="frame" x="10" y="3" width="48" height="48"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="fjy-HN-LK2"/>
-                                                        <constraint firstAttribute="width" constant="40" id="i6f-X7-n7I"/>
+                                                        <constraint firstAttribute="height" constant="48" id="fjy-HN-LK2"/>
+                                                        <constraint firstAttribute="width" constant="48" id="i6f-X7-n7I"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVR-TR-2aF">
-                                                    <rect key="frame" x="60" y="11.5" width="45" height="21"/>
+                                                    <rect key="frame" x="68" y="16.5" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-mb-xPM">
-                                                    <rect key="frame" x="314" y="7" width="80" height="30"/>
-                                                    <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGF-mb-xPM">
+                                                    <rect key="frame" x="273" y="8" width="80" height="38"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="lSH-61-Vny"/>
                                                     </constraints>
-                                                    <state key="normal" title="Invite">
+                                                    <state key="normal" image="Button_Add">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -62,6 +66,7 @@
                                                 <constraint firstItem="jpM-sz-UAa" firstAttribute="centerY" secondItem="FQe-OF-vyv" secondAttribute="centerY" id="xpP-Wk-oeh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="inviteButton" destination="gGF-mb-xPM" id="rt9-d7-sjL"/>
                                             <outlet property="userImageView" destination="jpM-sz-UAa" id="7Vf-dL-wlf"/>
@@ -77,14 +82,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="trailing" secondItem="TZ4-Aa-Rxq" secondAttribute="trailing" id="31K-ym-rAV"/>
-                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="bottom" secondItem="TZ4-Aa-Rxq" secondAttribute="bottom" id="CsR-zb-EsO"/>
-                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="top" secondItem="TZ4-Aa-Rxq" secondAttribute="top" id="cA8-7q-5Ha"/>
-                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="leading" secondItem="TZ4-Aa-Rxq" secondAttribute="leading" id="in0-Mg-sTY"/>
+                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="width" secondItem="TZ4-Aa-Rxq" secondAttribute="width" multiplier="0.9" id="3Vc-51-Z6W"/>
+                            <constraint firstAttribute="bottom" secondItem="gda-wg-lqT" secondAttribute="bottom" id="66e-7s-eMf"/>
+                            <constraint firstItem="TZ4-Aa-Rxq" firstAttribute="trailing" secondItem="gda-wg-lqT" secondAttribute="trailing" id="6Vp-aq-qEq"/>
+                            <constraint firstItem="gda-wg-lqT" firstAttribute="leading" secondItem="TZ4-Aa-Rxq" secondAttribute="leading" id="CKJ-MF-KLF"/>
+                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="centerX" secondItem="eTM-6F-jjF" secondAttribute="centerX" id="Rhg-WO-VfH"/>
+                            <constraint firstItem="TZ4-Aa-Rxq" firstAttribute="bottom" secondItem="6Sy-kC-xqp" secondAttribute="bottom" id="qNn-41-lNE"/>
+                            <constraint firstItem="gda-wg-lqT" firstAttribute="top" secondItem="TZ4-Aa-Rxq" secondAttribute="top" id="rHL-yJ-POc"/>
+                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="height" secondItem="TZ4-Aa-Rxq" secondAttribute="height" multiplier="0.9" id="tIA-nj-p0h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZ4-Aa-Rxq"/>
                     </view>
                     <connections>
+                        <outlet property="customView" destination="gda-wg-lqT" id="bMe-MK-u94"/>
                         <outlet property="tableView" destination="6Sy-kC-xqp" id="lbF-ZD-Lr8"/>
                     </connections>
                 </viewController>
@@ -93,4 +103,7 @@
             <point key="canvasLocation" x="147.82608695652175" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button_Add" width="85" height="38"/>
+    </resources>
 </document>

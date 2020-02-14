@@ -11,6 +11,7 @@ import UIKit
 class InviteFriendsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var customView: CustomUIView!
     fileprivate var invitefriendsViewModel: InviteFriendsViewModel!
 
     override func viewDidLoad() {
@@ -21,6 +22,11 @@ class InviteFriendsViewController: UIViewController {
         invitefriendsViewModel.fetchFriendReqFromUserMyself()
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        customView.roundCorners(cornerRadius: 50.0)
+    }
+    
 }
 
 extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSource {

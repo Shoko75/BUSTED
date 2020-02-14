@@ -14,12 +14,17 @@ class WaitingPlayerAdminViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
-
+    @IBOutlet weak var customView: CustomUIView!
+    
     fileprivate var waitingPlayerViewModel: WaitingPlayerViewModel!
     var invitationID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Layout setting
+        startButton.layer.cornerRadius = 12
+        cancelButton.layer.cornerRadius = 12
         
         // initial setting
         startButton.isEnabled = false
@@ -32,6 +37,10 @@ class WaitingPlayerAdminViewController: UIViewController {
         
         waitingPlayerViewModel.observeInvitation()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        customView.roundCorners(cornerRadius: 50.0)
     }
     
     func controlStartButton(){
@@ -49,6 +58,8 @@ class WaitingPlayerAdminViewController: UIViewController {
                 
                 if countPlayers == cntAnswer, cntJoin >= 1 {
                     startButton.isEnabled = true
+                    startButton.backgroundColor = UIColor.systemOrange
+                    startButton.setTitleColor(UIColor.white, for: .normal)
                     waitingPlayerViewModel.stopObserve()
                 }
             }

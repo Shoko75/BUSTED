@@ -13,6 +13,7 @@ class WaitingPlayerViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var declineButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var customView: CustomUIView!
     
     fileprivate var waitingPlayerViewModel: WaitingPlayerViewModel!
     var invitationID: String?
@@ -20,6 +21,10 @@ class WaitingPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Layout setting
+        joinButton.layer.cornerRadius = 12
+        declineButton.layer.cornerRadius = 12
+        
         waitingPlayerViewModel = WaitingPlayerViewModel()
         waitingPlayerViewModel.waitingPlayerDelegate = self
         
@@ -38,6 +43,10 @@ class WaitingPlayerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        customView.roundCorners(cornerRadius: 50.0)
     }
     
     

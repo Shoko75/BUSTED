@@ -24,7 +24,8 @@ class FriendsListTableViewCell: UITableViewCell {
         self.cellValues = cellValues
         userNameLabel.text = cellValues.userName
         userImageView.contentMode = .scaleToFill
-        
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
         if let userImageURL = cellValues.userImageURL {
             userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }
@@ -43,6 +44,6 @@ class FriendsListTableViewCell: UITableViewCell {
 extension FriendsListTableViewCell: ToCellfriendsListDelegate {
     func didRegisterFriend() {
         acceptButton.isEnabled = false
-        acceptButton.setTitle("Accepted", for: .normal)
+        acceptButton.setTitle("Button_accepted", for: .normal)
     }
 }

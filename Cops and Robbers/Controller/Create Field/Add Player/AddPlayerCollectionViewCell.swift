@@ -25,7 +25,8 @@ class AddPlayerCollectionViewCell: UICollectionViewCell {
         self.cellValues = cellValues
         userNameLabel.text = cellValues.userName
         userImageView.contentMode = .scaleToFill
-        
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
         if let userImageURL = cellValues.userImageURL {
             userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }

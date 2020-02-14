@@ -12,12 +12,16 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
     var loginViewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginViewModel.loginViewModelDelegate = self
+        
+        
+        signInButton.layer.cornerRadius = 12
         
         // Listen for keyboard events
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)

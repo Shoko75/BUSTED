@@ -18,7 +18,8 @@ class ShowTeamTableViewCell: UITableViewCell {
     func setCupsValues( cop: CopPlayer ) {
         copsNameLable.text = cop.userName
         copsImageView.contentMode = .scaleToFill
-        
+        copsImageView.layer.masksToBounds = true
+        copsImageView.layer.cornerRadius = copsImageView.bounds.width / 2
         if let userImageURL = cop.userImageURL, userImageURL != "" {
             copsImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }
@@ -27,7 +28,8 @@ class ShowTeamTableViewCell: UITableViewCell {
     func setrobbersValues( robber: RobPlayer ) {
         robbersNameLable.text = robber.userName
         robbersImageView.contentMode = .scaleToFill
-        
+        robbersImageView.layer.masksToBounds = true
+        robbersImageView.layer.cornerRadius = robbersImageView.bounds.width / 2
         if let userImageURL = robber.userImageURL, userImageURL != "" {
             robbersImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
         }

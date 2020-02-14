@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5j-15-Dbw">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,47 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Menu Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fV-qM-sdF">
-                                <rect key="frame" x="117" y="92" width="181" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="TGU-qG-Tyz">
-                                <rect key="frame" x="41.5" y="323" width="331" height="250"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TGU-qG-Tyz">
+                                <rect key="frame" x="41.333333333333343" y="64" width="331.33333333333326" height="736.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH4-tF-jOs">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="44"/>
-                                        <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Start Game">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5R-lR-AUY">
+                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="178"/>
+                                        <state key="normal" image="Button-Create"/>
                                         <connections>
-                                            <action selector="pressedCreateField:" destination="F5j-15-Dbw" eventType="touchUpInside" id="7dB-Nl-6PU"/>
+                                            <action selector="pressedCreateField:" destination="F5j-15-Dbw" eventType="touchUpInside" id="YNq-4C-r5X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-oA-nrT">
-                                        <rect key="frame" x="0.0" y="103" width="331" height="44"/>
-                                        <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Invite Friends">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedFriendsList:" destination="F5j-15-Dbw" eventType="touchUpInside" id="E3d-x9-WaR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE0-hB-sdH">
-                                        <rect key="frame" x="0.0" y="206" width="331" height="44"/>
-                                        <color key="backgroundColor" red="0.16862745100000001" green="0.45098039220000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <state key="normal" title="Join the Field">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE0-hB-sdH" userLabel="Join Group">
+                                        <rect key="frame" x="0.0" y="186" width="331.33333333333331" height="178"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="Button-Join">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="pressedJoinField:" destination="F5j-15-Dbw" eventType="touchUpInside" id="Q1w-Vv-Nps"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-f8-z5M" userLabel="How To Play">
+                                        <rect key="frame" x="0.0" y="372" width="331.33333333333331" height="178"/>
+                                        <state key="normal" image="Button-How"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-oA-nrT" userLabel="Invite Friends">
+                                        <rect key="frame" x="0.0" y="558" width="331.33333333333331" height="178.33333333333337"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="Button-Friends">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedFriendsList:" destination="F5j-15-Dbw" eventType="touchUpInside" id="E3d-x9-WaR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -63,15 +55,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="width" secondItem="uCJ-rb-r2e" secondAttribute="width" multiplier="0.8" id="6Yf-Zd-KFm"/>
-                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="centerY" secondItem="tKl-aD-UaQ" secondAttribute="centerY" id="Rx1-xz-hg6"/>
-                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="centerX" secondItem="tKl-aD-UaQ" secondAttribute="centerX" id="hdK-52-bkh"/>
+                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="width" secondItem="uCJ-rb-r2e" secondAttribute="width" multiplier="0.8" id="GVe-ZX-hIh"/>
+                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="height" secondItem="uCJ-rb-r2e" secondAttribute="height" multiplier="0.9" id="aBQ-rG-OOq"/>
+                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="top" secondItem="uCJ-rb-r2e" secondAttribute="top" constant="20" id="fdg-fA-fOo"/>
+                            <constraint firstItem="TGU-qG-Tyz" firstAttribute="centerX" secondItem="tKl-aD-UaQ" secondAttribute="centerX" id="uxV-Tl-dF3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uCJ-rb-r2e"/>
                     </view>
                     <navigationItem key="navigationItem" id="XQC-px-4w6"/>
                     <connections>
-                        <outlet property="joinFieldButton" destination="mE0-hB-sdH" id="aqp-Ji-fHe"/>
+                        <outlet property="joinFieldButton" destination="mE0-hB-sdH" id="ah6-rr-Z3V"/>
                         <segue destination="zUI-Ek-lr6" kind="show" identifier="showWaitingPlayer" id="TAT-XZ-wym"/>
                         <segue destination="dia-OK-JS7" kind="show" identifier="showFriendsList" id="KfF-DC-5Og"/>
                         <segue destination="n8I-S2-NjF" kind="show" identifier="showAddPlayer" id="ZWp-Gk-zId"/>
@@ -79,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GZ-Qw-aVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-765" y="7"/>
+            <point key="canvasLocation" x="-765.21739130434787" y="6.6964285714285712"/>
         </scene>
         <!--AddPlayer-->
         <scene sceneID="Ny2-2z-QeM">
@@ -120,4 +113,10 @@
             <point key="canvasLocation" x="-1506" y="7"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button-Create" width="377" height="152.33332824707031"/>
+        <image name="Button-Friends" width="377" height="152.33332824707031"/>
+        <image name="Button-How" width="377" height="152.33332824707031"/>
+        <image name="Button-Join" width="377" height="152.33332824707031"/>
+    </resources>
 </document>
