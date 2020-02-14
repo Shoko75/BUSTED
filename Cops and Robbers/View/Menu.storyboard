@@ -39,6 +39,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-f8-z5M" userLabel="How To Play">
                                         <rect key="frame" x="0.0" y="372" width="331.33333333333331" height="178"/>
                                         <state key="normal" image="Button-How"/>
+                                        <connections>
+                                            <action selector="pressedHowToPlay:" destination="F5j-15-Dbw" eventType="touchUpInside" id="wg8-pb-k5m"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-oA-nrT" userLabel="Invite Friends">
                                         <rect key="frame" x="0.0" y="558" width="331.33333333333331" height="178.33333333333337"/>
@@ -68,6 +71,7 @@
                         <segue destination="zUI-Ek-lr6" kind="show" identifier="showWaitingPlayer" id="TAT-XZ-wym"/>
                         <segue destination="dia-OK-JS7" kind="show" identifier="showFriendsList" id="KfF-DC-5Og"/>
                         <segue destination="n8I-S2-NjF" kind="show" identifier="showAddPlayer" id="ZWp-Gk-zId"/>
+                        <segue destination="S5M-Sh-lj8" kind="show" identifier="showHowToPlay" id="lxc-uK-Gs2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GZ-Qw-aVb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -103,6 +107,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYi-H6-7Uq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-146" y="101"/>
+        </scene>
+        <!--HowToPlay-->
+        <scene sceneID="nWp-S0-YjB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HowToPlay" referencedIdentifier="HowToPlay" id="S5M-Sh-lj8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="a2i-7v-zGA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1U8-eV-Q6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136" y="161"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="Qng-oq-8Ok">

@@ -32,6 +32,10 @@
 		2F91FEA223E641C20060A1FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEA123E641C20060A1FF /* Game.swift */; };
 		2F91FEA423F3AED40060A1FF /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEA323F3AED30060A1FF /* MapCollectionViewCell.swift */; };
 		2F91FEC823F635830060A1FF /* 1802-single-wave-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEC723F635830060A1FF /* 1802-single-wave-loader.json */; };
+		2F91FECA23F652150060A1FF /* HowToPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEC923F652150060A1FF /* HowToPlay.storyboard */; };
+		2F91FECC23F65A440060A1FF /* HowToPlayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FECB23F65A440060A1FF /* HowToPlayData.swift */; };
+		2F91FECE23F65D590060A1FF /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FECD23F65D590060A1FF /* HowToPlayViewController.swift */; };
+		2F91FED023F65ED20060A1FF /* HowToPlayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FECF23F65ED20060A1FF /* HowToPlayCollectionViewCell.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -96,6 +100,10 @@
 		2F91FEA123E641C20060A1FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2F91FEA323F3AED30060A1FF /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F91FEC723F635830060A1FF /* 1802-single-wave-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "1802-single-wave-loader.json"; sourceTree = "<group>"; };
+		2F91FEC923F652150060A1FF /* HowToPlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HowToPlay.storyboard; sourceTree = "<group>"; };
+		2F91FECB23F65A440060A1FF /* HowToPlayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayData.swift; sourceTree = "<group>"; };
+		2F91FECD23F65D590060A1FF /* HowToPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		2F91FECF23F65ED20060A1FF /* HowToPlayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -299,6 +307,7 @@
 				2FDF0E7523CAC551001648D5 /* Friend Management */,
 				2F91FE6523DBD14F0060A1FF /* Create Field */,
 				2F91FE8F23E388940060A1FF /* WaitingPlayer.storyboard */,
+				2F91FEC923F652150060A1FF /* HowToPlay.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +323,8 @@
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
 				2F91FE6723DBD1750060A1FF /* Create Field */,
 				2F91FE9723E3940F0060A1FF /* Waiting Player */,
+				2F91FECD23F65D590060A1FF /* HowToPlayViewController.swift */,
+				2F91FECF23F65ED20060A1FF /* HowToPlayCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +352,7 @@
 				2F91FE7023DBD5A10060A1FF /* Invitation.swift */,
 				2F91FE7223DBD5B20060A1FF /* DataBase */,
 				2F91FEA123E641C20060A1FF /* Game.swift */,
+				2F91FECB23F65A440060A1FF /* HowToPlayData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,6 +506,7 @@
 				2F91FE7723E0EB260060A1FF /* ShowTeam.storyboard in Resources */,
 				2F91FE8023E25D800060A1FF /* LoadGame.storyboard in Resources */,
 				2FDF0E5D23B3BD74001648D5 /* NavigationController.storyboard in Resources */,
+				2F91FECA23F652150060A1FF /* HowToPlay.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,9 +579,11 @@
 				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,
 				2F91FE7C23E1032D0060A1FF /* ShowTeamTableViewCell.swift in Sources */,
 				2F91FE7123DBD5A10060A1FF /* Invitation.swift in Sources */,
+				2F91FECE23F65D590060A1FF /* HowToPlayViewController.swift in Sources */,
 				2FDF0E5223B0B78E001648D5 /* FirebaseAuthManager.swift in Sources */,
 				2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */,
 				2FDF0E6223B4515C001648D5 /* InviteFriendsViewModel.swift in Sources */,
+				2F91FECC23F65A440060A1FF /* HowToPlayData.swift in Sources */,
 				2F91FE7423DBDD1A0060A1FF /* WaitingPlayerViewModel.swift in Sources */,
 				2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */,
 				2F91FE6D23DBD2B40060A1FF /* WaitingPlayerAdminViewController.swift in Sources */,
@@ -590,6 +605,7 @@
 				2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */,
 				2FDF0E1D23AC6867001648D5 /* User.swift in Sources */,
 				2FDF0E6023B3C239001648D5 /* Components.swift in Sources */,
+				2F91FED023F65ED20060A1FF /* HowToPlayCollectionViewCell.swift in Sources */,
 				2F91FE6F23DBD3700060A1FF /* WaitingPlayerAdminTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

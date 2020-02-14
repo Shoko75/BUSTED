@@ -63,6 +63,9 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
     }
     
+    @IBAction func pressedHowToPlay(_ sender: Any) {
+        performSegue(withIdentifier: "showHowToPlay", sender: nil)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showWaitingPlayer" {
