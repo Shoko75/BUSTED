@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TGU-qG-Tyz">
-                                <rect key="frame" x="41.333333333333343" y="64" width="331.33333333333326" height="736.33333333333337"/>
+                                <rect key="frame" x="41.333333333333343" y="108" width="331.33333333333326" height="696.66666666666663"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5R-lR-AUY">
-                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="178"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="168"/>
                                         <state key="normal" image="Button-Create"/>
                                         <connections>
                                             <action selector="pressedCreateField:" destination="F5j-15-Dbw" eventType="touchUpInside" id="YNq-4C-r5X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE0-hB-sdH" userLabel="Join Group">
-                                        <rect key="frame" x="0.0" y="186" width="331.33333333333331" height="178"/>
+                                        <rect key="frame" x="0.0" y="176" width="331.33333333333331" height="168.33333333333337"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="Button-Join">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,14 +37,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-f8-z5M" userLabel="How To Play">
-                                        <rect key="frame" x="0.0" y="372" width="331.33333333333331" height="178"/>
+                                        <rect key="frame" x="0.0" y="352.33333333333331" width="331.33333333333331" height="167.99999999999994"/>
                                         <state key="normal" image="Button-How"/>
                                         <connections>
                                             <action selector="pressedHowToPlay:" destination="F5j-15-Dbw" eventType="touchUpInside" id="wg8-pb-k5m"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-oA-nrT" userLabel="Invite Friends">
-                                        <rect key="frame" x="0.0" y="558" width="331.33333333333331" height="178.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="528.33333333333337" width="331.33333333333331" height="168.33333333333337"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="Button-Friends">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,6 +66,7 @@
                         <viewLayoutGuide key="safeArea" id="uCJ-rb-r2e"/>
                     </view>
                     <navigationItem key="navigationItem" id="XQC-px-4w6"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="joinFieldButton" destination="mE0-hB-sdH" id="ah6-rr-Z3V"/>
                         <segue destination="zUI-Ek-lr6" kind="show" identifier="showWaitingPlayer" id="TAT-XZ-wym"/>

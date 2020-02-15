@@ -24,31 +24,37 @@ class MenuViewController: UIViewController {
         menuViewModel.menuDelegate = self
         joinFieldButton.isEnabled = menuViewModel.flgJoinField
         
-        showSignOut()
+        setNavBar()
         menuViewModel.checkInvitationStatus()
         
     }
     
-    func showSignOut() {
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "SignOut", style: .plain, target: self, action: #selector(signOut))
+    func setNavBar() {
         
+        // Right Item
+        let userButton = UIButton(type: .system)
+        userButton.setImage(UIImage(named: "Frame 15")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+        userButton.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
+        userButton.contentMode = .scaleAspectFill
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: userButton)
+        self.navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserSetting)))
+        
+        // Title
         let logo = UIImage(named: "Busted_logo_navbar")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
+        
+        // Delete navigation bar under line
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    @objc func signOut() {
-        do {
-            try Auth.auth().signOut()
-            let storybord = UIStoryboard(name: "Login", bundle: nil)
-            let loginController = storybord.instantiateViewController(identifier: "Login") as! LoginViewController
-            self.view.window?.rootViewController = loginController
-            
-        } catch let error {
-            print("Faild to sign out with error: \(error)")
-        }
+    @objc func showUserSetting() {
+        print("showUserSetting")
+        let storyBoard = UIStoryboard(name: "UserSetting", bundle: nil)
+        let userSettingVC = storyBoard.instantiateViewController(withIdentifier: "UserSetting") as! UserSettingViewController
+        userSettingVC.modalPresentationStyle = .popover
+        self.present(userSettingVC, animated: true, completion: nil)
     }
     
     @IBAction func pressedCreateField(_ sender: Any) {
