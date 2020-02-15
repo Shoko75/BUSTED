@@ -41,6 +41,9 @@
 		2F91FED623F765000060A1FF /* UserSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FED523F765000060A1FF /* UserSettingTableViewCell.swift */; };
 		2F91FEDA23F770240060A1FF /* UserSettingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FED923F770240060A1FF /* UserSettingSection.swift */; };
 		2F91FEDC23F78C220060A1FF /* UserSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEDB23F78C220060A1FF /* UserSettingViewModel.swift */; };
+		2F91FEDE23F7A54D0060A1FF /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEDD23F7A54D0060A1FF /* ResetPassword.storyboard */; };
+		2F91FEE023F7AC980060A1FF /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEDF23F7AC980060A1FF /* ResetPasswordViewController.swift */; };
+		2F91FEE223F7EB5E0060A1FF /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEE123F7EB5D0060A1FF /* ResetPasswordViewModel.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -114,6 +117,9 @@
 		2F91FED523F765000060A1FF /* UserSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingTableViewCell.swift; sourceTree = "<group>"; };
 		2F91FED923F770240060A1FF /* UserSettingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingSection.swift; sourceTree = "<group>"; };
 		2F91FEDB23F78C220060A1FF /* UserSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewModel.swift; sourceTree = "<group>"; };
+		2F91FEDD23F7A54D0060A1FF /* ResetPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
+		2F91FEDF23F7AC980060A1FF /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		2F91FEE123F7EB5D0060A1FF /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -393,6 +399,7 @@
 			children = (
 				2FDF0E1523A99D3C001648D5 /* RegisterAccount.storyboard */,
 				2FDF0E1E23AC6D39001648D5 /* Login.storyboard */,
+				2F91FEDD23F7A54D0060A1FF /* ResetPassword.storyboard */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -431,6 +438,7 @@
 			children = (
 				2FDF0E5523B0FE55001648D5 /* RegisterAccountViewController.swift */,
 				2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */,
+				2F91FEDF23F7AC980060A1FF /* ResetPasswordViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -440,6 +448,7 @@
 			children = (
 				2FDF0E1923AC61E9001648D5 /* RegisterAccountViewModel.swift */,
 				2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */,
+				2F91FEE123F7EB5D0060A1FF /* ResetPasswordViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -534,6 +543,7 @@
 				2F91FED223F754850060A1FF /* UserSetting.storyboard in Resources */,
 				2FDF0E6C23C9843D001648D5 /* FriendsList.storyboard in Resources */,
 				2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */,
+				2F91FEDE23F7A54D0060A1FF /* ResetPassword.storyboard in Resources */,
 				2FDF0E1623A99D3C001648D5 /* RegisterAccount.storyboard in Resources */,
 				2F91FE7723E0EB260060A1FF /* ShowTeam.storyboard in Resources */,
 				2F91FE8023E25D800060A1FF /* LoadGame.storyboard in Resources */,
@@ -602,6 +612,7 @@
 				2F91FE9E23E51C7C0060A1FF /* DBGame.swift in Sources */,
 				2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */,
 				2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */,
+				2F91FEE223F7EB5E0060A1FF /* ResetPasswordViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2F91FE9223E38A500060A1FF /* WaitingPlayerViewController.swift in Sources */,
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
@@ -631,6 +642,7 @@
 				2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */,
 				2F91FE9423E38ADB0060A1FF /* WaitingPlayerTableViewCell.swift in Sources */,
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
+				2F91FEE023F7AC980060A1FF /* ResetPasswordViewController.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
 				2F91FE9923E4EF760060A1FF /* MenuViewModel.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,

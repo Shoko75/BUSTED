@@ -53,12 +53,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Akm-xi-U5y">
                                         <rect key="frame" x="0.0" y="69.666666666666629" width="414" height="417"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5If-mS-wuy">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5If-mS-wuy">
                                                 <rect key="frame" x="41.333333333333343" y="188.33333333333337" width="331.33333333333326" height="208.66666666666663"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-Uk-mcI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="59.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="331.33333333333331" height="50"/>
                                                         <color key="backgroundColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="gCM-ap-xLD"/>
+                                                        </constraints>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -69,15 +72,21 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NRw-ze-7lE">
-                                                        <rect key="frame" x="0.0" y="74.666666666666686" width="331.33333333333331" height="59.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="79.333333333333314" width="331.33333333333331" height="50"/>
                                                         <color key="backgroundColor" red="0.2274509804" green="0.2274509804" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="4pe-nD-qbv"/>
+                                                        </constraints>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MsU-Ej-N9t">
-                                                        <rect key="frame" x="0.0" y="149.33333333333331" width="331.33333333333331" height="59.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="158.66666666666669" width="331.33333333333331" height="50"/>
                                                         <color key="backgroundColor" red="0.2274509804" green="0.2274509804" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="hYU-EQ-WO2"/>
+                                                        </constraints>
                                                         <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>

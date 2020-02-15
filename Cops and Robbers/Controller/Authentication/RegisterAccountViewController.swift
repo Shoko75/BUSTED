@@ -23,6 +23,8 @@ class RegisterAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.hidesKeyboard()
         // Layout setting
         signUpButton.layer.cornerRadius = 12
         cancelButton.layer.cornerRadius = 12

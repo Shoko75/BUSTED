@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginViewModel.loginViewModelDelegate = self
-        
+        self.hidesKeyboard()
         
         signInButton.layer.cornerRadius = 12
         
@@ -66,6 +66,7 @@ class LoginViewController: UIViewController {
     @IBAction func pressedBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+    
 }
 
 extension LoginViewController: LoginViewModelDelegate {
