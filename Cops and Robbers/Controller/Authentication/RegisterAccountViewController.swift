@@ -92,6 +92,7 @@ class RegisterAccountViewController: UIViewController {
     
 }
 
+// MARK: UIImagePickerControllerDelegate
 extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerController() {

@@ -10,7 +10,7 @@
         <!--User Setting View Controller-->
         <scene sceneID="uDM-p5-MwL">
             <objects>
-                <viewController storyboardIdentifier="UserSetting" id="mSh-bs-jUK" customClass="UserSettingViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserSetting" id="mSh-bs-jUK" customClass="UserSettingViewController" customModule="BUSTED" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a2Z-Yu-Yoy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSettingTableViewCell" id="b7D-q8-jCh" customClass="UserSettingTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserSettingTableViewCell" id="b7D-q8-jCh" customClass="UserSettingTableViewCell" customModule="BUSTED" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b7D-q8-jCh" id="Mca-so-Do5">
@@ -103,7 +103,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PWK-e2-mLb" firstAttribute="leading" secondItem="fVu-0k-PLW" secondAttribute="leading" id="0u7-cC-2Qa"/>
                             <constraint firstAttribute="bottom" secondItem="PWK-e2-mLb" secondAttribute="bottom" id="3jj-jm-bzX"/>
@@ -114,6 +114,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fVu-0k-PLW"/>
                     </view>
+                    <connections>
+                        <outlet property="userImageView" destination="M2e-34-N4H" id="gMd-GK-1mx"/>
+                        <outlet property="userNameLabel" destination="UD4-aA-Tz9" id="uOd-kP-ZtE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLV-ON-cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

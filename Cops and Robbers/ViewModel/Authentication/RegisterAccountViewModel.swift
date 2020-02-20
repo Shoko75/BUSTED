@@ -48,6 +48,7 @@ class RegisterAccountViewModel {
         
         // Saving the userImage on the storage
         if let uploadData = userImage.pngData() {
+            
             storageRef.putData(uploadData, metadata: nil, completion:
                 { (metadata, error) in
                     if error != nil {

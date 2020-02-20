@@ -21,6 +21,7 @@ class MenuViewModel {
     var flgJoinField = false
     var menuDelegate: MenuDelegate?
     var invitationID: String?
+    var userInfo: Friend?
     
     func checkInvitationStatus() {
         

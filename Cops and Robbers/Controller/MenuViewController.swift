@@ -33,9 +33,9 @@ class MenuViewController: UIViewController {
         
         // Right Item
         let userButton = UIButton(type: .system)
-        userButton.setImage(UIImage(named: "Frame 15")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+        let largeConfig = UIImage.SymbolConfiguration(textStyle: .title1)
+        userButton.setImage(UIImage(systemName: "person.circle", withConfiguration: largeConfig)!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
         userButton.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
-        userButton.contentMode = .scaleAspectFill
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: userButton)
         self.navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserSetting)))
         
@@ -83,7 +83,9 @@ class MenuViewController: UIViewController {
 }
 
 extension MenuViewController: MenuDelegate {
+    
     func didFinishcheckInvitationStatus() {
         joinFieldButton.isEnabled = self.menuViewModel.flgJoinField
     }
+    
 }

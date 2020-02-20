@@ -11,14 +11,31 @@ import Firebase
 
 class UserSettingViewController: UIViewController {
 
+    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    var userSettingViewModel: UserSettingViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        userSettingViewModel = UserSettingViewModel()
+        userSettingViewModel.userSettingDelegate = self
+        userSettingViewModel.observeUserInfo()
         
+        userImageView.contentMode = .scaleToFill
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
     }
-
+    
+    func setUserInfo() {
+        if let userImage = userSettingViewModel.userInfo?.userImageURL {
+            userImageView.loadImageUsingCacheWithUrlString(urlString: userImage)
+        }
+        userNameLabel.text = userSettingViewModel.userInfo?.userName
+    }
 }
 
+// MARK: UITableViewDelegate
 extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,7 +48,6 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
         
         switch section {
         case .Account: return AccountOptions.allCases.count
-        case .Settings: return SettingsOptions.allCases.count
         }
     }
     
@@ -66,9 +82,6 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
         case .Account:
             let account = AccountOptions(rawValue: indexPath.row)
             cell.sectionType = account
-        case .Settings:
-            let settings = SettingsOptions(rawValue: indexPath.row)
-            cell.sectionType = settings
         }
         
         return cell
@@ -92,17 +105,48 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
                 } catch let error {
                     print("Faild to sign out with error: \(error)")
                 }
-            case .changePassword:
-                print("changePassword")
+            case .changeProfilePicture:
+                print("changeProfilePicture")
+                self.showImagePickerController()
             case .none:
                 print("none")
             }
-        case .Settings:
-            let settings = SettingsOptions(rawValue: indexPath.row)?.description
-            print(settings)
-            
         }
     }
+}
+
+// MARK: Delegate
+extension UserSettingViewController: UserSettingDelegate {
+    func didFinishObserveUserInfo() {
+        self.setUserInfo()
+    }
+}
+
+// MARK: UIImagePickerControllerDelegate
+extension UserSettingViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    func showImagePickerController() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            userImageView.image = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userImageView.image = originalImage
+        }
+        
+        dismiss(animated: true, completion: {
+            self.userSettingViewModel.changeUserImage(userImage: self.userImageView.image!)
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
 }

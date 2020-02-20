@@ -11,42 +11,24 @@ protocol SectionType: CustomStringConvertible {
 
 enum UserSettingSection: Int, CaseIterable, CustomStringConvertible {
     case Account
-    case Settings
     
     var description: String {
         switch self {
         case .Account: return "Account"
-        case .Settings: return "Settings"
         }
     }
 }
 
 enum AccountOptions: Int, CaseIterable, SectionType {
-    case changePassword
+    case changeProfilePicture
     case logout
     
     var containsSwitch: Bool { return false }
     
     var description: String {
         switch self {
-        case .changePassword: return "Change Password"
+        case .changeProfilePicture: return "Change Profile Picture"
         case .logout: return "Log out"
-        }
-    }
-}
-
-enum SettingsOptions: Int, CaseIterable, SectionType {
-    case notification
-    
-    var containsSwitch: Bool {
-        switch self {
-        case .notification: return true
-        }
-    }
-    
-    var description: String {
-        switch self {
-        case .notification: return "Notification"
         }
     }
 }

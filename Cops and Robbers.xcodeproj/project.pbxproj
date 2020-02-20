@@ -121,7 +121,7 @@
 		2F91FEDF23F7AC980060A1FF /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		2F91FEE123F7EB5D0060A1FF /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		2FB47DE523A0923300AA9216 /* Cops and Robbers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cops and Robbers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB47DE523A0923300AA9216 /* BUSTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2FB47DF123A0923600AA9216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		2FB47DE623A0923300AA9216 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47DE523A0923300AA9216 /* Cops and Robbers.app */,
+				2FB47DE523A0923300AA9216 /* BUSTED.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -489,7 +489,7 @@
 			);
 			name = "Cops and Robbers";
 			productName = "Cops and Robbers";
-			productReference = 2FB47DE523A0923300AA9216 /* Cops and Robbers.app */;
+			productReference = 2FB47DE523A0923300AA9216 /* BUSTED.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -801,9 +801,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BUSTED;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -822,9 +822,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shokohashimoto.CopsAndRobbers;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BUSTED;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
