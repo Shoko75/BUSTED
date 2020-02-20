@@ -37,8 +37,24 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         return friendsListViewModel.friendsList.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return friendsListViewModel.friendsList[section].sectionName
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 23/255, green: 23/255, blue: 49/255, alpha: 1)
+        
+        let title = UILabel()
+        title.font = UIFont.boldSystemFont(ofSize: 16)
+        title.textColor = .white
+        title.text = friendsListViewModel.friendsList[section].sectionName
+        view.addSubview(title)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        title.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
