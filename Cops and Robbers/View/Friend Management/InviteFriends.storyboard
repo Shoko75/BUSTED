@@ -10,12 +10,12 @@
         <!--Invite Friends-->
         <scene sceneID="pyY-NV-Kac">
             <objects>
-                <viewController storyboardIdentifier="InviteFriends" title="Invite Friends" id="c8S-jq-lki" customClass="InviteFriendsViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteFriends" title="Invite Friends" id="c8S-jq-lki" customClass="InviteFriendsViewController" customModule="BUSTED" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTM-6F-jjF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gda-wg-lqT" customClass="CustomUIView" customModule="Cops_and_Robbers" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gda-wg-lqT" customClass="CustomUIView" customModule="BUSTED" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="20.5" y="126" width="373" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InviteFriendsCell" id="KG1-ou-UOI" customClass="InviteFriendsTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InviteFriendsCell" id="KG1-ou-UOI" customClass="InviteFriendsTableViewCell" customModule="BUSTED" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="373" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KG1-ou-UOI" id="FQe-OF-vyv">

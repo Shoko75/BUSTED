@@ -43,6 +43,7 @@ class ShowTeamViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDelegate
 extension ShowTeamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rows = 0
@@ -78,6 +79,7 @@ extension ShowTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// MARK: ShowTeamDelegate
 extension ShowTeamViewController: ShowTeamDelegate {
     func didFetchGame() {
         self.tableView.reloadData()

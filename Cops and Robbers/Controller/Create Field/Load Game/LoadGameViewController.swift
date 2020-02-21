@@ -18,7 +18,7 @@ class LoadGameViewController: UIViewController {
     var passedData = [Player]()
     var flgAdmin = false
     var gameID: String?
-    var feildLocation: DBField?
+    var feildLocation: CLLocation?
     var locationManager: CLLocationManager?
     
     let animationView = AnimationView()
@@ -107,7 +107,7 @@ extension LoadGameViewController: CLLocationManagerDelegate {
         let lan = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude
         
-        feildLocation = DBField(latitude: String(lan), longitude: String(lon))
+        self.feildLocation = CLLocation(latitude: lan, longitude: lon)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,8 +119,10 @@ extension LoadGameViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: LoadGameDelegate
 extension LoadGameViewController: LoadGameDelegate {
     func didCreateGame() {
+        self.loadGameViewModel.stopObserveGame(gameID: gameID!)
         performSegue(withIdentifier: "showTeam", sender: nil)
     }
 }

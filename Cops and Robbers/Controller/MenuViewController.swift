@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
         // Right Item
         let userButton = UIButton(type: .system)
         let largeConfig = UIImage.SymbolConfiguration(textStyle: .title1)
-        userButton.setImage(UIImage(systemName: "person.circle", withConfiguration: largeConfig)!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+        userButton.setImage(UIImage(systemName: "person.crop.circle", withConfiguration: largeConfig)!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
         userButton.frame = CGRect(x: 0, y: 0, width: 35, height: 35)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: userButton)
         self.navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserSetting)))

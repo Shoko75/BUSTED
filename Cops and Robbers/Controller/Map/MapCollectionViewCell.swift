@@ -16,6 +16,8 @@ class MapCollectionViewCell: UICollectionViewCell {
     func setCellValues(name: String, userImageURL: String) {
         userNameLabel.text = name
         userImageView.contentMode = .scaleToFill
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
         userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
     }
 }

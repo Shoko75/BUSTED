@@ -13,6 +13,7 @@ import CoreLocation
 protocol MapDelegate {
     func didObserve()
     func didFetchGame()
+    func didUpdateFlagStatus()
 }
 
 class MapViewModel {
@@ -68,10 +69,6 @@ class MapViewModel {
         }
         
         return gameUuid
-    }
-    
-    func controlProcessingByProximity(gameUuid: String) {
-        
     }
     
     func alertForProximity(_ proximity: CLProximity,gameUuid: String) -> String {
@@ -131,6 +128,7 @@ class MapViewModel {
             if let gameData = Game(snapshot: snapshot) {
                 self.gameData = gameData
                 self.fetchUserInfoByID()
+                self.mapDelegate?.didUpdateFlagStatus()
             }
         }
     }
@@ -175,5 +173,11 @@ class MapViewModel {
         
         let left = total - cntJail
         return String(left)
+    }
+    
+    func updateFlag(identifier: String) {
+       
+        let activeFlg = ["activeFlg": false]
+        gameRef.child(gameID).child("flags").child(identifier).updateChildValues(activeFlg)
     }
 }

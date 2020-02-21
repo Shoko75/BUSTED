@@ -29,6 +29,7 @@ class InviteFriendsViewController: UIViewController {
     
 }
 
+// MARK: UITableViewDelegate
 extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return invitefriendsViewModel.friendsList[section].friends.count

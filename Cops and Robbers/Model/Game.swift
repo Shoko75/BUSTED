@@ -14,6 +14,7 @@ struct Game {
     let field: Field
     var cops: Cops
     var robbers: Robbers
+    var flags = [Flag]()
     
     init?(snapshot: DataSnapshot){
         
@@ -21,12 +22,17 @@ struct Game {
             let value = snapshot.value as? [String: AnyObject],
             let field = value["feild"] as? [String: AnyObject],
             let cops = value["cops"] as? [String: AnyObject],
-            let robbers = value["robbers"] as? [String: AnyObject]
+            let robbers = value["robbers"] as? [String: AnyObject],
+            let flags = value["flags"] as? [[String: AnyObject]]
         else { return nil }
         
         self.field = Field(data: field)
         self.cops = Cops(data: cops)
         self.robbers = Robbers(data: robbers)
+        
+        for flag in flags {
+            self.flags.append(Flag(data: flag))
+        }
     }
 }
 
@@ -38,6 +44,18 @@ struct Field {
     init(data: [String: AnyObject]) {
         self.latitude = data["latitude"] as! String
         self.longitude = data["longitude"] as! String
+    }
+}
+
+struct Flag {
+    let latitude: String
+    let longitude: String
+    let activeFlg: Bool
+    
+    init(data: [String: AnyObject]) {
+        self.latitude = data["latitude"] as! String
+        self.longitude = data["longitude"] as! String
+        self.activeFlg = data["activeFlg"] as! Bool
     }
 }
 

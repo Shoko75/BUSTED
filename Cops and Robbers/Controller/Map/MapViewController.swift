@@ -40,17 +40,19 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // notification check
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        // set status on objects
         initSetting()
         
+        // fetch game data
         mapViewModel = MapViewModel()
         mapViewModel.mapDelegate = self
         mapViewModel.gameID = self.gameID!
         mapViewModel.flgCops = self.flgCops!
-        mapViewModel.observeGame()
         mapViewModel.setEnemyData(gameData: gameData!)
         let myGameUuid = mapViewModel.searchMyGameUuid(gameData: gameData!)
         
@@ -71,11 +73,17 @@ class MapViewController: UIViewController {
         addRadiusCircle(location: location)
         
         // Set exit notification of the field
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(Double((gameData?.field.latitude)!)!, Double((gameData?.field.longitude)!)!)
-        let radiusOfNotify: CLLocationDistance = 100
-        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
-        geofenceRegion.notifyOnExit = true
-        locationManager.startMonitoring(for: geofenceRegion)
+        setFieldNotification()
+        
+        // Set Flags
+        setFlags()
+        
+        if !flgCops! { // flag monitoring is only for robbers
+            startFlagsMonitoring()
+        }
+        
+        // Observe Game data
+        mapViewModel.observeGame()
         
     }
     
@@ -86,13 +94,25 @@ class MapViewController: UIViewController {
         stopLocalBeacon()
     }
     
+    func setFieldNotification() {
+        let geofenceRegionCenter = CLLocationCoordinate2DMake(Double((gameData?.field.latitude)!)!, Double((gameData?.field.longitude)!)!)
+        let radiusOfNotify: CLLocationDistance = 1500
+        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
+        geofenceRegion.notifyOnExit = true
+        locationManager.startMonitoring(for: geofenceRegion)
+    }
+    
     func initSetting() {
         if flgCops! {
             statusLabel.text = "ROBBERS"
             statusNumLabel.text = "0"
+            backgroundImageView.image = UIImage(named: "playerlist_police_bg")
         } else {
             statusLabel.text = "FLAGS"
-            statusNumLabel.text = "0"
+            if let flgCnt = gameData?.flags.count {
+                statusNumLabel.text = String(flgCnt)
+            }
+            backgroundImageView.image = UIImage(named: "playerlist_robbers_bg")
         }
     }
     
@@ -144,11 +164,61 @@ class MapViewController: UIViewController {
     // Map setting
     func addRadiusCircle(location: CLLocation) {
         self.mapView.delegate = self
-        var circle = MKCircle(center: location.coordinate, radius: 100 as CLLocationDistance)
+        var circle = MKCircle(center: location.coordinate, radius: 1500 as CLLocationDistance)
         self.mapView.addOverlay(circle)
+    }
+    
+    func setFlags() {
+        for flag in self.gameData!.flags {
+            let showflag = MKPointAnnotation()
+            showflag.coordinate = CLLocationCoordinate2D(latitude: Double(flag.latitude)!, longitude: Double(flag.longitude)!)
+            mapView.addAnnotation(showflag)
+        }
+    }
+    
+    func startFlagsMonitoring() {
+        var cnt = 0
+        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            for flag in self.gameData!.flags {
+                let flagLocation = CLLocationCoordinate2D(latitude: Double(flag.latitude)!, longitude: Double(flag.longitude)!)
+                let region = CLCircularRegion(center: flagLocation, radius: 5, identifier: "\(cnt)")
+                region.notifyOnEntry = true
+                region.notifyOnExit = true
+                locationManager.startMonitoring(for: region)
+                cnt += 1
+            }
+        }
+    }
+    
+    func updateFlagStatus() {
+        if let flags = self.mapViewModel.gameData?.flags {
+            for flag in flags {
+                for annotation in mapView.annotations {
+                    
+                    if flag.latitude == String (annotation.coordinate.latitude),
+                        flag.longitude == String (annotation.coordinate.longitude),
+                        flag.activeFlg == false {
+                        mapView.view(for: annotation)?.isHidden = !flag.activeFlg
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateFlagLabel() {
+        var flagCnt = 0
+        if let flags = self.mapViewModel.gameData?.flags {
+            for flag in flags {
+                if flag.activeFlg {
+                    flagCnt += 1
+                }
+            }
+            statusNumLabel.text = String(flagCnt)
+        }
     }
 }
 
+// MARK: MapDelegate
 extension MapViewController: MapDelegate {
     func didFetchGame() {
         self.collectionView.reloadData()
@@ -157,6 +227,14 @@ extension MapViewController: MapDelegate {
     func didObserve() {
         if flgCops! {
             let leftRobs = mapViewModel.countRobbers()
+        }
+    }
+    
+    func didUpdateFlagStatus() {
+        // controll flag hidden status
+        updateFlagStatus()
+        if !flgCops! {
+            updateFlagLabel()
         }
     }
     
@@ -239,7 +317,6 @@ extension MapViewController: CLLocationManagerDelegate {
 
     }
     
-    
     // Error handling
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
       print("Failed monitoring region: \(error.localizedDescription)")
@@ -252,6 +329,14 @@ extension MapViewController: CLLocationManagerDelegate {
     // Map Setting
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.currentLocation = locations.last as CLLocation?
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        self.mapViewModel.updateFlag(identifier: region.identifier)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print(region.identifier)
     }
 }
 
@@ -276,6 +361,24 @@ extension MapViewController: MKMapViewDelegate {
         circle.fillColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.1)
         circle.lineWidth = 2
         return circle
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "flags") as? MKMarkerAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "flags")
+        } else {
+            annotationView?.annotation = annotation
+        }
+        annotationView?.glyphText = "💰"
+        
+        return annotationView
     }
 }
 

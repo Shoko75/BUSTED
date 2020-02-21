@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import MapKit
 
 protocol LoadGameDelegate {
     func didCreateGame()
@@ -32,10 +33,10 @@ class LoadGameViewModel {
         }
     }
     
-    func prepareForGame(currentLoction: DBField, playersInfo: [Player], gameID: String) {
+    func prepareForGame(currentLoction: CLLocation, playersInfo: [Player], gameID: String) {
         
         // FieldLocation
-        let fieldLocation = DBField(latitude: currentLoction.latitude, longitude: currentLoction.longitude)
+        let fieldLocation = DBField(latitude: String(currentLoction.coordinate.latitude), longitude: String(currentLoction.coordinate.longitude))
         
         // Generate Major
         let majors = generateMajor()
@@ -43,7 +44,9 @@ class LoadGameViewModel {
         // CreateTeam
         let (cops, robbers) = createTeam(playersInfo: playersInfo, majors: majors)
         
-        let gameData = DBGame(field: fieldLocation, cops: cops, robbers: robbers)
+        let flags = generateFlags(currentLoction: currentLoction)
+        
+        let gameData = DBGame(field: fieldLocation, cops: cops, robbers: robbers, flags: flags)
         
         // Register Game
         registerGame(registerData: gameData, gameID: gameID)
@@ -128,6 +131,61 @@ class LoadGameViewModel {
 
             print("the game data was created")
             self.loadGameDelegate?.didCreateGame()
+        }
+    }
+    
+    func stopObserveGame(gameID: String) {
+        gameRef.child(gameID).removeAllObservers()
+    }
+    
+    func generateFlags(currentLoction: CLLocation) -> [DBFlag] {
+
+        var cnt = 0
+        var flags = [DBFlag]()
+        
+        //First we declare While to repeat adding Annotation
+        while cnt != 3 {
+              cnt += 1
+
+            //Add Annotation
+            let flag = generateRandomCoordinates(min: 1, max: 500, currentLoction: currentLoction) //this will be the maximum and minimum distance of the annotation from the current Location (Meters)
+            flags.append(DBFlag(latitude: String(flag.latitude), longitude: String(flag.longitude)))
+
+        }
+        
+        return flags
+    }
+    
+    func generateRandomCoordinates(min: UInt32, max: UInt32, currentLoction: CLLocation)-> CLLocationCoordinate2D {
+        //Get the Current Location's longitude and latitude
+        let currentLong = currentLoction.coordinate.longitude
+        let currentLat = currentLoction.coordinate.latitude
+
+        //1 KiloMeter = 0.00900900900901° So, 1 Meter = 0.00900900900901 / 1000
+        let meterCord = 0.00900900900901 / 1000
+
+        //Generate random Meters between the maximum and minimum Meters
+        let randomMeters = UInt(arc4random_uniform(max) + min)
+
+        //then Generating Random numbers for different Methods
+        let randomPM = arc4random_uniform(6)
+
+        //Then we convert the distance in meters to coordinates by Multiplying the number of meters with 1 Meter Coordinate
+        let metersCordN = meterCord * Double(randomMeters)
+        
+        //here we generate the last Coordinates
+        if randomPM == 0 {
+            return CLLocationCoordinate2D(latitude: currentLat + metersCordN, longitude: currentLong + metersCordN)
+        }else if randomPM == 1 {
+            return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong - metersCordN)
+        }else if randomPM == 2 {
+            return CLLocationCoordinate2D(latitude: currentLat + metersCordN, longitude: currentLong - metersCordN)
+        }else if randomPM == 3 {
+            return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong + metersCordN)
+        }else if randomPM == 4 {
+            return CLLocationCoordinate2D(latitude: currentLat, longitude: currentLong - metersCordN)
+        }else {
+            return CLLocationCoordinate2D(latitude: currentLat - metersCordN, longitude: currentLong)
         }
     }
 }

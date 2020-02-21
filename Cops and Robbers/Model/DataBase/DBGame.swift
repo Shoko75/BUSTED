@@ -12,19 +12,48 @@ struct DBGame {
     let field: DBField
     let cops: DBCops
     let robbers: DBRobber
+    let flags: [DBFlag]
     
-    init(field: DBField, cops: DBCops, robbers: DBRobber){
+    init(field: DBField, cops: DBCops, robbers: DBRobber, flags: [DBFlag]){
         self.field = field
         self.cops = cops
         self.robbers = robbers
+        self.flags = flags
+    }
+    
+    func toAnyObject() -> Any {
+        
+        var dbFlags = [[String:Any]]()
+        for flag in flags {
+            dbFlags.append(flag.toAnyObject() as! [String : Any])
+        }
+        
+        return [
+            "feild": field.toAnyObject(),
+            "cops": cops.toAnyObject(),
+            "robbers": robbers.toAnyObject(),
+            "flags": dbFlags
+        ]
+    }
+}
+
+struct DBFlag {
+    let latitude: String
+    let longitude: String
+    let activeFlg: Bool
+    
+    init(latitude: String, longitude: String) {
+        self.latitude = latitude
+        self.longitude = longitude
+        self.activeFlg = true
     }
     
     func toAnyObject() -> Any {
         
         return [
-            "feild": field.toAnyObject(),
-            "cops": cops.toAnyObject(),
-            "robbers": robbers.toAnyObject()
+            "latitude": latitude,
+            "longitude": longitude,
+            "activeFlg": activeFlg
         ]
     }
 }
