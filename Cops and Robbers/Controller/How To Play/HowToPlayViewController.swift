@@ -11,20 +11,11 @@ import UIKit
 class HowToPlayViewController: UIViewController {
 
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-
-    //Button click method
-    // ================================================================
-    @IBAction func pressedSkip(_ sender: Any) {
-        let pageNumber = pageControl.currentPage + 1
-        setNextPage(pageNumber: pageNumber)
-        scrollToPageforBtn(page: pageNumber, animated: true)
     }
 
     // Go to next page when they pressed the next button

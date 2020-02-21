@@ -20,7 +20,7 @@
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhJ-DU-ccD">
-                                <rect key="frame" x="20.5" y="780" width="373" height="82"/>
+                                <rect key="frame" x="20.5" y="760" width="373" height="82"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd5-WJ-eRp">
                                         <rect key="frame" x="305" y="12" width="58" height="58"/>
@@ -39,7 +39,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plW-AN-Zja">
-                                <rect key="frame" x="20.5" y="118" width="373" height="654"/>
+                                <rect key="frame" x="20.5" y="89" width="373" height="663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +103,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="bOT-O5-8Ra" firstAttribute="bottom" secondItem="WhJ-DU-ccD" secondAttribute="bottom" id="0ur-sg-1K2"/>
+                            <constraint firstItem="bOT-O5-8Ra" firstAttribute="bottom" secondItem="WhJ-DU-ccD" secondAttribute="bottom" constant="20" id="0ur-sg-1K2"/>
                             <constraint firstItem="WhJ-DU-ccD" firstAttribute="top" secondItem="plW-AN-Zja" secondAttribute="bottom" constant="8" symbolic="YES" id="AnL-iZ-0h5"/>
                             <constraint firstItem="WhJ-DU-ccD" firstAttribute="height" secondItem="bOT-O5-8Ra" secondAttribute="height" multiplier="0.1" id="Fxz-Mi-fA4"/>
                             <constraint firstItem="WhJ-DU-ccD" firstAttribute="centerX" secondItem="LG4-iC-Feu" secondAttribute="centerX" id="Ntb-8k-nKq"/>
@@ -112,8 +112,8 @@
                             <constraint firstItem="qnL-k8-xu6" firstAttribute="top" secondItem="bOT-O5-8Ra" secondAttribute="top" id="Yy3-Dz-lfp"/>
                             <constraint firstItem="qnL-k8-xu6" firstAttribute="trailing" secondItem="bOT-O5-8Ra" secondAttribute="trailing" id="ZBE-Bh-Ah6"/>
                             <constraint firstItem="WhJ-DU-ccD" firstAttribute="width" secondItem="bOT-O5-8Ra" secondAttribute="width" multiplier="0.9" id="drb-vK-hNX"/>
+                            <constraint firstItem="plW-AN-Zja" firstAttribute="top" secondItem="bOT-O5-8Ra" secondAttribute="top" constant="45" id="eb7-AB-XUx"/>
                             <constraint firstAttribute="bottom" secondItem="qnL-k8-xu6" secondAttribute="bottom" id="nzF-FT-s8p"/>
-                            <constraint firstItem="plW-AN-Zja" firstAttribute="height" secondItem="bOT-O5-8Ra" secondAttribute="height" multiplier="0.8" id="qVg-MB-6By"/>
                             <constraint firstItem="qnL-k8-xu6" firstAttribute="leading" secondItem="bOT-O5-8Ra" secondAttribute="leading" id="yhk-nd-PyQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bOT-O5-8Ra"/>

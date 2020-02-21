@@ -37,12 +37,7 @@ class WaitingPlayerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,7 +57,12 @@ class WaitingPlayerViewController: UIViewController {
         print("pressedJoin")
         waitingPlayerViewModel.joinInvitation()
         declineButton.isEnabled = false
+        declineButton.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 0.60)
+        declineButton.setTitleColor(UIColor.lightGray, for: .normal)
         joinButton.isEnabled = false
+        joinButton.backgroundColor = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 0.60)
+        joinButton.setTitleColor(UIColor.lightGray, for: .normal)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

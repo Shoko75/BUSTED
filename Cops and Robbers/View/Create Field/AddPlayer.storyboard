@@ -20,9 +20,12 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-YM-uCj">
-                                        <rect key="frame" x="20.5" y="750" width="373" height="82"/>
+                                        <rect key="frame" x="20.5" y="757" width="373" height="75"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jJV-vR-wan">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="N9F-xc-ktM"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jJV-vR-wan">
                                             <size key="itemSize" width="65" height="75"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,6 +48,9 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNB-Nw-cMD">
                                                             <rect key="frame" x="0.0" y="53" width="65" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="jjx-Uv-waa"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -81,7 +87,7 @@
                                         </connections>
                                     </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G3U-7p-qUv">
-                                        <rect key="frame" x="20.5" y="86" width="373" height="654"/>
+                                        <rect key="frame" x="20.5" y="45" width="373" height="702"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddPlayersTableCell" id="VuV-LQ-6Gd" customClass="AddPlayerTableViewCell" customModule="BUSTED" customModuleProvider="target">
@@ -141,6 +147,7 @@
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="nVe-YM-uCj" firstAttribute="centerX" secondItem="cxq-eQ-e5h" secondAttribute="centerX" id="Eud-PH-lAN"/>
+                                    <constraint firstItem="G3U-7p-qUv" firstAttribute="top" secondItem="cxq-eQ-e5h" secondAttribute="top" constant="45" id="XHV-qu-85A"/>
                                     <constraint firstItem="G3U-7p-qUv" firstAttribute="centerX" secondItem="cxq-eQ-e5h" secondAttribute="centerX" id="eUm-TT-cu4"/>
                                     <constraint firstAttribute="bottom" secondItem="nVe-YM-uCj" secondAttribute="bottom" constant="20" symbolic="YES" id="p28-T5-PCy"/>
                                     <constraint firstItem="nVe-YM-uCj" firstAttribute="top" secondItem="G3U-7p-qUv" secondAttribute="bottom" constant="10" id="vOI-Q7-hZH"/>
@@ -150,8 +157,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="cxq-eQ-e5h" firstAttribute="leading" secondItem="GwC-T1-ZuI" secondAttribute="leading" id="4LY-TP-Yk9"/>
-                            <constraint firstItem="G3U-7p-qUv" firstAttribute="height" secondItem="GwC-T1-ZuI" secondAttribute="height" multiplier="0.8" id="7xB-Dx-5We"/>
-                            <constraint firstItem="nVe-YM-uCj" firstAttribute="height" secondItem="GwC-T1-ZuI" secondAttribute="height" multiplier="0.1" id="Y74-n1-iYh"/>
                             <constraint firstAttribute="bottom" secondItem="cxq-eQ-e5h" secondAttribute="bottom" id="eQJ-vJ-u19"/>
                             <constraint firstItem="cxq-eQ-e5h" firstAttribute="top" secondItem="GwC-T1-ZuI" secondAttribute="top" id="lK1-mW-ror"/>
                             <constraint firstItem="G3U-7p-qUv" firstAttribute="width" secondItem="GwC-T1-ZuI" secondAttribute="width" multiplier="0.9" id="oem-13-J93"/>

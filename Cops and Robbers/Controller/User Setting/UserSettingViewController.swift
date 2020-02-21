@@ -13,6 +13,7 @@ class UserSettingViewController: UIViewController {
 
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     var userSettingViewModel: UserSettingViewModel!
     
     override func viewDidLoad() {
@@ -25,6 +26,8 @@ class UserSettingViewController: UIViewController {
         userImageView.contentMode = .scaleToFill
         userImageView.layer.masksToBounds = true
         userImageView.layer.cornerRadius = userImageView.bounds.width / 2
+        
+        self.tableView.separatorColor = UIColor.clear
     }
     
     func setUserInfo() {

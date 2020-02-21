@@ -7,23 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Waiting Player View Controller-->
+        <!--Waiting for players-->
         <scene sceneID="umu-0c-snK">
             <objects>
-                <viewController storyboardIdentifier="WaitingPlayer" id="M45-yJ-gTU" customClass="WaitingPlayerViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WaitingPlayer" title="Waiting for players" id="M45-yJ-gTU" customClass="WaitingPlayerViewController" customModule="BUSTED" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uxI-zS-reh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-54-azg" customClass="CustomUIView" customModule="Cops_and_Robbers" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-54-azg" customClass="CustomUIView" customModule="BUSTED" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PLx-HR-yYD">
-                                <rect key="frame" x="20.5" y="118" width="373" height="654"/>
+                                <rect key="frame" x="20.5" y="89" width="373" height="663"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaitingPlayerTableViewCell" id="WwU-Vh-mrZ" customClass="WaitingPlayerTableViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WaitingPlayerTableViewCell" id="WwU-Vh-mrZ" customClass="WaitingPlayerTableViewCell" customModule="BUSTED" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="373" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WwU-Vh-mrZ" id="AaM-WT-418">
@@ -74,7 +74,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QEh-ba-OXl">
-                                <rect key="frame" x="20.5" y="780" width="373" height="82"/>
+                                <rect key="frame" x="20.5" y="760" width="373" height="82"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfL-tu-NYe">
                                         <rect key="frame" x="0.0" y="0.0" width="181.5" height="82"/>
@@ -87,7 +87,7 @@
                                             <action selector="pressedDecline:" destination="M45-yJ-gTU" eventType="touchUpInside" id="HlV-Ee-EfH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ou-Zc-VJS">
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ou-Zc-VJS">
                                         <rect key="frame" x="191.5" y="0.0" width="181.5" height="82"/>
                                         <color key="backgroundColor" red="1" green="0.6588235294117647" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -104,14 +104,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="yHR-54-azg" secondAttribute="bottom" id="1p6-ZS-alR"/>
-                            <constraint firstItem="YhG-Fo-5eC" firstAttribute="bottom" secondItem="QEh-ba-OXl" secondAttribute="bottom" id="9DB-Pw-qm5"/>
+                            <constraint firstItem="YhG-Fo-5eC" firstAttribute="bottom" secondItem="QEh-ba-OXl" secondAttribute="bottom" constant="20" id="9DB-Pw-qm5"/>
                             <constraint firstItem="QEh-ba-OXl" firstAttribute="centerX" secondItem="uxI-zS-reh" secondAttribute="centerX" id="Bgu-Jd-xmS"/>
                             <constraint firstItem="yHR-54-azg" firstAttribute="trailing" secondItem="YhG-Fo-5eC" secondAttribute="trailing" id="FjA-vG-AFN"/>
                             <constraint firstItem="yHR-54-azg" firstAttribute="leading" secondItem="YhG-Fo-5eC" secondAttribute="leading" id="OYK-SK-mKo"/>
+                            <constraint firstItem="PLx-HR-yYD" firstAttribute="top" secondItem="YhG-Fo-5eC" secondAttribute="top" constant="45" id="ahh-zD-gcP"/>
                             <constraint firstItem="QEh-ba-OXl" firstAttribute="width" secondItem="YhG-Fo-5eC" secondAttribute="width" multiplier="0.9" id="dCd-ql-4kv"/>
                             <constraint firstItem="PLx-HR-yYD" firstAttribute="centerX" secondItem="uxI-zS-reh" secondAttribute="centerX" id="eKG-g9-dws"/>
                             <constraint firstItem="QEh-ba-OXl" firstAttribute="top" secondItem="PLx-HR-yYD" secondAttribute="bottom" constant="8" symbolic="YES" id="lkQ-IT-DHf"/>
-                            <constraint firstItem="PLx-HR-yYD" firstAttribute="height" secondItem="YhG-Fo-5eC" secondAttribute="height" multiplier="0.8" id="w2t-GD-v6T"/>
                             <constraint firstItem="QEh-ba-OXl" firstAttribute="height" secondItem="YhG-Fo-5eC" secondAttribute="height" multiplier="0.1" id="ydz-ON-4OZ"/>
                             <constraint firstItem="PLx-HR-yYD" firstAttribute="width" secondItem="YhG-Fo-5eC" secondAttribute="width" multiplier="0.9" id="zaN-AX-WjB"/>
                             <constraint firstItem="yHR-54-azg" firstAttribute="top" secondItem="YhG-Fo-5eC" secondAttribute="top" id="zga-6H-TXK"/>

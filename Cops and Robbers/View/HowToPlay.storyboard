@@ -11,7 +11,7 @@
         <!--How To Play View Controller-->
         <scene sceneID="4Ml-bG-SeU">
             <objects>
-                <viewController storyboardIdentifier="HowToPlay" id="da3-h0-fMb" customClass="HowToPlayViewController" customModule="Cops_and_Robbers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HowToPlay" id="da3-h0-fMb" customClass="HowToPlayViewController" customModule="BUSTED" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9pG-YQ-Z5a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,26 +27,15 @@
                                         <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vf-qg-IZJ">
-                                        <rect key="frame" x="361" y="26" width="33" height="30"/>
-                                        <state key="normal" title="SKIP">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="pressedSkip:" destination="da3-h0-fMb" eventType="touchUpInside" id="MaQ-s5-NSS"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="8vf-qg-IZJ" secondAttribute="trailing" constant="20" id="ALu-XY-tDt"/>
                                     <constraint firstItem="RXU-6z-EIQ" firstAttribute="centerX" secondItem="C7i-uq-b17" secondAttribute="centerX" id="pck-DL-Ab5"/>
                                     <constraint firstItem="RXU-6z-EIQ" firstAttribute="centerY" secondItem="C7i-uq-b17" secondAttribute="centerY" id="qNc-2O-Z19"/>
-                                    <constraint firstItem="8vf-qg-IZJ" firstAttribute="centerY" secondItem="C7i-uq-b17" secondAttribute="centerY" id="sLC-X5-495"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-oS-t70">
-                                <rect key="frame" x="0.0" y="118" width="414" height="654"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-oS-t70">
+                                <rect key="frame" x="0.0" y="44" width="414" height="728"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ESH-th-Cbs">
                                     <size key="itemSize" width="300" height="500"/>
@@ -55,8 +44,8 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HowToPlayCollectionViewCell" id="ksX-8q-p9l" customClass="HowToPlayCollectionViewCell" customModule="Cops_and_Robbers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="15" width="414" height="624"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HowToPlayCollectionViewCell" id="ksX-8q-p9l" customClass="HowToPlayCollectionViewCell" customModule="BUSTED" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="52" width="414" height="624"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I2S-AY-Kst">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
@@ -99,7 +88,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="rek-we-YXK" secondAttribute="bottom" id="2uJ-ge-Pdj"/>
-                            <constraint firstItem="jhe-oS-t70" firstAttribute="height" secondItem="y8m-Sg-VKF" secondAttribute="height" multiplier="0.8" id="Ji7-r6-uyN"/>
                             <constraint firstItem="jhe-oS-t70" firstAttribute="centerX" secondItem="9pG-YQ-Z5a" secondAttribute="centerX" id="NA3-Sw-kWf"/>
                             <constraint firstItem="rek-we-YXK" firstAttribute="trailing" secondItem="y8m-Sg-VKF" secondAttribute="trailing" id="SAy-tj-8BE"/>
                             <constraint firstItem="C7i-uq-b17" firstAttribute="top" secondItem="jhe-oS-t70" secondAttribute="bottom" constant="8" symbolic="YES" id="YNy-pG-Ouh"/>
@@ -109,6 +97,7 @@
                             <constraint firstItem="C7i-uq-b17" firstAttribute="height" secondItem="y8m-Sg-VKF" secondAttribute="height" multiplier="0.1" id="ei3-6g-mjc"/>
                             <constraint firstItem="C7i-uq-b17" firstAttribute="centerX" secondItem="9pG-YQ-Z5a" secondAttribute="centerX" id="hkA-TJ-h24"/>
                             <constraint firstItem="jhe-oS-t70" firstAttribute="width" secondItem="y8m-Sg-VKF" secondAttribute="width" id="lHP-BC-6to"/>
+                            <constraint firstItem="jhe-oS-t70" firstAttribute="top" secondItem="y8m-Sg-VKF" secondAttribute="top" id="vpX-hc-ZfR"/>
                             <constraint firstItem="C7i-uq-b17" firstAttribute="bottom" secondItem="y8m-Sg-VKF" secondAttribute="bottom" id="zKP-ok-8Kc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y8m-Sg-VKF"/>
@@ -116,7 +105,6 @@
                     <connections>
                         <outlet property="collectionView" destination="jhe-oS-t70" id="vy7-5a-ZWn"/>
                         <outlet property="pageControl" destination="RXU-6z-EIQ" id="cZx-po-y4H"/>
-                        <outlet property="skipButton" destination="8vf-qg-IZJ" id="YEM-rZ-dcq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJF-TM-kSk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

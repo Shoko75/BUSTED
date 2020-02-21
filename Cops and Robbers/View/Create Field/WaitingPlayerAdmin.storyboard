@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XfB-jS-v6t">
-                                <rect key="frame" x="20.5" y="116" width="373" height="654"/>
+                                <rect key="frame" x="20.5" y="89" width="373" height="661"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WaitingPlayerAdminTableCell" id="d9n-vi-jPA" customClass="WaitingPlayerAdminTableViewCell" customModule="BUSTED" customModuleProvider="target">
@@ -74,7 +74,7 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cqI-Nh-z8k">
-                                <rect key="frame" x="20.5" y="780" width="373" height="82"/>
+                                <rect key="frame" x="20.5" y="760" width="373" height="82"/>
                                 <subviews>
                                     <button autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXa-Yi-h6v">
                                         <rect key="frame" x="0.0" y="0.0" width="182.5" height="82"/>
@@ -87,7 +87,7 @@
                                             <action selector="pressedCancell:" destination="Jck-Hh-Wal" eventType="touchUpInside" id="ZT8-Lv-8ys"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-P2-ED3">
+                                    <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-P2-ED3">
                                         <rect key="frame" x="190.5" y="0.0" width="182.5" height="82"/>
                                         <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="0.59966050392670156" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -107,8 +107,8 @@
                             <constraint firstItem="cqI-Nh-z8k" firstAttribute="centerX" secondItem="MLN-Kd-dml" secondAttribute="centerX" id="HOS-gm-1bP"/>
                             <constraint firstItem="cqI-Nh-z8k" firstAttribute="width" secondItem="t7C-gh-MZo" secondAttribute="width" multiplier="0.9" id="M7j-mF-B5c"/>
                             <constraint firstItem="fvR-Te-CsJ" firstAttribute="top" secondItem="t7C-gh-MZo" secondAttribute="top" id="SdP-Uc-WGF"/>
-                            <constraint firstItem="XfB-jS-v6t" firstAttribute="height" secondItem="t7C-gh-MZo" secondAttribute="height" multiplier="0.8" id="UFE-mc-8BJ"/>
-                            <constraint firstItem="t7C-gh-MZo" firstAttribute="bottom" secondItem="cqI-Nh-z8k" secondAttribute="bottom" id="dyI-lj-Hsv"/>
+                            <constraint firstItem="XfB-jS-v6t" firstAttribute="top" secondItem="t7C-gh-MZo" secondAttribute="top" constant="45" id="UNy-nm-yaF"/>
+                            <constraint firstItem="t7C-gh-MZo" firstAttribute="bottom" secondItem="cqI-Nh-z8k" secondAttribute="bottom" constant="20" id="dyI-lj-Hsv"/>
                             <constraint firstAttribute="bottom" secondItem="fvR-Te-CsJ" secondAttribute="bottom" id="ehY-fx-lZn"/>
                             <constraint firstItem="XfB-jS-v6t" firstAttribute="width" secondItem="t7C-gh-MZo" secondAttribute="width" multiplier="0.9" id="k27-n3-4U2"/>
                             <constraint firstItem="fvR-Te-CsJ" firstAttribute="leading" secondItem="t7C-gh-MZo" secondAttribute="leading" id="mrq-Si-ZME"/>

@@ -27,26 +27,29 @@
                                 <rect key="frame" x="62" y="74" width="290" height="163.5"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-R0-E7o">
-                                <rect key="frame" x="41.5" y="94.5" width="331" height="21.5"/>
+                                <rect key="frame" x="41.5" y="89" width="331" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cops" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRR-EZ-0xn">
-                                        <rect key="frame" x="0.0" y="0.0" width="163" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robbers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aJ-TU-8Im">
-                                        <rect key="frame" x="168" y="0.0" width="163" height="21.5"/>
+                                        <rect key="frame" x="168" y="0.0" width="163" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="x1I-9P-LgH"/>
+                                </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-xl-pXS">
-                                <rect key="frame" x="20.5" y="126" width="373" height="736"/>
+                                <rect key="frame" x="20.5" y="119" width="373" height="723"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="showTeamTableViewCell" id="4hI-8r-fXT" customClass="ShowTeamTableViewCell" customModule="BUSTED" customModuleProvider="target">
@@ -137,17 +140,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rWj-xl-pXS" firstAttribute="height" secondItem="YVG-Qg-O2f" secondAttribute="height" multiplier="0.9" id="19s-a4-liu"/>
                             <constraint firstItem="kn6-te-wGB" firstAttribute="top" secondItem="YVG-Qg-O2f" secondAttribute="top" id="1fn-1J-8zG"/>
                             <constraint firstItem="sJT-km-W4M" firstAttribute="height" secondItem="YVG-Qg-O2f" secondAttribute="height" multiplier="0.2" id="6Gi-qt-zEA"/>
                             <constraint firstItem="o3N-R0-E7o" firstAttribute="width" secondItem="YVG-Qg-O2f" secondAttribute="width" multiplier="0.8" id="7SQ-mL-kdU"/>
                             <constraint firstItem="rWj-xl-pXS" firstAttribute="width" secondItem="YVG-Qg-O2f" secondAttribute="width" multiplier="0.9" id="9yY-gl-r7R"/>
                             <constraint firstItem="sJT-km-W4M" firstAttribute="width" secondItem="YVG-Qg-O2f" secondAttribute="width" multiplier="0.7" id="JGF-KZ-FAr"/>
-                            <constraint firstItem="YVG-Qg-O2f" firstAttribute="bottom" secondItem="rWj-xl-pXS" secondAttribute="bottom" id="JTb-ME-CjF"/>
+                            <constraint firstItem="YVG-Qg-O2f" firstAttribute="bottom" secondItem="rWj-xl-pXS" secondAttribute="bottom" constant="20" id="JTb-ME-CjF"/>
                             <constraint firstItem="sJT-km-W4M" firstAttribute="centerX" secondItem="Y6Q-Fi-FXE" secondAttribute="centerX" id="K4W-8j-qbR"/>
                             <constraint firstItem="YVG-Qg-O2f" firstAttribute="trailing" secondItem="we2-hV-kC3" secondAttribute="trailing" id="NKe-vK-cZO"/>
                             <constraint firstItem="sJT-km-W4M" firstAttribute="top" secondItem="YVG-Qg-O2f" secondAttribute="top" constant="30" id="Nv9-6A-ewz"/>
                             <constraint firstItem="o3N-R0-E7o" firstAttribute="centerX" secondItem="Y6Q-Fi-FXE" secondAttribute="centerX" id="O5d-y0-3oH"/>
+                            <constraint firstItem="o3N-R0-E7o" firstAttribute="top" secondItem="YVG-Qg-O2f" secondAttribute="top" constant="45" id="RQ4-jb-kDl"/>
                             <constraint firstItem="rWj-xl-pXS" firstAttribute="centerX" secondItem="Y6Q-Fi-FXE" secondAttribute="centerX" id="SF8-Zl-ihb"/>
                             <constraint firstItem="kn6-te-wGB" firstAttribute="bottom" secondItem="Y6Q-Fi-FXE" secondAttribute="bottom" id="VTv-dJ-fE9"/>
                             <constraint firstItem="kn6-te-wGB" firstAttribute="width" secondItem="YVG-Qg-O2f" secondAttribute="width" multiplier="0.5" id="ffo-Pk-jnN"/>

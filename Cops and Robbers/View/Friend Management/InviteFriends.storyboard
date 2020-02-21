@@ -20,7 +20,7 @@
                                 <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sy-kC-xqp">
-                                <rect key="frame" x="20.5" y="126" width="373" height="736"/>
+                                <rect key="frame" x="20.5" y="89" width="373" height="753"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="InviteFriendsCell" id="KG1-ou-UOI" customClass="InviteFriendsTableViewCell" customModule="BUSTED" customModuleProvider="target">
@@ -87,9 +87,9 @@
                             <constraint firstItem="TZ4-Aa-Rxq" firstAttribute="trailing" secondItem="gda-wg-lqT" secondAttribute="trailing" id="6Vp-aq-qEq"/>
                             <constraint firstItem="gda-wg-lqT" firstAttribute="leading" secondItem="TZ4-Aa-Rxq" secondAttribute="leading" id="CKJ-MF-KLF"/>
                             <constraint firstItem="6Sy-kC-xqp" firstAttribute="centerX" secondItem="eTM-6F-jjF" secondAttribute="centerX" id="Rhg-WO-VfH"/>
-                            <constraint firstItem="TZ4-Aa-Rxq" firstAttribute="bottom" secondItem="6Sy-kC-xqp" secondAttribute="bottom" id="qNn-41-lNE"/>
+                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="top" secondItem="TZ4-Aa-Rxq" secondAttribute="top" constant="45" id="U5T-8b-XSX"/>
+                            <constraint firstItem="TZ4-Aa-Rxq" firstAttribute="bottom" secondItem="6Sy-kC-xqp" secondAttribute="bottom" constant="20" id="qNn-41-lNE"/>
                             <constraint firstItem="gda-wg-lqT" firstAttribute="top" secondItem="TZ4-Aa-Rxq" secondAttribute="top" id="rHL-yJ-POc"/>
-                            <constraint firstItem="6Sy-kC-xqp" firstAttribute="height" secondItem="TZ4-Aa-Rxq" secondAttribute="height" multiplier="0.9" id="tIA-nj-p0h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TZ4-Aa-Rxq"/>
                     </view>
