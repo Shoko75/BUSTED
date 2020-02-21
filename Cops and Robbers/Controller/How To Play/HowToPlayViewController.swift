@@ -18,8 +18,6 @@ class HowToPlayViewController: UIViewController {
 
     }
 
-    // Go to next page when they pressed the next button
-    // ===============================================================
     func scrollToPageforBtn(page: Int, animated: Bool) {
         var frame: CGRect = self.collectionView.bounds
         frame.origin.x = frame.size.width * CGFloat(page)
@@ -27,8 +25,6 @@ class HowToPlayViewController: UIViewController {
         self.collectionView.scrollRectToVisible(frame, animated: animated)
     }
     
-    // set the next page infomation for pageControl and button
-    // ================================================================
     func setNextPage(pageNumber: Int) {
 
         // set the current page of the pageControl
@@ -36,6 +32,7 @@ class HowToPlayViewController: UIViewController {
     }
 }
 
+// MARK: UICollectionViewDelegate
 extension HowToPlayViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

@@ -21,7 +21,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var statusNumLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-
+    @IBOutlet weak var jailImageView: UIImageView!
+    
     private let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
     
@@ -90,8 +91,9 @@ class MapViewController: UIViewController {
     // Beacon setting
     override func viewDidDisappear(_ animated: Bool) {
         // TODO: Need to change later
-        stopMonitoringUser()
+        stopMonitoring()
         stopLocalBeacon()
+        
     }
     
     func setFieldNotification() {
@@ -103,9 +105,15 @@ class MapViewController: UIViewController {
     }
     
     func initSetting() {
+        
+        alertLabel.isHidden = true
+        jailImageView.isHidden = true
+        
         if flgCops! {
             statusLabel.text = "ROBBERS"
-            statusNumLabel.text = "0"
+            if let robbersCnt = gameData?.robbers.robPlayers.count {
+                statusNumLabel.text = String(robbersCnt)
+            }
             backgroundImageView.image = UIImage(named: "playerlist_police_bg")
         } else {
             statusLabel.text = "FLAGS"
@@ -124,11 +132,15 @@ class MapViewController: UIViewController {
         }
     }
     
-    func stopMonitoringUser() {
+    func stopMonitoring() {
         for enemy in mapViewModel.enemys {
             let beaconRegion = enemy.asBeaconRegion()
             locationManager.stopMonitoring(for: beaconRegion)
             locationManager.stopRangingBeacons(in: beaconRegion)
+        }
+        
+        for region in locationManager.monitoredRegions {
+            locationManager.stopMonitoring(for: region)
         }
     }
     
@@ -154,17 +166,17 @@ class MapViewController: UIViewController {
     }
     
     func stopLocalBeacon(){
-        peripheralManager.stopAdvertising()
-        peripheralManager = nil
-        beaconPeripheralData = nil
-        localBeacon = nil
+        if peripheralManager != nil {
+            peripheralManager.stopAdvertising()
+            peripheralManager = nil
+            beaconPeripheralData = nil
+            localBeacon = nil
+        }
     }
     
-    
-    // Map setting
     func addRadiusCircle(location: CLLocation) {
         self.mapView.delegate = self
-        var circle = MKCircle(center: location.coordinate, radius: 1500 as CLLocationDistance)
+        let circle = MKCircle(center: location.coordinate, radius: 1500 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
     
@@ -183,7 +195,6 @@ class MapViewController: UIViewController {
                 let flagLocation = CLLocationCoordinate2D(latitude: Double(flag.latitude)!, longitude: Double(flag.longitude)!)
                 let region = CLCircularRegion(center: flagLocation, radius: 5, identifier: "\(cnt)")
                 region.notifyOnEntry = true
-                region.notifyOnExit = true
                 locationManager.startMonitoring(for: region)
                 cnt += 1
             }
@@ -205,36 +216,35 @@ class MapViewController: UIViewController {
         }
     }
     
-    func updateFlagLabel() {
-        var flagCnt = 0
-        if let flags = self.mapViewModel.gameData?.flags {
-            for flag in flags {
-                if flag.activeFlg {
-                    flagCnt += 1
-                }
-            }
-            statusNumLabel.text = String(flagCnt)
-        }
-    }
+    
 }
 
 // MARK: MapDelegate
 extension MapViewController: MapDelegate {
+    
     func didFetchGame() {
         self.collectionView.reloadData()
     }
     
-    func didObserve() {
-        if flgCops! {
-            let leftRobs = mapViewModel.countRobbers()
-        }
-    }
-    
-    func didUpdateFlagStatus() {
+    func didChangeGameValues() {
         // controll flag hidden status
         updateFlagStatus()
-        if !flgCops! {
-            updateFlagLabel()
+        
+        if flgCops! {
+            let leftRobs = mapViewModel.updateRobbersLabel()
+            statusNumLabel.text = leftRobs
+        } else {
+            let flagCnt = mapViewModel.updateFlagLabel()
+            statusNumLabel.text = flagCnt
+            let JailStatus = mapViewModel.judgeJailStatus()
+            jailImageView.isHidden = !JailStatus
+            
+            // Stop beacon and monitoring
+            if JailStatus {
+                alertLabel.text = "YOU'VE BEEN SENT TO JAIL!"
+                stopLocalBeacon()
+                stopMonitoring()
+            }
         }
     }
     
@@ -280,29 +290,18 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         
-        var indexPaths = [IndexPath]()
         var printInfo = ""
         var alert = ""
-        for beacon in beacons {
-            for row in 0..<mapViewModel.enemys.count {
+        if let beacon = beacons.last {
                 
-                    mapViewModel.enemys[row].beacon = beacon
-                    indexPaths += [IndexPath(row: row, section: 0)]
-                    print(mapViewModel.enemys[row].name)
-                    
-                    
-                    let bea = beacon as CLBeacon
-                    
-                    let title = "------------ number \(beacons.count) -----------------\n"
-                    let name = "Name: \(mapViewModel.enemys[row].name) \n"
-                    let major = "major: \(bea.major.intValue) \n"
-                    let minor = "minor: \(bea.minor.intValue) \n"
-
-                    let location = "location: \(mapViewModel.enemys[row].locationString()) \n"
-                    
-                alert = mapViewModel.alertForProximity(bea.proximity, gameUuid: bea.uuid.uuidString)
-                    printInfo += title + name + major + minor + location
-            }
+            let bea = beacon as CLBeacon
+            let title = "------------ number \(beacons.count) -----------------\n"
+            let name = "Name: \(bea.uuid) \n"
+            let major = "major: \(bea.major.intValue) \n"
+            let minor = "minor: \(bea.minor.intValue) \n"
+            let location = "location: \(mapViewModel.locationString(beacon: bea)) \n"
+            alert = mapViewModel.alertForProximity(bea.proximity, gameUuid: bea.uuid.uuidString)
+            printInfo += title + name + major + minor + location
         }
         
         print(printInfo)
@@ -334,10 +333,6 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         self.mapViewModel.updateFlag(identifier: region.identifier)
     }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print(region.identifier)
-    }
 }
 
 // MARK: CBPeripheralManagerDelegate
@@ -363,6 +358,7 @@ extension MapViewController: MKMapViewDelegate {
         return circle
     }
     
+    // Annotation setting
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         if annotation is MKUserLocation {
@@ -386,7 +382,5 @@ extension MapViewController: MKMapViewDelegate {
 // MARK: UNUserNotificationCenterDelegate
 extension MapViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
-        
     }
 }

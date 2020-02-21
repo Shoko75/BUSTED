@@ -30,33 +30,4 @@ class UserForGame {
         return CLBeaconRegion(proximityUUID: uuid, major: majorValue, identifier: name)
     }
     
-    func nameForProximity(_ proximity: CLProximity) -> String {
-        
-        switch proximity {
-        case .unknown:
-            return "Unknown"
-        case .immediate:
-            return "Immediate"
-        case .near:
-            return "Near"
-        case .far:
-            return "Far"
-        @unknown default:
-        fatalError()
-        }
-    }
-    
-    func locationString() -> String {
-      guard let beacon = beacon else { return "Location: Unknown" }
-      let proximity = nameForProximity(beacon.proximity)
-      let accuracy = String(format: "%.2f", beacon.accuracy)
-        
-      var location = " \(proximity)"
-      if beacon.proximity != .unknown {
-        location += " (approx. \(accuracy)m)"
-      }
-        
-      return location
-    }
-    
 }

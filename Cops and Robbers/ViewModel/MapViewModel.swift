@@ -11,15 +11,15 @@ import Firebase
 import CoreLocation
 
 protocol MapDelegate {
-    func didObserve()
     func didFetchGame()
-    func didUpdateFlagStatus()
+    func didChangeGameValues()
 }
 
 class MapViewModel {
     
     let gameRef = Database.database().reference(withPath: "game")
     let userInfoRef = Database.database().reference(withPath: "user_Info")
+    let userID = Auth.auth().currentUser?.uid
     
     var enemys = [UserForGame]()
     var gameID = ""
@@ -83,7 +83,6 @@ class MapViewModel {
                 updateRobberStatus(gameUuid: gameUuid)
                 alert = "YOU COUGHT A ROBBER!!"
             } else {
-                
                 alert = "YOU'VE BEEN SENT TO JAIL! "
             }
             return alert
@@ -109,6 +108,35 @@ class MapViewModel {
         }
     }
     
+    func nameForProximity(_ proximity: CLProximity) -> String {
+        
+        switch proximity {
+        case .unknown:
+            return "Unknown"
+        case .immediate:
+            return "Immediate"
+        case .near:
+            return "Near"
+        case .far:
+            return "Far"
+        @unknown default:
+        fatalError()
+        }
+    }
+    
+    func locationString(beacon:CLBeacon) -> String {
+      //guard let beacon = beacon else { return "Location: Unknown" }
+      let proximity = nameForProximity(beacon.proximity)
+      let accuracy = String(format: "%.2f", beacon.accuracy)
+        
+      var location = " \(proximity)"
+      if beacon.proximity != .unknown {
+        location += " (approx. \(accuracy)m)"
+      }
+        
+      return location
+    }
+    
     func updateRobberStatus(gameUuid: String) {
         
         let status = ["status": "Jail"]
@@ -128,7 +156,7 @@ class MapViewModel {
             if let gameData = Game(snapshot: snapshot) {
                 self.gameData = gameData
                 self.fetchUserInfoByID()
-                self.mapDelegate?.didUpdateFlagStatus()
+                self.mapDelegate?.didChangeGameValues()
             }
         }
     }
@@ -161,7 +189,7 @@ class MapViewModel {
         }
     }
     
-    func countRobbers() -> String {
+    func updateRobbersLabel() -> String {
         var cntJail = 0
         let total = (self.gameData?.robbers.robPlayers.count)!
         
@@ -173,6 +201,29 @@ class MapViewModel {
         
         let left = total - cntJail
         return String(left)
+    }
+    
+    func updateFlagLabel() -> String {
+        var flagCnt = 0
+        if let flags = self.gameData?.flags {
+            for flag in flags {
+                if flag.activeFlg {
+                    flagCnt += 1
+                }
+            }
+        }
+        return String(flagCnt)
+    }
+    
+    func judgeJailStatus() -> Bool {
+        if let robbers = gameData?.robbers.robPlayers {
+            for robber in robbers {
+                if robber.status == "Jail", robber.userId == userID {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     func updateFlag(identifier: String) {
