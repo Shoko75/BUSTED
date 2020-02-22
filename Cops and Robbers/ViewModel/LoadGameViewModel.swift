@@ -18,6 +18,8 @@ class LoadGameViewModel {
     
     let gameRef = Database.database().reference(withPath: "game")
     let occupiedMajorRef = Database.database().reference(withPath: "occupied _major")
+    
+    let userID = Auth.auth().currentUser?.uid
     var occupiedMajors = [String]()
     var loadGameDelegate :LoadGameDelegate?
     
@@ -46,7 +48,7 @@ class LoadGameViewModel {
         
         let flags = generateFlags(currentLoction: currentLoction)
         
-        let gameData = DBGame(field: fieldLocation, cops: cops, robbers: robbers, flags: flags)
+        let gameData = DBGame(field: fieldLocation, cops: cops, robbers: robbers, flags: flags, admin: userID!)
         
         // Register Game
         registerGame(registerData: gameData, gameID: gameID)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="da3-h0-fMb">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7i-uq-b17">
-                                <rect key="frame" x="0.0" y="780" width="414" height="82"/>
+                                <rect key="frame" x="0.0" y="780.33333333333337" width="414" height="81.666666666666629"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="RXU-6z-EIQ">
-                                        <rect key="frame" x="179.5" y="22.5" width="55" height="37"/>
+                                        <rect key="frame" x="179.66666666666666" y="22.333333333333258" width="55" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
@@ -35,7 +35,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jhe-oS-t70">
-                                <rect key="frame" x="0.0" y="44" width="414" height="728"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="728.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ESH-th-Cbs">
                                     <size key="itemSize" width="300" height="500"/>
@@ -45,20 +45,20 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HowToPlayCollectionViewCell" id="ksX-8q-p9l" customClass="HowToPlayCollectionViewCell" customModule="BUSTED" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="52" width="414" height="624"/>
+                                        <rect key="frame" x="0.0" y="52.333333333333336" width="414" height="624"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I2S-AY-Kst">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="624"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players are randomly selected to be in a team of  Cops or Robbers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoA-X1-Wuk">
-                                                    <rect key="frame" x="20" y="417" width="374" height="187"/>
+                                                    <rect key="frame" x="20" y="416.66666666666669" width="374" height="187.33333333333331"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fortunewheel" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-ma-Mid">
-                                                    <rect key="frame" x="62" y="85" width="290" height="312"/>
+                                                    <rect key="frame" x="62" y="84.666666666666686" width="290" height="312"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>

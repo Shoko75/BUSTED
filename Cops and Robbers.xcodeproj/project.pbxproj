@@ -46,6 +46,7 @@
 		2F91FEE223F7EB5E0060A1FF /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEE123F7EB5D0060A1FF /* ResetPasswordViewModel.swift */; };
 		2F91FEE8240098AB0060A1FF /* EndGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEE7240098AB0060A1FF /* EndGame.storyboard */; };
 		2F91FEEA24009E6D0060A1FF /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */; };
+		2F91FEEC2400AC6E0060A1FF /* EndGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -124,6 +125,7 @@
 		2F91FEE123F7EB5D0060A1FF /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		2F91FEE7240098AB0060A1FF /* EndGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndGame.storyboard; sourceTree = "<group>"; };
 		2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewModel.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* BUSTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				2F91FE9823E4EF760060A1FF /* MenuViewModel.swift */,
 				2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */,
 				2F91FEDB23F78C220060A1FF /* UserSettingViewModel.swift */,
+				2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				2F91FEE223F7EB5E0060A1FF /* ResetPasswordViewModel.swift in Sources */,
 				2FB47E5123A1E64900AA9216 /* MapViewController.swift in Sources */,
 				2F91FE9223E38A500060A1FF /* WaitingPlayerViewController.swift in Sources */,
+				2F91FEEC2400AC6E0060A1FF /* EndGameViewModel.swift in Sources */,
 				2FDF0E7423CAA20C001648D5 /* DBFriends.swift in Sources */,
 				2F91FE5A23D6A6850060A1FF /* DBInvitation.swift in Sources */,
 				2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */,

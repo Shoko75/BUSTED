@@ -168,11 +168,20 @@
                         <outlet property="mapView" destination="F4V-DA-4YM" id="md5-0V-kJD"/>
                         <outlet property="statusLabel" destination="QYw-ce-Sf0" id="wIJ-hB-PlX"/>
                         <outlet property="statusNumLabel" destination="zaQ-J9-8eG" id="GPX-Qj-4ft"/>
+                        <segue destination="jrK-dw-EmI" kind="presentation" identifier="showEndGame" modalPresentationStyle="overFullScreen" id="SvL-VU-lSQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fh-YV-s8F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82.608695652173921" y="136.60714285714286"/>
+        </scene>
+        <!--EndGame-->
+        <scene sceneID="13L-E5-77C">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EndGame" referencedIdentifier="EndGame" id="jrK-dw-EmI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqx-hc-xeX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582" y="110"/>
         </scene>
     </scenes>
     <resources>

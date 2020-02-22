@@ -19,6 +19,7 @@ class MapViewModel {
     
     let gameRef = Database.database().reference(withPath: "game")
     let userInfoRef = Database.database().reference(withPath: "user_Info")
+    let occupiedMajorRef = Database.database().reference(withPath: "occupied _major")
     let userID = Auth.auth().currentUser?.uid
     
     var enemys = [UserForGame]()
@@ -81,7 +82,7 @@ class MapViewModel {
 
             if flgCops! {
                 updateRobberStatus(gameUuid: gameUuid)
-                alert = "YOU COUGHT A ROBBER!!"
+                alert = "YOU CAUGHT A ROBBER!!"
             } else {
                 alert = "YOU'VE BEEN SENT TO JAIL! "
             }
@@ -97,9 +98,9 @@ class MapViewModel {
             return alert
         case .far:
             if flgCops! {
-                alert = "ALERT! A ROBBER IS NEARBY!"
+                alert = ""
             } else {
-                alert = "ALERT! A COP IS NEARBY!"
+                alert = ""
             }
         
         return alert
@@ -231,4 +232,22 @@ class MapViewModel {
         let activeFlg = ["activeFlg": false]
         gameRef.child(gameID).child("flags").child(identifier).updateChildValues(activeFlg)
     }
+    
+    func finishGame() {
+        if gameData?.admin == userID {
+            deleteOccupiedMajor()
+            deleteGame()
+        }
+    }
+    
+    func deleteOccupiedMajor() {
+        occupiedMajorRef.child((gameData?.cops.major)!).removeValue()
+        occupiedMajorRef.child((gameData?.robbers.major)!).removeValue()
+    }
+    
+    func deleteGame() {
+        gameRef.child(gameID).removeAllObservers()
+        gameRef.child(gameID).removeValue()
+    }
+    
 }

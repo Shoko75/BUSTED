@@ -13,12 +13,14 @@ struct DBGame {
     let cops: DBCops
     let robbers: DBRobber
     let flags: [DBFlag]
+    let admin: String
     
-    init(field: DBField, cops: DBCops, robbers: DBRobber, flags: [DBFlag]){
+    init(field: DBField, cops: DBCops, robbers: DBRobber, flags: [DBFlag], admin: String){
         self.field = field
         self.cops = cops
         self.robbers = robbers
         self.flags = flags
+        self.admin = admin
     }
     
     func toAnyObject() -> Any {
@@ -32,7 +34,8 @@ struct DBGame {
             "feild": field.toAnyObject(),
             "cops": cops.toAnyObject(),
             "robbers": robbers.toAnyObject(),
-            "flags": dbFlags
+            "flags": dbFlags,
+            "admin": admin
         ]
     }
 }

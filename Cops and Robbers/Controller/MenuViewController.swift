@@ -18,15 +18,19 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         menuViewModel = MenuViewModel()
         menuViewModel.menuDelegate = self
         joinFieldButton.isEnabled = menuViewModel.flgJoinField
         
         setNavBar()
         menuViewModel.checkInvitationStatus()
-        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        menuViewModel.stopObserveUserInfo()
     }
     
     func setNavBar() {

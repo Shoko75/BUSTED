@@ -39,4 +39,8 @@ class MenuViewModel {
             }
         }
     }
+    
+    func stopObserveUserInfo() {
+        userInfoRef.child(userID!).removeAllObservers()
+    }
 }

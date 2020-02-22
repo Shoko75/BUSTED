@@ -37,6 +37,7 @@ class MapViewController: UIViewController {
     var gameData: Game?
     var flgCops: Bool?
     var gameID: String?
+    var winCopsFlg: Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -229,12 +230,12 @@ extension MapViewController: MapDelegate {
     func didChangeGameValues() {
         // controll flag hidden status
         updateFlagStatus()
+        let leftRobs = mapViewModel.updateRobbersLabel()
+        let flagCnt = mapViewModel.updateFlagLabel()
         
         if flgCops! {
-            let leftRobs = mapViewModel.updateRobbersLabel()
             statusNumLabel.text = leftRobs
         } else {
-            let flagCnt = mapViewModel.updateFlagLabel()
             statusNumLabel.text = flagCnt
             let JailStatus = mapViewModel.judgeJailStatus()
             jailImageView.isHidden = !JailStatus
@@ -244,6 +245,32 @@ extension MapViewController: MapDelegate {
                 alertLabel.text = "YOU'VE BEEN SENT TO JAIL!"
                 stopLocalBeacon()
                 stopMonitoring()
+            }
+        }
+        
+        // Judge game end
+        if leftRobs == "0" {
+            winCopsFlg = true
+            prepareForEndGame()
+            performSegue(withIdentifier: "showEndGame", sender: nil)
+        } else if flagCnt == "0" {
+            winCopsFlg = false
+            prepareForEndGame()
+            performSegue(withIdentifier: "showEndGame", sender: nil)
+        }
+    }
+    
+    func prepareForEndGame() {
+        stopLocalBeacon()
+        stopMonitoring()
+        mapViewModel.finishGame()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showEndGame" {
+            if let endGameViewController = segue.destination as? EndGameViewController {
+                endGameViewController.endGameDelegate = self
+                endGameViewController.winCopsFlg = winCopsFlg
             }
         }
     }
@@ -382,5 +409,12 @@ extension MapViewController: MKMapViewDelegate {
 // MARK: UNUserNotificationCenterDelegate
 extension MapViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    }
+}
+
+// EndGameDelegate
+extension MapViewController: EndGameDelegate {
+    func backToMenu() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

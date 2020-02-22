@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "End_game_modal_bg.png",
+      "filename" : "End_game_modal_cops_bg.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "End_game_modal_bg@2x.png",
+      "filename" : "End_game_modal_cops_bg@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "End_game_modal_bg@3x.png",
+      "filename" : "End_game_modal_cops_bg@3x.png",
       "scale" : "3x"
     }
   ],

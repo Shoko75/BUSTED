@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nwS-MV-bqK">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="409"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cC-6v-ohq">
-                                        <rect key="frame" x="62" y="266.5" width="290" height="122.5"/>
+                                        <rect key="frame" x="62" y="266.33333333333331" width="290" height="122.66666666666669"/>
                                         <string key="text">Do not trespass or enter 
 dangerous areas while 
 playing BUSTED.</string>
@@ -43,7 +43,7 @@ playing BUSTED.</string>
                                 <rect key="frame" x="0.0" y="734" width="414" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETn-UK-ISU">
-                                        <rect key="frame" x="151.5" y="49.5" width="111.5" height="29"/>
+                                        <rect key="frame" x="151.66666666666666" y="49.666666666666629" width="110.99999999999997" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@ playing BUSTED.</string>
                                 <rect key="frame" x="0.0" y="461" width="414" height="273"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSN-Pq-Gmg">
-                                        <rect key="frame" x="62" y="55" width="290" height="163.5"/>
+                                        <rect key="frame" x="62" y="54.666666666666615" width="290" height="163.66666666666663"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
