@@ -89,6 +89,16 @@ class MapViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        // Title
+        let logo = UIImage(named: "Busted_logo_navbar")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+    }
+    
     // Beacon setting
     override func viewDidDisappear(_ animated: Bool) {
         // TODO: Need to change later

@@ -61,6 +61,11 @@ class LoadGameViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
 
         animationView.play(fromProgress: 0,

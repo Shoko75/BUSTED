@@ -26,6 +26,11 @@ class ShowTeamViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     override func viewDidLayoutSubviews() {
         customLeftView.roundLeftCorners(cornerRadius: 50.0)
         customRightView.roundRightCorners(cornerRadius: 50.0)

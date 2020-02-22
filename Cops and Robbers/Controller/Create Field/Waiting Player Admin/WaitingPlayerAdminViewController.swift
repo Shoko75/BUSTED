@@ -39,6 +39,11 @@ class WaitingPlayerAdminViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: false)
+    }
+    
     override func viewDidLayoutSubviews() {
         customView.roundCorners(cornerRadius: 50.0)
     }
