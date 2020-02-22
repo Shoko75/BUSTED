@@ -120,10 +120,16 @@ class WaitingPlayerViewModel {
         for player in playerList {
             userInfoRef.child(player.user!.uid).updateChildValues(playTeamValue)
         }
+        
+        userInfoRef.child(userID!).updateChildValues(playTeamValue)
     }
     
-    func stopObserve() {
+    func stopObserveInvitation() {
         invitationRef.child(invitationID!).removeAllObservers()
+    }
+    
+    func stopObserveUserInfo() {
+        userInfoRef.child(userID!).removeAllObservers()
     }
     
     func declineInvitation() {

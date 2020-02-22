@@ -60,7 +60,7 @@ class WaitingPlayerAdminViewController: UIViewController {
                     startButton.isEnabled = true
                     startButton.backgroundColor = UIColor.systemOrange
                     startButton.setTitleColor(UIColor.white, for: .normal)
-                    waitingPlayerViewModel.stopObserve()
+                    waitingPlayerViewModel.stopObserveInvitation()
                 }
             }
         }

@@ -79,6 +79,7 @@ class AddPlayerViewModel {
         for player in playerList {
             userInfoRef.child(player.uid).updateChildValues(invitationID)
         }
+            userInfoRef.child(userID!).updateChildValues(invitationID)
     }
     
     func checkInvitation() {

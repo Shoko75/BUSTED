@@ -29,10 +29,6 @@ class MenuViewController: UIViewController {
         menuViewModel.checkInvitationStatus()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        menuViewModel.stopObserveUserInfo()
-    }
-    
     func setNavBar() {
         
         // Right Item

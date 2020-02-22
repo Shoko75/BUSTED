@@ -48,7 +48,8 @@ class WaitingPlayerViewController: UIViewController {
     @IBAction func pressedDecline(_ sender: Any) {
         print("pressedDecline")
         
-        waitingPlayerViewModel.stopObserve()
+        waitingPlayerViewModel.stopObserveUserInfo()
+        waitingPlayerViewModel.stopObserveInvitation()
         waitingPlayerViewModel.declineInvitation()
         self.navigationController?.popToRootViewController(animated: false)
     }
@@ -92,6 +93,7 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
 extension WaitingPlayerViewController: WaitingPlayerDelegate {
     func didStartGame() {
         print("didStartGame")
+        waitingPlayerViewModel.stopObserveUserInfo()
         self.performSegue(withIdentifier: "showLoadGame", sender: nil)
     }
     

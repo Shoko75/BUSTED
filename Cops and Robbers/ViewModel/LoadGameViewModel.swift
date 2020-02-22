@@ -18,6 +18,7 @@ class LoadGameViewModel {
     
     let gameRef = Database.database().reference(withPath: "game")
     let occupiedMajorRef = Database.database().reference(withPath: "occupied _major")
+    let invitationRef = Database.database().reference(withPath: "invitation")
     
     let userID = Auth.auth().currentUser?.uid
     var occupiedMajors = [String]()
@@ -52,8 +53,13 @@ class LoadGameViewModel {
         
         // Register Game
         registerGame(registerData: gameData, gameID: gameID)
+        deleteInvitation(gameID: gameID)
     }
     
+    
+    func deleteInvitation(gameID: String) {
+        invitationRef.child(gameID).removeValue()
+    }
     
     func generateMajor() -> [String] {
         
