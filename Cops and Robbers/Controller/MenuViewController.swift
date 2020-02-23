@@ -12,6 +12,7 @@ import Firebase
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var joinFieldButton: UIButton!
+    @IBOutlet weak var inviteAlert: UIImageView!
     
     var window: UIWindow?
     var menuViewModel: MenuViewModel!
@@ -24,6 +25,7 @@ class MenuViewController: UIViewController {
         menuViewModel = MenuViewModel()
         menuViewModel.menuDelegate = self
         joinFieldButton.isEnabled = menuViewModel.flgJoinField
+        inviteAlert.isHidden = !menuViewModel.flgJoinField
         
         setNavBar()
         menuViewModel.checkInvitationStatus()
@@ -86,6 +88,7 @@ extension MenuViewController: MenuDelegate {
     
     func didFinishcheckInvitationStatus() {
         joinFieldButton.isEnabled = self.menuViewModel.flgJoinField
+        inviteAlert.isHidden = !self.menuViewModel.flgJoinField
     }
     
 }

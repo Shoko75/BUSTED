@@ -90,14 +90,6 @@ class MapViewController: UIViewController {
         
     }
     
-    // Beacon setting
-    override func viewDidDisappear(_ animated: Bool) {
-        // TODO: Need to change later
-        stopMonitoring()
-        stopLocalBeacon()
-        
-    }
-    
     func setNavBar() {
         self.navigationItem.setHidesBackButton(true, animated: false)
         
