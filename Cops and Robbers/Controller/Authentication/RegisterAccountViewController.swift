@@ -19,6 +19,7 @@ class RegisterAccountViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     var registerAccountViewModel = RegisterAccountViewModel()
+    var selectedImageFlg = false
     
     // MARK: Init
     override func viewDidLoad() {
@@ -92,10 +93,10 @@ class RegisterAccountViewController: UIViewController {
         let email = emailText.text
         let password = passwordText.text
         
-        if userName != "", email != "", password != "", let userImage = userImageView.image {
+        if userName != "", email != "", password != "", let userImage = userImageView.image, selectedImageFlg {
             registerAccountViewModel.createUser(userName: userName!, email: email!, password: password!, userImage: userImage)
         } else {
-            self.showAlert(title: "SignIn Error", message: "please enter username, email and password")
+            self.showAlert(title: "SignIn Error", message: "Please enter username, email and password and choose a picture")
         }
     }
     
@@ -118,8 +119,10 @@ extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavi
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             userImageView.image = editedImage
+            selectedImageFlg = true
         } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             userImageView.image = originalImage
+            selectedImageFlg = true
         }
         
         dismiss(animated: true, completion: nil)
