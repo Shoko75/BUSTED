@@ -13,6 +13,7 @@ import CoreLocation
 protocol MapDelegate {
     func didFetchGame()
     func didChangeGameValues()
+    func didCancleGame()
 }
 
 class MapViewModel {
@@ -234,6 +235,7 @@ class MapViewModel {
     }
     
     func finishGame() {
+        stopObserveUserInfo()
         if gameData?.admin == userID {
             deleteOccupiedMajor()
             deleteGame()
@@ -250,4 +252,42 @@ class MapViewModel {
         gameRef.child(gameID).removeValue()
     }
     
+    func stopObserveUserInfo() {
+        userInfoRef.child(userID!).removeAllObservers()
+    }
+    
+    func observeUserInfo() {
+        userInfoRef.child(userID!).observe(.value) { (snapshot) in
+            
+            if let value = snapshot.value as? [String: AnyObject],
+                let playTeam = value["playTeam"] as? String {
+                
+                if playTeam == "" {
+                    self.mapDelegate?.didCancleGame()
+                }
+            }
+        }
+    }
+    
+    func checkAdmin(gameData: Game) -> Bool {
+        if gameData.admin == userID {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func deleteUserInfoPlayTeam(){
+        
+        let playTeamValue = ["playTeam": ""]
+        
+        for player in (gameData?.cops.players)! {
+            userInfoRef.child(player.userId).updateChildValues(playTeamValue)
+        }
+        
+        for player in (gameData?.robbers.robPlayers)! {
+            userInfoRef.child(player.userId).updateChildValues(playTeamValue)
+        }
+        
+    }
 }

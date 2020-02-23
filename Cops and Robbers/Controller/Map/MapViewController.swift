@@ -38,10 +38,15 @@ class MapViewController: UIViewController {
     var flgCops: Bool?
     var gameID: String?
     var winCopsFlg: Bool?
+    var myGameUuid: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mapViewModel = MapViewModel()
+        mapViewModel.mapDelegate = self
+        setNavBar()
+        
         // notification check
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -51,17 +56,10 @@ class MapViewController: UIViewController {
         initSetting()
         
         // fetch game data
-        mapViewModel = MapViewModel()
-        mapViewModel.mapDelegate = self
         mapViewModel.gameID = self.gameID!
         mapViewModel.flgCops = self.flgCops!
         mapViewModel.setEnemyData(gameData: gameData!)
-        let myGameUuid = mapViewModel.searchMyGameUuid(gameData: gameData!)
-        
-        // Monitaring setting
-        startMonitoringUser()
-        initLocalBeacon(gameUuid: myGameUuid)
-        
+        myGameUuid = mapViewModel.searchMyGameUuid(gameData: gameData!)
         
         // Map setting
         mapView.showsUserLocation = true
@@ -86,17 +84,10 @@ class MapViewController: UIViewController {
         
         // Observe Game data
         mapViewModel.observeGame()
+        mapViewModel.observeUserInfo()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        performSegue(withIdentifier: "showCountdown", sender: nil)
         
-        // Title
-        let logo = UIImage(named: "Busted_logo_navbar")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
     }
     
     // Beacon setting
@@ -105,6 +96,34 @@ class MapViewController: UIViewController {
         stopMonitoring()
         stopLocalBeacon()
         
+    }
+    
+    func setNavBar() {
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        // Title
+        let logo = UIImage(named: "Busted_logo_navbar")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        
+        if mapViewModel.checkAdmin(gameData: gameData!) {
+            // Right Item
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "exit"), style: .plain, target: self, action: #selector(prepareForeExit))
+        }
+    }
+    
+    @objc func prepareForeExit() {
+        print("prepareForeExit")
+        let alert = UIAlertController(title: "End Game", message: "Are you sure to finish this game?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.prepareForEndGame()
+            self.mapViewModel.deleteUserInfoPlayTeam()
+            self.backToMenu()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
     
     func setFieldNotification() {
@@ -227,6 +246,11 @@ class MapViewController: UIViewController {
         }
     }
     
+    func prepareForEndGame() {
+        stopLocalBeacon()
+        stopMonitoring()
+        mapViewModel.finishGame()
+    }
     
 }
 
@@ -270,10 +294,13 @@ extension MapViewController: MapDelegate {
         }
     }
     
-    func prepareForEndGame() {
-        stopLocalBeacon()
-        stopMonitoring()
-        mapViewModel.finishGame()
+    func didCancleGame() {
+        let alertController = UIAlertController(title: "This game was cancelled", message: "This game was canncelled by the owner", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {(handler) in
+            self.prepareForEndGame()
+            self.backToMenu()
+        }))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -281,6 +308,12 @@ extension MapViewController: MapDelegate {
             if let endGameViewController = segue.destination as? EndGameViewController {
                 endGameViewController.endGameDelegate = self
                 endGameViewController.winCopsFlg = winCopsFlg
+            }
+        }
+        
+        if segue.identifier == "showCountdown" {
+            if let countdownViewController = segue.destination as? CountdownViewController {
+                countdownViewController.countdownDelegate = self
             }
         }
     }
@@ -426,5 +459,13 @@ extension MapViewController: UNUserNotificationCenterDelegate {
 extension MapViewController: EndGameDelegate {
     func backToMenu() {
         self.navigationController?.popToRootViewController(animated: true)
+    }
+}
+
+extension MapViewController: CountdownDelegate {
+    func startGame() {
+        // Monitaring setting
+        startMonitoringUser()
+        initLocalBeacon(gameUuid: myGameUuid!)
     }
 }

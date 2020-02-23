@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1040E97BCEF847E8D841F61E /* Pods_Cops_and_Robbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D92D814D5E6D91FBDB37C6 /* Pods_Cops_and_Robbers.framework */; };
+		2F0926D92401E37D0088BDE0 /* timer.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0926D82401E37D0088BDE0 /* timer.json */; };
 		2F91FE5423D666C10060A1FF /* AddPlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */; };
 		2F91FE5823D6807B0060A1FF /* WaitingPlayerAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* WaitingPlayerAdmin.storyboard */; };
 		2F91FE5A23D6A6850060A1FF /* DBInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBInvitation.swift */; };
@@ -47,6 +48,8 @@
 		2F91FEE8240098AB0060A1FF /* EndGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEE7240098AB0060A1FF /* EndGame.storyboard */; };
 		2F91FEEA24009E6D0060A1FF /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */; };
 		2F91FEEC2400AC6E0060A1FF /* EndGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */; };
+		2F91FEEE240117B70060A1FF /* Countdown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEED240117B70060A1FF /* Countdown.storyboard */; };
+		2F91FEF02401E09B0060A1FF /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -87,6 +90,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F0926D82401E37D0088BDE0 /* timer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timer.json; sourceTree = "<group>"; };
 		2F91FE5323D666C10060A1FF /* AddPlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F91FE5723D6807B0060A1FF /* WaitingPlayerAdmin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaitingPlayerAdmin.storyboard; sourceTree = "<group>"; };
 		2F91FE5923D6A6850060A1FF /* DBInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBInvitation.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		2F91FEE7240098AB0060A1FF /* EndGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndGame.storyboard; sourceTree = "<group>"; };
 		2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewModel.swift; sourceTree = "<group>"; };
+		2F91FEED240117B70060A1FF /* Countdown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Countdown.storyboard; sourceTree = "<group>"; };
+		2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* BUSTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +339,7 @@
 				2FB47DF623A0923600AA9216 /* Info.plist */,
 				2F91FEC723F635830060A1FF /* 1802-single-wave-loader.json */,
 				2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */,
+				2F0926D82401E37D0088BDE0 /* timer.json */,
 			);
 			path = "Cops and Robbers";
 			sourceTree = "<group>";
@@ -350,6 +357,7 @@
 				2F91FEC923F652150060A1FF /* HowToPlay.storyboard */,
 				2F91FED123F754840060A1FF /* UserSetting.storyboard */,
 				2F91FEE7240098AB0060A1FF /* EndGame.storyboard */,
+				2F91FEED240117B70060A1FF /* Countdown.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -368,6 +376,7 @@
 				2F91FED723F765140060A1FF /* How To Play */,
 				2F91FED823F765230060A1FF /* User Setting */,
 				2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */,
+				2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -540,11 +549,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F91FE5823D6807B0060A1FF /* WaitingPlayerAdmin.storyboard in Resources */,
+				2F91FEEE240117B70060A1FF /* Countdown.storyboard in Resources */,
 				2F91FE9023E388940060A1FF /* WaitingPlayer.storyboard in Resources */,
 				2F91FEE8240098AB0060A1FF /* EndGame.storyboard in Resources */,
 				2F91FEC823F635830060A1FF /* 1802-single-wave-loader.json in Resources */,
 				2FDF0E2523AC7534001648D5 /* Menu.storyboard in Resources */,
 				2FDF0E7B23CB3F65001648D5 /* AddPlayer.storyboard in Resources */,
+				2F0926D92401E37D0088BDE0 /* timer.json in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
 				2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */,
 				2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */,
@@ -656,6 +667,7 @@
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,
 				2F91FEE023F7AC980060A1FF /* ResetPasswordViewController.swift in Sources */,
 				2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */,
+				2F91FEF02401E09B0060A1FF /* CountdownViewController.swift in Sources */,
 				2F91FE9923E4EF760060A1FF /* MenuViewModel.swift in Sources */,
 				2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */,
 				2F91FE7E23E10E7A0060A1FF /* ShowTeamViewModel.swift in Sources */,
