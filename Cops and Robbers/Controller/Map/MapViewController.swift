@@ -66,7 +66,7 @@ class MapViewController: UIViewController {
         
         // Darawing the field
         let location = CLLocation(latitude: Double((gameData?.field.latitude)!)!, longitude: Double((gameData?.field.longitude)!)!)
-        let regionRadius: CLLocationDistance = 1500
+        let regionRadius: CLLocationDistance = 1300
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
         mapView.setRegion(region, animated: true)
@@ -128,7 +128,7 @@ class MapViewController: UIViewController {
     
     func setFieldNotification() {
         let geofenceRegionCenter = CLLocationCoordinate2DMake(Double((gameData?.field.latitude)!)!, Double((gameData?.field.longitude)!)!)
-        let radiusOfNotify: CLLocationDistance = 1500
+        let radiusOfNotify: CLLocationDistance = 500
         let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
         geofenceRegion.notifyOnExit = true
         locationManager.startMonitoring(for: geofenceRegion)
@@ -206,7 +206,7 @@ class MapViewController: UIViewController {
     
     func addRadiusCircle(location: CLLocation) {
         self.mapView.delegate = self
-        let circle = MKCircle(center: location.coordinate, radius: 1500 as CLLocationDistance)
+        let circle = MKCircle(center: location.coordinate, radius: 500 as CLLocationDistance)
         self.mapView.addOverlay(circle)
     }
     
@@ -455,13 +455,14 @@ extension MapViewController: UNUserNotificationCenterDelegate {
     }
 }
 
-// EndGameDelegate
+// MARK: EndGameDelegate
 extension MapViewController: EndGameDelegate {
     func backToMenu() {
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
 
+// MARK: CountdownDelegate
 extension MapViewController: CountdownDelegate {
     func startGame() {
         // Monitaring setting
