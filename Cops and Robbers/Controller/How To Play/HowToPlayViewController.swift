@@ -17,6 +17,15 @@ class HowToPlayViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.tintColor = UIColor.black
+    }
 
     func scrollToPageforBtn(page: Int, animated: Bool) {
         var frame: CGRect = self.collectionView.bounds
@@ -48,7 +57,8 @@ extension HowToPlayViewController: UICollectionViewDelegateFlowLayout, UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        let howToPlayData = HowToPlayData()
+        return howToPlayData.data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
