@@ -82,10 +82,10 @@ class LoadGameViewController: UIViewController {
     
     func playAnimation() {
         let animation = Animation.named("1802-single-wave-loader")
-        animationView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        animationView.frame = CGRect(x: 0, y: 0, width: 300, height: 100)
         animationView.animation = animation
 
-        animationView.contentMode = .scaleAspectFit
+        animationView.contentMode = .scaleAspectFill
 
         self.animationUIView.addSubview(animationView)
 
