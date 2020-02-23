@@ -12,12 +12,12 @@ class InviteFriendsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var customView: CustomUIView!
-    fileprivate var invitefriendsViewModel: InviteFriendsViewModel!
+    fileprivate var invitefriendsViewModel = InviteFriendsViewModel()
 
+    // MARK: Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        invitefriendsViewModel = InviteFriendsViewModel()
         invitefriendsViewModel.inviteFriendsDelegate = self
         invitefriendsViewModel.fetchFriendReqFromUserMyself()
         

@@ -16,17 +16,16 @@ class LoginViewController: UIViewController {
     
     var loginViewModel = LoginViewModel()
     
+    // MARK: Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginViewModel.loginViewModelDelegate = self
-        self.hidesKeyboard()
         
+        // Layout and keyboard setting
         signInButton.layer.cornerRadius = 12
+        keyboardSetting()
         
-        // Listen for keyboard events
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        // Delegate
+        loginViewModel.loginViewModelDelegate = self
     }
     
     deinit {
@@ -37,7 +36,6 @@ class LoginViewController: UIViewController {
     }
     
     @objc func keyboardWillChange(notification: Notification) {
-        print("keyboard will show: \(notification.name.rawValue)")
         
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
@@ -50,7 +48,14 @@ class LoginViewController: UIViewController {
         
     }
     
+    func keyboardSetting() {
+        self.hidesKeyboard()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
     
+    // MARK: Button Functions
     @IBAction func pressedLogin(_ sender: Any) {
         
         let email = emailText.text
@@ -69,6 +74,7 @@ class LoginViewController: UIViewController {
     
 }
 
+// MARK: LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     
     func finishLogIn(errorMessage: String?) {

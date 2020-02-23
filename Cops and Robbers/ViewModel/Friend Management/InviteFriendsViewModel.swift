@@ -5,27 +5,28 @@
 //  Created by Shoko Hashimoto on 2019-12-26.
 //  Copyright © 2019 Shoko Hashimoto. All rights reserved.
 //
-
-import Foundation
 import Firebase
 
+// MARK: Protocol -InviteFriendsDelegate
 protocol InviteFriendsDelegate {
     func didFinishObserveUserInfo()
 }
 
+// MARK: Protocol -ToCellInviteFriendsDelegate
 protocol ToCellInviteFriendsDelegate {
     func didRegisterFriendRequest()
 }
 
+// MARK: InviteFriendsViewModel
 class InviteFriendsViewModel {
     
     let SECTION_REQUESTING = "Requesting"
     let SECTION_PEOPLE = "People"
     
-    let userInfoRef = Database.database().reference(withPath: "user_Info")
-    let friendReqRef = Database.database().reference(withPath: "friends_request")
-    let friendsRef = Database.database().reference(withPath: "friends")
-    let userID = Auth.auth().currentUser?.uid
+    private let userInfoRef = Database.database().reference(withPath: "user_Info")
+    private let friendReqRef = Database.database().reference(withPath: "friends_request")
+    private let friendsRef = Database.database().reference(withPath: "friends")
+    private let userID = Auth.auth().currentUser?.uid
     
     var dbFriendReq: DBFriendRequest!
     var inviteFriendsDelegate: InviteFriendsDelegate?
@@ -37,8 +38,10 @@ class InviteFriendsViewModel {
         var sectionName: String
         var friends: [Friend]
     }
+    
     var friendsList = [frindsWithSection]()
     
+    // MARK: Registration
     func createFriendsList(){
         
         friendsList.removeAll()
@@ -51,6 +54,16 @@ class InviteFriendsViewModel {
         }
     }
     
+    func registerFrinedRequest(friend: Friend){
+        
+        self.dbFriendReq = DBFriendRequest(fromUser: userID!, toUser: friend.uid, status: "request")
+        
+        let request = friendReqRef.childByAutoId()
+        request.setValue(self.dbFriendReq.toAnyObject())
+        toCellInviteFriendsDelegate?.didRegisterFriendRequest()
+    }
+    
+    // MARK: Fetch
     func fetchFriendReqFromUserMyself() {
         
         var requestingFriendID = [String]()
@@ -107,7 +120,6 @@ class InviteFriendsViewModel {
     }
     
     func fetchFriends() {
-        
         friendsRef.child(userID!).observeSingleEvent(of: .value, with: { snapshot in
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot {
@@ -152,14 +164,5 @@ class InviteFriendsViewModel {
         }) { (error) in
             print(error.localizedDescription)
         }
-    }
-    
-    func registerFrinedRequest(friend: Friend){
-        
-        self.dbFriendReq = DBFriendRequest(fromUser: userID!, toUser: friend.uid, status: "request")
-        
-        let request = friendReqRef.childByAutoId()
-        request.setValue(self.dbFriendReq.toAnyObject())
-        toCellInviteFriendsDelegate?.didRegisterFriendRequest()
     }
 }

@@ -6,21 +6,22 @@
 //  Copyright © 2019 Shoko Hashimoto. All rights reserved.
 //
 
-import Foundation
 import Firebase
 
-
+// MARK: Protocol
 protocol RegisterAccountDelegate {
     func finishSignIn(errorMessage: String?)
 }
 
+// MARK: RegisterAccountViewModel
 class RegisterAccountViewModel {
+    
+    private let userInfoRef = Database.database().reference(withPath: "user_Info")
     
     var registerAccountDelegate: RegisterAccountDelegate?
     var dbUser: DBUser!
     
-    let userInfoRef = Database.database().reference(withPath: "user_Info")
-    
+    // MARK: Registration
     func createUser(userName: String, email: String, password: String, userImage: UIImage) {
         
         let singInManager = FirebaseAuthManager()
@@ -31,7 +32,7 @@ class RegisterAccountViewModel {
             
             if success {
                 self!.saveUserImage(userImage: userImage, userName: userName)
-                singInManager.logIn(email: email, password: password) { [weak self] (success, error) in
+                singInManager.logIn(email: email, password: password) { (success, error) in
                     print("logined!")
                 }
             } else {

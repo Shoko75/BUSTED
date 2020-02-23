@@ -20,8 +20,10 @@ class FriendsListTableViewCell: UITableViewCell {
     fileprivate var friendsListViewModel = FriendsListViewModel()
     
     func setCellValues(cellValues: Friend, sectionName: String){
+        
         self.friendsListViewModel.toCellFriendsListDelegate = self
         self.cellValues = cellValues
+        
         userNameLabel.text = cellValues.userName
         userImageView.contentMode = .scaleToFill
         userImageView.layer.masksToBounds = true
@@ -35,12 +37,13 @@ class FriendsListTableViewCell: UITableViewCell {
         }
     }
     
-    
+    // Button Functions
     @IBAction func pressedAcceptButton(_ sender: Any) {
         friendsListViewModel.registerFriend(friendUID: cellValues.uid)
     }
 }
 
+// MARK: ToCellfriendsListDelegate
 extension FriendsListTableViewCell: ToCellfriendsListDelegate {
     func didRegisterFriend() {
         acceptButton.isEnabled = false

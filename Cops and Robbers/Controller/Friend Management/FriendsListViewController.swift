@@ -12,12 +12,13 @@ class FriendsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var customVIew: CustomUIView!
-    fileprivate var friendsListViewModel: FriendsListViewModel!
     
+    fileprivate var friendsListViewModel = FriendsListViewModel()
+    
+    // MARK: Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        friendsListViewModel = FriendsListViewModel()
         friendsListViewModel.friendsListDelegate = self
         friendsListViewModel.fetchFriendReq()
         friendsListViewModel.fetchFriends()
@@ -28,6 +29,7 @@ class FriendsListViewController: UIViewController {
     }
 }
 
+// MARK: UITableViewDelegate
 extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return friendsListViewModel.friendsList[section].friends.count

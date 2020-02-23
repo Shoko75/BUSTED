@@ -5,8 +5,6 @@
 //  Created by Shoko Hashimoto on 2019-12-25.
 //  Copyright © 2019 Shoko Hashimoto. All rights reserved.
 //
-
-import Foundation
 import Firebase
 
 struct DBUser {

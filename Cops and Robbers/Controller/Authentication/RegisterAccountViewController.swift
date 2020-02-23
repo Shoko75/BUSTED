@@ -20,27 +20,15 @@ class RegisterAccountViewController: UIViewController {
     
     var registerAccountViewModel = RegisterAccountViewModel()
     
+    // MARK: Init
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Layout and keyboard setting
+        layoutSetting()
+        keyboardSetting()
         
-        self.hidesKeyboard()
-        // Layout setting
-        signUpButton.layer.cornerRadius = 12
-        cancelButton.layer.cornerRadius = 12
-        
-        userImageView.layer.masksToBounds = true
-        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
-        
-        userNameText.attributedPlaceholder = NSAttributedString(string: "Your username",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        emailText.attributedPlaceholder = NSAttributedString(string: "Your email",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        passwordText.attributedPlaceholder = NSAttributedString(string: "Your password",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        // keyboard setting
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        
+        // delegate
         registerAccountViewModel.registerAccountDelegate = self
     }
     
@@ -68,11 +56,36 @@ class RegisterAccountViewController: UIViewController {
         }
         
     }
-
-    @IBAction func pressedSelectImage(_ sender: Any) {
+    
+    func layoutSetting() {
         
+        // Buttons
+        signUpButton.layer.cornerRadius = 12
+        cancelButton.layer.cornerRadius = 12
+        
+        // ImageView
+        userImageView.layer.masksToBounds = true
+        userImageView.layer.cornerRadius = userImageView.bounds.width / 2
+        
+        // Text Field
+        userNameText.attributedPlaceholder = NSAttributedString(string: "Your username",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        emailText.attributedPlaceholder = NSAttributedString(string: "Your email",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordText.attributedPlaceholder = NSAttributedString(string: "Your password",  attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+    }
+    
+    func keyboardSetting() {
+        
+        self.hidesKeyboard()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+
+    // MARK: Button Functions
+    @IBAction func pressedSelectImage(_ sender: Any) {
         showImagePickerController()
     }
+    
     @IBAction func pressedSingIn(_ sender: Any) {
         
         let userName = userNameText.text
@@ -89,10 +102,9 @@ class RegisterAccountViewController: UIViewController {
     @IBAction func pressedBack(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
-    
 }
 
-// MARK: UIImagePickerControllerDelegate
+// MARK: UIImagePickerControllerDelegate (For Photo Library)
 extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerController() {
@@ -122,13 +134,10 @@ extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavi
 // MARK: RegisterAccountDelegate
 extension RegisterAccountViewController: RegisterAccountDelegate {
     func finishSignIn(errorMessage: String?) {
-        
         if errorMessage == nil {
             self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
         } else {
             self.showAlert(title: "SignIn Error", message: errorMessage!)
         }
     }
-    
-    
 }

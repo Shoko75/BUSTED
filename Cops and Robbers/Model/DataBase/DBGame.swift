@@ -6,8 +6,7 @@
 //  Copyright © 2020 Shoko Hashimoto. All rights reserved.
 //
 
-import Foundation
-
+// MARK: DBGame
 struct DBGame {
     let field: DBField
     let cops: DBCops
@@ -40,6 +39,7 @@ struct DBGame {
     }
 }
 
+// MARK: DBFlag
 struct DBFlag {
     let latitude: String
     let longitude: String
@@ -61,6 +61,7 @@ struct DBFlag {
     }
 }
 
+// MARK: DBField
 struct DBField {
     
     let latitude: String
@@ -80,6 +81,7 @@ struct DBField {
     }
 }
 
+// MARK: DBCops
 struct DBCops {
     let major: String
     let players: [DBCopPlayer]
@@ -106,6 +108,7 @@ struct DBCops {
     }
 }
 
+// MARK: DBCopPlayer
 struct DBCopPlayer {
     let userId: String
     let gameUuid: String
@@ -123,6 +126,7 @@ struct DBCopPlayer {
     }
 }
 
+// MARK: DBRobber
 struct DBRobber {
     let major: String
     let dbRobPlayers: [DBRobPlayer]
@@ -149,6 +153,7 @@ struct DBRobber {
     }
 }
 
+// MARK: DBRobPlayer
 struct DBRobPlayer {
     let userId: String
     let status: String

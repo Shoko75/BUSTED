@@ -20,8 +20,10 @@ class InviteFriendsTableViewCell: UITableViewCell {
     fileprivate var invitefriendsViewModel = InviteFriendsViewModel()
     
     func setCellValues(cellValues: Friend, sectionName: String){
+        
         self.invitefriendsViewModel.toCellInviteFriendsDelegate = self
         self.cellValues = cellValues
+        
         userNameLabel.text = cellValues.userName
         userImageView.contentMode = .scaleToFill
         userImageView.layer.masksToBounds = true
@@ -35,13 +37,13 @@ class InviteFriendsTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: Button Functions
     @IBAction func pressedInvite(_ sender: Any) {
         invitefriendsViewModel.registerFrinedRequest(friend: cellValues)
     }
-    
-
 }
 
+// MARK: ToCellInviteFriendsDelegate
 extension InviteFriendsTableViewCell: ToCellInviteFriendsDelegate {
     func didRegisterFriendRequest() {
         inviteButton.isEnabled = false

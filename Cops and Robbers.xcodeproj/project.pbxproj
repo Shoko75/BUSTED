@@ -61,7 +61,6 @@
 		2FB47E5523A1EDD100AA9216 /* UserForGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47E5423A1EDD100AA9216 /* UserForGame.swift */; };
 		2FDF0E1623A99D3C001648D5 /* RegisterAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1523A99D3C001648D5 /* RegisterAccount.storyboard */; };
 		2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1923AC61E9001648D5 /* RegisterAccountViewModel.swift */; };
-		2FDF0E1D23AC6867001648D5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1C23AC6867001648D5 /* User.swift */; };
 		2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FDF0E1E23AC6D39001648D5 /* Login.storyboard */; };
 		2FDF0E2123AC6E15001648D5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */; };
 		2FDF0E2323AC6EC6001648D5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */; };
@@ -146,7 +145,6 @@
 		2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Cops and Robbers.entitlements"; sourceTree = "<group>"; };
 		2FDF0E1523A99D3C001648D5 /* RegisterAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterAccount.storyboard; sourceTree = "<group>"; };
 		2FDF0E1923AC61E9001648D5 /* RegisterAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewModel.swift; sourceTree = "<group>"; };
-		2FDF0E1C23AC6867001648D5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2FDF0E1E23AC6D39001648D5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2FDF0E2023AC6E15001648D5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2FDF0E2223AC6EC6001648D5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -189,15 +187,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F91FE6523DBD14F0060A1FF /* Create Field */ = {
+		2F0926DA24031BB60088BDE0 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
+				2F91FEE7240098AB0060A1FF /* EndGame.storyboard */,
+				2F91FEED240117B70060A1FF /* Countdown.storyboard */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		2F0926DB24031C130088BDE0 /* Menu and Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */,
+				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
+				2F91FEC923F652150060A1FF /* HowToPlay.storyboard */,
+				2F91FED123F754840060A1FF /* UserSetting.storyboard */,
+			);
+			path = "Menu and Setting";
+			sourceTree = "<group>";
+		};
+		2F0926DC24031C2F0088BDE0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
+				2FDF0E5F23B3C239001648D5 /* Components.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2F0926DD24031C480088BDE0 /* Menu and Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
+				2F91FED723F765140060A1FF /* How To Play */,
+				2F91FED823F765230060A1FF /* User Setting */,
+			);
+			path = "Menu and Setting";
+			sourceTree = "<group>";
+		};
+		2F0926DE24031C9B0088BDE0 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE8423E288170060A1FF /* Map */,
+				2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */,
+				2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		2F0926DF24031CD20088BDE0 /* Menu and Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE9823E4EF760060A1FF /* MenuViewModel.swift */,
+				2F91FEDB23F78C220060A1FF /* UserSettingViewModel.swift */,
+				2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */,
+			);
+			path = "Menu and Setting";
+			sourceTree = "<group>";
+		};
+		2F0926E024031CFC0088BDE0 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		2F0926E124031D430088BDE0 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47E5423A1EDD100AA9216 /* UserForGame.swift */,
+				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
+				2FDF0E6323B452A8001648D5 /* Friend.swift */,
+				2F91FE7023DBD5A10060A1FF /* Invitation.swift */,
+				2F91FEA123E641C20060A1FF /* Game.swift */,
+				2F91FED923F770240060A1FF /* UserSettingSection.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		2F91FE6523DBD14F0060A1FF /* Prepare For game */ = {
+			isa = PBXGroup;
+			children = (
+				2F91FE8F23E388940060A1FF /* WaitingPlayer.storyboard */,
 				2FDF0E7A23CB3F65001648D5 /* AddPlayer.storyboard */,
 				2F91FE5723D6807B0060A1FF /* WaitingPlayerAdmin.storyboard */,
 				2F91FE7623E0EB260060A1FF /* ShowTeam.storyboard */,
 				2F91FE7F23E25D800060A1FF /* LoadGame.storyboard */,
 			);
-			path = "Create Field";
+			path = "Prepare For game";
 			sourceTree = "<group>";
 		};
 		2F91FE6623DBD1610060A1FF /* Add Player */ = {
@@ -210,25 +290,28 @@
 			path = "Add Player";
 			sourceTree = "<group>";
 		};
-		2F91FE6723DBD1750060A1FF /* Create Field */ = {
+		2F91FE6723DBD1750060A1FF /* Prepare For Game */ = {
 			isa = PBXGroup;
 			children = (
+				2F91FE9723E3940F0060A1FF /* Waiting Player */,
 				2F91FE6B23DBD1E80060A1FF /* Waiting Player Admin */,
 				2F91FE6623DBD1610060A1FF /* Add Player */,
 				2F91FE7A23E0EEE60060A1FF /* Show Team */,
 				2F91FE8323E287F10060A1FF /* Load Game */,
 			);
-			path = "Create Field";
+			path = "Prepare For Game";
 			sourceTree = "<group>";
 		};
-		2F91FE6823DBD1A10060A1FF /* Create Field */ = {
+		2F91FE6823DBD1A10060A1FF /* Prepare For Game */ = {
 			isa = PBXGroup;
 			children = (
+				2F0926E024031CFC0088BDE0 /* Game */,
+				2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */,
 				2FDF0E8023CB4524001648D5 /* AddPlayerViewModel.swift */,
 				2F91FE7323DBDD1A0060A1FF /* WaitingPlayerViewModel.swift */,
 				2F91FE7D23E10E7A0060A1FF /* ShowTeamViewModel.swift */,
 			);
-			path = "Create Field";
+			path = "Prepare For Game";
 			sourceTree = "<group>";
 		};
 		2F91FE6B23DBD1E80060A1FF /* Waiting Player Admin */ = {
@@ -338,8 +421,8 @@
 				2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */,
 				2FB47DF623A0923600AA9216 /* Info.plist */,
 				2F91FEC723F635830060A1FF /* 1802-single-wave-loader.json */,
-				2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */,
 				2F0926D82401E37D0088BDE0 /* timer.json */,
+				2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */,
 			);
 			path = "Cops and Robbers";
 			sourceTree = "<group>";
@@ -347,17 +430,11 @@
 		2FB47DFE23A0958400AA9216 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47E4E23A1E57200AA9216 /* Map.storyboard */,
-				2FDF0E5C23B3BD74001648D5 /* NavigationController.storyboard */,
-				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
+				2F0926DB24031C130088BDE0 /* Menu and Setting */,
 				2FDF0E5E23B3BE53001648D5 /* Authentication */,
 				2FDF0E7523CAC551001648D5 /* Friend Management */,
-				2F91FE6523DBD14F0060A1FF /* Create Field */,
-				2F91FE8F23E388940060A1FF /* WaitingPlayer.storyboard */,
-				2F91FEC923F652150060A1FF /* HowToPlay.storyboard */,
-				2F91FED123F754840060A1FF /* UserSetting.storyboard */,
-				2F91FEE7240098AB0060A1FF /* EndGame.storyboard */,
-				2F91FEED240117B70060A1FF /* Countdown.storyboard */,
+				2F91FE6523DBD14F0060A1FF /* Prepare For game */,
+				2F0926DA24031BB60088BDE0 /* Game */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,18 +442,12 @@
 		2FB47E2723A0BDD800AA9216 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47E2C23A18F0000AA9216 /* CustomUIView.swift */,
-				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
-				2F91FE8423E288170060A1FF /* Map */,
-				2FDF0E5F23B3C239001648D5 /* Components.swift */,
+				2F0926DC24031C2F0088BDE0 /* Components */,
+				2F0926DD24031C480088BDE0 /* Menu and Setting */,
 				2FDF0E7823CAC5AD001648D5 /* Authentication */,
 				2FDF0E7623CAC571001648D5 /* Friend Management */,
-				2F91FE6723DBD1750060A1FF /* Create Field */,
-				2F91FE9723E3940F0060A1FF /* Waiting Player */,
-				2F91FED723F765140060A1FF /* How To Play */,
-				2F91FED823F765230060A1FF /* User Setting */,
-				2F91FEE924009E6D0060A1FF /* EndGameViewController.swift */,
-				2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */,
+				2F91FE6723DBD1750060A1FF /* Prepare For Game */,
+				2F0926DE24031C9B0088BDE0 /* Game */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,14 +455,10 @@
 		2FB47E2823A0BEB600AA9216 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */,
+				2F0926DF24031CD20088BDE0 /* Menu and Setting */,
 				2FDF0E7923CAC5C3001648D5 /* Authentication */,
 				2FDF0E7723CAC587001648D5 /* Friend Management */,
-				2F91FE6823DBD1A10060A1FF /* Create Field */,
-				2F91FE9823E4EF760060A1FF /* MenuViewModel.swift */,
-				2F91FE9B23E51C130060A1FF /* LoadGameViewModel.swift */,
-				2F91FEDB23F78C220060A1FF /* UserSettingViewModel.swift */,
-				2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */,
+				2F91FE6823DBD1A10060A1FF /* Prepare For Game */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -399,15 +466,9 @@
 		2FB47E2923A0BECC00AA9216 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2FB47E5423A1EDD100AA9216 /* UserForGame.swift */,
-				2FDF0E1C23AC6867001648D5 /* User.swift */,
-				2FDF0E5123B0B78E001648D5 /* FirebaseAuthManager.swift */,
-				2FDF0E6323B452A8001648D5 /* Friend.swift */,
-				2F91FE7023DBD5A10060A1FF /* Invitation.swift */,
+				2F0926E124031D430088BDE0 /* Data Model */,
 				2F91FE7223DBD5B20060A1FF /* DataBase */,
-				2F91FEA123E641C20060A1FF /* Game.swift */,
 				2F91FECB23F65A440060A1FF /* HowToPlayData.swift */,
-				2F91FED923F770240060A1FF /* UserSettingSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -436,8 +497,8 @@
 			children = (
 				2FDF0E6523BC7D5F001648D5 /* InviteFriendsViewController.swift */,
 				2FDF0E6723C971E6001648D5 /* InviteFriendsTableViewCell.swift */,
-				2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */,
 				2FDF0E6F23C985FE001648D5 /* FriendsListViewController.swift */,
+				2FDF0E6D23C985E5001648D5 /* FriendsListTableViewCell.swift */,
 			);
 			path = "Friend Management";
 			sourceTree = "<group>";
@@ -675,7 +736,6 @@
 				2FDF0E7F23CB4028001648D5 /* AddPlayerTableViewCell.swift in Sources */,
 				2F91FEA223E641C20060A1FF /* Game.swift in Sources */,
 				2FDF0E6A23C97737001648D5 /* DBFriendRequest.swift in Sources */,
-				2FDF0E1D23AC6867001648D5 /* User.swift in Sources */,
 				2FDF0E6023B3C239001648D5 /* Components.swift in Sources */,
 				2F91FED023F65ED20060A1FF /* HowToPlayCollectionViewCell.swift in Sources */,
 				2F91FE6F23DBD3700060A1FF /* WaitingPlayerAdminTableViewCell.swift in Sources */,

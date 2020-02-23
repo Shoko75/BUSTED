@@ -5,8 +5,6 @@
 //  Created by Shoko Hashimoto on 2020-01-10.
 //  Copyright © 2020 Shoko Hashimoto. All rights reserved.
 //
-
-import Foundation
 import Firebase
 
 struct DBFriendRequest {

@@ -6,8 +6,6 @@
 //  Copyright © 2020 Shoko Hashimoto. All rights reserved.
 //
 
-import Foundation
-
 struct DBFriends {
     
     let uid: String

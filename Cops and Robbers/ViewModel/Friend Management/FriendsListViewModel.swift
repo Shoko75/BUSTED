@@ -5,28 +5,28 @@
 //  Created by Shoko Hashimoto on 2020-01-11.
 //  Copyright © 2020 Shoko Hashimoto. All rights reserved.
 //
-
-import Foundation
 import Firebase
 
+// MARK: Protocol -FriendsListDelegate
 protocol FriendsListDelegate {
     func didFinishFetchData()
 }
 
+// MARK: Protocol -ToCellfriendsListDelegate
 protocol ToCellfriendsListDelegate {
     func didRegisterFriend()
 }
 
-
+// MARK: FriendsListViewModel
 class FriendsListViewModel {
     
     let SECTION_REQUESTS = "Requests"
     let SECTION_FRIENDS = "Friends"
     
-    let userInfoRef = Database.database().reference(withPath: "user_Info")
-    let friendReqRef = Database.database().reference(withPath: "friends_request")
-    let friendsRef = Database.database().reference(withPath: "friends")
-    let userID = Auth.auth().currentUser?.uid
+    private let userInfoRef = Database.database().reference(withPath: "user_Info")
+    private let friendReqRef = Database.database().reference(withPath: "friends_request")
+    private let friendsRef = Database.database().reference(withPath: "friends")
+    private let userID = Auth.auth().currentUser?.uid
     
     var dicFriendsAndReq = [String:[Friend]]()
     var friendsListDelegate: FriendsListDelegate?
@@ -39,6 +39,7 @@ class FriendsListViewModel {
     }
     var friendsList = [frindsWithSection]()
     
+    // MARK: Registration
     func createFriendsList(){
         
         friendsList.removeAll()
@@ -51,6 +52,23 @@ class FriendsListViewModel {
         }
     }
     
+    func registerFriend(friendUID: String){
+        
+        // Myself
+        let dbFriendsMine = DBFriends(uid: userID! ,friendUID: friendUID)
+        let registerMyselfRef = self.friendsRef.child(dbFriendsMine.uid).child(dbFriendsMine.friendUID)
+        registerMyselfRef.setValue(ServerValue.timestamp())
+        
+        // Opponent
+        let dbFriendsOpponent = DBFriends(uid: friendUID ,friendUID: userID!)
+        let registerOpponentfRef = self.friendsRef.child(dbFriendsOpponent.uid).child(dbFriendsOpponent.friendUID)
+        registerOpponentfRef.setValue(ServerValue.timestamp())
+        
+        // Delete friend request
+        deleteFriendRequest(friendUID: dbFriendsMine.friendUID)
+    }
+    
+    // MARK: Fetch
     func fetchFriendReq() {
         var receivedFriendsID = [String]()
         
@@ -106,22 +124,7 @@ class FriendsListViewModel {
         }
     }
     
-    func registerFriend(friendUID: String){
-        
-        // Myself
-        let dbFriendsMine = DBFriends(uid: userID! ,friendUID: friendUID)
-        let registerMyselfRef = self.friendsRef.child(dbFriendsMine.uid).child(dbFriendsMine.friendUID)
-        registerMyselfRef.setValue(ServerValue.timestamp())
-        
-        // Opponent
-        let dbFriendsOpponent = DBFriends(uid: friendUID ,friendUID: userID!)
-        let registerOpponentfRef = self.friendsRef.child(dbFriendsOpponent.uid).child(dbFriendsOpponent.friendUID)
-        registerOpponentfRef.setValue(ServerValue.timestamp())
-        
-        // Delete friend request
-        deleteFriendRequest(friendUID: dbFriendsMine.friendUID)
-    }
-    
+    // MARK: Delete
     func deleteFriendRequest(friendUID: String){
         
         // Get the data which toUser is my userID
@@ -142,6 +145,4 @@ class FriendsListViewModel {
             print(error.localizedDescription)
         }
     }
-    
-    
 }

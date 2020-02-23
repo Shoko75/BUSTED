@@ -6,18 +6,20 @@
 //  Copyright © 2019 Shoko Hashimoto. All rights reserved.
 //
 
-import Foundation
 import Firebase
 
+// MARK: Protocol
 protocol LoginViewModelDelegate {
     func finishLogIn(errorMessage: String?)
 }
 
+// MARK: LoginViewModel
 class LoginViewModel {
     
+    private let userInfoRef = Database.database().reference(withPath: "user_Info")
     var loginViewModelDelegate: LoginViewModelDelegate?
-    let userInfoRef = Database.database().reference(withPath: "user_Info")
     
+    // MARK: LogIn
     func logIn(email: String, password: String) {
         
         let loginManager = FirebaseAuthManager()
@@ -33,6 +35,7 @@ class LoginViewModel {
         }
     }
     
+    // MARK: Update
     func updateToken() {
         let userID = Auth.auth().currentUser?.uid
         let token = ["token": UserDefaults.standard.string(forKey: "FCM_TOKEN")!]

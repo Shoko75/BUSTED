@@ -6,8 +6,7 @@
 //  Copyright © 2020 Shoko Hashimoto. All rights reserved.
 //
 
-import Foundation
-
+// MARK: DBInvitation
 struct DBInvitation {
     
     let adminUser: String
@@ -35,6 +34,7 @@ struct DBInvitation {
     }
 }
 
+// MARK: DBPlayer
 struct DBPlayer {
     let userId: String
     let token: String
