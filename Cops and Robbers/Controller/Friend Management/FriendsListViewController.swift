@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class FriendsListViewController: UIViewController {
 
@@ -19,9 +20,14 @@ class FriendsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // viewModel Delegate
         friendsListViewModel.friendsListDelegate = self
         friendsListViewModel.fetchFriendReq()
         friendsListViewModel.fetchFriends()
+        
+        // emptyDataSet Delegate
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -76,5 +82,21 @@ extension FriendsListViewController: FriendsListDelegate {
     
     func didFinishFetchData() {
         self.tableView.reloadData()
+    }
+}
+
+// MARK: DZNEmptyDataSetDelegate
+extension FriendsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "You don't have any friends"
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Tap the plus button to make your friends"
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
 }

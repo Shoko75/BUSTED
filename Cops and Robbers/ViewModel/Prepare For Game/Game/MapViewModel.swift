@@ -8,7 +8,7 @@
 import Firebase
 import CoreLocation
 
-// MARK: protocol
+// MARK: protocol -MapDelegate
 protocol MapDelegate {
     func didFetchGame()
     func didChangeGameValues()

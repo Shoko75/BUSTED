@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class AddPlayerViewController: UIViewController {
 
@@ -23,8 +24,11 @@ class AddPlayerViewController: UIViewController {
 
         // Delegate
         addPlayerViewModel.addPlayerDelegate = self
-        
         addPlayerViewModel.fetchFriends()
+        
+        // emptyDataSet Delegate
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -166,5 +170,21 @@ extension AddPlayerViewController: AddPlayerCollectionViewCellDelegate {
         
         collectionView.reloadData()
         tableView.reloadData()
+    }
+}
+
+// MARK: DZNEmptyDataSetDelegate
+extension AddPlayerViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Make your firends first"
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "You don't have any friends. Go back to Menu and make your friends first."
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
 }
