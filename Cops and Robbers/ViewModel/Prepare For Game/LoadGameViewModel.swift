@@ -8,7 +8,7 @@
 import Firebase
 import MapKit
 
-// MARK: protocol
+// MARK: protocol -LoadGameDelegate
 protocol LoadGameDelegate {
     func didCreateGame()
 }
@@ -159,7 +159,7 @@ class LoadGameViewModel {
               cnt += 1
 
             //Add Annotation
-            let flag = generateRandomCoordinates(min: 1, max: 500, currentLoction: currentLoction) //this will be the maximum and minimum distance of the annotation from the current Location (Meters)
+            let flag = generateRandomCoordinates(min: 0, max: 500, currentLoction: currentLoction) //this will be the maximum and minimum distance of the annotation from the current Location (Meters)
             flags.append(DBFlag(latitude: String(flag.latitude), longitude: String(flag.longitude)))
 
         }

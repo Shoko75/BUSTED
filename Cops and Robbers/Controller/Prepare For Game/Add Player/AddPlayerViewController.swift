@@ -177,13 +177,13 @@ extension AddPlayerViewController: AddPlayerCollectionViewCellDelegate {
 extension AddPlayerViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Make your firends first"
+        let str = "Make some friends first"
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
         return NSAttributedString(string: str, attributes: attrs)
     }
 
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "You don't have any friends. Go back to Menu and make your friends first."
+        let str = "You don't have any friends. Go back to Menu and add some friends first."
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
         return NSAttributedString(string: str, attributes: attrs)
     }

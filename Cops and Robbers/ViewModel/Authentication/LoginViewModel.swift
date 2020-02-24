@@ -38,7 +38,10 @@ class LoginViewModel {
     // MARK: Update
     func updateToken() {
         let userID = Auth.auth().currentUser?.uid
-        let token = ["token": UserDefaults.standard.string(forKey: "FCM_TOKEN")!]
-        userInfoRef.child(userID!).updateChildValues(token)
+        
+        if userID != "", userID != nil {
+            let token = ["token": UserDefaults.standard.string(forKey: "FCM_TOKEN")!]
+            userInfoRef.child(userID!).updateChildValues(token)
+        }
     }
 }

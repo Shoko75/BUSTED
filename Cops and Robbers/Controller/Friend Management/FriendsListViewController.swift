@@ -95,7 +95,7 @@ extension FriendsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDeleg
     }
 
     func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
-        let str = "Tap the plus button to make your friends"
+        let str = "Tap the plus button to add a friend"
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
         return NSAttributedString(string: str, attributes: attrs)
     }

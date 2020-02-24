@@ -47,6 +47,6 @@ class FriendsListTableViewCell: UITableViewCell {
 extension FriendsListTableViewCell: ToCellfriendsListDelegate {
     func didRegisterFriend() {
         acceptButton.isEnabled = false
-        acceptButton.setTitle("Button_accepted", for: .normal)
+        acceptButton.setImage(UIImage(named:"Button_accepted"), for: .normal)
     }
 }

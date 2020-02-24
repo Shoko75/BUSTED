@@ -10,16 +10,19 @@ import Firebase
 
 // MARK: protocol
 protocol MenuDelegate {
-    func didFinishcheckInvitationStatus()
+    func didFinishCheckInvitationStatus()
+    func didFinishCheckFriendReq()
 }
 
 // MARK: MenuViewModel
 class MenuViewModel {
     
     private let userInfoRef = Database.database().reference(withPath: "user_Info")
+    private let friendReqRef = Database.database().reference(withPath: "friends_request")
     private let userID = Auth.auth().currentUser?.uid
     
     var flgJoinField = false
+    var flgFriendReq = false
     var menuDelegate: MenuDelegate?
     var invitationID: String?
     var userInfo: Friend?
@@ -35,8 +38,19 @@ class MenuViewModel {
                 } else {
                     self.flgJoinField = false
                 }
-                self.menuDelegate?.didFinishcheckInvitationStatus()
+                self.menuDelegate?.didFinishCheckInvitationStatus()
             }
+        }
+    }
+    
+    func checkFriendReq() {
+        
+        // Get the data which toUser is myself
+        friendReqRef.queryOrdered(byChild: "toUser").queryEqual(toValue: userID).observe(.value) { (snapshot) in
+            if snapshot.childrenCount != 0 {
+                self.flgFriendReq = true
+            }
+            self.menuDelegate?.didFinishCheckFriendReq()
         }
     }
 }

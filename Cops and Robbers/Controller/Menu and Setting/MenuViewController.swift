@@ -13,6 +13,7 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var joinFieldButton: UIButton!
     @IBOutlet weak var inviteAlert: UIImageView!
+    @IBOutlet weak var friendReqAlert: UIImageView!
     
     var window: UIWindow?
     var menuViewModel: MenuViewModel!
@@ -29,9 +30,11 @@ class MenuViewController: UIViewController {
         menuViewModel.menuDelegate = self
         joinFieldButton.isEnabled = menuViewModel.flgJoinField
         inviteAlert.isHidden = !menuViewModel.flgJoinField
+        friendReqAlert.isHidden = !menuViewModel.flgFriendReq
         
         setNavBar()
         menuViewModel.checkInvitationStatus()
+        menuViewModel.checkFriendReq()
     }
     
     func setNavBar() {
@@ -91,7 +94,12 @@ class MenuViewController: UIViewController {
 // MARK: MenuDelegate
 extension MenuViewController: MenuDelegate {
     
-    func didFinishcheckInvitationStatus() {
+    func didFinishCheckFriendReq() {
+        friendReqAlert.isHidden = !self.menuViewModel.flgFriendReq
+    }
+    
+    
+    func didFinishCheckInvitationStatus() {
         joinFieldButton.isEnabled = self.menuViewModel.flgJoinField
         inviteAlert.isHidden = !self.menuViewModel.flgJoinField
     }

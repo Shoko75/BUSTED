@@ -22,6 +22,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var jailImageView: UIImageView!
     
+    let FIELD_RADIUS: CLLocationDistance = 500
+    
     private let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
     
@@ -62,14 +64,14 @@ class MapViewController: UIViewController {
         
         // Darawing the field
         let location = CLLocation(latitude: Double((gameData?.field.latitude)!)!, longitude: Double((gameData?.field.longitude)!)!)
-        let regionRadius: CLLocationDistance = 1300
+        let regionRadius: CLLocationDistance = 1000
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
         mapView.setRegion(region, animated: true)
         addRadiusCircle(location: location)
         
         // Set exit notification of the field
-        setFieldNotification()
+        setFieldNotification(location: location)
         
         // Set Flags
         setFlags()
@@ -119,11 +121,9 @@ class MapViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func setFieldNotification() {
+    func setFieldNotification(location: CLLocation) {
         print("setFieldNotification")
-        let geofenceRegionCenter = CLLocationCoordinate2DMake(Double((gameData?.field.latitude)!)!, Double((gameData?.field.longitude)!)!)
-        let radiusOfNotify: CLLocationDistance = 500
-        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
+        let geofenceRegion = CLCircularRegion(center: location.coordinate, radius: FIELD_RADIUS, identifier: "Field")
         geofenceRegion.notifyOnExit = true
         locationManager.startMonitoring(for: geofenceRegion)
     }
@@ -154,7 +154,7 @@ class MapViewController: UIViewController {
     func addRadiusCircle(location: CLLocation) {
         print("addRadiusCircle")
         self.mapView.delegate = self
-        let circle = MKCircle(center: location.coordinate, radius: 500 as CLLocationDistance)
+        let circle = MKCircle(center: location.coordinate, radius: FIELD_RADIUS)
         self.mapView.addOverlay(circle)
     }
     
