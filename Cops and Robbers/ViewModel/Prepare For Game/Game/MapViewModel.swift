@@ -31,6 +31,7 @@ class MapViewModel {
     
     // MARK: Init
     func setEnemyData(gameData: Game) {
+        print("setEnemyData")
         if flgCops! {
             for enemy in gameData.robbers.robPlayers {
                 
@@ -50,6 +51,7 @@ class MapViewModel {
     }
     
     func searchMyGameUuid(gameData: Game) -> String {
+        print("searchMyGameUuid")
         let userID = Auth.auth().currentUser?.uid
         var gameUuid = ""
         
@@ -125,6 +127,7 @@ class MapViewModel {
     }
     
     func locationString(beacon:CLBeacon) -> String {
+        
       let proximity = nameForProximity(beacon.proximity)
       let accuracy = String(format: "%.2f", beacon.accuracy)
         
@@ -140,6 +143,7 @@ class MapViewModel {
         gameRef.child(gameID).observe(.value) { (snapshot) in
             
             if let gameData = Game(snapshot: snapshot) {
+                print("observeGame")
                 self.gameData = gameData
                 self.fetchUserInfoByID()
                 self.mapDelegate?.didChangeGameValues()
@@ -154,6 +158,7 @@ class MapViewModel {
                 let playTeam = value["playTeam"] as? String {
                 
                 if playTeam == "" {
+                    print("observeUserInfo")
                     self.mapDelegate?.didCancleGame()
                 }
             }
@@ -161,11 +166,13 @@ class MapViewModel {
     }
     
     func stopObserveUserInfo() {
+        
         userInfoRef.child(userID!).removeAllObservers()
     }
     
     // MARK: Fetch
     func fetchUserInfoByID() {
+        print("fetchUserInfoByID")
         var copsCnt = 0
         var robbersCnt = 0
         
@@ -195,7 +202,7 @@ class MapViewModel {
     
     // MARK: Update
     func updateRobberStatus(gameUuid: String) {
-        
+        print("updateRobberStatus")
         let status = ["status": "Jail"]
         for player in (gameData?.robbers.robPlayers)! {
             
@@ -206,6 +213,7 @@ class MapViewModel {
     }
     
     func updateRobbersLabel() -> String {
+        print("updateRobbersLabel")
         var cntJail = 0
         let total = (self.gameData?.robbers.robPlayers.count)!
         
@@ -220,6 +228,7 @@ class MapViewModel {
     }
     
     func updateFlagLabel() -> String {
+        print("updateFlagLabel")
         var flagCnt = 0
         if let flags = self.gameData?.flags {
             for flag in flags {
@@ -232,8 +241,10 @@ class MapViewModel {
     }
     
     func updateFlag(identifier: String) {
-        let activeFlg = ["activeFlg": false]
-        gameRef.child(gameID).child("flags").child(identifier).updateChildValues(activeFlg)
+        if identifier != "" {
+            let activeFlg = ["activeFlg": false]
+            gameRef.child(gameID).child("flags").child(identifier).updateChildValues(activeFlg)
+        }
     }
     
     // MARK: Delete
@@ -248,7 +259,7 @@ class MapViewModel {
     }
     
     func deleteUserInfoPlayTeam(){
-        
+        print("deleteUserInfoPlayTeam")
         let playTeamValue = ["playTeam": ""]
         
         for player in (gameData?.cops.players)! {
@@ -263,6 +274,7 @@ class MapViewModel {
     
     // MARK: Others
     func judgeJailStatus() -> Bool {
+        print("checkAdmin")
         if let robbers = gameData?.robbers.robPlayers {
             for robber in robbers {
                 if robber.status == "Jail", robber.userId == userID {

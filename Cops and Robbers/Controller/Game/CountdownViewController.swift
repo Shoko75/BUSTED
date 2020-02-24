@@ -44,6 +44,8 @@ class CountdownViewController: UIViewController {
 
         if timeLeft <= 0 {
             self.dismiss(animated: true) {
+                self.timer?.invalidate()
+                self.timer = nil
                 self.countdownDelegate?.startGame()
             }
         }

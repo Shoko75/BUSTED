@@ -120,6 +120,7 @@ class MapViewController: UIViewController {
     }
     
     func setFieldNotification() {
+        print("setFieldNotification")
         let geofenceRegionCenter = CLLocationCoordinate2DMake(Double((gameData?.field.latitude)!)!, Double((gameData?.field.longitude)!)!)
         let radiusOfNotify: CLLocationDistance = 500
         let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: radiusOfNotify, identifier: "Field")
@@ -151,6 +152,7 @@ class MapViewController: UIViewController {
     }
     
     func addRadiusCircle(location: CLLocation) {
+        print("addRadiusCircle")
         self.mapView.delegate = self
         let circle = MKCircle(center: location.coordinate, radius: 500 as CLLocationDistance)
         self.mapView.addOverlay(circle)
@@ -158,6 +160,7 @@ class MapViewController: UIViewController {
     
     // MARK: Monitoring Enemys Setting
     func startMonitoringUser() {
+        print("startMonitoringUser")
         for enemy in mapViewModel.enemys {
             let beaconRegion = enemy.asBeaconRegion()
             locationManager.startMonitoring(for: beaconRegion)
@@ -166,6 +169,7 @@ class MapViewController: UIViewController {
     }
     
     func stopMonitoring() {
+        print("stopMonitoring")
         for enemy in mapViewModel.enemys {
             let beaconRegion = enemy.asBeaconRegion()
             locationManager.stopMonitoring(for: beaconRegion)
@@ -179,6 +183,7 @@ class MapViewController: UIViewController {
     
     // MARK: Beacon
     func initLocalBeacon(gameUuid: String){
+        print("initLocalBeacon")
         if localBeacon != nil {
             stopLocalBeacon()
         }
@@ -200,6 +205,7 @@ class MapViewController: UIViewController {
     }
     
     func stopLocalBeacon(){
+        print("stopLocalBeacon")
         if peripheralManager != nil {
             peripheralManager.stopAdvertising()
             peripheralManager = nil
@@ -210,6 +216,7 @@ class MapViewController: UIViewController {
     
     // MARK: Flags Setting
     func setFlags() {
+        print("setFlags")
         for flag in self.gameData!.flags {
             let showflag = MKPointAnnotation()
             showflag.coordinate = CLLocationCoordinate2D(latitude: Double(flag.latitude)!, longitude: Double(flag.longitude)!)
@@ -218,6 +225,7 @@ class MapViewController: UIViewController {
     }
     
     func startFlagsMonitoring() {
+        print("startFlagsMonitoring")
         var cnt = 0
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             for flag in self.gameData!.flags {
@@ -231,6 +239,7 @@ class MapViewController: UIViewController {
     }
     
     func updateFlagStatus() {
+        print("updateFlagStatus")
         if let flags = self.mapViewModel.gameData?.flags {
             for flag in flags {
                 for annotation in mapView.annotations {
@@ -247,6 +256,7 @@ class MapViewController: UIViewController {
     
     // MARK: EndGame
     func prepareForEndGame() {
+        print("prepareForEndGame")
         stopLocalBeacon()
         stopMonitoring()
         mapViewModel.finishGame()
@@ -273,10 +283,12 @@ class MapViewController: UIViewController {
 extension MapViewController: MapDelegate {
     
     func didFetchGame() {
+        print("didFetchGame")
         self.collectionView.reloadData()
     }
     
     func didChangeGameValues() {
+        print("didChangeGameValues")
         // controll flag hidden status
         updateFlagStatus()
         let leftRobs = mapViewModel.updateRobbersLabel()
@@ -310,6 +322,7 @@ extension MapViewController: MapDelegate {
     }
     
     func didCancleGame() {
+        print("didCancleGame")
         let alertController = UIAlertController(title: "This game was cancelled",
                                                 message: "This game was cancelled by the owner",
                                                 preferredStyle: .alert)
@@ -359,9 +372,10 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
 extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        
+        print("locationManager")
         var printInfo = ""
         var alert = ""
+        
         if let beacon = beacons.last {
                 
             let bea = beacon as CLBeacon
@@ -373,6 +387,8 @@ extension MapViewController: CLLocationManagerDelegate {
             alert = mapViewModel.alertForProximity(bea.proximity, gameUuid: bea.uuid.uuidString)
             printInfo += title + name + major + minor + location
         }
+        
+        print(printInfo)
         
         if alert == "Unknown" || alert == "" {
             alertLabel.isHidden = true
@@ -397,13 +413,15 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        self.mapViewModel.updateFlag(identifier: region.identifier)
+            print(region.identifier)
+            self.mapViewModel.updateFlag(identifier: region.identifier)
     }
 }
 
 // MARK: CBPeripheralManagerDelegate
 extension MapViewController: CBPeripheralManagerDelegate {
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+        print("peripheralManagerDidUpdateState")
         if peripheral.state == .poweredOn {
             peripheralManager.startAdvertising(beaconPeripheralData)
         } else if peripheral.state == .poweredOff {
@@ -453,6 +471,7 @@ extension MapViewController: UNUserNotificationCenterDelegate {
 // MARK: EndGameDelegate
 extension MapViewController: EndGameDelegate {
     func backToMenu() {
+        print("backToMenu")
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
@@ -460,6 +479,7 @@ extension MapViewController: EndGameDelegate {
 // MARK: CountdownDelegate
 extension MapViewController: CountdownDelegate {
     func startGame() {
+        print("startGame")
         // Monitaring setting
         startMonitoringUser()
         initLocalBeacon(gameUuid: myGameUuid!)

@@ -72,7 +72,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="RtO-ob-nzb" kind="modal" animates="NO" modalPresentationStyle="fullScreen" id="0Ys-Iw-zgG"/>
+                                                    <segue destination="RtO-ob-nzb" kind="modal" modalPresentationStyle="fullScreen" id="0Ys-Iw-zgG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -127,7 +127,7 @@
                         <outlet property="emailText" destination="Hu8-4Q-DV5" id="E56-vZ-9nd"/>
                         <outlet property="passwordText" destination="pjH-Bj-gGZ" id="GM5-1P-fGu"/>
                         <outlet property="signInButton" destination="fLn-Nn-dRC" id="YQg-p0-7br"/>
-                        <segue destination="BHw-5K-5in" kind="modal" identifier="GoToMainMenu" animates="NO" modalPresentationStyle="fullScreen" id="7DA-nc-Gb6"/>
+                        <segue destination="BHw-5K-5in" kind="modal" identifier="GoToMainMenu" modalPresentationStyle="fullScreen" id="7DA-nc-Gb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9X-Cc-zmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

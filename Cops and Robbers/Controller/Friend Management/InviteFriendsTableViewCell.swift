@@ -47,6 +47,6 @@ class InviteFriendsTableViewCell: UITableViewCell {
 extension InviteFriendsTableViewCell: ToCellInviteFriendsDelegate {
     func didRegisterFriendRequest() {
         inviteButton.isEnabled = false
-        inviteButton.setImage(UIImage(named: "Button_added"), for: .normal)
+        inviteButton.setImage(UIImage(named: "Button_Requested"), for: .normal)
     }
 }
