@@ -28,14 +28,14 @@ class FriendsListViewModel {
     private let friendsRef = Database.database().reference(withPath: "friends")
     private let userID = Auth.auth().currentUser?.uid
     
-    var dicFriendsAndReq = [String:[Friend]]()
+    var dicFriendsAndReq = [String:[(Friend, Bool)]]() // Bool = isAcceptedFlg
     var friendsListDelegate: FriendsListDelegate?
     var toCellFriendsListDelegate: ToCellfriendsListDelegate?
     var dbFriends: DBFriends!
     
     struct frindsWithSection {
         var sectionName: String
-        var friends: [Friend]
+        var friends: [(Friend,Bool)]
     }
     var friendsList = [frindsWithSection]()
     
@@ -104,13 +104,13 @@ class FriendsListViewModel {
     }
     
     func fetchUserInfoByID(idKeys: [String], sectionName: String){
-        var frineds: [Friend] = []
+        var frineds: [(Friend, Bool)] = []
         
         for idKey in idKeys {
             userInfoRef.child(idKey).observeSingleEvent(of: .value, with: { snapshot in
                 
                 if let friend = Friend(snapshot: snapshot) {
-                    frineds.append(friend)
+                    frineds.append((friend, false))
                 }
                 
                 if self.SECTION_REQUESTS == sectionName {

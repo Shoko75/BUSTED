@@ -14,7 +14,9 @@ class FriendsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var customVIew: CustomUIView!
     
-    fileprivate var friendsListViewModel = FriendsListViewModel()
+    let SECTION_FRIENDDS = "Friends"
+    
+    private var friendsListViewModel = FriendsListViewModel()
     
     // MARK: Init
     override func viewDidLoad() {
@@ -28,6 +30,8 @@ class FriendsListViewController: UIViewController {
         // emptyDataSet Delegate
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
+        
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,6 +46,13 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if friendsListViewModel.friendsList.count == 0 {
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        } else {
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+        }
+        
         return friendsListViewModel.friendsList.count
     }
     
@@ -69,10 +80,32 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsListCell", for: indexPath) as! FriendsListTableViewCell
         
-        let friend = friendsListViewModel.friendsList[indexPath.section].friends[indexPath.row]
+        let (friend, isAcceptedFlg) = friendsListViewModel.friendsList[indexPath.section].friends[indexPath.row]
         let sectionName = friendsListViewModel.friendsList[indexPath.section].sectionName
-        cell.setCellValues(cellValues: friend, sectionName: sectionName)
-
+       
+        cell.indexPath = indexPath
+        cell.friendsListCellDelegate = self
+        cell.userNameLabel.text = friend.userName
+        cell.userImageView.contentMode = .scaleToFill
+        cell.userImageView.layer.masksToBounds = true
+        cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2
+        if let userImageURL = friend.userImageURL {
+            cell.userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+        }
+        
+        if SECTION_FRIENDDS == sectionName {
+            cell.acceptButton.isHidden = true
+        } else {
+            cell.acceptButton.isHidden = false
+            if isAcceptedFlg {
+                cell.acceptButton.isEnabled = false
+                cell.acceptButton.setImage(UIImage(named:"Button_accepted"), for: .normal)
+            } else {
+                cell.acceptButton.isEnabled = true
+                cell.acceptButton.setImage(UIImage(named:"Button_accept"), for: .normal)
+            }
+        }
+        
         return cell
     }
 }
@@ -85,11 +118,20 @@ extension FriendsListViewController: FriendsListDelegate {
     }
 }
 
+// MARK: FriendsListCellDelegate
+extension FriendsListViewController: FriendsListCellDelegate {
+    func didPressAccept(indexPath: IndexPath) {
+        friendsListViewModel.friendsList[indexPath.section].friends[indexPath.row].1 = true
+        let uid = friendsListViewModel.friendsList[indexPath.section].friends[indexPath.row].0.uid
+        friendsListViewModel.registerFriend(friendUID: uid)
+        tableView.reloadRows(at: [indexPath], with: .none)
+    }
+}
+
 // MARK: DZNEmptyDataSetDelegate
 extension FriendsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         let str = "You don't have any friends"
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
         return NSAttributedString(string: str, attributes: attrs)
