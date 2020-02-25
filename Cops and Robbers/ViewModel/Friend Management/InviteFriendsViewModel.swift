@@ -12,11 +12,6 @@ protocol InviteFriendsDelegate {
     func didFinishObserveUserInfo()
 }
 
-// MARK: Protocol -ToCellInviteFriendsDelegate
-protocol ToCellInviteFriendsDelegate {
-    func didRegisterFriendRequest()
-}
-
 // MARK: InviteFriendsViewModel
 class InviteFriendsViewModel {
     
@@ -30,13 +25,12 @@ class InviteFriendsViewModel {
     
     var dbFriendReq: DBFriendRequest!
     var inviteFriendsDelegate: InviteFriendsDelegate?
-    var toCellInviteFriendsDelegate: ToCellInviteFriendsDelegate?
-    var dicPeopleAndReq = [String:[Friend]]()
+    var dicPeopleAndReq = [String:[(Friend,Bool)]]() // Bool = isRequestedFlg
     var exculudeUsers = [String]()
     
     struct frindsWithSection {
         var sectionName: String
-        var friends: [Friend]
+        var friends: [(Friend,Bool)]
     }
     
     var friendsList = [frindsWithSection]()
@@ -60,7 +54,6 @@ class InviteFriendsViewModel {
         
         let request = friendReqRef.childByAutoId()
         request.setValue(self.dbFriendReq.toAnyObject())
-        toCellInviteFriendsDelegate?.didRegisterFriendRequest()
     }
     
     // MARK: Fetch
@@ -106,13 +99,13 @@ class InviteFriendsViewModel {
     }
     
     func fetchUserInfoByID(reqFriendID: [String]){
-        var frineds: [Friend] = []
+        var frineds: [(Friend, Bool)] = []
         
         for toUserID in reqFriendID {
             userInfoRef.child(toUserID).observeSingleEvent(of: .value, with: { snapshot in
                 
                 if let friend = Friend(snapshot: snapshot) {
-                    frineds.append(friend)
+                    frineds.append((friend, false))
                 }
                 self.dicPeopleAndReq[self.SECTION_REQUESTING] = frineds
             })
@@ -133,7 +126,7 @@ class InviteFriendsViewModel {
     
     func fetchPeopleInfo() {
         userInfoRef.observeSingleEvent(of: .value, with: { snapshot in
-            var friends: [Friend] = []
+            var friends: [(Friend,Bool)] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let friend = Friend(snapshot: snapshot){
@@ -148,12 +141,12 @@ class InviteFriendsViewModel {
                         }
                         
                         if cnt == self.exculudeUsers.count {
-                            friends.append(friend)
+                            friends.append((friend,false))
                         }
                     } else {
                         
                         if friend.uid != self.userID {
-                            friends.append(friend)
+                            friends.append((friend,false))
                         }
                     }
                 }

@@ -12,8 +12,11 @@ class InviteFriendsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var customView: CustomUIView!
-    fileprivate var invitefriendsViewModel = InviteFriendsViewModel()
+    
+    private var invitefriendsViewModel = InviteFriendsViewModel()
 
+    let SECTION_REQUESTING = "Requesting"
+    
     // MARK: Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +65,30 @@ extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "InviteFriendsCell", for: indexPath) as! InviteFriendsTableViewCell
-        
-        let friend = invitefriendsViewModel.friendsList[indexPath.section].friends[indexPath.row]
+        let (friend, isRequestedFlg) = invitefriendsViewModel.friendsList[indexPath.section].friends[indexPath.row]
         let sectionName = invitefriendsViewModel.friendsList[indexPath.section].sectionName
-        cell.setCellValues(cellValues: friend, sectionName: sectionName)
 
+        cell.indexPath = indexPath
+        cell.inviteFriendsCellDelegate = self
+        cell.userNameLabel.text = friend.userName
+        cell.userImageView.contentMode = .scaleToFill
+        cell.userImageView.layer.masksToBounds = true
+        cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2
+        if let userImageURL = friend.userImageURL {
+            cell.userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+        }
+        
+        if SECTION_REQUESTING == sectionName {
+            cell.inviteButton.isHidden = true
+        } else {
+            cell.inviteButton.isHidden = false
+            if isRequestedFlg {
+                cell.inviteButton.setImage(UIImage(named: "Button_Requested"), for: .normal)
+            } else {
+                cell.inviteButton.setImage(UIImage(named: "Button_Add"), for: .normal)
+            }
+        }
+        
         return cell
     }
 }
@@ -75,5 +97,15 @@ extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSourc
 extension InviteFriendsViewController: InviteFriendsDelegate {
     func didFinishObserveUserInfo() {
         self.tableView.reloadData()
+    }
+}
+
+// MARK: InviteFriendsCellDelegate
+extension InviteFriendsViewController: InviteFriendsCellDelegate {
+    func didPressInvite(indexPath: IndexPath) {
+    invitefriendsViewModel.friendsList[indexPath.section].friends[indexPath.row].1 = true
+        let (friend, _) = invitefriendsViewModel.friendsList[indexPath.section].friends[indexPath.row]
+        invitefriendsViewModel.registerFrinedRequest(friend: friend)
+        self.tableView.reloadRows(at: [indexPath], with: .none)
     }
 }

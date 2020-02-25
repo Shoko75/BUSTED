@@ -89,6 +89,7 @@ extension FriendsListViewController: FriendsListDelegate {
 extension FriendsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         let str = "You don't have any friends"
         let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
         return NSAttributedString(string: str, attributes: attrs)
