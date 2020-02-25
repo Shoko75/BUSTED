@@ -14,10 +14,12 @@ protocol SectionType: CustomStringConvertible {
 // MARK: UserSettingSection
 enum UserSettingSection: Int, CaseIterable, CustomStringConvertible {
     case Account
+    case About
     
     var description: String {
         switch self {
         case .Account: return "Account"
+        case .About: return "About"
         }
     }
 }
@@ -33,6 +35,21 @@ enum AccountOptions: Int, CaseIterable, SectionType {
         switch self {
         case .changeProfilePicture: return "Change Profile Picture"
         case .logout: return "Log out"
+        }
+    }
+}
+
+// MARK: About
+enum AboutOptions: Int, CaseIterable, SectionType {
+    case termsAndConditions
+    case privacyPolicy
+    
+    var containsSwitch: Bool { return false }
+    
+    var description: String {
+        switch self {
+        case .termsAndConditions: return "Terms and conditions"
+        case .privacyPolicy: return "Privacy policy"
         }
     }
 }

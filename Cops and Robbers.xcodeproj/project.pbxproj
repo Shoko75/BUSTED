@@ -50,6 +50,8 @@
 		2F91FEEC2400AC6E0060A1FF /* EndGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */; };
 		2F91FEEE240117B70060A1FF /* Countdown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FEED240117B70060A1FF /* Countdown.storyboard */; };
 		2F91FEF02401E09B0060A1FF /* CountdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */; };
+		2F9892652404D117005A666E /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9892642404D117005A666E /* ContractViewController.swift */; };
+		2F9892672404D460005A666E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9892662404D460005A666E /* Contract.storyboard */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -131,6 +133,8 @@
 		2F91FEEB2400AC6E0060A1FF /* EndGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewModel.swift; sourceTree = "<group>"; };
 		2F91FEED240117B70060A1FF /* Countdown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Countdown.storyboard; sourceTree = "<group>"; };
 		2F91FEEF2401E09B0060A1FF /* CountdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownViewController.swift; sourceTree = "<group>"; };
+		2F9892642404D117005A666E /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
+		2F9892662404D460005A666E /* Contract.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* BUSTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 				2FDF0E2423AC7534001648D5 /* Menu.storyboard */,
 				2F91FEC923F652150060A1FF /* HowToPlay.storyboard */,
 				2F91FED123F754840060A1FF /* UserSetting.storyboard */,
+				2F9892662404D460005A666E /* Contract.storyboard */,
 			);
 			path = "Menu and Setting";
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				2FDF0E2623AC763A001648D5 /* MenuViewController.swift */,
 				2F91FED723F765140060A1FF /* How To Play */,
 				2F91FED823F765230060A1FF /* User Setting */,
+				2F9892642404D117005A666E /* ContractViewController.swift */,
 			);
 			path = "Menu and Setting";
 			sourceTree = "<group>";
@@ -619,6 +625,7 @@
 				2F0926D92401E37D0088BDE0 /* timer.json in Resources */,
 				2FB47DF523A0923600AA9216 /* LaunchScreen.storyboard in Resources */,
 				2FB47E4F23A1E57200AA9216 /* Map.storyboard in Resources */,
+				2F9892672404D460005A666E /* Contract.storyboard in Resources */,
 				2FDF0E1F23AC6D39001648D5 /* Login.storyboard in Resources */,
 				2FDF0E2923AC7B3D001648D5 /* InviteFriends.storyboard in Resources */,
 				2FB47DF223A0923600AA9216 /* Assets.xcassets in Resources */,
@@ -692,6 +699,7 @@
 				2F91FEDC23F78C220060A1FF /* UserSettingViewModel.swift in Sources */,
 				2FDF0E7223CA14FA001648D5 /* FriendsListViewModel.swift in Sources */,
 				2F91FE9E23E51C7C0060A1FF /* DBGame.swift in Sources */,
+				2F9892652404D117005A666E /* ContractViewController.swift in Sources */,
 				2FDF0E6823C971E6001648D5 /* InviteFriendsTableViewCell.swift in Sources */,
 				2FDF0E1A23AC61E9001648D5 /* RegisterAccountViewModel.swift in Sources */,
 				2F91FEE223F7EB5E0060A1FF /* ResetPasswordViewModel.swift in Sources */,

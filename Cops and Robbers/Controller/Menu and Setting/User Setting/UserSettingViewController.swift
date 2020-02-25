@@ -42,6 +42,17 @@ class UserSettingViewController: UIViewController {
         }
         userNameLabel.text = userSettingViewModel.userInfo?.userName
     }
+    
+    // MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showContract" {
+            if let contractViewController = segue.destination as? ContractViewController {
+                if let rowNum = sender {
+                    contractViewController.pageNum = rowNum as? Int
+                }
+            }
+        }
+    }
 }
 
 // MARK: UITableViewDelegate
@@ -57,6 +68,7 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
         
         switch section {
             case .Account: return AccountOptions.allCases.count
+            case .About: return AboutOptions.allCases.count
         }
     }
     
@@ -91,6 +103,9 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
             case .Account:
                 let account = AccountOptions(rawValue: indexPath.row)
                 cell.sectionType = account
+            case .About:
+                let about = AboutOptions(rawValue: indexPath.row)
+                cell.sectionType = about
         }
         
         return cell
@@ -100,26 +115,28 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
         guard let section = UserSettingSection(rawValue: indexPath.section) else { return }
         
         switch section {
-        case .Account:
-            let account = AccountOptions(rawValue: indexPath.row)
-            switch account {
-            case .logout:
-                print("logout")
-                do {
-                    try Auth.auth().signOut()
-                    let storybord = UIStoryboard(name: "Login", bundle: nil)
-                    let loginController = storybord.instantiateViewController(identifier: "Login") as! LoginViewController
-                    self.view.window?.rootViewController = loginController
-                    
-                } catch let error {
-                    print("Faild to sign out with error: \(error)")
+            case .Account:
+                let account = AccountOptions(rawValue: indexPath.row)
+                switch account {
+                case .logout:
+                    print("logout")
+                    do {
+                        try Auth.auth().signOut()
+                        let storybord = UIStoryboard(name: "Login", bundle: nil)
+                        let loginController = storybord.instantiateViewController(identifier: "Login") as! LoginViewController
+                        self.view.window?.rootViewController = loginController
+                        
+                    } catch let error {
+                        print("Faild to sign out with error: \(error)")
+                    }
+                case .changeProfilePicture:
+                    print("changeProfilePicture")
+                    self.showImagePickerController()
+                case .none:
+                    print("none")
                 }
-            case .changeProfilePicture:
-                print("changeProfilePicture")
-                self.showImagePickerController()
-            case .none:
-                print("none")
-            }
+            case .About:
+                self.performSegue(withIdentifier: "showContract", sender: indexPath.row)
         }
     }
 }

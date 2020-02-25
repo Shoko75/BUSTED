@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mSh-bs-jUK">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -54,7 +54,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSettingTableViewCell" id="b7D-q8-jCh" customClass="UserSettingTableViewCell" customModule="BUSTED" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserSettingTableViewCell" id="b7D-q8-jCh" customClass="UserSettingTableViewCell" customModule="BUSTED" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="374" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b7D-q8-jCh" id="Mca-so-Do5">
@@ -105,11 +105,22 @@
                         <outlet property="tableView" destination="i4s-Rb-IZ7" id="SI1-AG-g9R"/>
                         <outlet property="userImageView" destination="M2e-34-N4H" id="gMd-GK-1mx"/>
                         <outlet property="userNameLabel" destination="UD4-aA-Tz9" id="uOd-kP-ZtE"/>
+                        <segue destination="Ikj-wt-lBR" kind="show" identifier="showContract" id="Uof-2y-BnP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CLV-ON-cc4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-52.173913043478265" y="114.50892857142857"/>
+        </scene>
+        <!--Contract-->
+        <scene sceneID="sgY-bM-Q1w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Contract" referencedIdentifier="Contract" id="Ikj-wt-lBR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qpc-sf-nmD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMH-9U-fV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471" y="133"/>
         </scene>
     </scenes>
     <resources>
