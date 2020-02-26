@@ -69,4 +69,8 @@ class UserSettingViewModel {
         userInfoRef.child(userID!).updateChildValues(userImage)
     }
     
+    func deleteToken() {
+        let token = ["token": ""]
+        userInfoRef.child(userID!).updateChildValues(token)
+    }
 }

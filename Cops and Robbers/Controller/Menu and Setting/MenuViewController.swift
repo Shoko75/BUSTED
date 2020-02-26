@@ -98,7 +98,6 @@ extension MenuViewController: MenuDelegate {
         friendReqAlert.isHidden = !self.menuViewModel.flgFriendReq
     }
     
-    
     func didFinishCheckInvitationStatus() {
         joinFieldButton.isEnabled = self.menuViewModel.flgJoinField
         inviteAlert.isHidden = !self.menuViewModel.flgJoinField
