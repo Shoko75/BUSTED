@@ -140,7 +140,7 @@ extension RegisterAccountViewController: RegisterAccountDelegate {
         if errorMessage == nil {
             self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
         } else {
-            self.showAlert(title: "SignIn Error", message: errorMessage!)
+            self.showAlert(title: "Sign Up Error", message: errorMessage!)
         }
     }
 }
