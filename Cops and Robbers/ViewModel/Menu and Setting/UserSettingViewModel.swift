@@ -32,6 +32,10 @@ class UserSettingViewModel {
         }
     }
     
+    func stopOberveUserInfo() {
+        userInfoRef.child(userID!).removeAllObservers()
+    }
+    
     // MARK: Registration
     func changeUserImage(userImage: UIImage) {
         let randomID = UUID.init().uuidString

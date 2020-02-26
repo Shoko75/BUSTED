@@ -121,6 +121,7 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
                 case .logout:
                     print("logout")
                     do {
+                        userSettingViewModel.stopOberveUserInfo()
                         userSettingViewModel.deleteToken()
                         try Auth.auth().signOut()
                         let storybord = UIStoryboard(name: "Login", bundle: nil)

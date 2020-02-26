@@ -72,13 +72,12 @@ class RegisterAccountViewModel {
     
     func createUserInfo(userName: String, userImageURL: String) {
         
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            
-            guard let user = user else { return }
-            self.dbUser = DBUser(authData: user, userName: userName, userImageURL: userImageURL, token: UserDefaults.standard.string(forKey: "FCM_TOKEN")!, playTeam: "")
-            
-            let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
-            currentUserRef.setValue(self.dbUser.toAnyObject())
-        }
+        let userID = Auth.auth().currentUser?.uid
+        self.dbUser = DBUser(authData: userID!, userName: userName, userImageURL: userImageURL, token: UserDefaults.standard.string(forKey: "FCM_TOKEN")!, playTeam: "")
+        
+        let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
+        currentUserRef.setValue(self.dbUser.toAnyObject())
+        
+        
     }
 }

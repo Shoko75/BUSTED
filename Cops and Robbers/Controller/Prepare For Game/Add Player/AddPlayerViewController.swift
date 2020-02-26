@@ -79,6 +79,7 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
         let bStatus = checkButtonStatus(id: friend.uid)
         
         cell.addPlayerTableViewCellDelegate = self
+        cell.indexPath = indexPath
         cell.userNameLabel.text = friend.userName
         cell.userImageView.contentMode = .scaleToFill
         cell.addedButton.isEnabled = bStatus

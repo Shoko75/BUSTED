@@ -143,7 +143,7 @@ class MapViewController: UIViewController {
             }
             backgroundImageView.image = UIImage(named: "playerlist_police_bg")
         } else {
-            statusLabel.text = "MONY BAGS"
+            statusLabel.text = "MONEY BAGS"
             if let flgCnt = gameData?.flags.count {
                 statusNumLabel.text = String(flgCnt)
             }

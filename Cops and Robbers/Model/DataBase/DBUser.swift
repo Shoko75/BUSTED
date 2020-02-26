@@ -15,8 +15,8 @@ struct DBUser {
     let token: String
     let playTeam: String?
     
-    init(authData: Firebase.User, userName: String, userImageURL: String, token: String, playTeam: String? ) {
-        self.uid = authData.uid
+    init(authData: String, userName: String, userImageURL: String, token: String, playTeam: String? ) {
+        self.uid = authData
         self.userName = userName
         self.userImageURL = userImageURL
         self.token = token
