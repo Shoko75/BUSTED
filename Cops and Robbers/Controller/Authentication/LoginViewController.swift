@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
         if email != "", password != "" {
             loginViewModel.logIn(email: email!, password: password!)
         } else {
-            self.showAlert(title: "Login Error", message: "Please enter Email and Password")
+            self.showAlert(title: "Sign In Error", message: "Please enter Email and Password")
         }
     }
     
@@ -82,7 +82,7 @@ extension LoginViewController: LoginViewModelDelegate {
         if errorMessage == nil {
             self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
         } else {
-            self.showAlert(title: "Login Error", message: errorMessage!)
+            self.showAlert(title: "Sign In Error", message: errorMessage!)
         }
     }
 }

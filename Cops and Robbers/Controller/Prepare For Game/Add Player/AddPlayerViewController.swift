@@ -69,6 +69,13 @@ class AddPlayerViewController: UIViewController {
 extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if addPlayerViewModel.friendList.count == 0 {
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        } else {
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+        }
+        
         return addPlayerViewModel.friendList.count
     }
     

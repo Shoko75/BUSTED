@@ -96,7 +96,7 @@ class RegisterAccountViewController: UIViewController {
         if userName != "", email != "", password != "", let userImage = userImageView.image, selectedImageFlg {
             registerAccountViewModel.createUser(userName: userName!, email: email!, password: password!, userImage: userImage)
         } else {
-            self.showAlert(title: "SignIn Error", message: "Please enter username, email and password and choose a picture")
+            self.showAlert(title: "Sign Up Error", message: "Please enter username, email and password and choose a picture")
         }
     }
     
