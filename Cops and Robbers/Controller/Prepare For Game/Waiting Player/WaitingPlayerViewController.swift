@@ -15,7 +15,7 @@ class WaitingPlayerViewController: UIViewController {
     @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var customView: CustomUIView!
     
-    fileprivate var waitingPlayerViewModel = WaitingPlayerViewModel()
+    private var waitingPlayerViewModel = WaitingPlayerViewModel()
     var invitationID: String?
     
     // MARK: Init

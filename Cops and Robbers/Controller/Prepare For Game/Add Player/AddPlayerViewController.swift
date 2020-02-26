@@ -75,17 +75,31 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlayersTableCell", for: indexPath) as! AddPlayerTableViewCell
-        cell.addPlayerTableViewCellDelegate = self
         let friend = addPlayerViewModel.friendList[indexPath.row]
         let bStatus = checkButtonStatus(id: friend.uid)
-        cell.setCellValues(cellValues: friend, bStatus: bStatus)
+        
+        cell.addPlayerTableViewCellDelegate = self
+        cell.userNameLabel.text = friend.userName
+        cell.userImageView.contentMode = .scaleToFill
+        cell.addedButton.isEnabled = bStatus
+        if bStatus {
+            cell.addedButton.isEnabled = true
+            cell.addedButton.setImage(UIImage(named: "Button_Add"), for: .normal)
+        } else {
+            cell.addedButton.isEnabled = false
+            cell.addedButton.setImage(UIImage(named: "Button_added"), for: .normal)
+        }
+        cell.userImageView.layer.masksToBounds = true
+        cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2
+        if let userImageURL = friend.userImageURL {
+            cell.userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+        }
         return cell
     }
     
     func checkButtonStatus(id: String) -> Bool {
         
         for player in addPlayerViewModel.playerList {
-        
             if player.uid == id {
                 return false
             }
@@ -149,8 +163,10 @@ extension AddPlayerViewController: AddPlayerDelegate {
 
 // MARK: AddPlayerTableViewCellDelegate
 extension AddPlayerViewController: AddPlayerTableViewCellDelegate {
-    func pressedAdd(player: Friend) {
+    func didPressAdd(indexPath: IndexPath) {
+        let player = addPlayerViewModel.friendList[indexPath.row]
         addPlayerViewModel.playerList.append(player)
+        tableView.reloadRows(at: [indexPath], with: .none)
         collectionView.reloadData()
     }
 }
