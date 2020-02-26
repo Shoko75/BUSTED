@@ -88,8 +88,21 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerTableViewCell", for: indexPath) as! WaitingPlayerTableViewCell
-        let values = waitingPlayerViewModel.playerList[indexPath.row]
-        cell.setCellValues(cellValues: values)
+        let player = waitingPlayerViewModel.playerList[indexPath.row]
+        
+        cell.userNameLabel.text = player.user?.userName
+        cell.statusLabel.text = player.status
+        if player.status == "Joined" {
+            cell.statusLabel.textColor = UIColor.link
+        } else {
+            cell.statusLabel.textColor = UIColor.lightGray
+        }
+        cell.userImageView.contentMode = .scaleToFill
+        cell.userImageView.layer.masksToBounds = true
+        cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2
+        if let userImageURL = player.user?.userImageURL {
+            cell.userImageView.loadImageUsingCacheWithUrlString(urlString: userImageURL)
+        }
         return cell
     }
 }
