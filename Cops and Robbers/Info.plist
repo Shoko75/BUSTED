@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -32,15 +32,19 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>We need permission to your bluetooth to share the infromation with other players</string>
+	<string>Bluetooth is used to detect the opponent's location during the game.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Bluetooth is used to detect the opponent's location during the game.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Need to know each user's location in the game</string>
+	<string>Your location is used to allow us to show you where you are during the game.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Need to know each user's location in the game</string>
+	<string>Your location is used to allow us to show you where you are during the game.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Need to know each user's location in the game</string>
+	<string>Your location is used to allow us to show you where you are during the game.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Need to know each user's location in the game</string>
+	<string>Your location is used to allow us to show you where you are during the game.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This allows us to upload photos as your profile picture from your library.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
