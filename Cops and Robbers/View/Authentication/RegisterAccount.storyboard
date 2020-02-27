@@ -87,33 +87,47 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-7a-5ds">
                                                 <rect key="frame" x="20" y="20" width="374" height="168.33333333333334"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-Vw-1Gf">
-                                                        <rect key="frame" x="147" y="44.333333333333371" width="80" height="80"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AG3-Tj-XdC">
+                                                        <rect key="frame" x="67" y="29.333333333333371" width="240" height="110"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Le-NS-dLX">
+                                                                <rect key="frame" x="76" y="85" width="88" height="20"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="vbf-i5-5uw"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <state key="normal" title="Select Photo">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pressedSelectImage:" destination="Z5l-0X-NtX" eventType="touchUpInside" id="Bmb-9m-LkC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-Vw-1Gf">
+                                                                <rect key="frame" x="80" y="0.0" width="80" height="80"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="fwT-kT-0Xe"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="gEj-Se-jCQ"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="fwT-kT-0Xe"/>
-                                                            <constraint firstAttribute="width" constant="80" id="gEj-Se-jCQ"/>
+                                                            <constraint firstItem="2Le-NS-dLX" firstAttribute="centerX" secondItem="AG3-Tj-XdC" secondAttribute="centerX" id="0DA-Qu-LlS"/>
+                                                            <constraint firstItem="NUc-Vw-1Gf" firstAttribute="top" secondItem="AG3-Tj-XdC" secondAttribute="top" id="8ga-wU-9Gx"/>
+                                                            <constraint firstItem="NUc-Vw-1Gf" firstAttribute="centerX" secondItem="AG3-Tj-XdC" secondAttribute="centerX" id="hjL-5i-1eg"/>
+                                                            <constraint firstItem="2Le-NS-dLX" firstAttribute="top" secondItem="NUc-Vw-1Gf" secondAttribute="bottom" constant="5" id="oMU-fa-lJ3"/>
+                                                            <constraint firstAttribute="height" constant="110" id="tNG-oV-s3k"/>
                                                         </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Le-NS-dLX">
-                                                        <rect key="frame" x="147" y="44.333333333333371" width="80" height="80"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="pressedSelectImage:" destination="Z5l-0X-NtX" eventType="touchUpInside" id="Bmb-9m-LkC"/>
-                                                        </connections>
-                                                    </button>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="NUc-Vw-1Gf" firstAttribute="centerX" secondItem="kVY-7a-5ds" secondAttribute="centerX" id="2G5-B4-U1u"/>
-                                                    <constraint firstItem="NUc-Vw-1Gf" firstAttribute="centerY" secondItem="kVY-7a-5ds" secondAttribute="centerY" id="3Od-Qb-Qxq"/>
-                                                    <constraint firstItem="2Le-NS-dLX" firstAttribute="height" secondItem="NUc-Vw-1Gf" secondAttribute="height" id="3yY-Fl-Fek"/>
-                                                    <constraint firstItem="2Le-NS-dLX" firstAttribute="width" secondItem="NUc-Vw-1Gf" secondAttribute="width" id="71Q-fP-YVl"/>
-                                                    <constraint firstItem="2Le-NS-dLX" firstAttribute="centerY" secondItem="kVY-7a-5ds" secondAttribute="centerY" id="Ilz-pj-S0t"/>
-                                                    <constraint firstItem="2Le-NS-dLX" firstAttribute="centerX" secondItem="kVY-7a-5ds" secondAttribute="centerX" id="P0Q-f3-0JK"/>
+                                                    <constraint firstItem="AG3-Tj-XdC" firstAttribute="width" secondItem="kVY-7a-5ds" secondAttribute="width" multiplier="0.641711" id="5Sz-01-Tah"/>
+                                                    <constraint firstItem="AG3-Tj-XdC" firstAttribute="centerY" secondItem="kVY-7a-5ds" secondAttribute="centerY" id="6r9-33-0M1"/>
+                                                    <constraint firstItem="AG3-Tj-XdC" firstAttribute="centerX" secondItem="kVY-7a-5ds" secondAttribute="centerX" id="bWd-9F-BKZ"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -218,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4T-dJ-YGg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-268.1159420289855" y="105.80357142857143"/>
+            <point key="canvasLocation" x="-555.07246376811599" y="93.75"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="a32-GC-d7H">

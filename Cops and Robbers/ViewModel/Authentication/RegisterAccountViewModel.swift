@@ -17,12 +17,13 @@ protocol RegisterAccountDelegate {
 class RegisterAccountViewModel {
     
     private let userInfoRef = Database.database().reference(withPath: "user_Info")
+    let DEFALT_IMG = "4084DD65-935E-4473-8A52-105251E4A6DF.png"
     
     var registerAccountDelegate: RegisterAccountDelegate?
     var dbUser: DBUser!
     
     // MARK: Registration
-    func createUser(userName: String, email: String, password: String, userImage: UIImage) {
+    func createUser(userName: String, email: String, password: String, userImage: UIImage?) {
         
         let singInManager = FirebaseAuthManager()
         singInManager.createUser(email: email, password: password) { [weak self] (success, error) in
@@ -31,7 +32,11 @@ class RegisterAccountViewModel {
             var errorMessage: String?
             
             if success {
-                self!.saveUserImage(userImage: userImage, userName: userName)
+                if let userImage = userImage {
+                    self!.saveUserImage(userImage: userImage, userName: userName)
+                } else {
+                    self?.getDefaltImgURL(userName: userName)
+                }
                 singInManager.logIn(email: email, password: password) { (success, error) in
                     print("logined!")
                 }
@@ -78,6 +83,17 @@ class RegisterAccountViewModel {
         let currentUserRef = self.userInfoRef.child(self.dbUser.uid)
         currentUserRef.setValue(self.dbUser.toAnyObject())
         
+    }
+    
+    func getDefaltImgURL(userName: String) {
+        let storageRef = Storage.storage().reference(withPath: "profileImages/\(DEFALT_IMG)")
         
+        storageRef.downloadURL { (url, error) in
+            guard let imageURL = url else {
+                print(error!)
+                return
+            }
+            self.createUserInfo(userName: userName, userImageURL: imageURL.absoluteString)
+        }
     }
 }

@@ -93,10 +93,17 @@ class RegisterAccountViewController: UIViewController {
         let email = emailText.text
         let password = passwordText.text
         
-        if userName != "", email != "", password != "", let userImage = userImageView.image, selectedImageFlg {
+        if userName != "", email != "", password != "" {
+            
+            var userImage:UIImage? = nil
+
+            if selectedImageFlg {
+                userImage = userImageView.image
+            }
+            
             registerAccountViewModel.createUser(userName: userName!, email: email!, password: password!, userImage: userImage)
         } else {
-            self.showAlert(title: "Sign Up Error", message: "Please enter username, email and password and choose a picture")
+            self.showAlert(title: "Sign Up Error", message: "Please enter username, email and password.")
         }
     }
     
