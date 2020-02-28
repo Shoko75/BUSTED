@@ -68,25 +68,29 @@ class WaitingPlayerAdminViewController: UIViewController {
     }
     
     // MARK: Others
+    // Controll the start button whether enable or not by the player's answer
     func controlStartButton(){
         let countPlayers = waitingPlayerViewModel.playerList.count
-        var cntAnswer = 0
-        var cntJoin = 0
+        var cntAnswered = 0
+        var cntJoined = 0
         
         for player in waitingPlayerViewModel.playerList {
-            if player.status != "Waiting" {
-                cntAnswer += 1
-                
-                if player.status == "Joined" {
-                    cntJoin += 1
-                }
-                
-                if countPlayers == cntAnswer, cntJoin >= 1 {
-                    startButton.isEnabled = true
-                    startButton.backgroundColor = UIColor.systemOrange
-                    startButton.setTitleColor(UIColor.white, for: .normal)
-                    waitingPlayerViewModel.stopObserveInvitation()
-                }
+            
+            switch player.status {
+            case .Waiting: return
+            case .Joined:
+                cntAnswered += 1
+                cntJoined += 1
+            case .Declined:
+                cntAnswered += 1
+            }
+            
+            // If all players have been answered and have been joined more than one player, set the start button as enable.
+            if countPlayers == cntAnswered, cntJoined >= 1 {
+                startButton.isEnabled = true
+                startButton.backgroundColor = UIColor.systemOrange
+                startButton.setTitleColor(UIColor.white, for: .normal)
+                waitingPlayerViewModel.stopObserveInvitation()
             }
         }
     }
@@ -102,11 +106,13 @@ extension WaitingPlayerAdminViewController: UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerAdminTableCell", for: indexPath) as! WaitingPlayerAdminTableViewCell
         let player = waitingPlayerViewModel.playerList[indexPath.row]
+        
         cell.userNameLabel.text = player.user?.userName
-        cell.statusLabel.text = player.status
-        if player.status == "Joined" {
+        cell.statusLabel.text = player.status.rawValue
+        switch player.status {
+        case .Joined:
             cell.statusLabel.textColor = UIColor.link
-        } else {
+        default:
             cell.statusLabel.textColor = UIColor.lightGray
         }
         cell.userImageView.contentMode = .scaleToFill

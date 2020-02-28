@@ -203,11 +203,11 @@ class MapViewModel {
     // MARK: Update
     func updateRobberStatus(gameUuid: String) {
         print("updateRobberStatus")
-        let status = ["status": "Jail"]
+        let statusJail = ["status": RobStatus.Jail.rawValue]
         for player in (gameData?.robbers.robPlayers)! {
             
-            if player.gameUuid == gameUuid, player.status != "Jail" {
-                gameRef.child(gameID).child("robbers").child("player").child(player.userId).updateChildValues(status)
+            if player.gameUuid == gameUuid, player.status.rawValue != RobStatus.Jail.rawValue {
+                gameRef.child(gameID).child("robbers").child("player").child(player.userId).updateChildValues(statusJail)
             }
         }
     }
@@ -218,8 +218,10 @@ class MapViewModel {
         let total = (self.gameData?.robbers.robPlayers.count)!
         
         for player in (self.gameData?.robbers.robPlayers)! {
-            if player.status == "Jail" {
+            switch player.status {
+            case .Jail:
                 cntJail += 1
+            default: return ""
             }
         }
         
@@ -277,7 +279,7 @@ class MapViewModel {
         print("checkAdmin")
         if let robbers = gameData?.robbers.robPlayers {
             for robber in robbers {
-                if robber.status == "Jail", robber.userId == userID {
+                if robber.status.rawValue == RobStatus.Jail.rawValue, robber.userId == userID {
                     return true
                 }
             }

@@ -9,13 +9,19 @@ import Firebase
 
 struct Player {
     let playerID: String
-    let status: String
+    let status: InvitationStatus
     let user: Friend?
     
-    init( playerID: String, status: String, user:Friend? ) {
+    init( playerID: String, status: InvitationStatus, user:Friend? ) {
         self.playerID = playerID
         self.status = status
         self.user = user
     }
+}
+
+enum InvitationStatus: String {
+    case Waiting
+    case Joined
+    case Declined
 }
 

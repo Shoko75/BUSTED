@@ -59,6 +59,7 @@ class WaitingPlayerViewController: UIViewController {
     @IBAction func pressedJoin(_ sender: Any) {
         print("pressedJoin")
         
+        // Update invitation status as "joined"
         waitingPlayerViewModel.joinInvitation()
         
         // Button setting
@@ -91,12 +92,14 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
         let player = waitingPlayerViewModel.playerList[indexPath.row]
         
         cell.userNameLabel.text = player.user?.userName
-        cell.statusLabel.text = player.status
-        if player.status == "Joined" {
+        cell.statusLabel.text = player.status.rawValue
+        switch player.status {
+        case .Joined:
             cell.statusLabel.textColor = UIColor.link
-        } else {
+        default:
             cell.statusLabel.textColor = UIColor.lightGray
         }
+            
         cell.userImageView.contentMode = .scaleToFill
         cell.userImageView.layer.masksToBounds = true
         cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2

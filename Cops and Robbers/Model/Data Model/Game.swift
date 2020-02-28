@@ -142,15 +142,23 @@ struct Robbers {
 struct RobPlayer {
     let userId: String
     let gameUuid: String
-    let status: String
+    let status: RobStatus
     var userName: String?
     var userImageURL: String?
     
     init (data: [String: AnyObject], userID: String) {
+        
+        let strStatus = data["status"] as! String
+        
         self.userId = userID
         self.gameUuid = data["gameUuid"] as! String
-        self.status = data["status"] as! String
+        self.status = RobStatus(rawValue: strStatus) ?? .Jail
         self.userName = ""
         self.userImageURL = ""
     }
+}
+
+enum RobStatus: String {
+    case Alive
+    case Jail
 }

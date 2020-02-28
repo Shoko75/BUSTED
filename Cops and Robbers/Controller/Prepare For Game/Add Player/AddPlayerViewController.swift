@@ -44,7 +44,6 @@ class AddPlayerViewController: UIViewController {
     
     @objc func pressedNext() {
         print("Pressed Next!")
-        
         self.addPlayerViewModel.checkInvitation()
     }
     

@@ -60,13 +60,14 @@ class AddPlayerViewModel {
     // MARK: Registration
     func registerInvitation() -> String {
         var players = [DBPlayer]()
+        let statusWaiting = InvitationStatus.Waiting.rawValue
         
         for player in playerList {
-            let dbplayer = DBPlayer(userId: player.uid, token: player.token, status: "Waiting")
+            let dbplayer = DBPlayer(userId: player.uid, token: player.token, status: statusWaiting)
             players.append(dbplayer)
         }
         
-        let game = DBInvitation(players: players, adminUser: userID!, status: "Waiting")
+        let game = DBInvitation(players: players, adminUser: userID!, status: statusWaiting)
         
         let request = invitationRef.childByAutoId()
         request.setValue(game.toAnyObject())

@@ -102,4 +102,11 @@ extension MenuViewController: MenuDelegate {
         joinFieldButton.isEnabled = self.menuViewModel.flgJoinField
         inviteAlert.isHidden = !self.menuViewModel.flgJoinField
     }
+    
+    
+}
+
+
+extension MenuViewController {
+    @objc static let cfNotificationSupport = "CFNotificationSupport"
 }

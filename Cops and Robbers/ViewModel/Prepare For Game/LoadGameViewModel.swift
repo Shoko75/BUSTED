@@ -138,7 +138,7 @@ class LoadGameViewModel {
                 copsPlayer.append(DBCopPlayer(userId: player.playerID, gameUuid: uuid))
             } else {
                 let uuid = UUID().uuidString
-                robbersPlayer.append(DBRobPlayer(userId: player.playerID, status: "Alive", gameUuid: uuid))
+                robbersPlayer.append(DBRobPlayer(userId: player.playerID, status: RobStatus.Alive.rawValue, gameUuid: uuid))
             }
             cnt += 1
         }

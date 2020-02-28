@@ -41,8 +41,9 @@ class WaitingPlayerViewModel {
                 
                     for member in members.keys {
                         if let value = members[member] as? [String:AnyObject],
-                            let status = value["status"] as? String {
-                            players.append(Player(playerID: member, status: status, user: dummyFriend))
+                            let status = value["status"] as? String,
+                            let invitationStatus = InvitationStatus(rawValue: status) {
+                            players.append(Player(playerID: member, status: invitationStatus, user: dummyFriend))
                         }
                     }
                     self.fetchUserInfoByID(players: players)
@@ -93,9 +94,10 @@ class WaitingPlayerViewModel {
     }
     
     func fetchAdminUserInfo() {
+        
         userInfoRef.child(userID!).observeSingleEvent(of: .value, with: { snapshot in
             if let friend = Friend(snapshot: snapshot) {
-                let adminUser = Player(playerID: friend.uid, status: "Joined", user: friend)
+                let adminUser = Player(playerID: friend.uid, status: .Joined, user: friend)
                 self.updateInvitationPlayer(updateInfo: adminUser)
                 self.playerList.append(adminUser)
                 self.updateInvitationStatus()
@@ -107,22 +109,26 @@ class WaitingPlayerViewModel {
     // MARK: Registration
     func createPassData(){
         var joinedPlayers = [Player]()
+        
         for player in playerList {
-            if player.status == "Joined" {
-                joinedPlayers.append(player)
-            } else if player.status == "Declined" {
-                let request = invitationRef.child(invitationID!).child("player").child(player.playerID)
-                request.removeValue()
+            
+            switch player.status {
+                case .Joined:
+                    joinedPlayers.append(player)
+                case .Declined:
+                    let request = invitationRef.child(invitationID!).child("player").child(player.playerID)
+                    request.removeValue()
+                default: return
             }
         }
-        playerList = joinedPlayers
+        self.playerList = joinedPlayers
         fetchAdminUserInfo()
     }
     
     // MARK: Update
     func updateInvitationPlayer(updateInfo: Player) {
        
-        let adminData = DBPlayer(userId: updateInfo.playerID, token: updateInfo.user!.token, status: updateInfo.status)
+        let adminData = DBPlayer(userId: updateInfo.playerID, token: updateInfo.user!.token, status: updateInfo.status.rawValue)
         
         let request = invitationRef.child(invitationID!).child("player").child(adminData.userId)
         request.setValue(adminData.toAnyObject())
@@ -150,7 +156,7 @@ class WaitingPlayerViewModel {
     }
     
     func declineInvitation() {
-        let updateStatus = ["status": "Declined"]
+        let updateStatus = ["status": InvitationStatus.Declined.rawValue]
         invitationRef.child(invitationID!).child("player").child(userID!).updateChildValues(updateStatus)
     
         let playTeamValue = ["playTeam": ""]
@@ -159,7 +165,7 @@ class WaitingPlayerViewModel {
     }
     
     func joinInvitation() {
-        let updateStatus = ["status": "Joined"]
+        let updateStatus = ["status": InvitationStatus.Joined.rawValue]
         invitationRef.child(invitationID!).child("player").child(userID!).updateChildValues(updateStatus)
     }
 }
