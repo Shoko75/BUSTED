@@ -221,7 +221,8 @@ class MapViewModel {
             switch player.status {
             case .Jail:
                 cntJail += 1
-            default: return ""
+            case .Alive:
+                print("Alive")
             }
         }
         

@@ -118,7 +118,7 @@ class WaitingPlayerViewModel {
                 case .Declined:
                     let request = invitationRef.child(invitationID!).child("player").child(player.playerID)
                     request.removeValue()
-                default: return
+                case .Waiting: print("Waiting")
             }
         }
         self.playerList = joinedPlayers

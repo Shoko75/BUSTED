@@ -77,21 +77,21 @@ class WaitingPlayerAdminViewController: UIViewController {
         for player in waitingPlayerViewModel.playerList {
             
             switch player.status {
-            case .Waiting: return
+            case .Waiting: print("Waiting")
             case .Joined:
                 cntAnswered += 1
                 cntJoined += 1
             case .Declined:
                 cntAnswered += 1
             }
-            
-            // If all players have been answered and have been joined more than one player, set the start button as enable.
-            if countPlayers == cntAnswered, cntJoined >= 1 {
-                startButton.isEnabled = true
-                startButton.backgroundColor = UIColor.systemOrange
-                startButton.setTitleColor(UIColor.white, for: .normal)
-                waitingPlayerViewModel.stopObserveInvitation()
-            }
+        }
+        
+        // If all players have been answered and have been joined more than one player, set the start button as enable.
+        if countPlayers == cntAnswered, cntJoined >= 1 {
+            startButton.isEnabled = true
+            startButton.backgroundColor = UIColor.systemOrange
+            startButton.setTitleColor(UIColor.white, for: .normal)
+            waitingPlayerViewModel.stopObserveInvitation()
         }
     }
 }
@@ -112,7 +112,7 @@ extension WaitingPlayerAdminViewController: UITableViewDelegate, UITableViewData
         switch player.status {
         case .Joined:
             cell.statusLabel.textColor = UIColor.link
-        default:
+        case .Waiting, .Declined:
             cell.statusLabel.textColor = UIColor.lightGray
         }
         cell.userImageView.contentMode = .scaleToFill

@@ -96,7 +96,7 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
         switch player.status {
         case .Joined:
             cell.statusLabel.textColor = UIColor.link
-        default:
+        case .Declined,.Waiting:
             cell.statusLabel.textColor = UIColor.lightGray
         }
             
