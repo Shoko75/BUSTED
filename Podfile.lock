@@ -144,6 +144,9 @@ PODS:
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - Protobuf (3.10.0)
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
 
 DEPENDENCIES:
   - DZNEmptyDataSet
@@ -154,6 +157,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Storage
   - lottie-ios
+  - R.swift
 
 SPEC REPOS:
   trunk:
@@ -183,6 +187,8 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - Protobuf
+    - R.swift
+    - R.swift.Library
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -211,7 +217,9 @@ SPEC CHECKSUMS:
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
 
-PODFILE CHECKSUM: 7f5adb590e8503601685769a3a0bd628893d83f3
+PODFILE CHECKSUM: a4b66a5e68523dd21b19bea884dc727163c2f8a7
 
 COCOAPODS: 1.8.3

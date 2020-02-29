@@ -18,7 +18,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ax-R6-hrk">
                                 <rect key="frame" x="20.666666666666657" y="202.66666666666666" width="372.66666666666674" height="490.66666666666674"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="End_game_modal_cops_bg" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-lq-88D">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper/endGameRobbers" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-lq-88D">
                                         <rect key="frame" x="0.0" y="0.0" width="372.66666666666669" height="490.66666666666669"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5jX-1n-jOs" userLabel="Top View">
@@ -120,6 +120,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="End_game_modal_cops_bg" width="386" height="489"/>
+        <image name="wallpaper/endGameRobbers" width="386" height="489"/>
     </resources>
 </document>

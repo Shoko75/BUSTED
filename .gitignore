@@ -1,2 +1,3 @@
 Cops and Robbers/GoogleService-Info.plist
 Pods/
+*.generated.swift

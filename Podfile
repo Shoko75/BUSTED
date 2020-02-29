@@ -14,4 +14,5 @@ target 'Cops and Robbers' do
   pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'DZNEmptyDataSet'
+  pod 'R.swift'
 end

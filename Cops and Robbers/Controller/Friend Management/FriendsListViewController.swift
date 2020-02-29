@@ -99,10 +99,10 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
             cell.acceptButton.isHidden = false
             if isAcceptedFlg {
                 cell.acceptButton.isEnabled = false
-                cell.acceptButton.setImage(UIImage(named:"Button_accepted"), for: .normal)
+                cell.acceptButton.setImage(R.image.button.accepted(), for: .normal)
             } else {
                 cell.acceptButton.isEnabled = true
-                cell.acceptButton.setImage(UIImage(named:"Button_accept"), for: .normal)
+                cell.acceptButton.setImage(R.image.button.accept(), for: .normal)
             }
         }
         

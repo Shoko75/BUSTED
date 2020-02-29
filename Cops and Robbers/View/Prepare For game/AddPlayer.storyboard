@@ -57,7 +57,7 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zk1-Vx-meg">
                                                             <rect key="frame" x="40" y="5" width="25" height="24"/>
-                                                            <state key="normal" image="Frame 15"/>
+                                                            <state key="normal" image="Button/close"/>
                                                             <connections>
                                                                 <action selector="pressedDeleteButton:" destination="Lyf-gl-lNX" eventType="touchUpInside" id="VKQ-5t-cYf"/>
                                                             </connections>
@@ -113,7 +113,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCu-5r-OsJ">
                                                             <rect key="frame" x="267.66666666666669" y="8" width="85" height="38"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" image="Button_Add">
+                                                            <state key="normal" image="Button/add">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>
@@ -188,7 +188,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button_Add" width="85" height="38"/>
-        <image name="Frame 15" width="25" height="24"/>
+        <image name="Button/add" width="85" height="38"/>
+        <image name="Button/close" width="25" height="24"/>
     </resources>
 </document>

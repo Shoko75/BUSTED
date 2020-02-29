@@ -15,13 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Account Registration" translatesAutoresizingMaskIntoConstraints="NO" id="hou-sJ-6SZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper/registration" translatesAutoresizingMaskIntoConstraints="NO" id="hou-sJ-6SZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5w-Uz-Tfc" userLabel="Logo View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="148.66666666666666"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Busted_logo" translatesAutoresizingMaskIntoConstraints="NO" id="aJi-fg-jbh">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo/nomal" translatesAutoresizingMaskIntoConstraints="NO" id="aJi-fg-jbh">
                                         <rect key="frame" x="123" y="44" width="168" height="61"/>
                                     </imageView>
                                 </subviews>
@@ -104,7 +104,7 @@
                                                                     <action selector="pressedSelectImage:" destination="Z5l-0X-NtX" eventType="touchUpInside" id="Bmb-9m-LkC"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-Vw-1Gf">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Others/emptyAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="NUc-Vw-1Gf">
                                                                 <rect key="frame" x="80" y="0.0" width="80" height="80"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -246,8 +246,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Account Registration" width="414" height="896"/>
-        <image name="Busted_logo" width="168" height="61"/>
-        <image name="empty_avatar" width="119" height="119"/>
+        <image name="Logo/nomal" width="168" height="61"/>
+        <image name="Others/emptyAvatar" width="119" height="119"/>
+        <image name="wallpaper/registration" width="414" height="896"/>
     </resources>
 </document>

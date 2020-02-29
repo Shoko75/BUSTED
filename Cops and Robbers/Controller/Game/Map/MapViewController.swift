@@ -97,13 +97,13 @@ class MapViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: false)
         
         // Title
-        let logo = UIImage(named: "Busted_logo_navbar")
+        let logo = R.image.logo.navbar()
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
         if mapViewModel.checkAdmin(gameData: gameData!) {
             // Right Item
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "exit"), style: .plain, target: self, action: #selector(prepareForeExit))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: R.image.button.exit(), style: .plain, target: self, action: #selector(prepareForeExit))
         }
     }
     
@@ -141,13 +141,13 @@ class MapViewController: UIViewController {
             if let robbersCnt = gameData?.robbers.robPlayers.count {
                 statusNumLabel.text = String(robbersCnt)
             }
-            backgroundImageView.image = UIImage(named: "playerlist_police_bg")
+            backgroundImageView.image = R.image.map.playerlistPoliceBg()
         } else {
             statusLabel.text = "MONEY BAGS"
             if let flgCnt = gameData?.flags.count {
                 statusNumLabel.text = String(flgCnt)
             }
-            backgroundImageView.image = UIImage(named: "playerlist_robbers_bg")
+            backgroundImageView.image = R.image.map.playerlistRobbersBg()
         }
     }
     

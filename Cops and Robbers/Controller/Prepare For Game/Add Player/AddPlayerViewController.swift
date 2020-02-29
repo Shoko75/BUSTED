@@ -91,10 +91,10 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
         cell.addedButton.isEnabled = bStatus
         if bStatus {
             cell.addedButton.isEnabled = true
-            cell.addedButton.setImage(UIImage(named: "Button_Add"), for: .normal)
+            cell.addedButton.setImage(R.image.button.add(), for: .normal)
         } else {
             cell.addedButton.isEnabled = false
-            cell.addedButton.setImage(UIImage(named: "Button_added"), for: .normal)
+            cell.addedButton.setImage(R.image.button.added(), for: .normal)
         }
         cell.userImageView.layer.masksToBounds = true
         cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2

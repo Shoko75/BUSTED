@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Account Login" translatesAutoresizingMaskIntoConstraints="NO" id="7rR-ub-ID1">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper/login" translatesAutoresizingMaskIntoConstraints="NO" id="7rR-ub-ID1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ic-iV-JhW" userLabel="Buttom View">
@@ -95,7 +95,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abJ-Um-i70" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="401"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Busted_logo_big" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-h6-lvZ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo/big" translatesAutoresizingMaskIntoConstraints="NO" id="Ejf-h6-lvZ">
                                         <rect key="frame" x="67" y="150" width="280" height="101.33333333333331"/>
                                     </imageView>
                                 </subviews>
@@ -166,7 +166,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Account Login" width="414" height="896"/>
-        <image name="Busted_logo_big" width="280" height="101.33333587646484"/>
+        <image name="Logo/big" width="280" height="101.33333587646484"/>
+        <image name="wallpaper/login" width="414" height="896"/>
     </resources>
 </document>

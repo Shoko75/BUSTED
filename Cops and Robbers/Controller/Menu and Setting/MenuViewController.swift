@@ -48,7 +48,7 @@ class MenuViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showUserSetting)))
         
         // Title
-        let logo = UIImage(named: "Busted_logo_navbar")
+        let logo = R.image.logo.navbar()
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         

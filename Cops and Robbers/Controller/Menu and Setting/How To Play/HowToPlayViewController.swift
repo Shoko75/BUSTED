@@ -57,8 +57,8 @@ extension HowToPlayViewController: UICollectionViewDelegateFlowLayout, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HowToPlayCollectionViewCell", for: indexPath) as! HowToPlayCollectionViewCell
         let howToPlayData = HowToPlayData()
 
-        cell.imageView.image = UIImage(named: howToPlayData.data[indexPath.row]["ImageName"]!)
-        cell.textLabel.text = howToPlayData.data[indexPath.row]["text"]!
+        cell.imageView.image = howToPlayData.data[indexPath.row]["ImageName"] as? UIImage
+        cell.textLabel.text = howToPlayData.data[indexPath.row]["text"] as? String
         return cell
     }
 }

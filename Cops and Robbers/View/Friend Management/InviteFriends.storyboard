@@ -49,7 +49,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="lSH-61-Vny"/>
                                                     </constraints>
-                                                    <state key="normal" image="Button_Add">
+                                                    <state key="normal" image="Button/add">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -104,6 +104,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button_Add" width="85" height="38"/>
+        <image name="Button/add" width="85" height="38"/>
     </resources>
 </document>

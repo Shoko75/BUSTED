@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how_to_play_bg" translatesAutoresizingMaskIntoConstraints="NO" id="rek-we-YXK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper/howToPlay" translatesAutoresizingMaskIntoConstraints="NO" id="rek-we-YXK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C7i-uq-b17">
@@ -57,7 +57,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fortunewheel" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-ma-Mid">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HowToPlay/fortunewheel" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-ma-Mid">
                                                     <rect key="frame" x="62" y="84.666666666666686" width="290" height="312"/>
                                                 </imageView>
                                             </subviews>
@@ -113,7 +113,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fortunewheel" width="281" height="281"/>
-        <image name="how_to_play_bg" width="414" height="896"/>
+        <image name="HowToPlay/fortunewheel" width="281" height="281"/>
+        <image name="wallpaper/howToPlay" width="414" height="896"/>
     </resources>
 </document>

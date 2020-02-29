@@ -26,7 +26,7 @@
                                         <rect key="frame" x="304.66666666666663" y="11.666666666666629" width="58" height="58"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="add_friend"/>
+                                        <state key="normal" image="Button/addFriend"/>
                                         <connections>
                                             <segue destination="3Lm-o3-G4O" kind="show" id="oGf-hP-dmB"/>
                                         </connections>
@@ -70,7 +70,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="zTL-QB-u6q"/>
                                                     </constraints>
-                                                    <state key="normal" image="Button_accept">
+                                                    <state key="normal" image="Button/accept">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -139,7 +139,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button_accept" width="85" height="38"/>
-        <image name="add_friend" width="58" height="58"/>
+        <image name="Button/accept" width="85" height="38"/>
+        <image name="Button/addFriend" width="58" height="58"/>
     </resources>
 </document>

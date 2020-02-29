@@ -83,9 +83,9 @@ extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSourc
         } else {
             cell.inviteButton.isHidden = false
             if isRequestedFlg {
-                cell.inviteButton.setImage(UIImage(named: "Button_Requested"), for: .normal)
+                cell.inviteButton.setImage(R.image.button.requested(), for: .normal)
             } else {
-                cell.inviteButton.setImage(UIImage(named: "Button_Add"), for: .normal)
+                cell.inviteButton.setImage(R.image.button.add(), for: .normal)
             }
         }
         

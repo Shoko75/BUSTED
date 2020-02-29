@@ -37,11 +37,11 @@ class EndGameViewController: UIViewController {
         
         if let winCopsFlg = winCopsFlg {
             if winCopsFlg {
-                backgroundImageView.image = UIImage(named: "End_game_modal_cops_bg")
+                backgroundImageView.image = R.image.wallpaper.endGameCops()
                 titleLabel.text = "TEAM COPS WIN!"
                 detailLabel.text = "ALL ROBBERS HAVE BEEN APPREHENDED"
             } else {
-                backgroundImageView.image = UIImage(named: "End_game_modal_robbers_bg")
+                backgroundImageView.image = R.image.wallpaper.endGameRobbers()
                 titleLabel.text = "TEAM ROBBERS WIN!"
                 detailLabel.text = "ALL FLAGS HAVE BEEN CAPTURED"
             }

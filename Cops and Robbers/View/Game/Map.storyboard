@@ -19,7 +19,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="F4V-DA-4YM">
                                 <rect key="frame" x="0.0" y="44" width="414" height="728"/>
                             </mapView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jailbars" translatesAutoresizingMaskIntoConstraints="NO" id="rsM-dx-wbr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map/jailbars" translatesAutoresizingMaskIntoConstraints="NO" id="rsM-dx-wbr">
                                 <rect key="frame" x="0.0" y="44" width="414" height="728"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALERT! A ROBBER IS NEARBY!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76t-pV-FeJ">
@@ -32,7 +32,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="quI-h3-fMX">
                                 <rect key="frame" x="0.0" y="772" width="414" height="90"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playerlist_police_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8se-w7-exF">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map/playerlistPoliceBg" translatesAutoresizingMaskIntoConstraints="NO" id="8se-w7-exF">
                                         <rect key="frame" x="103.5" y="0.0" width="207" height="90"/>
                                     </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kId-J1-IHX">
@@ -194,7 +194,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="jailbars" width="414" height="672"/>
-        <image name="playerlist_police_bg" width="144" height="115"/>
+        <image name="Map/jailbars" width="414" height="672"/>
+        <image name="Map/playerlistPoliceBg" width="144" height="115"/>
     </resources>
 </document>

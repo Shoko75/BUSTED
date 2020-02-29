@@ -23,7 +23,7 @@
                                 <rect key="frame" x="207" y="44" width="207" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="two-face" translatesAutoresizingMaskIntoConstraints="NO" id="sJT-km-W4M">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper/twoFace" translatesAutoresizingMaskIntoConstraints="NO" id="sJT-km-W4M">
                                 <rect key="frame" x="62" y="73.999999999999986" width="290" height="163.66666666666663"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="o3N-R0-E7o">
@@ -185,6 +185,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="two-face" width="200" height="224"/>
+        <image name="wallpaper/twoFace" width="200" height="224"/>
     </resources>
 </document>
