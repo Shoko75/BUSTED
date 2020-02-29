@@ -61,7 +61,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Ku6-l9-mo4" kind="modal" modalPresentationStyle="fullScreen" id="9pp-aH-BDN"/>
+                                                    <segue destination="Ku6-l9-mo4" kind="modal" identifier="showResetPassword" modalPresentationStyle="fullScreen" id="9pp-aH-BDN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDB-Jj-tG7">
@@ -72,7 +72,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="RtO-ob-nzb" kind="modal" modalPresentationStyle="fullScreen" id="0Ys-Iw-zgG"/>
+                                                    <segue destination="RtO-ob-nzb" kind="modal" identifier="showRegisterAccount" modalPresentationStyle="fullScreen" id="0Ys-Iw-zgG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -127,7 +127,7 @@
                         <outlet property="emailText" destination="Hu8-4Q-DV5" id="E56-vZ-9nd"/>
                         <outlet property="passwordText" destination="pjH-Bj-gGZ" id="GM5-1P-fGu"/>
                         <outlet property="signInButton" destination="fLn-Nn-dRC" id="YQg-p0-7br"/>
-                        <segue destination="BHw-5K-5in" kind="modal" identifier="GoToMainMenu" modalPresentationStyle="fullScreen" id="7DA-nc-Gb6"/>
+                        <segue destination="BHw-5K-5in" kind="modal" identifier="showMainMenu" modalPresentationStyle="fullScreen" id="7DA-nc-Gb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9X-Cc-zmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,7 +142,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9I-nc-cYB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="35"/>
+            <point key="canvasLocation" x="-7" y="138"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="Hbj-8a-eSm">
@@ -152,7 +152,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23Q-Rl-qGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="107"/>
+            <point key="canvasLocation" x="12" y="72"/>
         </scene>
         <!--ResetPassword-->
         <scene sceneID="Tpg-US-2gb">
@@ -162,7 +162,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zH-5L-F2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="197"/>
+            <point key="canvasLocation" x="-12" y="104"/>
         </scene>
     </scenes>
     <resources>

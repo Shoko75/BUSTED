@@ -58,7 +58,7 @@ class WaitingPlayerAdminViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "showLoadGame" {
+        if segue.identifier == R.segue.waitingPlayerAdminViewController.showLoadGame.identifier {
             if let loadGameViewController = segue.destination as? LoadGameViewController {
                 loadGameViewController.passedData = waitingPlayerViewModel.playerList
                 loadGameViewController.flgAdmin = true
@@ -137,7 +137,7 @@ extension WaitingPlayerAdminViewController: WaitingPlayerDelegate {
     }
     
     func didCreatePassData() {
-        self.performSegue(withIdentifier: "showLoadGame", sender: nil)
+        self.performSegue(withIdentifier: R.segue.waitingPlayerAdminViewController.showLoadGame, sender: nil)
     }
     
     func didfetchData() {

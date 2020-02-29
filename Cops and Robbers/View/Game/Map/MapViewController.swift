@@ -85,7 +85,7 @@ class MapViewController: UIViewController {
         mapViewModel.observeUserInfo()
         
         // Show Countdown page
-        performSegue(withIdentifier: "showCountdown", sender: nil)
+        performSegue(withIdentifier: R.segue.mapViewController.showCountdown, sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -264,14 +264,14 @@ class MapViewController: UIViewController {
     
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showEndGame" {
+        if segue.identifier == R.segue.mapViewController.showEndGame.identifier {
             if let endGameViewController = segue.destination as? EndGameViewController {
                 endGameViewController.endGameDelegate = self
                 endGameViewController.winCopsFlg = winCopsFlg
             }
         }
         
-        if segue.identifier == "showCountdown" {
+        if segue.identifier == R.segue.mapViewController.showCountdown.identifier {
             if let countdownViewController = segue.destination as? CountdownViewController {
                 countdownViewController.countdownDelegate = self
             }
@@ -313,11 +313,11 @@ extension MapViewController: MapDelegate {
         if leftRobs == "0" {
             winCopsFlg = true
             prepareForEndGame()
-            performSegue(withIdentifier: "showEndGame", sender: nil)
+            performSegue(withIdentifier: R.segue.mapViewController.showEndGame, sender: nil)
         } else if flagCnt == "0" {
             winCopsFlg = false
             prepareForEndGame()
-            performSegue(withIdentifier: "showEndGame", sender: nil)
+            performSegue(withIdentifier: R.segue.mapViewController.showEndGame, sender: nil)
         }
     }
     

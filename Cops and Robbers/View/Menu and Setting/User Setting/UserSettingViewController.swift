@@ -45,7 +45,7 @@ class UserSettingViewController: UIViewController {
     
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showContract" {
+        if segue.identifier == R.segue.userSettingViewController.showContract.identifier {
             if let contractViewController = segue.destination as? ContractViewController {
                 if let rowNum = sender {
                     contractViewController.pageNum = rowNum as? Int
@@ -124,8 +124,7 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
                         userSettingViewModel.stopOberveUserInfo()
                         userSettingViewModel.deleteToken()
                         try Auth.auth().signOut()
-                        let storybord = UIStoryboard(name: "Login", bundle: nil)
-                        let loginController = storybord.instantiateViewController(identifier: "Login") as! LoginViewController
+                        let loginController = R.storyboard.login.instantiateInitialViewController()
                         self.view.window?.rootViewController = loginController
                         
                     } catch let error {
@@ -138,7 +137,7 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
                     print("none")
                 }
             case .About:
-                self.performSegue(withIdentifier: "showContract", sender: indexPath.row)
+                self.performSegue(withIdentifier: R.segue.userSettingViewController.showContract, sender: indexPath.row)
         }
     }
 }

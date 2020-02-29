@@ -59,31 +59,34 @@ class MenuViewController: UIViewController {
     
     @objc func showUserSetting() {
         print("showUserSetting")
-        let storyBoard = UIStoryboard(name: "UserSetting", bundle: nil)
-        let userSettingVC = storyBoard.instantiateViewController(withIdentifier: "UserSetting") as! UserSettingViewController
-        userSettingVC.modalPresentationStyle = .popover
-        self.present(userSettingVC, animated: true, completion: nil)
+        let userSettingVC = R.storyboard.userSetting.instantiateInitialViewController()
+        userSettingVC!.modalPresentationStyle = .popover
+        self.present(userSettingVC!, animated: true, completion: nil)
     }
     
     // MARK: Button Functions
     @IBAction func pressedCreateField(_ sender: Any) {
-        performSegue(withIdentifier: "showAddPlayer", sender: nil)
+        // Add Player
+        performSegue(withIdentifier: R.segue.menuViewController.showAddPlayer, sender: nil)
     }
     
     @IBAction func pressedFriendsList(_ sender: Any) {
-        performSegue(withIdentifier: "showFriendsList", sender: nil)
+        // Friends List
+        performSegue(withIdentifier: R.segue.menuViewController.showFriendsList, sender: nil)
     }
     
     @IBAction func pressedJoinField(_ sender: Any) {
-        performSegue(withIdentifier: "showWaitingPlayer", sender: nil)
+        // Waiting Player
+        performSegue(withIdentifier: R.segue.menuViewController.showWaitingPlayer, sender: nil)
     }
     
     @IBAction func pressedHowToPlay(_ sender: Any) {
-        performSegue(withIdentifier: "showHowToPlay", sender: nil)
+        // How To Play
+        performSegue(withIdentifier: R.segue.menuViewController.showHowToPlay, sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "showWaitingPlayer" {
+        // Waiting Player
+        if segue.identifier == R.segue.menuViewController.showWaitingPlayer.identifier {
             if let waitingPlayerViewController = segue.destination as? WaitingPlayerViewController {
                 waitingPlayerViewController.invitationID = self.menuViewModel.invitationID
             }

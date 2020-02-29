@@ -80,7 +80,7 @@ extension LoginViewController: LoginViewModelDelegate {
     func finishLogIn(errorMessage: String?) {
         
         if errorMessage == nil {
-            self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
+            self.performSegue(withIdentifier: R.segue.loginViewController.showMainMenu, sender: nil)
         } else {
             self.showAlert(title: "Sign In Error", message: errorMessage!)
         }

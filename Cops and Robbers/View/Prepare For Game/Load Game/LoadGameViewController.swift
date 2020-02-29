@@ -99,7 +99,7 @@ class LoadGameViewController: UIViewController {
     
     // MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showTeam" {
+        if segue.identifier == R.segue.loadGameViewController.showTeam.identifier {
             if let showTeamViewController = segue.destination as? ShowTeamViewController {
                 showTeamViewController.gameID = gameID!
             }
@@ -130,6 +130,6 @@ extension LoadGameViewController: CLLocationManagerDelegate {
 extension LoadGameViewController: LoadGameDelegate {
     func didCreateGame() {
         self.loadGameViewModel.stopObserveGame(gameID: gameID!)
-        performSegue(withIdentifier: "showTeam", sender: nil)
+        performSegue(withIdentifier: R.segue.loadGameViewController.showTeam, sender: nil)
     }
 }

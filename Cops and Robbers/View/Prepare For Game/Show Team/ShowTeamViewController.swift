@@ -40,7 +40,7 @@ class ShowTeamViewController: UIViewController {
 
     // MARK: Segue Setting
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMap" {
+        if segue.identifier == R.segue.showTeamViewController.showMap.identifier {
             if let mapViewController = segue.destination as? MapViewController {
                 mapViewController.gameData = showTeamViewModle.gameData
                 mapViewController.flgCops = showTeamViewModle.flgCops
@@ -89,7 +89,7 @@ extension ShowTeamViewController: ShowTeamDelegate {
     func didFetchGame() {
         self.tableView.reloadData()
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (timer) in
-            self.performSegue(withIdentifier: "showMap", sender: nil)
+            self.performSegue(withIdentifier: R.segue.showTeamViewController.showMap, sender: nil)
         }
     }
 }

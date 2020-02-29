@@ -73,7 +73,7 @@ class WaitingPlayerViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLoadGame" {
+        if segue.identifier == R.segue.waitingPlayerViewController.showLoadGame.identifier {
             if let loadGameViewController = segue.destination as? LoadGameViewController {
                 loadGameViewController.gameID = invitationID
             }
@@ -117,7 +117,7 @@ extension WaitingPlayerViewController: WaitingPlayerDelegate {
         print("didStartGame")
         
         waitingPlayerViewModel.stopObserveUserInfo()
-        self.performSegue(withIdentifier: "showLoadGame", sender: nil)
+        self.performSegue(withIdentifier: R.segue.waitingPlayerViewController.showLoadGame, sender: nil)
     }
     
     func didCancleInvitation() {

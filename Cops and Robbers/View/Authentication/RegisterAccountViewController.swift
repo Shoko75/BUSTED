@@ -145,7 +145,7 @@ extension RegisterAccountViewController: UIImagePickerControllerDelegate, UINavi
 extension RegisterAccountViewController: RegisterAccountDelegate {
     func finishSignIn(errorMessage: String?) {
         if errorMessage == nil {
-            self.performSegue(withIdentifier: "GoToMainMenu", sender: nil)
+            self.performSegue(withIdentifier: R.segue.registerAccountViewController.showMainMenu, sender: nil)
         } else {
             self.showAlert(title: "Sign Up Error", message: errorMessage!)
         }

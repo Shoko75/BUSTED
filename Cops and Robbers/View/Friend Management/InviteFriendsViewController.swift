@@ -23,13 +23,11 @@ class InviteFriendsViewController: UIViewController {
         
         invitefriendsViewModel.inviteFriendsDelegate = self
         invitefriendsViewModel.fetchFriendReqFromUserMyself()
-        
     }
     
     override func viewDidLayoutSubviews() {
         customView.roundCorners(cornerRadius: 50.0)
     }
-    
 }
 
 // MARK: UITableViewDelegate
@@ -83,8 +81,10 @@ extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSourc
         } else {
             cell.inviteButton.isHidden = false
             if isRequestedFlg {
+                cell.inviteButton.isEnabled = false
                 cell.inviteButton.setImage(R.image.button.requested(), for: .normal)
             } else {
+                cell.inviteButton.isEnabled = true
                 cell.inviteButton.setImage(R.image.button.add(), for: .normal)
             }
         }

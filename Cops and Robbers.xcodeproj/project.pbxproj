@@ -13,7 +13,6 @@
 		2F91FE5823D6807B0060A1FF /* WaitingPlayerAdmin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5723D6807B0060A1FF /* WaitingPlayerAdmin.storyboard */; };
 		2F91FE5A23D6A6850060A1FF /* DBInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5923D6A6850060A1FF /* DBInvitation.swift */; };
 		2F91FE5C23D6B8940060A1FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */; };
-		2F91FE5E23D94B520060A1FF /* ApnsUploads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */; };
 		2F91FE6D23DBD2B40060A1FF /* WaitingPlayerAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6C23DBD2B40060A1FF /* WaitingPlayerAdminViewController.swift */; };
 		2F91FE6F23DBD3700060A1FF /* WaitingPlayerAdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE6E23DBD3700060A1FF /* WaitingPlayerAdminTableViewCell.swift */; };
 		2F91FE7123DBD5A10060A1FF /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F91FE7023DBD5A10060A1FF /* Invitation.swift */; };
@@ -97,7 +96,6 @@
 		2F91FE5723D6807B0060A1FF /* WaitingPlayerAdmin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WaitingPlayerAdmin.storyboard; sourceTree = "<group>"; };
 		2F91FE5923D6A6850060A1FF /* DBInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBInvitation.swift; sourceTree = "<group>"; };
 		2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApnsUploads.swift; sourceTree = "<group>"; };
 		2F91FE6C23DBD2B40060A1FF /* WaitingPlayerAdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingPlayerAdminViewController.swift; sourceTree = "<group>"; };
 		2F91FE6E23DBD3700060A1FF /* WaitingPlayerAdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPlayerAdminTableViewCell.swift; sourceTree = "<group>"; };
 		2F91FE7023DBD5A10060A1FF /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
@@ -405,6 +403,16 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		2F9B826A2409E55300849CEC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2FB47DE823A0923300AA9216 /* AppDelegate.swift */,
+				2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */,
+				2F9B82682409CDDF00849CEC /* R.generated.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		2FB47DDC23A0923300AA9216 = {
 			isa = PBXGroup;
 			children = (
@@ -427,24 +435,21 @@
 			isa = PBXGroup;
 			children = (
 				2FDF0E1423A45638001648D5 /* Cops and Robbers.entitlements */,
-				2FB47DFE23A0958400AA9216 /* View */,
-				2FB47E2723A0BDD800AA9216 /* Controller */,
+				2FB47DFE23A0958400AA9216 /* Storyboard */,
+				2FB47E2723A0BDD800AA9216 /* View */,
 				2FB47E2823A0BEB600AA9216 /* ViewModel */,
 				2FB47E2923A0BECC00AA9216 /* Model */,
-				2FB47DE823A0923300AA9216 /* AppDelegate.swift */,
-				2F91FE5D23D94B520060A1FF /* ApnsUploads.swift */,
-				2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */,
+				2F9B826A2409E55300849CEC /* Common */,
+				2F9B82672409CDB200849CEC /* Animations */,
 				2FB47DF123A0923600AA9216 /* Assets.xcassets */,
 				2FB47DF323A0923600AA9216 /* LaunchScreen.storyboard */,
 				2FB47DF623A0923600AA9216 /* Info.plist */,
-				2F9B82672409CDB200849CEC /* Animations */,
 				2F91FE5B23D6B8940060A1FF /* GoogleService-Info.plist */,
-				2F9B82682409CDDF00849CEC /* R.generated.swift */,
 			);
 			path = "Cops and Robbers";
 			sourceTree = "<group>";
 		};
-		2FB47DFE23A0958400AA9216 /* View */ = {
+		2FB47DFE23A0958400AA9216 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				2F0926DB24031C130088BDE0 /* Menu and Setting */,
@@ -453,10 +458,10 @@
 				2F91FE6523DBD14F0060A1FF /* Prepare For game */,
 				2F0926DA24031BB60088BDE0 /* Game */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		2FB47E2723A0BDD800AA9216 /* Controller */ = {
+		2FB47E2723A0BDD800AA9216 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				2F0926DC24031C2F0088BDE0 /* Components */,
@@ -466,7 +471,7 @@
 				2F91FE6723DBD1750060A1FF /* Prepare For Game */,
 				2F0926DE24031C9B0088BDE0 /* Game */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
 		2FB47E2823A0BEB600AA9216 /* ViewModel */ = {
@@ -762,7 +767,6 @@
 				2FDF0E6623BC7D5F001648D5 /* InviteFriendsViewController.swift in Sources */,
 				2FDF0E5623B0FE55001648D5 /* RegisterAccountViewController.swift in Sources */,
 				2FDF0E7023C985FE001648D5 /* FriendsListViewController.swift in Sources */,
-				2F91FE5E23D94B520060A1FF /* ApnsUploads.swift in Sources */,
 				2FDF0E6423B452A8001648D5 /* Friend.swift in Sources */,
 				2F91FE9423E38ADB0060A1FF /* WaitingPlayerTableViewCell.swift in Sources */,
 				2FDF0E5B23B3AE65001648D5 /* DBUser.swift in Sources */,

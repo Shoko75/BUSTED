@@ -162,7 +162,6 @@ extension AppDelegate: MessagingDelegate {
         UserDefaults.standard.set(fcmToken, forKey: "FCM_TOKEN")
         UserDefaults.standard.synchronize()
         print("Firebase registration token: \(fcmToken)")
-        registerCustomActions()
     }
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {

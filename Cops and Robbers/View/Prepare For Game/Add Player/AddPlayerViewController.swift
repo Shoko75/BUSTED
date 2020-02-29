@@ -49,7 +49,7 @@ class AddPlayerViewController: UIViewController {
     
     // MARK: Button Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showWaitingPlayerAdmin" {
+        if segue.identifier == R.segue.addPlayerViewController.showWaitingPlayerAdmin.identifier {
             if let waitingPlayerAdminViewController = segue.destination as? WaitingPlayerAdminViewController {
                 waitingPlayerAdminViewController.invitationID = self.invitationID
             }
@@ -60,7 +60,7 @@ class AddPlayerViewController: UIViewController {
     func prepareInvitation() {
         self.invitationID = self.addPlayerViewModel.registerInvitation()
         self.addPlayerViewModel.updateUserPlayTeam(invitationID: self.invitationID!)
-        self.performSegue(withIdentifier: "showWaitingPlayerAdmin", sender: nil)
+        self.performSegue(withIdentifier: R.segue.addPlayerViewController.showWaitingPlayerAdmin, sender: nil)
     }
 }
 
