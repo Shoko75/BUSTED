@@ -14,7 +14,7 @@ class ShowTeamViewController: UIViewController {
     @IBOutlet weak var customLeftView: CustomUIView!
     @IBOutlet weak var customRightView: CustomUIView!
     
-    fileprivate var showTeamViewModle = ShowTeamViewModle()
+    private var showTeamViewModle = ShowTeamViewModle()
     
     var gameID: String?
     

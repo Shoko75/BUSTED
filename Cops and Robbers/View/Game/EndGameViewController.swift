@@ -20,7 +20,7 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var menuButton: UIButton!
     
-    fileprivate var endGameViewModel = EndGameViewModel()
+    private var endGameViewModel = EndGameViewModel()
     var winCopsFlg: Bool?
     var endGameDelegate: EndGameDelegate!
     

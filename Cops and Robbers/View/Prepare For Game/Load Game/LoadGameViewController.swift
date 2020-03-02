@@ -16,7 +16,7 @@ class LoadGameViewController: UIViewController {
     
     let animationView = AnimationView()
     
-    fileprivate var loadGameViewModel = LoadGameViewModel()
+    private var loadGameViewModel = LoadGameViewModel()
     
     var passedData = [Player]()
     var flgAdmin = false

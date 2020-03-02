@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
     private let center = UNUserNotificationCenter.current()
     let locationManager = CLLocationManager()
     
-    fileprivate var mapViewModel = MapViewModel()
+    private var mapViewModel = MapViewModel()
     var localBeacon: CLBeaconRegion!
     var localBeaconIdentityConstraint: CLBeaconIdentityConstraint!
     var beaconPeripheralData: [String:Any]?

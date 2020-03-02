@@ -15,7 +15,7 @@ class AddPlayerViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var customView: CustomUIView!
     
-    fileprivate var addPlayerViewModel = AddPlayerViewModel()
+    private var addPlayerViewModel = AddPlayerViewModel()
     var invitationID: String?
     
     // MARK: Init

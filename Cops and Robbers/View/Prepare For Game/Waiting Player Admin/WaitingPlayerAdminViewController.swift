@@ -15,7 +15,7 @@ class WaitingPlayerAdminViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var customView: CustomUIView!
     
-    fileprivate var waitingPlayerViewModel = WaitingPlayerViewModel()
+    private var waitingPlayerViewModel = WaitingPlayerViewModel()
     var invitationID: String?
     
     // MARK: Init

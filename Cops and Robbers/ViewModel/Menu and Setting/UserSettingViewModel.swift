@@ -18,6 +18,7 @@ class UserSettingViewModel {
     
     private let userInfoRef = Database.database().reference(withPath: "user_Info")
     private let userID = Auth.auth().currentUser?.uid
+    let DEFALT_IMG = "4084DD65-935E-4473-8A52-105251E4A6DF.png"
     
     var userInfo: Friend?
     var userSettingDelegate: UserSettingDelegate?
@@ -61,8 +62,10 @@ class UserSettingViewModel {
                         self.updateUserImage(userImageURL: dowloadURL.absoluteString)
                     }
                     
-                    // delete old image
-                    storageRef.delete(completion: nil)
+                    if storageRef.name != self.DEFALT_IMG {
+                        // delete old image
+                        storageRef.delete(completion: nil)
+                    }
             })
         }
     }
