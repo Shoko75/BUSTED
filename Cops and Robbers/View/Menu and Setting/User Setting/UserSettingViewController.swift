@@ -94,7 +94,7 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserSettingTableViewCell", for: indexPath) as! UserSettingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.userSettingTableViewCell, for: indexPath)!
         
         guard let section = UserSettingSection(rawValue: indexPath.section) else { return UITableViewCell() }
         

@@ -104,7 +104,7 @@ extension WaitingPlayerAdminViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerAdminTableCell", for: indexPath) as! WaitingPlayerAdminTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.waitingPlayerAdminTableCell, for: indexPath)!
         let player = waitingPlayerViewModel.playerList[indexPath.row]
         
         cell.userNameLabel.text = player.user?.userName

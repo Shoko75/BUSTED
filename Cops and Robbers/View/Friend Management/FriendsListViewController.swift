@@ -78,8 +78,7 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsListCell", for: indexPath) as! FriendsListTableViewCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.friendsListCell, for: indexPath)!
         let (friend, isAcceptedFlg) = friendsListViewModel.friendsList[indexPath.section].friends[indexPath.row]
         let sectionName = friendsListViewModel.friendsList[indexPath.section].sectionName
        

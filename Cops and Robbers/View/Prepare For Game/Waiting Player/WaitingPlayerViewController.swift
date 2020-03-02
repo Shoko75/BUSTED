@@ -88,7 +88,7 @@ extension WaitingPlayerViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WaitingPlayerTableViewCell", for: indexPath) as! WaitingPlayerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.waitingPlayerTableViewCell, for: indexPath)!
         let player = waitingPlayerViewModel.playerList[indexPath.row]
         
         cell.userNameLabel.text = player.user?.userName

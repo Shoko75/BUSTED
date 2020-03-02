@@ -62,7 +62,7 @@ extension InviteFriendsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InviteFriendsCell", for: indexPath) as! InviteFriendsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.inviteFriendsCell, for: indexPath)!
         let (friend, isRequestedFlg) = invitefriendsViewModel.friendsList[indexPath.section].friends[indexPath.row]
         let sectionName = invitefriendsViewModel.friendsList[indexPath.section].sectionName
 

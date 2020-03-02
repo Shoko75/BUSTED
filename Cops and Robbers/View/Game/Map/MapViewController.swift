@@ -354,7 +354,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
         var name = ""
         var userImage = ""
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCollectionViewCell", for: indexPath) as! MapCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.mapCollectionViewCell, for: indexPath)!
         
         if flgCops! {
             name = (mapViewModel.gameData?.cops.players[indexPath.row].userName)!

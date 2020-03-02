@@ -80,7 +80,7 @@ extension AddPlayerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlayersTableCell", for: indexPath) as! AddPlayerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.addPlayersTableCell, for: indexPath)!
         let friend = addPlayerViewModel.friendList[indexPath.row]
         let bStatus = checkButtonStatus(id: friend.uid)
         
@@ -127,7 +127,7 @@ extension AddPlayerViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddPlayersCollectionCell", for: indexPath) as! AddPlayerCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.addPlayersCollectionCell, for: indexPath)!
         cell.addPlayerCollectionViewCellDelegate = self
         let player = addPlayerViewModel.playerList[indexPath.row]
         cell.setCellValues(cellValues: player)
