@@ -98,13 +98,8 @@ class MapViewModel {
             
             return alert
         case .far:
-            if flgCops! {
-                alert = ""
-            } else {
-                alert = ""
-            }
-        
-        return alert
+            alert = ""
+            return alert
         @unknown default:
         fatalError()
         }

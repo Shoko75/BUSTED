@@ -53,6 +53,7 @@ class MapViewController: UIViewController {
         
         // Notification authorization check
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         

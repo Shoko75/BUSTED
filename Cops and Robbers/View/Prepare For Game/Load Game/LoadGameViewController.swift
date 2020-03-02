@@ -42,7 +42,7 @@ class LoadGameViewController: UIViewController {
             // Location Manager setting
             locationManager = CLLocationManager()
             locationManager?.delegate = self
-            locationManager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             
             if CLLocationManager.authorizationStatus() == .authorizedAlways ||
                 CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
