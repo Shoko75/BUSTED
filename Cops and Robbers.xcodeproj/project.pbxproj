@@ -52,6 +52,7 @@
 		2F9892652404D117005A666E /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9892642404D117005A666E /* ContractViewController.swift */; };
 		2F9892672404D460005A666E /* Contract.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9892662404D460005A666E /* Contract.storyboard */; };
 		2F9B82692409CDDF00849CEC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B82682409CDDF00849CEC /* R.generated.swift */; };
+		2F9B826C240DC88E00849CEC /* ApnsUploads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B826B240DC88E00849CEC /* ApnsUploads.swift */; };
 		2F9D0FC923A302DC002FA0D0 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */; };
 		2FB47DE923A0923300AA9216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DE823A0923300AA9216 /* AppDelegate.swift */; };
 		2FB47DEB23A0923300AA9216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */; };
@@ -135,6 +136,7 @@
 		2F9892642404D117005A666E /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
 		2F9892662404D460005A666E /* Contract.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contract.storyboard; sourceTree = "<group>"; };
 		2F9B82682409CDDF00849CEC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		2F9B826B240DC88E00849CEC /* ApnsUploads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApnsUploads.swift; sourceTree = "<group>"; };
 		2F9D0FC823A302DC002FA0D0 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2FB47DE523A0923300AA9216 /* BUSTED.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSTED.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FB47DE823A0923300AA9216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				2FB47DE823A0923300AA9216 /* AppDelegate.swift */,
 				2FB47DEA23A0923300AA9216 /* SceneDelegate.swift */,
 				2F9B82682409CDDF00849CEC /* R.generated.swift */,
+				2F9B826B240DC88E00849CEC /* ApnsUploads.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				2F91FE7923E0EED80060A1FF /* ShowTeamViewController.swift in Sources */,
 				2FB47E2D23A18F0000AA9216 /* CustomUIView.swift in Sources */,
 				2FDF0E6E23C985E5001648D5 /* FriendsListTableViewCell.swift in Sources */,
+				2F9B826C240DC88E00849CEC /* ApnsUploads.swift in Sources */,
 				2F91FE7C23E1032D0060A1FF /* ShowTeamTableViewCell.swift in Sources */,
 				2F91FE7123DBD5A10060A1FF /* Invitation.swift in Sources */,
 				2F91FECE23F65D590060A1FF /* HowToPlayViewController.swift in Sources */,

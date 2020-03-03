@@ -239,9 +239,14 @@ class MapViewModel {
     }
     
     func updateFlag(identifier: String) {
-        if identifier != "" {
+        
+        if identifier != "" && (identifier == "0" || identifier == "1" || identifier == "2") {
             let activeFlg = ["activeFlg": false]
-            gameRef.child(gameID).child("flags").child(identifier).updateChildValues(activeFlg)
+            gameRef.child(gameID).observeSingleEvent(of: .value) { (snapshot) in
+                if snapshot.childrenCount != 0 {
+                    self.gameRef.child(self.gameID).child("flags").child(identifier).updateChildValues(activeFlg)
+                }
+            }
         }
     }
     

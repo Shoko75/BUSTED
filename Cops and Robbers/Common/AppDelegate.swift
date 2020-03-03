@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // Notification setiing
     func handleEvent(forRegion region: CLRegion) {
-        
+            
         let content = UNMutableNotificationContent()
         content.title = "Cops and Robbers (Warning)"
         content.body = "You are out side of the filed! Please come back! "
