@@ -235,10 +235,16 @@ class MapViewModel {
         return String(flagCnt)
     }
     
+    // When the user got the money bug, will update the status of money bug as "false"
+    // Sometimes the gameID will change, so need to search first wether the game ID exsits or not before the update.
     func updateFlag(identifier: String) {
-        if identifier != "" {
+        if identifier != "" && (identifier == "0" || identifier == "1" || identifier == "2") {
             let activeFlg = ["activeFlg": false]
-            gameRef.child(gameID).child("flags").child(identifier).updateChildValues(activeFlg)
+            gameRef.child(gameID).observeSingleEvent(of: .value) { (snapshot) in
+                if snapshot.childrenCount != 0 {
+                    self.gameRef.child(self.gameID).child("flags").child(identifier).updateChildValues(activeFlg)
+                }
+            }
         }
     }
     

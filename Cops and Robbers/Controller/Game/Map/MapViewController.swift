@@ -414,8 +414,11 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-            print(region.identifier)
+        print(region.identifier)
+        
+        if !flgCops! {
             self.mapViewModel.updateFlag(identifier: region.identifier)
+        }
     }
 }
 
