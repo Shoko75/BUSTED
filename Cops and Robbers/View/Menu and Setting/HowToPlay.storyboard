@@ -53,22 +53,23 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Players are randomly selected to be in a team of  Cops or Robbers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoA-X1-Wuk">
                                                     <rect key="frame" x="20" y="416.66666666666669" width="374" height="187.33333333333331"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fortunewheel" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-ma-Mid">
-                                                    <rect key="frame" x="62" y="84.666666666666686" width="290" height="312"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how_to_play_fortunewheel" translatesAutoresizingMaskIntoConstraints="NO" id="MeW-ma-Mid">
+                                                    <rect key="frame" x="10" y="84.666666666666686" width="394" height="312"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="eoA-X1-Wuk" secondAttribute="trailing" constant="20" id="3oz-uB-uQp"/>
                                                 <constraint firstItem="MeW-ma-Mid" firstAttribute="height" secondItem="I2S-AY-Kst" secondAttribute="height" multiplier="0.5" id="8PM-jq-N6T"/>
+                                                <constraint firstAttribute="trailing" secondItem="MeW-ma-Mid" secondAttribute="trailing" constant="10" id="Bnm-i2-lo4"/>
                                                 <constraint firstAttribute="bottom" secondItem="eoA-X1-Wuk" secondAttribute="bottom" constant="20" id="EKW-oQ-d5D"/>
                                                 <constraint firstItem="MeW-ma-Mid" firstAttribute="centerX" secondItem="I2S-AY-Kst" secondAttribute="centerX" id="S41-Nc-3Zo"/>
+                                                <constraint firstItem="MeW-ma-Mid" firstAttribute="leading" secondItem="I2S-AY-Kst" secondAttribute="leading" constant="10" id="d3C-NJ-lAO"/>
                                                 <constraint firstItem="eoA-X1-Wuk" firstAttribute="height" secondItem="I2S-AY-Kst" secondAttribute="height" multiplier="0.3" id="e7l-UH-uKR"/>
                                                 <constraint firstItem="eoA-X1-Wuk" firstAttribute="leading" secondItem="I2S-AY-Kst" secondAttribute="leading" constant="20" id="eP9-xv-j99"/>
-                                                <constraint firstItem="MeW-ma-Mid" firstAttribute="width" secondItem="I2S-AY-Kst" secondAttribute="width" multiplier="0.7" id="nTC-L2-ssF"/>
                                                 <constraint firstItem="eoA-X1-Wuk" firstAttribute="top" secondItem="MeW-ma-Mid" secondAttribute="bottom" constant="20" id="oHL-VU-Dpk"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -113,7 +114,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fortunewheel" width="281" height="281"/>
         <image name="how_to_play_bg" width="414" height="896"/>
+        <image name="how_to_play_fortunewheel" width="229.33332824707031" height="265.33334350585938"/>
     </resources>
 </document>

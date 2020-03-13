@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Fortunewheel.png",
+      "filename" : "robber_trespassing.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Fortunewheel@2x.png",
+      "filename" : "robber_trespassing@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Fortunewheel@3x.png",
+      "filename" : "robber_trespassing@3x.png",
       "scale" : "3x"
     }
   ],
