@@ -12,3 +12,5 @@ BUSTED is a mobile game application that is a modernized game of Cops and Robber
 - UserNotifications
 - Firebase(Authentication, Database, Storage, Functions)
 
+# Architecture
+![alt text](https://github.com/Shoko75/portfolio/blob/master/img/details/BUSTED_Architecture.png "BUSTED_Architecture")
