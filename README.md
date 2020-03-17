@@ -2,6 +2,9 @@
 ![alt text](https://github.com/Shoko75/portfolio/blob/master/img/details/Banner_Busted.png "main pic")
 BUSTED is a mobile game application that is a modernized game of Cops and Robbers or Tag. You split yourselves into groups of two - Cops and Robbers - each with their own objectives to complete the game. You can enjoy this game with your family or friends.
 
+# Why I created this app
+Suddenly came up with this idea when I heard about Beacon technology because I really liked to play Cops and Robbers game during my childhood days. In addition, I was a little bit sad about the news that children don't play outside recently. So I hope I could encourage the children to enjoy playing outside with BUSTED.
+
 # UI Design (This design was created by [@andasan](https://github.com/andasan))
 ![alt text](https://github.com/Shoko75/portfolio/blob/master/img/details/BUSTED_UI.png "UI_pic")
 
